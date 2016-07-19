@@ -33,14 +33,6 @@
 </head>
 <body>
 
-<div class="jumbotron">
-  <div class="container text-center">
-    <h1>GATORSWAP- CSC 648- STUDENT WEB SITE</h1>
-    <p>Hello and Welcome</p>
-	<p>This site has been created by sfsu atudents to enable sfsu students to buy and sell items.</p>
-  </div>
-</div>
-
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -55,14 +47,11 @@
 	    <div class="row text-center">
 	<div class="form-inline">
 
-       <label > Search
       <input type="search" class="form-control" size="50" class="glyphicon glyphicon-search" placeholder="Search">
 	  <input type="Search" class="btn btn-primary" value="Search">
-	  </label>
+    
 	  </div>
     </div>
-	<ul class="nav navbar-nav navbar-left"> <a href="home.php"><span class="glyphicon glyphicon-home "></span> Home</a>
-	</ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#"><span class="glyphicon glyphicon-shopping-cart "></span> Cart</a></li>
         <li><a href="<?php echo URL; ?>home/signin"><span class="glyphicon glyphicon-log-in"></span>Sign In</a></li>
