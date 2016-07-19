@@ -7,13 +7,14 @@
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  
   <style>
     /* Remove the navbar's default rounded borders and increase the bottom margin */
     .navbar {
-	padding: 25px;
+	   padding: 25px;
       margin-bottom: 50px;
       border-radius: 0;
-	  background-color: black;
+	   background-color: #26215f;
 
 
     }
@@ -26,9 +27,16 @@
 
     /* Add a gray background color and some padding to the footer */
     footer {
-      background-color: #f2f2f2;
+      background-color: #53565A;
       padding: 25px;
     }
+
+    .footerLinks{
+      color:white;
+
+    }
+    
+
   </style>
 </head>
 <body>
