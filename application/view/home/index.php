@@ -5,6 +5,10 @@
     border-color: #000000;
 }
 
+.panel-primary{
+  border-color: #53565a
+}
+
 </style>
 
 
@@ -15,7 +19,7 @@
     <div class="col-sm-4">
       <div class="panel panel-primary">
         <div class="panel-heading">BOOKS</div>
-        <div class="panel-body"><img src="http://www.gijobs.com/wp-content/uploads/2014/08/textbooks.resized-1.jpg"  alt="Image" width="300" height="300" ></div>
+        <div class="panel-body"><span class="glyphicons glyphicons-book"></span><!-- <img src="http://www.gijobs.com/wp-content/uploads/2014/08/textbooks.resized-1.jpg"  alt="Image" width="300" height="300" > --></div>
         <div class="panel-footer">Click here to buy books</div>
       </div>
     </div>
