@@ -1,9 +1,8 @@
 <style>
 
-.panel-primary{
-  background-color: #000000;
-  border-color: #000000;
-
+.panel-primary>.panel-heading {
+    background-color: #000000;
+    border-color: #000000;
 }
 
 </style>
