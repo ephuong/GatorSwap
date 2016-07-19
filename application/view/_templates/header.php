@@ -49,7 +49,14 @@
       color:#C99700;
 
     }
-    
+
+    .navbar-inverse .navbar-nav>li>a {
+    color: white;
+    }
+
+    .navbar-inverse .navbar-nav>li>a:hover {
+    color: #C99700;
+    }    
 
   </style>
 </head>
