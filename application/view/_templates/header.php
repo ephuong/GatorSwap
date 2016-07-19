@@ -35,6 +35,20 @@
       color:white;
 
     }
+
+    .headerLinks{
+      color:white;
+
+    }
+    .footerLinks:hover{
+      color:#C99700;
+
+    }
+
+    .headerLinks:hover{
+      color:#C99700;
+
+    }
     
 
   </style>
@@ -61,9 +75,9 @@
 	  </div>
     </div>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-shopping-cart "></span> Cart</a></li>
-        <li><a href="<?php echo URL; ?>home/signin"><span class="glyphicon glyphicon-log-in"></span>Sign In</a></li>
-		<li><a href="<?php echo URL; ?>home/profile"><span class="glyphicon glyphicon-user"></span>Profile</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-shopping-cart headerLinks"></span> Cart</a></li>
+        <li><a href="<?php echo URL; ?>home/signin"><span class="glyphicon glyphicon-log-in headerLinks"></span>Sign In</a></li>
+		<li><a href="<?php echo URL; ?>home/profile"><span class="glyphicon glyphicon-user headerLinks"></span>Profile</a></li>
       </ul>
     </div>
   </div>
