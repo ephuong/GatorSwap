@@ -19,7 +19,8 @@
     <div class="col-sm-4">
       <div class="panel panel-primary">
         <div class="panel-heading">BOOKS</div>
-        <div class="panel-body"><span class="glyphicons glyphicons-book"></span><!-- <img src="http://www.gijobs.com/wp-content/uploads/2014/08/textbooks.resized-1.jpg"  alt="Image" width="300" height="300" > --></div>
+        <!--USING flaticon free icons here, need to put in doc -->
+        <div class="panel-body"><img src="http://image.flaticon.com/icons/svg/126/126503.svg"  alt="Image"></div>
         <div class="panel-footer">Click here to buy books</div>
       </div>
     </div>
