@@ -20,7 +20,7 @@
       <div class="panel panel-primary">
         <div class="panel-heading">BOOKS</div>
         <!--USING flaticon free icons here, need to put in doc -->
-        <div class="panel-body"><img src="http://image.flaticon.com/icons/svg/126/126503.svg"  alt="Image"></div>
+        <div class="panel-body"><img src="http://image.flaticon.com/icons/svg/126/126503.svg"  alt="Image"  width="200" height="200"></div>
         <div class="panel-footer">Click here to buy books</div>
       </div>
     </div>
