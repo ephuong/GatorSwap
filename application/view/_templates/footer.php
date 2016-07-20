@@ -1,10 +1,10 @@
 <style>
 
-#gatorSwapFooter{
+/*#gatorSwapFooter{
 	position: absolute;
     bottom: 0;
     width: 100%;
-}
+}*/
 </style>
 
 
