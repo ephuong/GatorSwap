@@ -47,4 +47,16 @@ class Home extends Controller
         require APP . 'view/home/profile.php';
         require APP . 'view/_templates/footer.php';
     }
+
+    /**
+     * PAGE: cart
+     * This method handles the users carted items. 
+     * The camelCase writing is just for better readability. The method name is case-insensitive.
+     */
+    public function cart()
+    {
+        require APP . 'view/_templates/header.php';
+        require APP . 'view/mycart/cart.php';
+        require APP . 'view/_templates/footer.php';
+      
 }
