@@ -1,11 +1,9 @@
 <style>
 
 #gatorSwapFooter{
-	width:100%;
 	position: absolute;
-	height: 80px;
-	clear:both;
-	top:100%;
+    bottom: 0;
+    width: 100%;
 }
 </style>
 
