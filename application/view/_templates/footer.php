@@ -1,9 +1,13 @@
 <footer class="container-fluid text-center">
-  <a href="" title="Terms and conditions" class="footerLinks"> Terms and conditions</a> <br>
- <a href="" title="Help" class="footerLinks"> Help</a><br>
-  <a href="" title="About us" class="footerLinks"> About us</a><br>
-   <a href="" title="Contact_info" class="footerLinks"> Contact info</a><br>
- <a href="" title="Privacy policy" class="footerLinks"> Privacy policy</a><br>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-2 col-md-offset-1"><a href="" title="About us" class="footerLinks"> About</a> </div>
+    		<div class="col-md-2"><a href="" title="Help" class="footerLinks"> Help</a></div>
+    		<div class="col-md-2"><a href="" title="Privacy policy" class="footerLinks"> Privacy</a></div>
+    		<div class="col-md-2"><a href="" title="Contact_info" class="footerLinks"> Contact info</a></div>
+        	<div class="col-md-2"><a href="" title="Terms and conditions" class="footerLinks"> Terms and conditions</a></div>
+		</div> <!--Row-->
+  	</div> <!--container-->
 </footer>
 </body>
 </html>
