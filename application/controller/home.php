@@ -58,5 +58,6 @@ class Home extends Controller
         require APP . 'view/_templates/header.php';
         require APP . 'view/mycart/cart.php';
         require APP . 'view/_templates/footer.php';
+    }
       
 }
