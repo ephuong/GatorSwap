@@ -8,7 +8,7 @@
 </style>
 
 
-<footer class="container-fluid text-center" id="gatorSwapFooter">
+<footer class="container-fluid text-center footer" id="gatorSwapFooter">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-2 col-md-offset-1"><a href="<?php echo URL; ?>home/about" title="About us" class="footerLinks"> About</a> </div>
