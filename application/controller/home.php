@@ -59,5 +59,65 @@ class Home extends Controller
         require APP . 'view/home/cart.php';
         require APP . 'view/_templates/footer.php';
     }
+
+    /**
+     * PAGE: cart
+     * This method handles the about page. 
+     * The camelCase writing is just for better readability. The method name is case-insensitive.
+     */
+    public function about()
+    {
+        require APP . 'view/_templates/header.php';
+        require APP . 'view/home/about.php';
+        require APP . 'view/_templates/footer.php';
+    }
+
+    /**
+     * PAGE: cart
+     * This method handles the terms page 
+     * The camelCase writing is just for better readability. The method name is case-insensitive.
+     */
+    public function terms()
+    {
+        require APP . 'view/_templates/header.php';
+        require APP . 'view/home/terms.php';
+        require APP . 'view/_templates/footer.php';
+    }
+
+    /**
+     * PAGE: cart
+     * This method handles the privacy page. 
+     * The camelCase writing is just for better readability. The method name is case-insensitive.
+     */
+    public function privacy()
+    {
+        require APP . 'view/_templates/header.php';
+        require APP . 'view/home/privacy.php';
+        require APP . 'view/_templates/footer.php';
+    }
+
+    /**
+     * PAGE: cart
+     * This method handles the contact page. 
+     * The camelCase writing is just for better readability. The method name is case-insensitive.
+     */
+    public function contact()
+    {
+        require APP . 'view/_templates/header.php';
+        require APP . 'view/home/contact.php';
+        require APP . 'view/_templates/footer.php';
+    }
+
+    /**
+     * PAGE: cart
+     * This method handles the help page. 
+     * The camelCase writing is just for better readability. The method name is case-insensitive.
+     */
+    public function help()
+    {
+        require APP . 'view/_templates/header.php';
+        require APP . 'view/home/help.php';
+        require APP . 'view/_templates/footer.php';
+    }
       
 }
