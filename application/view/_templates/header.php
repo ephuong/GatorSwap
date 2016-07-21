@@ -83,7 +83,8 @@
     </div>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="<?php echo URL; ?>home/cart" class="headerLinks"><span class="glyphicon glyphicon-shopping-cart headerLinks"></span> Cart</a></li>
-        <li><a href="<?php echo URL; ?>home/signin" class="headerLinks"><span class="glyphicon glyphicon-log-in headerLinks"></span> Register/Sign In</a></li>
+        <li><a href="<?php echo URL; ?>home/signin" class="headerLinks"><span class="glyphicon glyphicon-log-in headerLinks"></span> Sign In</a></li>
+        <li><a href="<?php echo URL; ?>home/register" class="headerLinks"><span class="glyphicon glyphicon-log-in headerLinks"></span> Register</a></li>
         <li><a href="<?php echo URL; ?>home/profile" class="headerLinks"><span class="glyphicon glyphicon-user headerLinks"></span> Profile</a></li>
       </ul>
     </div>
