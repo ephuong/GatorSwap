@@ -55,13 +55,14 @@ class Home extends Controller
      */
     public function addUser()
     {
-        // if we have POST data to create a new song entry
+        // if we have POST data to create a new User entry
         if (isset($_POST["user_submit"])) {
-            $email = $_POST["email"];
-            $myArray = []; //Declare an empty array
-            $myArray = explode('@', $email); //split up the email by @ sign
-            $username = $myArray[0];
-            // do addSong() in model/model.php
+          $email = $_POST["email"];
+          $myArray = []; //Declare an empty array
+          $myArray = explode('@', $email); //split up the email by @ sign
+          $username = $myArray[0];
+            
+            // do addUser() in model/model.php
             
             $this->model->addUser($_POST["firstname"], $_POST["lastname"],$username,$_POST["password"],$_POST["confirmPassword"],$_POST["sfsu_id"],$_POST["phoneNumber"],$_POST["address"],$_POST['city'],$_POST["zipcode"]);
         }
