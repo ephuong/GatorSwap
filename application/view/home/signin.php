@@ -128,8 +128,8 @@ body {
 
 </script>
 <?php
-
- $firstname = $_POST['firstname'];
+if(isset($_POST['submit'])){
+    $firstname = $_POST['firstname'];
  $lastname = $_POST['lastname'];
  $username = $_POST['username'];
  
@@ -141,6 +141,8 @@ body {
  $address = $_POST['address'];
  $city = $_POST['city'];
  $zipcode = $_POST['zipcode'];
+}
+ 
  
 ?>
   <div id="login" class="wrapper">
