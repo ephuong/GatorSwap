@@ -127,9 +127,24 @@ body {
         
 
 </script>
+<?php
 
+ $firstname = $_POST['firstname'];
+ $lastname = $_POST['lastname'];
+ $username = $_POST['username'];
+ 
+ $password = $_POST['password'];
+ $confirmPassword = $_POST['confirmPassword'];
+ $email = $_POST['email'];
+ $sfsu_id = $_POST['sfsu_id'];
+ $phoneNumber = $_POST['phoneNumber'];
+ $address = $_POST['address'];
+ $city = $_POST['city'];
+ $zipcode = $_POST['zipcode'];
+ 
+?>
   <div id="login" class="wrapper">
-    <form class="form-signin">       
+    <form data-toggle="validator" class="form-signin">       
       <h3>Login or <a href="#signup">Sign up</a> </h3>
       <input type="text" class="form-control" name="username" placeholder="Username" required="" autofocus="" /></br>
       <input type="password" class="form-control" name="password" placeholder="Password" required=""/>      
@@ -145,34 +160,34 @@ body {
 
 <div id="signup" class="container">
     
-    <form class="form-signup" role="form">
+    <form class="form-signup" role="form" method="post" action="#">
         <h3>Register To Create Your Account</h3>
         <div class="row">
             <div class="col-md-4">
                 
                 <div class="form-group">
 	                <label>First Name</label>
-	                <input class="form-control" placeholder="Your First Name" type="text">
+	                <input class="form-control" name="firstname" placeholder="Your First Name" type="text">
             	</div>
 
             	<div class="form-group">
 	                <label>Last Name</label>
-	                <input class="form-control" placeholder="Your Last Name" type="text">
+	                <input class="form-control" name="lastname" placeholder="Your Last Name" type="text">
             	</div>
 
 		  <div class="form-group">                
 	                <label>UserName</label> 
-	                <input class="form-control" placeholder="Username" type="text"> 
+	                <input class="form-control" name="username" placeholder="Username" type="text"> 
             	</div>
                 
                 <div class="form-group">                
 	                <label>Password</label> 
-	                <input class="form-control" placeholder="Password" type="text"> 
+	                <input class="form-control" name="password" placeholder="Password" type="text"> 
             	</div>
                 
                 <div class="form-group">                
 	                <label>Confirm Password</label> 
-	                <input class="form-control" placeholder="Confirm Password" type="text"> 
+	                <input class="form-control" name="confirmPassword" placeholder="Confirm Password" type="text"> 
             	</div>
                 
                 <h3>Already Have an account?</br><a href="#top" id ="backToTopBtn">Login</a></h3>
@@ -184,32 +199,33 @@ body {
                 
                 <div class="form-group">                
 	                <label>SFSU E-mail</label> 
-	                <input class="form-control" placeholder="....@mail.sfsu.edu" type="text"> 
-            	</div>
+	                <input class="form-control" name="email" placeholder="....@mail.sfsu.edu" type="email" data-error="Bruh, that email address is invalid" required> 
+            	        
+                </div>
                 
                 <div class="form-group">                
 	                <label>SFSU ID:</label> 
-	                <input class="form-control" placeholder="SFSU ID" type="text"> 
+	                <input class="form-control" name="sfsu_id" placeholder="SFSU ID" type="text"> 
             	</div>
                 
                 <div class="form-group">                
 	                <label>Phone Number</label> 
-	                <input class="form-control" placeholder="Phone Number" type="text"> 
+	                <input class="form-control" name="phoneNumber" placeholder="Phone Number" type="text"> 
             	</div>
 
    		
                 
                 <div class="form-group">                
 	                <label>Address:</label> 
-	                <input class="form-control" placeholder="1600 Holloway Ave" type="text"> 
+	                <input class="form-control" name="address"  placeholder="1600 Holloway Ave" type="text"> 
             	</div>
         <div class="form-group">                
 	                <label>City</label> 
-	                <input class="form-control" placeholder="City" type="text"> 
+	                <input class="form-control"  name="city" placeholder="City" type="text"> 
             	</div>
         <div class="form-group">                
 	                <label>Zipcode</label> 
-	                <input class="form-control" placeholder="Zipcode" type="text"> 
+	                <input class="form-control" name="zipcode" placeholder="Zipcode" type="text"> 
             	</div>
         
          <button class="btn btn-lg btn-primary btn-block" type="submit">REGISTER</button>                 
