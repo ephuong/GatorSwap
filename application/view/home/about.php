@@ -19,7 +19,6 @@
 		<div class="col-lg-12">
 	  		<div class="page-header">
 	    		<h1>About GatorSwap</h1>
-	    		<small>SFSU's Marketplace</small>
 	  		</div>
 
 	  		<p>
