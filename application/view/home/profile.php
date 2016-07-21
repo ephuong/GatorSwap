@@ -1,14 +1,4 @@
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>CSC 648 - Group 7</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  <style><style>
+<style>
  @import "bourbon";
 
 body {
@@ -137,25 +127,7 @@ body {
 	                <label>UserName</label> 
 	                <input class="form-control" name="username" placeholder="Username" type="text"> 
             	</div>
-                
-                <div class="form-group">                
-	                <label>Password</label> 
-	                <input class="form-control" name="password" placeholder="Password" type="text"> 
-            	</div>
-                
-                <div class="form-group">                
-	                <label>Confirm Password</label> 
-	                <input class="form-control" name="confirmPassword" placeholder="Confirm Password" type="text"> 
-            	</div>
-                
-               
-                
-
-            </div>
-            
-            <div class="col-md-6">
-                
-                <div class="form-group">                
+                  <div class="form-group">                
 	                <label>SFSU E-mail</label> 
 	                <input class="form-control" name="email" placeholder="....@mail.sfsu.edu" type="email" data-error="Bruh, that email address is invalid" required> 
             	        
@@ -165,6 +137,16 @@ body {
 	                <label>SFSU ID:</label> 
 	                <input class="form-control" name="sfsu_id" placeholder="SFSU ID" type="text"> 
             	</div>
+                
+                
+                
+        
+
+            </div>
+            
+            <div class="col-md-6">
+                
+              
                 
                 <div class="form-group">                
 	                <label>Phone Number</label> 
@@ -242,7 +224,4 @@ if(isset($_POST['submit'])){
  
 ?>
 
-
-</body>
-</html>
 
