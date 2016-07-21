@@ -1,4 +1,4 @@
-<style>
+  <style>
  @import "bourbon";
 
 body {
@@ -168,9 +168,8 @@ body {
 	                <input class="form-control" name="zipcode" placeholder="Zipcode" type="text"> 
             	</div>
 				</div>
-        <div class = "container-text-centre">
-         <button class="btn btn-lg btn-primary btn-block" type="submit">Save</button>   
-</div>		 
+				<button type="button" class="btn btn-lg btn-primary btn-block ">  Done  </button>
+
         
                 
        </div>
@@ -223,5 +222,3 @@ if(isset($_POST['submit'])){
  
  
 ?>
-
-
