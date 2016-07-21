@@ -70,6 +70,17 @@ if(isset($_POST['submit'])){
  $city = $_POST['city'];
  $zipcode = $_POST['zipcode'];
  
+ //Matches the password length
+ if((strlen($password))< 6)
+ {
+     $passwordLength= "Password has to be at least 6 characters long" ;
+ }
+ 
+ //This code mathces two passwords
+ if($password!=$confirmPassword)
+ {
+     $passConfirmationError= "Passwords doesn't match";
+ }
  
  if(((strlen($sfsu_id))< 9) && (strlen($sfsu_id))>9)
  {
@@ -113,18 +124,6 @@ else //If its a valid email, then check if its a sfsu email
     $emailValidation= "Please type your sfsu student email only";  
   }
 }
-  
- //Matcehs the password length
- if((strlen($password))< 6)
- {
-     $passwordLength= "Password has to be at least 6 characters long" ;
- }
- 
- //This code mathces two passwords
- if($password!=$confirmPassword)
- {
-     $passConfirmationError= "Passwords doesn't match";
- }
  
  if((strlen($zipcode))< 5)
  {
