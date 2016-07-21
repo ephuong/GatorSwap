@@ -57,26 +57,101 @@ body {
 
 </style>
 <?php
-if(isset($_POST['submit'])){
- $username = $_POST['username'];
- $password = $_POST['password'];
-}
- 
- 
+  //CHECK THE DATA BASE HERE WITH THE INPUT VALUE
+
 ?>
-  <div id="login" class="wrapper">
-    <form data-toggle="validator" class="form-signin">       
+  <div id="loginForm" class="wrapper" data-toggle="validator">
+      <form id="myForm" class="form-signin" method="post">       
         <h3>Login or <a href="<?php echo URL; ?>home/register"">Sign up</a> </h3>
-      <input type="text" class="form-control" name="username" placeholder="Username" required="" autofocus="" /></br>
-      <input type="password" class="form-control" name="password" placeholder="Password" required=""/>      
+      <label for="username" control-label">Username</label>  
+      <input type="text" id="username" class="form-control" name="username" placeholder="Username" value="<?php if(isset($_POST['username'])){echo htmlspecialchars($_POST['username']); }?>" />
+      <?php 
+      if(isset($errUserName)){
+      echo "<p class='text-danger'>$errUserName</p>";
+      }
+      ?>
+      </br>
+      <label for="pwd" control-label">Password</label> 
+      <input type="text" id="pwd" class="form-control" name="password" placeholder="Password" value="<?php if(isset($_POST['password'])){echo htmlspecialchars($_POST['password']); }?>"/> 
+      <?php 
+      if(isset($errPassword)){
+      echo "<p class='text-danger'>$errPassword</p>";
+      }
+      ?>
       <label class="checkbox">
         <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Remember me
       </label>
-      <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>   
+       <div class="form-group">
+        <div class="col-md-4 ">
+            <div id="messages"></div>
+        </div>
+    </div>
+      <button onclick="myFunction()" class="btn btn-lg btn-primary btn-block" name="submit" type="submit">Login</button>
+     
     </form>
   </div>
 
+<script>
+    $(document).ready(function() {
+    $('#loginForm').bootstrapValidator({
+        container: '#messages',
+        feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            username: {
+                validators: {
+                    notEmpty: {
+                        message: 'Username is required and cannot be empty'
+                    }
+                }
+            },
+            password: {
+                validators: {
+                    notEmpty: {
+                        message: 'Password is required and cannot be empty'
+                    },
+                    stringLength: {
+                        min: 6,
+                        message: 'The content must be at least than 6 characters long'
+                    }
+                }
+            }
+        
+         }
+    });
+});
 
+function myFunction()
+{  
+     
+    var url = window.location.href;   
+    //var formData = JSON.stringify($("#myForm").serializeArray());
+    var newUrl = url.split("/");
+    delete newUrl[6];
+    var modifiedUrl = newUrl.join("/");
+    location.href = modifiedUrl+"dashboard";
+   /* 
+   $.ajax({
+    url: modifiedUrl+"dashboard",
+    type: "POST",
+    //data: "{'username':'" + username + "','password':'"+password+"'}",
+    contentType: "application/json; charset=UTF-8",
+    success: function(res) {
+          console.log("ajax went through!");
+          location.href = modifiedUrl+"dashboard";
+        },
+        error: function(res){
+         console.log(res);
+        }
+    });
+  */
+}
+
+
+</script>
 
 
 
