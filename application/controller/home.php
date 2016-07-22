@@ -162,6 +162,14 @@ class Home extends Controller
         require APP . 'view/_templates/header.php';
         require APP . 'view/home/dashboard.php';
         require APP . 'view/_templates/footer.php';
-    }
-      
+    
+}
+
+	public function sell ()
+	{
+	 require APP . 'view/_templates/header.php';
+	require APP . 'view/home/sell.php';
+	require APP . 'view/_templates/footer.php';
+
+}      
 }
