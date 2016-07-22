@@ -69,7 +69,8 @@ if(isset($_POST['submit'])){
  $address = $_POST['address'];
  $city = $_POST['city'];
  $zipcode = $_POST['zipcode'];
- 
+}
+ /*
  //Matches the password length
  if((strlen($password))< 6)
  {
@@ -131,7 +132,7 @@ else //If its a valid email, then check if its a sfsu email
  }
  
 }
-
+*/
 ?>
 
 <div id="signup" class="container">
