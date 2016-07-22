@@ -7,7 +7,7 @@ class User extends Model
 	/**
 	 * Set's the user's full name in the database when they first register
 	 */
-	public function setUser($firstname, $lastname,$country,$state,$address, $city, $zipcode,$phoneNumber,$account_id) {
+	public function setUser($account_id,$firstname, $lastname,$country,$state,$address, $city, $zipcode,$phoneNumber) {
 		try {		
 			
                        //$sql1 = "UPDATE User SET WHERE Account_ID = :Account_ID;";//(SELECT Account_ID FROM Account WHERE Username = :Username);";
@@ -18,9 +18,9 @@ class User extends Model
 			
 		       //$query1->execute($parameters1);
                         
-                       $sql = "INSERT INTO User (F_Name, L_Name,Address,City,Zipcode,Phone,Account_ID) VALUES (:firstname, :lastname,:country,:state,:address,:city,:zipcode,:phoneNumber,:account_id)";
+                       $sql = "INSERT INTO User (Account_ID,F_Name, L_Name,Country,State,Address,City,Zipcode,Phone) VALUES (:account_id,:firstname, :lastname,:country,:state,:address,:city,:zipcode,:phoneNumber)";
                        $query = $this->db->prepare($sql);
-                       $parameters = array(':firstname' => $firstname, ':lastname' => $lastname,':country'=>$country,':state'=>$state,':address'=>$address,':city'=>$city,':zipcode'=>$zipcode,':phoneNumber'=>$phoneNumber,':account_id'=>$account_id);
+                       $parameters = array(':account_id'=>$account_id,':firstname' => $firstname, ':lastname' => $lastname,':country'=>$country,':state'=>$state,':address'=>$address,':city'=>$city,':zipcode'=>$zipcode,':phoneNumber'=>$phoneNumber);
 		       $query->execute($parameters); 
 		
 		} 
