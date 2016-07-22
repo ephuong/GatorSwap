@@ -1,4 +1,5 @@
 <?php
+session_start();
 /**
  * Communicates with the Account table in the database
  */
@@ -35,6 +36,12 @@ class Account extends Model
 			$query->execute($parameters);
 			$account_id = $query->fetch(PDO::FETCH_ASSOC);
 			
+
+                        
+                        $_SESSION['username'] = $username;
+
+
+                        
 			return $account_id['Account_ID'];		
 		} 
 		catch(PDOException $e) 
