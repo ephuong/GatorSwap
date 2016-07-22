@@ -43,7 +43,7 @@
 		
 	}
 	a {
-		color: white;
+                color: #3399ff;
 		text-align: center; 
 	}
 
