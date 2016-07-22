@@ -18,7 +18,7 @@ class User extends Model
 			
 		       //$query1->execute($parameters1);
                         
-                       $sql = "INSERT INTO Account (F_Name, L_Name,Address,City,Zipcode,Phone,:Account_ID) VALUES (:firstname, :lastname,:address,:city,:zipcode,:phoneNumber,:account_id)";
+                       $sql = "INSERT INTO Account (F_Name, L_Name,Address,City,Zipcode,Phone,Account_ID) VALUES (:firstname, :lastname,:address,:city,:zipcode,:phoneNumber,:account_id)";
                        $query = $this->db->prepare($sql);
                        $parameters = array(':firstname' => $firstname, ':lastname' => $lastname,':address'=>$address,':city'=>$city,':zipcode'=>$zipcode,':phoneNumber'=>$phoneNumber,':account_id'=>$account_id);
 		       $query->execute($parameters); 
