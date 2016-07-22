@@ -18,7 +18,12 @@
 
 
     }
-
+	.btn {
+    
+    border-color: #46b8da;
+    padding-left: 50px;
+    padding-right: 50px;
+}
 
     /* Remove the jumbotron's default bottom margin */
      .jumbotron {
@@ -86,12 +91,6 @@
     <div class="collapse navbar-collapse" id="myNavbar">
 	    <div class="row text-center">
 	<div class="form-inline">
-<<<<<<< HEAD
-
-      <input type="search" class="form-control" size="50" class="glyphicon glyphicon-search" placeholder="Search">
-	  <input type="Search" class="btn btn-primary" value="Search">
-    
-=======
 		 <label > <br> 	   
 	  <div class="dropdown">
       <button class="btn btn-default dropdown-toggle" type="button" id="menuitem" data-toggle="dropdown">All
@@ -111,12 +110,12 @@
 	  <button type="button" class="btn btn-secondary btn-primary ">  Search  </button>
 			</div>
 		</div>
->>>>>>> c1ee517b06d0ea3fc30729463a62c5d9c413f0ab
 	  </div>
     </div>
 
       <ul class="nav navbar-nav navbar-right">
-		<li><a href="<?php echo URL; ?>home/sell" class="headerLinks"><span class="glyphicon glyphicon-open headerLinks "></span> Sell An Item</a></li>
+
+	<li><a href="<?php echo URL; ?>home/sell" class="headerLinks"><span class="glyphicon glyphicon-open headerLinks "></span> Sell An Item</a></li>
         <li><a href="<?php echo URL; ?>home/cart" class="headerLinks"><span class="glyphicon glyphicon-shopping-cart headerLinks"></span> Cart</a></li>
         <li><a href="<?php echo URL; ?>signin/index" class="headerLinks"><span class="glyphicon glyphicon-log-in headerLinks"></span> Sign In</a></li>
         <li><a href="<?php echo URL; ?>register/index" class="headerLinks"><span class="glyphicon glyphicon-log-in headerLinks"></span> Register</a></li>
@@ -125,8 +124,6 @@
     </div>
   </div>
 </nav>
-<<<<<<< HEAD
-=======
  <script>
 $(function(){
   
@@ -147,4 +144,3 @@ $(function(){
 
 });
   </script>
->>>>>>> c1ee517b06d0ea3fc30729463a62c5d9c413f0ab
