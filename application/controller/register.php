@@ -2,7 +2,8 @@
 
 class Register extends Controller
 {
-	public function index()
+	
+      public function index()
 	{
 		require APP . 'view/_templates/header.php';
 		require APP . 'view/register/index.php';
@@ -17,10 +18,10 @@ class Register extends Controller
             echo 'alert("accounts.php registerUser good.")';
             echo '</script>';
 			
-            //Insert new row in Account and setting the User's name in database using values inputted in the HTML form
-            $newly_registered_account_id = $this->AccountModel->registerAccount($_POST["username"],$_POST["password"],$_POST["sfsu_id"]);
+          //Insert new row in Account and setting the User's name in database using values inputted in the HTML form
+          $newly_registered_account_id = $this->AccountModel->registerAccount($_POST["username"],$_POST["password"],$_POST["sfsu_id"]);
 			
-	    $this->UserModel->setUser($_POST["firstname"], $_POST["lastname"],$_POST["address"],$_POST["city"],$_POST["zipcode"],$_POST["phoneNumber"], $newly_registered_account_id);
+	  $this->UserModel->setUser($_POST["firstname"], $_POST["lastname"],$_POST["address"],$_POST["city"],$_POST["zipcode"],$_POST["phoneNumber"], $newly_registered_account_id);
 			
         } 
         else 
@@ -34,5 +35,6 @@ class Register extends Controller
             header('location: ' . URL . 'home/dashboard');
 	}    
         
+      
 }
 
