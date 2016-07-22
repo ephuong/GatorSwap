@@ -130,6 +130,25 @@ class Home extends Controller
         require APP . 'view/_templates/footer.php';
     }
     
+<<<<<<< HEAD
     
       
+=======
+    public function dashboard()
+    {
+        // load views
+        require APP . 'view/_templates/header.php';
+        require APP . 'view/home/dashboard.php';
+        require APP . 'view/_templates/footer.php';
+    
+}
+
+	public function sell ()
+	{
+	 require APP . 'view/_templates/header.php';
+	require APP . 'view/home/sell.php';
+	require APP . 'view/_templates/footer.php';
+
+}      
+>>>>>>> c1ee517b06d0ea3fc30729463a62c5d9c413f0ab
 }

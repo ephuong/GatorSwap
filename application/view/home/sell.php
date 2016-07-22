@@ -1,4 +1,4 @@
-  <style>
+ <style>
  @import "bourbon";
 
 body {
@@ -106,79 +106,73 @@ body {
 
  
 
-<div id="signup" class="container">
+<div id="seller page" class="container">
     
-    <form class="form-signup" role="form" method="post" action="#">
-        <h3>Register To Create An Account.</h3>
+    <form class="form-sell" role="form" method="post" action="#">
+        <h3>Post An Item For Sale.</h3>
         <div class="row">
             <div class="col-md-6">
                 
                 <div class="form-group">
-	                <label>First Name</label>
-	                <input class="form-control" name="firstname" placeholder="Your First Name" type="text">
+	                <label>Name of item:</label>
+	                <input class="form-control" name="name_of_item" placeholder="Name of Item" type="text">
             	</div>
 
             	<div class="form-group">
-	                <label>Last Name</label>
-	                <input class="form-control" name="lastname" placeholder="Your Last Name" type="text">
+	                <label>Price: </label>
+	                <input class="form-control" name="price" placeholder="$10" type="text">
             	</div>
 
 		  <div class="form-group">                
-	                <label>UserName</label> 
-	                <input class="form-control" name="username" placeholder="Username" type="text"> 
+	                <label>Condition</label> 
+	                <input class="form-control" name="condition" placeholder="Good" type="text"> 
             	</div>
                      <div class="form-group">                
- 	                <label>Password</label> 
- 	                <input class="form-control" name="password" placeholder="Password" type="text"> 
+ 	                <label>Quantity</label> 
+ 	                <input type="number" class="form-control" name="quantity" placeholder="1" type="text"> 
              	</div>
                  
                  <div class="form-group">                
- 	                <label>Confirm Password</label> 
- 	                <input class="form-control" name="confirmPassword" placeholder="Confirm Password" type="text"> 
+ 	                <label>Description: </label> 
+					<textarea class="form-control" id="comments" name="Description" placeholder="This product was highlighted paragraphs." rows="5"></textarea></label><br>
+ 	           
              	</div>
-                 
-                 
-                 
- 
-          
                 
-                
-                
-        
 
             </div>
             
             <div class="col-md-6">
-                 <div class="form-group">                
-	                <label>SFSU E-mail</label> 
-	                <input class="form-control" name="email" placeholder="....@mail.sfsu.edu" type="email" data-error="Bruh, that email address is invalid" required> 
-            	        
-                </div>
+                  <div class="form-group">                
+	                <label>Add Images: </label> 
+	                <span class="glyphicons glyphicons-ambulance"></span><button type="button" class="btn btn-default btn-sm">
+					<span class="glyphicon glyphicon-plus"></span> Add
+					</button></label> <br><br>
+            	</div>
                 
                 <div class="form-group">                
-	                <label>SFSU ID:</label> 
-	                <input class="form-control" name="sfsu_id" placeholder="SFSU ID" type="text"> 
+	                <label>Author/ Brand name:</label> 
+	                <input class="form-control" name="author" placeholder="Sam Smith/Puma" type="text"> 
             	</div>
               
                 
                 <div class="form-group">                
-	                <label>Phone Number</label> 
-	                <input class="form-control" name="phoneNumber" placeholder="Phone Number" type="text"> 
+	                <label>Name of seller:</label> 
+	                <input class="form-control" name="name_of_seller" placeholder="Ron Ray" type="text"> 
             	</div>
 
    		
                 
                 <div class="form-group">                
-	                <label>Address:</label> 
-	                <input class="form-control" name="address"  placeholder="1600 Holloway Ave" type="text"> 
+	                <label>Email address::</label> 
+	                <input class="form-control" name="email_address"  placeholder="rray@sfsu.edu" type="text"> 
             	</div>
         <div class="form-group">                
-	                <label>City</label> 
-	                <input class="form-control"  name="city" placeholder="City" type="text"> 
+	                <label>Phone no.:</label> 
+	                <input class="form-control"  name="phone_no" placeholder="650-621-1998" type="text"> 
             	</div>
         <div class="form-group">                
-	                <label>Zipcode</label> 
-	                <input class="form-control" name="zipcode" placeholder="Zipcode" type="text"> 
+	                <label>Message</label> 
+	                <input class="form-control" name="message" placeholder="I can deliver the item to your location." type="text"> 
             	</div>
 				</div>
        <button type="button" class="btn btn-lg btn-primary btn-block ">  Done  </button>	 
@@ -189,13 +183,4 @@ body {
     </form>
 </div>
 </br></br></br></br></br>
-<<<<<<< HEAD:application/view/register/index.php
 
-
-
-
-
-
-
-=======
->>>>>>> c1ee517b06d0ea3fc30729463a62c5d9c413f0ab:application/view/home/register.php

@@ -4,13 +4,10 @@
   <title>CSC 648 - Group 7</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.js"></script>
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/css">
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/js/bootstrapValidator.min.js"> </script>
-  <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/css/bootstrapValidator.min.css"/>
+  
   <style>
     /* Remove the navbar's default rounded borders and increase the bottom margin */
     .navbar {
@@ -33,6 +30,17 @@
       background-color: #53565A;
       padding: 25px;
     }
+	.h4, h4{
+		font-size : 20px;
+		color : white;
+		
+		text-decoration: underline;
+		
+	}
+	a {
+		color: white;
+		text-align: center; 
+	}
 
     .footerLinks{
       color:white;
@@ -78,13 +86,37 @@
     <div class="collapse navbar-collapse" id="myNavbar">
 	    <div class="row text-center">
 	<div class="form-inline">
+<<<<<<< HEAD
 
       <input type="search" class="form-control" size="50" class="glyphicon glyphicon-search" placeholder="Search">
 	  <input type="Search" class="btn btn-primary" value="Search">
     
+=======
+		 <label > <br> 	   
+	  <div class="dropdown">
+      <button class="btn btn-default dropdown-toggle" type="button" id="menuitem" data-toggle="dropdown">All
+      <span class="caret"></span></button>
+      <ul class="dropdown-menu" role="menu" aria-labelledby="menuitem">
+	  <li role="presentation"><a role="menuitem" tabindex="1" href="#">All</a></li>
+      <li role="presentation"><a role="menuitem" tabindex="1" href="#">Books</a></li>
+      <li role="presentation"><a role="menuitem" tabindex="1" href="#">Office Supplies</a></li>
+      <li role="presentation"><a role="menuitem" tabindex="1" href="#">Clothes</a></li>
+	  <li role="presentation"><a role="menuitem" tabindex="1" href="#">Furniture</a></li>
+      <li role="presentation"><a role="menuitem" tabindex="1" href="#">Electronic Supplies</a></li>
+      <li role="presentation"><a role="menuitem" tabindex="1" href="#">Other</a></li>
+    </ul>
+  </div>
+	  </label>
+	  <input type="search" class="form-control" size="100px" class="glyphicon glyphicon-search" placeholder="Search">
+	  <button type="button" class="btn btn-secondary btn-primary ">  Search  </button>
+			</div>
+		</div>
+>>>>>>> c1ee517b06d0ea3fc30729463a62c5d9c413f0ab
 	  </div>
     </div>
+
       <ul class="nav navbar-nav navbar-right">
+		<li><a href="<?php echo URL; ?>home/sell" class="headerLinks"><span class="glyphicon glyphicon-open headerLinks "></span> Sell An Item</a></li>
         <li><a href="<?php echo URL; ?>home/cart" class="headerLinks"><span class="glyphicon glyphicon-shopping-cart headerLinks"></span> Cart</a></li>
         <li><a href="<?php echo URL; ?>signin/index" class="headerLinks"><span class="glyphicon glyphicon-log-in headerLinks"></span> Sign In</a></li>
         <li><a href="<?php echo URL; ?>register/index" class="headerLinks"><span class="glyphicon glyphicon-log-in headerLinks"></span> Register</a></li>
@@ -93,3 +125,26 @@
     </div>
   </div>
 </nav>
+<<<<<<< HEAD
+=======
+ <script>
+$(function(){
+  
+  $(".dropdown-menu li a").click(function(){
+    
+    $(".btn:first-child").text($(this).text());
+     $(".btn:first-child").val($(this).text());
+  });
+
+});
+$(function(){
+  
+  $(".dropdown-menu1 li a").click(function(){
+    
+    $(".btn:first-child").text($(this).text());
+     $(".btn:first-child").val($(this).text());
+  });
+
+});
+  </script>
+>>>>>>> c1ee517b06d0ea3fc30729463a62c5d9c413f0ab
