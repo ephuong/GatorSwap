@@ -2,21 +2,13 @@
 /**
  * Communicates with the User table in the database
  */
-class User extends Account
+class User extends Model
 {
         
-        public function __construct($db) {
-           parent::__construct($db);
-           try {
-            $this->db = $db;
-             } catch (PDOException $e) {
-            exit('Database connection could not be established.');
-          }
-        }
-	/**
+  	/**
 	 * Set's the user's full name in the database when they first register
 	 */
-      public function setUser($account_id,$firstname, $lastname,$country,$state,$address, $city, $zipcode,$phoneNumber) 
+    public function setUser($account_id,$firstname, $lastname,$country,$state,$address, $city, $zipcode,$phoneNumber) 
         {	
             try {	
                        $sql = "UPDATE User SET F_Name= :firstname,L_Name=:lastname,Country=:country,State=:state,Address=:address,City=:city,Zipcode=:zipcode,Phone=:phoneNumber WHERE Account_ID = :account_id;";
@@ -32,4 +24,3 @@ class User extends Account
 }
 
 
-?>
