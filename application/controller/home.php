@@ -21,55 +21,29 @@ class Home extends Controller
         require APP . 'view/home/index.php';
         require APP . 'view/_templates/footer.php';
     }
-
-    /**
-     * PAGE: Signin
-     * This method handles what happens when you move to http://yourproject/home/exampleone
-     * The camelCase writing is just for better readability. The method name is case-insensitive.
-     */
-    public function signin()
-    {
-        // load views
-        require APP . 'view/_templates/header.php';
-        require APP . 'view/home/signin.php';
-        require APP . 'view/_templates/footer.php';
-    }
-    
+ 
     /**
      * PAGE: Register
      * This method handles what happens when you move to http://yourproject/home/exampleone
      * The camelCase writing is just for better readability. The method name is case-insensitive.
      */
-    public function register()
-    {
-        // load views
-        require APP . 'view/_templates/header.php';
-        require APP . 'view/home/register.php';
-        require APP . 'view/_templates/footer.php';
-    }
-    
-    /**
-     * PAGE: Register
-     * This method handles what happens when you move to http://yourproject/home/exampleone
-     * The camelCase writing is just for better readability. The method name is case-insensitive.
-     */
-    public function addUser()
-    {
+    //public function addUser()
+    //{
         // if we have POST data to create a new User entry
-        if (isset($_POST["user_submit"])) {
-          $email = $_POST["email"];
-          $myArray = []; //Declare an empty array
-          $myArray = explode('@', $email); //split up the email by @ sign
-          $username = $myArray[0];
+      //  if (isset($_POST["user_submit"])) {
+       //   $email = $_POST["email"];
+       //   $myArray = []; //Declare an empty array
+       //   $myArray = explode('@', $email); //split up the email by @ sign
+        //  $username = $myArray[0];
             
             // do addUser() in model/model.php
             
-            $this->model->addUser($_POST["firstname"], $_POST["lastname"],$username,$_POST["password"],$_POST["confirmPassword"],$_POST["sfsu_id"],$_POST["phoneNumber"],$_POST["address"],$_POST['city'],$_POST["zipcode"]);
-        }
+          //  $this->model->addUser($_POST["firstname"], $_POST["lastname"],$username,$_POST["password"],$_POST["confirmPassword"],$_POST["sfsu_id"],$_POST["phoneNumber"],$_POST["address"],$_POST['city'],$_POST["zipcode"]);
+      //  }
 
         // where to go after song has been added
-        header('location: ' . URL . 'home/dashboard');
-    }
+     //   header('location: ' . URL . 'home/dashboard');
+   // }
     
     /**
      * PAGE: profile
@@ -156,12 +130,6 @@ class Home extends Controller
         require APP . 'view/_templates/footer.php';
     }
     
-    public function dashboard()
-    {
-        // load views
-        require APP . 'view/_templates/header.php';
-        require APP . 'view/home/dashboard.php';
-        require APP . 'view/_templates/footer.php';
-    }
+    
       
 }
