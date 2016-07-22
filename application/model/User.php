@@ -4,6 +4,15 @@
  */
 class User extends Account
 {
+        
+        public function __construct($db) {
+           parent::__construct($db);
+           try {
+            $this->db = $db;
+             } catch (PDOException $e) {
+            exit('Database connection could not be established.');
+          }
+        }
 	/**
 	 * Set's the user's full name in the database when they first register
 	 */
