@@ -8,7 +8,7 @@ class Account extends Model
 	 * @param int $student_id, string $username, string $password Registers new user to the database 
 	 * @return int containing the account_id of the newly created account
 	 */
-   public function registerAccount($firstname, $lastname,  $username, $password, $sfsu_id) {
+   public function registerAccount($username, $password, $sfsu_id) {
 		try 
 		{
 			// generate the unique salt for the Account
