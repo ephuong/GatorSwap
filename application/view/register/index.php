@@ -67,16 +67,18 @@ if(isset($_POST['submit'])){
  $sfsu_id = $_POST['sfsu_id'];
  $phoneNumber = $_POST['phoneNumber'];
  $address = $_POST['address'];
+ $country = $_POST['country'];
+ $state = $_POST['state'];
  $city = $_POST['city'];
  $zipcode = $_POST['zipcode'];
 
- 
+ /*
  //Matches the password length
  if((strlen($password))< 6)
  {
      $passwordLength= "Password has to be at least 6 characters long" ;
  }
- 
+ */
  //This code mathces two passwords
  if($password!=$confirmPassword)
  {
@@ -88,29 +90,31 @@ if(isset($_POST['submit'])){
      $sfsuIdLength= "Please type you 9 digit sfsu id";
  }
  
+ /*
  if((strlen($phoneNumber))< 10 && (strlen($phoneNumber))>10)
  {   
     $phoneNumberError= "Please type a 10 digit valid phonenumber";  
  }
- 
+ */
  //Check the length of the username
  if((strlen($username))< 3)
  {
      $usernameLength= "Must be 3+ letters";
  }
- 
+ /*
  //Check the length of the firstname
  if((strlen($firstname))< 3)
  {
      $firstNameError= "name is too short!";
  }
- 
+ */
+ /*
  //Check the length of the lastname
  if((strlen($lastname))< 3)
  {
      $lastNameError= "name is too short!";
  }
- 
+ */
 //This code checks the validation of a email using regex
 if (!preg_match("/([\w\-]+\@[\w\-]+\.[\w\-]+)/", $email)) 
 {
@@ -198,14 +202,21 @@ else //If its a valid email, then check if its a sfsu email
             	</div>
 
    		
-                
+                <div class="form-group">                
+	                <label>Country</label> 
+	                <input class="form-control"  name="country" placeholder="Ex: USA" type="text"> 
+            	</div>
+                <div class="form-group">                
+	                <label>State</label> 
+	                <input class="form-control"  name="state" placeholder="Ex: California" type="text"> 
+            	</div>
                 <div class="form-group">                
 	                <label>Address:</label> 
 	                <input class="form-control" name="address"  placeholder="1600 Holloway Ave" type="text"> 
             	</div>
         <div class="form-group">                
 	                <label>City</label> 
-	                <input class="form-control"  name="city" placeholder="Ex: Newyork" type="text"> 
+	                <input class="form-control"  name="city" placeholder="Ex: San Francisco" type="text"> 
             	</div>
         <div class="form-group">                
 	                <label>Zipcode</label> 
