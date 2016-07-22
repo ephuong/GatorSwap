@@ -2,7 +2,7 @@
 /**
  * Communicates with the User table in the database
  */
-class User extends Model
+class User extends Account
 {
 	/**
 	 * Set's the user's full name in the database when they first register
