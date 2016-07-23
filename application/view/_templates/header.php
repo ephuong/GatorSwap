@@ -101,7 +101,7 @@
               <li role="presentation"><a role="menuitem" tabindex="1" href="#">Books</a></li>
               <li role="presentation"><a role="menuitem" tabindex="1" href="#">Office Supplies</a></li>
               <li role="presentation"><a role="menuitem" tabindex="1" href="#">Clothes</a></li>
-        	     <li role="presentation"><a role="menuitem" tabindex="1" href="#">Furniture</a></li>
+        	    <li role="presentation"><a role="menuitem" tabindex="1" href="#">Furniture</a></li>
               <li role="presentation"><a role="menuitem" tabindex="1" href="#">Electronic Supplies</a></li>
               <li role="presentation"><a role="menuitem" tabindex="1" href="#">Other</a></li>
           </ul>
@@ -112,7 +112,7 @@
       </ul>
 
 	  <input type="search" class="form-control" size="100px" class="glyphicon glyphicon-search" placeholder="Search">
-	  <button type="button" class="btn btn-secondary btn-primary "> <span class="glyphicons glyphicons-search"></span> </button>
+	  <button type="button" class="btn btn-secondary btn-primary "> Search </button>
 
 		<ul class="nav navbar-nav navbar-right">
 
