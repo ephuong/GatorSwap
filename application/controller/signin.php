@@ -31,7 +31,7 @@ class Signin extends Controller
         else 
         {
             echo '<script language="javascript">';
-            echo 'alert("accounts.php registerUser bad.")';
+            echo 'alert("accounts.php signUser bad.")';
             echo '</script>';
         }	
          
