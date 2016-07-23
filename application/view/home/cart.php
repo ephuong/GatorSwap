@@ -84,7 +84,7 @@
                             <span class="glyphicon glyphicon-shopping-cart"></span> Continue Shopping
                         </button></a></td>
                         <td>
-                        <a href = "checkout.php"><button type="button" class="btn btn-primary">
+                        <a href="<?php echo URL; ?>home/checkout" ><button type="button" class="btn btn-primary">
                             Checkout </span>
                         </button></a></td>
                     </tr>
