@@ -1,6 +1,6 @@
 <style>
 body { margin-top:20px; 
-padding-left: 750px;}
+}
 .panel-title {display: inline;font-weight: bold;}
 .checkbox.pull-right { margin: 0; }
 
@@ -92,7 +92,7 @@ padding-left: 750px;}
             </div>
             
             <br/>
-			<a href="cart.php" class="btn btn-default btn-lg btn-block" role="button">Review Purchase</a>
+		<li>	<a href="cart.php" class="btn btn-default btn-lg btn-block" role="button">Review Purchase</a></li>
             <a href="endpage.php" class="btn btn-primary btn-lg btn-block" role="button">Pay</a>
         </div>
     </div>
