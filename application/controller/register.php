@@ -15,12 +15,13 @@ class Register extends Controller
         
         
          //  Check that register button exists and was clicked
-        if (isset($_POST["user_submit"])) {
+        //if (isset($_POST["user_submit"])) {
+        if(isset(filter_input(INPUT_POST, $user_submit))){
             echo '<script language="javascript">';
             echo 'alert("accounts.php registerUser good.")';
             echo '</script>';
             
-          $email = $_POST['email'];
+          $email = filter_input(INPUT_POST, $email);  //$_POST['email'];
 	  $myArray = []; //Declare an empty array
           $myArray = explode('@', $email); //split up the email by @ sign
           $username = $myArray[0];		
