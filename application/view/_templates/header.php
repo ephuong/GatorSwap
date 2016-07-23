@@ -109,7 +109,7 @@
 
 	  </label>
 	  <input type="search" class="form-control" size="100px" class="glyphicon glyphicon-search" placeholder="Search">
-	  <button type="button" class="btn btn-secondary btn-primary "> Search </button>
+	  <button type="button" class="btn btn-secondary btn-primary "> <span class="glyphicons glyphicons-search"></span> </button>
 
 		<ul class="nav navbar-nav navbar-right">
 
