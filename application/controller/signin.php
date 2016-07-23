@@ -34,11 +34,10 @@ class Signin extends Controller
             echo 'alert("accounts.php registerUser bad.")';
             echo '</script>';
         }	
-           if(isset($account_exists) && ($account_exists==true))
-           {
+         
              // where to go after song has been added
              header('location: ' . URL . 'dashboard/index'); 
-           }
+           
 	    
     }
 				
