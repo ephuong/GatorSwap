@@ -108,12 +108,11 @@
     </div>
 
 	  </label>
+    <input type="search" class="form-control" size="100px" class="glyphicon glyphicon-search" placeholder="Search">
+    <button type="button" class="btn btn-secondary btn-primary "> Search </button>
     </div>
     </div>
     </div>
-    
-	  <input type="search" class="form-control" size="100px" class="glyphicon glyphicon-search" placeholder="Search">
-	  <button type="button" class="btn btn-secondary btn-primary "> Search </button>
 
 		<ul class="nav navbar-nav navbar-right">
         <li><a href="<?php echo URL; ?>home/sell" class="headerLinks"><span class="glyphicon glyphicon-open headerLinks "></span> Sell An Item</a></li>
