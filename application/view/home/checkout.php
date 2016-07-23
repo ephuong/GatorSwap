@@ -93,7 +93,7 @@ body { margin-top:20px;
             
             <br/>
 			<a href="cart.php" class="btn btn-default btn-lg btn-block" role="button">Review Purchase</a>
-            <a href="endpage.php" class="btn btn-primary btn-lg btn-block" role="button">Pay</a>
+            <a href="endpage.php" class="btn btn-primary btn-lg btn-block" role="button">Pay</a><br><br>
         </div>
     </div>
 </div>
