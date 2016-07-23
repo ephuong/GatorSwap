@@ -111,9 +111,8 @@
 	  </label>
 	  <input type="search" class="form-control" size="100px" class="glyphicon glyphicon-search" placeholder="Search">
 	  <button type="button" class="btn btn-secondary btn-primary "> Search </button>
-			</div>
-
-      <ul class="nav navbar-nav navbar-right">
+    
+		<ul class="nav navbar-nav navbar-right">
 
         <li><a href="<?php echo URL; ?>home/index" class="headerLinks"><span class="glyphicon glyphicon-open headerLinks "></span> Sell An Item</a></li>
         <li><a href="<?php echo URL; ?>home/cart" class="headerLinks"><span class="glyphicon glyphicon-shopping-cart headerLinks"></span> Cart</a></li>
@@ -122,7 +121,9 @@
         <li><a href="<?php echo URL; ?>home/profile" class="headerLinks"><span class="glyphicon glyphicon-user headerLinks"></span> Profile</a></li>
 
       </ul>
-      
+
+    </div>
+
 		</div>
 	  </div>
       </div><!--row-->
