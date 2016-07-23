@@ -115,12 +115,11 @@ if(isset($_POST['user_submit'])){
  }
  
 //This code checks the validation of a email using regex
-if (!preg_match("/([\w\-]+\@[\w\-]+\.[\w\-]+)/", $email)) 
-{
-  $emailValidation= "Invalid Email" ;
-}
-else //If its a valid email, then check if its a sfsu email
-{
+//if (!preg_match("/([\w\-]+\@[\w\-]+\.[\w\-]+)/", $email)) 
+//{
+  //$emailValidation= "Invalid Email" ;
+//}
+ //check if its a sfsu email
   $myArray = []; //Declare an empty array
   $myArray = explode('@', $email); //split up the email by @ sign
   if($myArray[1]!="mail.sfsu.edu")
@@ -128,7 +127,6 @@ else //If its a valid email, then check if its a sfsu email
     $emailValidation= "Please type your sfsu student email only";  
   }
  
-}
  
  if((strlen($zipcode))< 5)
  {

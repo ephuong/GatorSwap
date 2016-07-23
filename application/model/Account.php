@@ -94,4 +94,3 @@ class Account extends Model
 		}
 	}		
 }
-?>
