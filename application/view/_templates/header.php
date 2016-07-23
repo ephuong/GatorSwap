@@ -79,8 +79,6 @@
 <body>
 
 <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class = "row">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
@@ -109,7 +107,7 @@
 
 	  </label>
 	  <input type="search" class="form-control" size="100px" class="glyphicon glyphicon-search" placeholder="Search">
-	  <button type="button" class="btn btn-secondary btn-primary "> Search </button>
+	  <button type="button" class="btn btn-secondary btn-primary "> <span class="glyphicons glyphicons-search"></span> </button>
 
 		<ul class="nav navbar-nav navbar-right">
 
@@ -125,9 +123,6 @@
 
 		</div>
 	  </div>
-      </div><!--row-->
-    </div><!--container-->
-
 
     </div>
   </div>
