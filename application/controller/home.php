@@ -117,5 +117,10 @@ class Home extends Controller
 	require APP . 'view/_templates/footer.php';
 
       }      
-
+	public function checkout()
+	{
+	require APP . 'view/_templates/header.php';
+	require APP . 'view/home/checkout.php';
+	require APP . 'view/_templates/footer.php';
+}
 }
