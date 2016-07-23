@@ -80,13 +80,13 @@
                         <td>   </td>
                         <td>   </td>
                         <td> 
-                       <li><a href ="search.php"> <button type="button" class="btn btn-default">
+                       <a href ="search.php"> <button type="button" class="btn btn-default">
                             <span class="glyphicon glyphicon-shopping-cart"></span> Continue Shopping
-                        </button></a></li></td>
+                        </button></a></td>
                         <td>
-                        <li><a href = "checkout.php"><button type="button" class="btn btn-primary">
+                        <a href = "checkout.php"><button type="button" class="btn btn-primary">
                             Checkout </span>
-                        </button></a></li></td>
+                        </button></a></td>
                     </tr>
                 </tbody>
             </table>
