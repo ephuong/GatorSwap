@@ -76,6 +76,10 @@
     
    
   </style>
+<script>
+ $('#logoutLink').hide(); 
+</script>
+  
 </head>
 <body>
 
@@ -115,18 +119,41 @@
     </div>
 
       <ul class="nav navbar-nav navbar-right">
-
+       
 	<li><a href="<?php echo URL; ?>home/sell" class="headerLinks"><span class="glyphicon glyphicon-open headerLinks "></span> Sell An Item</a></li>
         <li><a href="<?php echo URL; ?>home/cart" class="headerLinks"><span class="glyphicon glyphicon-shopping-cart headerLinks"></span> Cart</a></li>
-        <li><a href="<?php echo URL; ?>signin/index" class="headerLinks"><span class="glyphicon glyphicon-log-in headerLinks"></span> Sign In</a></li>
+        <li id="logoutLink"><a href="<?php echo URL; ?>signin/index" class="headerLinks"><span class="glyphicon glyphicon-log-in headerLinks"></span> Logout</a></li>
+        <li id="signinLink"><a href="<?php echo URL; ?>signin/index" class="headerLinks"><span class="glyphicon glyphicon-log-in headerLinks"></span> Sign In</a></li>
         <li><a href="<?php echo URL; ?>register/index" class="headerLinks"><span class="glyphicon glyphicon-log-in headerLinks"></span> Register</a></li>
         <li><a href="<?php echo URL; ?>home/profile" class="headerLinks"><span class="glyphicon glyphicon-user headerLinks"></span> Profile</a></li>
         
       </ul>
-       <div id="username" style="font-size: 32px; color: whitesmoke;">
+       <div id="username" style="font-size: 30px; color: whitesmoke;">
            
-           <?php            
-            echo "Hi! ".$_SESSION['username']; 			
+           <?php
+           if(isset($_SESSION["login"])){
+               if($_SESSION["login"])
+             {
+             echo "Logged in as ".$_SESSION['username'];
+             echo "
+            <script type=\"text/javascript\">
+              $('#signinLink').hide();
+              $('#logoutLink').show(); 
+              </script>
+              ";
+             }
+           }      
+          else 
+           {
+             echo "
+            <script type=\"text/javascript\">
+              $('#signinLink').show();
+              $('#logoutLink').hide(); 
+              </script>
+              ";   
+           }
+         
+    
            ?>
        </div>
     </div>

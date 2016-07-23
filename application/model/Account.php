@@ -39,7 +39,7 @@ class Account extends Model
 
                         
                         $_SESSION['username'] = $username;
-
+                        $_SESSION['login'] = true;
 
                         
 			return $account_id['Account_ID'];		

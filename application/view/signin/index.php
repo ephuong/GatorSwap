@@ -1,3 +1,7 @@
+<?php
+// remove all session variables
+session_unset();
+?>
 <style>
  @import "bourbon";
 

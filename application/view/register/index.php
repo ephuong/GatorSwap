@@ -56,11 +56,10 @@ body {
 }
 </style>
 <?php
-if(isset($_POST['submit'])){
+if(isset($_POST['user_submit'])){
     
  $firstname = $_POST['firstname'];
  $lastname = $_POST['lastname'];
- $username = $_POST['username'];
  $password = $_POST['password'];
  $confirmPassword = $_POST['confirmPassword'];
  $email = $_POST['email'];
@@ -101,20 +100,20 @@ if(isset($_POST['submit'])){
  {
      $usernameLength= "Must be 3+ letters";
  }
- /*
+ 
  //Check the length of the firstname
  if((strlen($firstname))< 3)
  {
      $firstNameError= "name is too short!";
  }
- */
- /*
+ 
+
  //Check the length of the lastname
  if((strlen($lastname))< 3)
  {
      $lastNameError= "name is too short!";
  }
- */
+ 
 //This code checks the validation of a email using regex
 if (!preg_match("/([\w\-]+\@[\w\-]+\.[\w\-]+)/", $email)) 
 {
@@ -128,6 +127,7 @@ else //If its a valid email, then check if its a sfsu email
   {
     $emailValidation= "Please type your sfsu student email only";  
   }
+ 
 }
  
  if((strlen($zipcode))< 5)
@@ -183,7 +183,7 @@ else //If its a valid email, then check if its a sfsu email
             
             <div class="col-md-5" >
 
-                <div class="form-group">,
+                <div class="form-group">
 	                <label>First Name</label>
 	                <input class="form-control" name="firstname" placeholder="First Name" type="text">
                         <?php if(isset($firstNameError)){echo "<p class='text-danger'>$firstNameError</p>";}?>
