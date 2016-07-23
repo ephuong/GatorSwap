@@ -79,6 +79,8 @@
 <body>
 
 <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class = "row">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
@@ -87,51 +89,48 @@
       </button>
       <a class="navbar-brand" href="#">Logo</a>
     </div>
-
     <div class="collapse navbar-collapse" id="myNavbar">
 	   <div class="form-inline">
      <div class="row text-center"> 
-  		 <label>
-  	   <div class="dropdown">
-        <button class="btn btn-default dropdown-toggle" type="button" id="menuitem" data-toggle="dropdown">All
-        <span class="caret"></span></button>
-        <ul class="dropdown-menu" role="menu" aria-labelledby="menuitem">
-    	    <li role="presentation"><a role="menuitem" tabindex="1" href="#">All</a></li>
-          <li role="presentation"><a role="menuitem" tabindex="1" href="#">Books</a></li>
-          <li role="presentation"><a role="menuitem" tabindex="1" href="#">Office Supplies</a></li>
-          <li role="presentation"><a role="menuitem" tabindex="1" href="#">Clothes</a></li>
-    	    <li role="presentation"><a role="menuitem" tabindex="1" href="#">Furniture</a></li>
-          <li role="presentation"><a role="menuitem" tabindex="1" href="#">Electronic Supplies</a></li>
-          <li role="presentation"><a role="menuitem" tabindex="1" href="#">Other</a></li>
-        </ul>
-      </div>
-  	  </label>
-    </div>
+		 <label>
+	   <div class="dropdown">
+      <button class="btn btn-default dropdown-toggle" type="button" id="menuitem" data-toggle="dropdown">All
+      <span class="caret"></span></button>
+      <ul class="dropdown-menu" role="menu" aria-labelledby="menuitem">
+	    <li role="presentation"><a role="menuitem" tabindex="1" href="#">All</a></li>
+      <li role="presentation"><a role="menuitem" tabindex="1" href="#">Books</a></li>
+      <li role="presentation"><a role="menuitem" tabindex="1" href="#">Office Supplies</a></li>
+      <li role="presentation"><a role="menuitem" tabindex="1" href="#">Clothes</a></li>
+	     <li role="presentation"><a role="menuitem" tabindex="1" href="#">Furniture</a></li>
+      <li role="presentation"><a role="menuitem" tabindex="1" href="#">Electronic Supplies</a></li>
+      <li role="presentation"><a role="menuitem" tabindex="1" href="#">Other</a></li>
+    </ul>
     </div>
 
+	  </label>
 	  <input type="search" class="form-control" size="100px" class="glyphicon glyphicon-search" placeholder="Search">
 	  <button type="button" class="btn btn-secondary btn-primary "> Search </button>
-<<<<<<< HEAD
-		<ul>
-        <li class="navbar-right"><a href="<?php echo URL; ?>home/index" class="headerLinks"><span class="glyphicon glyphicon-open headerLinks "></span> Sell An Item</a></li>
-        <li class="navbar-right"><a href="<?php echo URL; ?>home/cart" class="headerLinks"><span class="glyphicon glyphicon-shopping-cart headerLinks"></span> Cart</a></li>
-        <li class="navbar-right"><a href="<?php echo URL; ?>signin/index" class="headerLinks"><span class="glyphicon glyphicon-log-in headerLinks"></span> Sign In</a></li>
-        <li class="navbar-right"><a href="<?php echo URL; ?>register/index" class="headerLinks"><span class="glyphicon glyphicon-log-in headerLinks"></span> Register</a></li>
-        <li class="navbar-right"><a href="<?php echo URL; ?>home/profile" class="headerLinks"><span class="glyphicon glyphicon-user headerLinks"></span> Profile</a></li>
-    </ul>
-=======
-			</div>
 
-      <ul class="nav navbar-nav navbar-right">
+		<ul class="nav navbar-nav navbar-right">
 
-        <li><a href="<?php echo URL; ?>home/sell" class="headerLinks"><span class="glyphicon glyphicon-open headerLinks "></span> Sell An Item</a></li>
+        <li><a href="<?php echo URL; ?>home/index" class="headerLinks"><span class="glyphicon glyphicon-open headerLinks "></span> Sell An Item</a></li>
         <li><a href="<?php echo URL; ?>home/cart" class="headerLinks"><span class="glyphicon glyphicon-shopping-cart headerLinks"></span> Cart</a></li>
         <li><a href="<?php echo URL; ?>signin/index" class="headerLinks"><span class="glyphicon glyphicon-log-in headerLinks"></span> Sign In</a></li>
         <li><a href="<?php echo URL; ?>register/index" class="headerLinks"><span class="glyphicon glyphicon-log-in headerLinks"></span> Register</a></li>
         <li><a href="<?php echo URL; ?>home/profile" class="headerLinks"><span class="glyphicon glyphicon-user headerLinks"></span> Profile</a></li>
->>>>>>> c0f5fe5f357085acc9a0617bc7c49e4cee721ef5
 
+    </ul>
+
+    </div>
+
+		</div>
 	  </div>
+      </div><!--row-->
+    </div><!--container-->
+
+
+    </div>
+  </div>
 </nav>
  <script>
 $(function(){
