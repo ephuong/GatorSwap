@@ -80,6 +80,7 @@
 
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
+    <div class = "row">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
@@ -123,7 +124,10 @@
         <li><a href="<?php echo URL; ?>home/profile" class="headerLinks"><span class="glyphicon glyphicon-user headerLinks"></span> Profile</a></li>
 
       </ul>
-      </div>
+      </div><!--row-->
+    </div><!--container-->
+
+    
     </div>
   </div>
 </nav>
