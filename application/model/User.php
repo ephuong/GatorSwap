@@ -30,6 +30,7 @@ class User extends Model
 	public function loginAccount($username, $password) {
             
 		try {
+                        $_SESSION['login'] = false;
 			//$account_exist = true;
 			
 			// Query to retrieve salt to verify password

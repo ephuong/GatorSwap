@@ -33,11 +33,27 @@ class Signin extends Controller
           }
           
         } 
-        else if($_SESSION['login']==false)
+        else if(!isset ($_SESSION['login'])|| $_SESSION['login']==false)
         {
-            echo '<script language="javascript">';
-            echo 'alert("accounts.php signUser bad.")';
-            echo '</script>';
+            //<!-- Modal -->
+            echo '<div class="modal fade" id="myModal" role="dialog">';
+            echo '<div class="modal-dialog">';
+
+            //<!-- Modal content-->
+            echo '<div class="modal-content">';
+            echo '<div class="modal-header">';
+            echo '<button type="button" class="close" data-dismiss="modal">&times;</button>';
+            echo '<h4 class="modal-title">Modal Header</h4>';
+            echo '</div>';
+            echo '<div class="modal-body">';
+            echo '<p>Some text in the modal.</p>';
+            echo '</div>';
+            echo '<div class="modal-footer">';
+            echo '<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>';
+            echo '</div>';
+            echo '</div>';
+            echo '</div>';
+            echo '</div>';
         }	
          
             
