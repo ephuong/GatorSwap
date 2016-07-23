@@ -90,9 +90,10 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
 	    <div class="row text-center">
-	<div class="form-inline">
-		 <label > <br> 	   
-	  <div class="dropdown">
+	   <div class="form-inline">
+		 <label > <br> 
+
+	   <div class="dropdown">
       <button class="btn btn-default dropdown-toggle" type="button" id="menuitem" data-toggle="dropdown">All
       <span class="caret"></span></button>
       <ul class="dropdown-menu" role="menu" aria-labelledby="menuitem">
@@ -104,23 +105,25 @@
       <li role="presentation"><a role="menuitem" tabindex="1" href="#">Electronic Supplies</a></li>
       <li role="presentation"><a role="menuitem" tabindex="1" href="#">Other</a></li>
     </ul>
-  </div>
+    </div>
+
 	  </label>
 	  <input type="search" class="form-control" size="100px" class="glyphicon glyphicon-search" placeholder="Search">
-	  <button type="button" class="btn btn-secondary btn-primary ">  Search  </button>
+	  <button type="button" class="btn btn-secondary btn-primary "> <span class="glyphicons glyphicons-search"></span> </button>
 			</div>
 		</div>
 	  </div>
-    </div>
 
       <ul class="nav navbar-nav navbar-right">
 
-	<li><a href="<?php echo URL; ?>home/sell" class="headerLinks"><span class="glyphicon glyphicon-open headerLinks "></span> Sell An Item</a></li>
+	      <li><a href="<?php echo URL; ?>home/index" class="headerLinks"><span class="glyphicon glyphicon-open headerLinks "></span> Sell An Item</a></li>
         <li><a href="<?php echo URL; ?>home/cart" class="headerLinks"><span class="glyphicon glyphicon-shopping-cart headerLinks"></span> Cart</a></li>
         <li><a href="<?php echo URL; ?>signin/index" class="headerLinks"><span class="glyphicon glyphicon-log-in headerLinks"></span> Sign In</a></li>
         <li><a href="<?php echo URL; ?>register/index" class="headerLinks"><span class="glyphicon glyphicon-log-in headerLinks"></span> Register</a></li>
         <li><a href="<?php echo URL; ?>home/profile" class="headerLinks"><span class="glyphicon glyphicon-user headerLinks"></span> Profile</a></li>
+
       </ul>
+      </div>
     </div>
   </div>
 </nav>
