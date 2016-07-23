@@ -79,8 +79,6 @@
 <body>
 
 <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class = "row">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
@@ -125,9 +123,6 @@
 
 		</div>
 	  </div>
-      </div><!--row-->
-    </div><!--container-->
-
 
     </div>
   </div>
