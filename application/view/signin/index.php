@@ -87,11 +87,50 @@ body {
             <div id="messages"></div>
         </div>
     </div>
-      <button class="btn btn-lg btn-primary btn-block" name="user-signin" type="submit">Login</button>    
+      <button id="myBtn" class="btn btn-lg btn-primary btn-block" name="user-signin" type="submit" data-target="#myModal">Login</button>    
     </form>
   </div>
 
+ <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+          <p>Some text in the modal.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+
+
 <script>
+    
+    $(document).ready(function(){
+    var valideUserInfo = <?php echo $_SESSION['login']; ?>;
+    
+    if(valideUserInfo===false)
+    {
+          $("#myBtn").click(function(){
+          $("#myModal").modal();
+          });
+        
+    }
+   
+      
+      });
+
     $(document).ready(function() {
     $('#loginForm').bootstrapValidator({
         container: '#messages',

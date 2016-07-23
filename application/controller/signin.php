@@ -33,7 +33,7 @@ class Signin extends Controller
           }
           
         } 
-        else 
+        else if($_SESSION['login']==false)
         {
             echo '<script language="javascript">';
             echo 'alert("accounts.php signUser bad.")';
