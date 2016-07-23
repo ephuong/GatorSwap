@@ -65,7 +65,7 @@ body {
 
 ?>
   <div id="loginForm" class="wrapper" data-toggle="validator">
-      <form id="myForm" class="form-signin" method="post">       
+      <form id="myForm" class="form-signin" method="post" action="<?php echo URL; ?>signin/login">       
         <h3>Login or <a href="<?php echo URL; ?>register/index">Sign up</a> </h3>
       <label for="username" control-label">Username</label>  
       <input type="text" id="username" class="form-control" name="username" placeholder="Username" value="<?php if(isset($_POST['username'])){echo htmlspecialchars($_POST['username']); }?>" />
@@ -90,7 +90,7 @@ body {
             <div id="messages"></div>
         </div>
     </div>
-      <button onclick="myFunction()" class="btn btn-lg btn-primary btn-block" name="submit" type="submit">Login</button>
+      <button onclick="myFunction()" class="btn btn-lg btn-primary btn-block" name="user-signin" type="submit">Login</button>
      
     </form>
   </div>
@@ -131,12 +131,12 @@ body {
 function myFunction()
 {  
      
-    var url = window.location.href;   
+   // var url = window.location.href;   
     //var formData = JSON.stringify($("#myForm").serializeArray());
-    var newUrl = url.split("/");
-    delete newUrl[6];
-    var modifiedUrl = newUrl.join("/");
-    location.href = modifiedUrl+"dashboard";
+    //var newUrl = url.split("/");
+    //delete newUrl[6];
+   // var modifiedUrl = newUrl.join("/");
+    //location.href = modifiedUrl+"dashboard";
    /* 
    $.ajax({
     url: modifiedUrl+"dashboard",
