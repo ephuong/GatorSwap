@@ -10,11 +10,10 @@ class Register extends Controller
 		require APP . 'view/_templates/footer.php';
 	}
 	
-    public function addUser()
-	{
+   public function addUser()
+     {
         
-        
-         //  Check that register button exists and was clicked
+        //  Check that register button exists and was clicked
         if (isset($_POST["user_submit"])) {       
             echo '<script language="javascript">';
             echo 'alert("accounts.php registerUser good.")';

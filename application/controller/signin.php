@@ -12,7 +12,7 @@ class Signin extends Controller
         	/**
 	 * @param int $student_id, string $username, string $password Logs a user to the site
 	 * @return boolean check that the user logging in exists in the Account table
-	 */
+	
     public function login() {
   
    
@@ -40,6 +40,6 @@ class Signin extends Controller
            
 	    
     }
-				
+	 */			
 }
 

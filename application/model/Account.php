@@ -46,7 +46,7 @@ class Account extends Model
 		} 
 		catch(PDOException $e) 
 		{
-			echo $sql . "<br>" . $e->getMessage();
+			echo $sql2 . "<br>" . $e->getMessage();
 		}
 
 	}
@@ -54,7 +54,7 @@ class Account extends Model
     	/**
 	 * @param int $student_id, string $username, string $password Logs a user to the site
 	 * @return boolean check that the user logging in exists in the Account table
-	 */
+	 
 	public function loginAccount($username, $password) {
             
 		try {
@@ -99,5 +99,7 @@ class Account extends Model
 		} catch (PDOException $e) {
 			echo $sql . "<br>" . $e->getMessage();
 		}
-	}		
+	}
+         * */
+         		
 }
