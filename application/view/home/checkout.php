@@ -3,7 +3,7 @@ body { margin-top:20px;
 padding-left: 750px;}
 .panel-title {display: inline;font-weight: bold;}
 .checkbox.pull-right { margin: 0; }
-</style
+
 
 </style>
 <div class="container">
