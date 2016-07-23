@@ -12,21 +12,26 @@ class Signin extends Controller
         	/**
 	 * @param int $student_id, string $username, string $password Logs a user to the site
 	 * @return boolean check that the user logging in exists in the Account table
-	
-    public function login() {
+	  */
+   public function login() {
   
-   
-	              //  Check that register button exists and was clicked
+          //  Check that signin button responds and was clicked
             if (isset($_POST["user-signin"])) 
         {       
                echo '<script language="javascript">';
-               echo 'alert("accounts.php signIn User good.")';
+               echo 'alert("User.php signIn User good.")';
                echo '</script>';
             
           		
           //Check is the user exists in the database
-          $account_exists = $this->AccountModel->loginAccount($_POST["username"],$_POST["password"]);
-	            		
+          $this->UserModel->loginAccount($_POST["username"],$_POST["password"]);
+          
+          if($_SESSION['login'])
+          {
+             // where to go after song has been added
+             header('location: ' . URL . 'dashboard/index'); 
+          }
+          
         } 
         else 
         {
@@ -35,11 +40,10 @@ class Signin extends Controller
             echo '</script>';
         }	
          
-             // where to go after song has been added
-             header('location: ' . URL . 'dashboard/index'); 
+            
            
 	    
     }
-	 */			
+	 			
 }
 

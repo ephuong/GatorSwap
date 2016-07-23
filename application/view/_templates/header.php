@@ -72,7 +72,20 @@
 
     .navbar-inverse .navbar-nav>li>a:hover {
     color: #C99700;
-    }    
+    }
+    
+    .navbar-brand>img {
+   max-height: 100%;
+   height: 100%;
+   width: auto;
+   margin: 0 auto;
+
+
+   /* probably not needed anymore, but doesn't hurt */
+   -o-object-fit: contain;
+   object-fit: contain; 
+
+}
 
   </style>
 </head>
@@ -85,7 +98,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="<?php echo URL; ?>home/index">Logo</a>
+        <a class="navbar-brand" href="<?php echo URL; ?>home/index">Logo</a>
     </div>
 
     <div class="collapse navbar-collapse" id="myNavbar">
@@ -114,7 +127,7 @@
     </div>
     </div>
 
-		<ul class="nav navbar-nav navbar-right">
+	<ul class="nav navbar-nav navbar-right">
         <li><a href="<?php echo URL; ?>home/sell" class="headerLinks"><span class="glyphicon glyphicon-open headerLinks "></span> Sell An Item</a></li>
         <li><a href="<?php echo URL; ?>home/cart" class="headerLinks"><span class="glyphicon glyphicon-shopping-cart headerLinks"></span> Cart</a></li>
         <li><a href="<?php echo URL; ?>signin/index" class="headerLinks"><span class="glyphicon glyphicon-log-in headerLinks"></span> Sign In</a></li>
