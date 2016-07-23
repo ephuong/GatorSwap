@@ -1,68 +1,95 @@
-<style>
-
-.panel-primary>.panel-heading {
-    background-color: #000000;
-    border-color: #000000;
-}
-
-.panel-primary{
-  border-color: #53565a
-}
-
-</style>
-
-
-
-
+  
 <div class="container">
-  <div class="row">
-    <div class="col-sm-4">
-      <div class="panel panel-primary">
-        <div class="panel-heading">Books</div>
-        <!--USING flaticon free icons here, need to put in doc -->
-        <div class="panel-body"><img src="http://image.flaticon.com/icons/svg/126/126503.svg"  alt="Image"  width="300" height="200"></div>
-        <div class="panel-footer">Click here to buy books</div>
-      </div>
+    <div class="row">
+        <div class="col-sm-12 col-md-12">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+					<h3>Cart</h3>
+                        <th>Item</th>
+                        <th>Quantity</th>
+                        <th class="text-center">Price</th>
+                        <th class="text-center">Total</th>
+                        <th> </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="col-sm-8 col-md-6">
+                        <div class="media">
+                            <a class="thumbnail pull-left" href="#"> <img class="media-object" src="" style="width: 72px; height: 72px;"> </a>
+                            <div class="media-body">
+                                <h4 class="media-heading"><a href="#">Item name</a></h4>
+                                <h5 class="media-heading"> by <a href="#"> Author/Brand</a></h5>
+                                <span>Status: </span><span class="text-success"><strong>Available</strong></span>
+                            </div>
+                        </div></td>
+                        <td class="col-sm-1 col-md-1" style="text-align: center">
+                        <input type="number" class="form-control" id="item_number" placeholder=" 2" >
+                        </td>
+                        <td class="col-sm-1 col-md-1 text-center"><input type="number" class="form-control" id="item_price" placeholder="$ 15" ></td>
+                        <td class="col-sm-1 col-md-1 text-center"><input type="number" class="form-control" id="item_total_price" placeholder="$ 30" ></td>
+                        <td class="col-sm-1 col-md-1">
+                        <button type="button" class="btn btn-danger">
+                            Delete
+                        </button></td>
+                    </tr>
+                    <tr>
+                        <td class="col-sm-8 col-md-6">
+                        <div class="media">
+                            <a class="thumbnail pull-left" href="#"> <img class="media-object" src="" style="width: 72px; height: 72px;"> </a>
+                            <div class="media-body">
+                                <h4 class="media-heading"><a href="#">Item name</a></h4>
+                                <h5 class="media-heading"> by <a href="#"> Author/Brand</a></h5>
+                                <span>Status: </span><span class="text-success"><strong>UnAvailable</strong></span>
+                            </div>
+                        </div></td>
+                        <td class="col-sm-1 col-md-1" style="text-align: center">
+                        <input type="number" class="form-control" id="item_number" placeholder=" 3" >
+                        </td>
+                        <td class="col-sm-1 col-md-1 text-center"><input type="number" class="form-control" id="item_price" placeholder="$ 5" ></td>
+                        <td class="col-sm-1 col-md-1 text-center"><input type="number" class="form-control" id="item_total_price" placeholder="$ 15" ></td>
+                        <td class="col-sm-1 col-md-1">
+                        <button type="button" class="btn btn-danger">
+                           Delete
+                        </button></td>
+                    </tr>
+                    <tr>
+                        <td>   </td>
+                        <td>   </td>
+                        <td>   </td>
+                        <td><h5>Subtotal</h5></td>
+                         <td class="col-sm-1 col-md-1 "><input type="number" class="form-control" id="subtotal" placeholder="$45" ></td>
+                    </tr>
+                    <tr>
+                        <td>   </td>
+                        <td>   </td>
+                        <td>   </td>
+                        <td><h5>Estimated shipping</h5></td>
+                       <td class="col-sm-1 col-md-1 "><input type="number" class="form-control" id="shipping_price" placeholder="$5" ></td>
+                    </tr>
+                    <tr>
+                        <td>   </td>
+                        <td>   </td>
+                        <td>   </td>
+                        <td><h3>Total</h3></td>
+                         <td class="col-sm-1 col-md-1 "><input type="number" class="form-control" id="total" placeholder="$50" ></td>
+                    </tr>
+                    <tr>
+                        <td>   </td>
+                        <td>   </td>
+                        <td>   </td>
+                        <td> 
+                       <li><a href ="search.php"> <button type="button" class="btn btn-warning">
+                            <span class="glyphicon glyphicon-shopping-cart"></span> Continue Shopping
+                        </button></a></li></td>
+                        <td>
+                        <li><a href = "checkout.php"><button type="button" class="btn btn-success">
+                            Checkout </span>
+                        </button></a></li></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
-    <div class="col-sm-4">
-      <div class="panel panel-primary">
-        <div class="panel-heading">Office</div>
-        <div class="panel-body"><img src="http://image.flaticon.com/icons/svg/126/126483.svg"  alt="Image" width="300" height="200"></div>
-        <div class="panel-footer">Click here to buy office supplies</div>
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="panel panel-primary">
-        <div class="panel-heading">Clothing</div>
-        <div class="panel-body"><img src="http://image.flaticon.com/icons/svg/126/126515.svg" width="300" height="200"alt="Image"></div>
-        <div class="panel-footer">Click here to buy clothes</div>
-      </div>
-    </div>
-  </div>
-</div><br>
-
-<div class="container">
-  <div class="row">
-    <div class="col-sm-4">
-      <div class="panel panel-primary">
-        <div class="panel-heading">Furniture</div>
-        <div class="panel-body"><img src="http://image.flaticon.com/icons/svg/126/126496.svg"  height= "200" width ="300" alt="Image"></div>
-        <div class="panel-footer">Click here to buy furniture</div>
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="panel panel-primary">
-        <div class="panel-heading">Electronics</div>
-        <div class="panel-body"><img src="http://image.flaticon.com/icons/svg/126/126512.svg" height= "200" width ="300" alt="Image"></div>
-        <div class="panel-footer">Click here to buy electronic supplies</div>
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="panel panel-primary">
-        <div class="panel-heading">Other</div>
-        <div class="panel-body"><img src="http://image.flaticon.com/icons/svg/126/126498.svg"  height= "200" width ="300" alt="Image"></div>
-        <div class="panel-footer">Click here to browse deals</div>
-      </div>
-    </div>
-  </div>
-</div><br><br>
+</div>
