@@ -142,29 +142,28 @@ else //If its a valid email, then check if its a sfsu email
 ?>
 
 <div id="signup" class="container">
+
+  <h3 Style = "text-align:center">Already Have an account? <a href="<?php echo URL; ?>signin/index" >Login</a></h3>
     
     <form class="form-signup" role="form" method="post" action="<?php echo URL; ?>register/addUser">
         <h3>Register To Create Your Account</h3>
-        <div class="row">
-            <div class="col-md-4">
+        <div class = "row ">
+       
+            <div class="col-md-5" >
                 
-                <div class="form-group">
-	                <label>First Name</label>
-	                <input class="form-control" name="firstname" placeholder="Your First Name" type="text">
-                        <?php if(isset($firstNameError)){echo "<p class='text-danger'>$firstNameError</p>";}?>
+              <div class="form-group">                
+	                <label>SFSU ID:</label> 
+	                <input class="form-control" name="sfsu_id" placeholder="SFSU ID" type="text">
+                        <?php if(isset($sfsuIdLength)){echo "<p class='text-danger'>$sfsuIdLength</p>";}?>
             	</div>
 
-            	<div class="form-group">
-	                <label>Last Name</label>
-	                <input class="form-control" name="lastname" placeholder="Your Last Name" type="text">
-                        <?php if(isset($lastNameError)){echo "<p class='text-danger'>$lastNameError</p>";}?>
-            	</div>
-
-		  <div class="form-group">                
-	                <label>UserName</label> 
-	                <input class="form-control" name="username" placeholder="Username" type="text"> 
-                        <?php if(isset($usernameLength)){echo "<p class='text-danger'>$usernameLength</p>";}?>
-            	</div>
+              
+                <div class="form-group">                
+	                <label>SFSU E-mail / Username</label> 
+	                <input class="form-control" name="email" placeholder="Email" type="email" data-error="Bruh, that email address is invalid" required> 
+            	        <?php if(isset($emailValidation)){echo "<p class='text-danger'>$emailValidation</p>";}?>
+                  <b Style = "font-size: 80% ">Example: <i Style = "color:blue">jdoe@mail.sfsu.edu</i> is <b Style = "color:blue">jdoe</b></b>
+                </div>
                 
                 <div class="form-group">                
 	                <label>Password</label> 
@@ -178,31 +177,23 @@ else //If its a valid email, then check if its a sfsu email
                         <?php if(isset($passConfirmationError)){echo "<p class='text-danger'>$passConfirmationError</p>";}?>
             	</div>
                 
-                <h3>Already Have an account?</br><a href="<?php echo URL; ?>signin/index" >Login</a></h3>
-                
 
             </div>
+            <div class="col-md-1"></div>
             
-            <div class="col-md-4">
-                
-                <div class="form-group">                
-	                <label>SFSU E-mail</label> 
-	                <input class="form-control" name="email" placeholder="....@mail.sfsu.edu" type="email" data-error="Bruh, that email address is invalid" required> 
-            	        <?php if(isset($emailValidation)){echo "<p class='text-danger'>$emailValidation</p>";}?>
-                </div>
-                
-                <div class="form-group">                
-	                <label>SFSU ID:</label> 
-	                <input class="form-control" name="sfsu_id" placeholder="SFSU ID" type="text">
-                        <?php if(isset($sfsuIdLength)){echo "<p class='text-danger'>$sfsuIdLength</p>";}?>
-            	</div>
-                
-                <div class="form-group">                
-	                <label>Phone Number</label> 
-	                <input class="form-control" name="phoneNumber" placeholder="Ex:5104081325" type="text"> 
-                        <?php if(isset($phoneNumberError)){echo "<p class='text-danger'>$phoneNumberError</p>";}?>
+            <div class="col-md-5" >
+
+                <div class="form-group">,
+	                <label>First Name</label>
+	                <input class="form-control" name="firstname" placeholder="First Name" type="text">
+                        <?php if(isset($firstNameError)){echo "<p class='text-danger'>$firstNameError</p>";}?>
             	</div>
 
+            	<div class="form-group">
+	                <label>Last Name</label>
+	                <input class="form-control" name="lastname" placeholder="Last Name" type="text">
+                        <?php if(isset($lastNameError)){echo "<p class='text-danger'>$lastNameError</p>";}?>
+            	</div>
    		
                 <div class="form-group">                
 	                <label>Country</label> 
@@ -212,23 +203,32 @@ else //If its a valid email, then check if its a sfsu email
 	                <label>State</label> 
 	                <input class="form-control"  name="state" placeholder="Ex: California" type="text"> 
             	</div>
+              
                 <div class="form-group">                
 	                <label>Address:</label> 
-	                <input class="form-control" name="address"  placeholder="1600 Holloway Ave" type="text"> 
+	                <input class="form-control" name="address"  placeholder="Example: 1600 Holloway Ave." type="text"> 
             	</div>
         <div class="form-group">                
 	                <label>City</label> 
-	                <input class="form-control"  name="city" placeholder="Ex: San Francisco" type="text"> 
+	                <input class="form-control"  name="city" placeholder="Example: San Francisco" type="text"> 
             	</div>
         <div class="form-group">                
 	                <label>Zipcode</label> 
-	                <input class="form-control" name="zipcode" placeholder="Ex:94132" type="text">
+	                <input class="form-control" name="zipcode" placeholder="Example: 94132" type="text">
                         <?php if(isset($zipCodeLength)){echo "<p class='text-danger'>$zipCodeLength</p>";}?>
             	</div>
-        
-         <button class="btn btn-lg btn-primary btn-block" name = "user_submit" type="submit">REGISTER</button>                 
+              
+              <div class="form-group">                
+	                <label>Phone Number</label> 
+	                <input class="form-control" name="phoneNumber" placeholder="Example: 5104081325" type="text"> 
+                        <?php if(isset($phoneNumberError)){echo "<p class='text-danger'>$phoneNumberError</p>";}?>
+            	</div>
+              <div class="col-md-1"></div>
+
         </div>
-                
+              <div class="col-md-offset-3 col-md-6 " Style = "Padding-top:2%">
+                  <button class="btn btn-lg btn-primary btn-block" name = "user_submit" type="submit" >REGISTER</button>    
+              </div>
        </div>
                   
     </form>
