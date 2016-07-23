@@ -60,10 +60,7 @@ body {
 }
 
 </style>
-<?php
-  //CHECK THE DATA BASE HERE WITH THE INPUT VALUE
 
-?>
   <div id="loginForm" class="wrapper" data-toggle="validator">
       <form id="myForm" class="form-signin" method="post" >       
         <h3>Login or <a href="<?php echo URL; ?>register/index">Sign up</a> </h3>
