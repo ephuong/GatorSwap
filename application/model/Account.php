@@ -18,23 +18,23 @@ class Account extends Model
 		
 			$NaCl_Hash = Hash("SHA256", $password . $salt);
 			
-			$sql = "INSERT INTO Account(Student_ID, Username, NaCl_Hash, NaCl) 
+			$sql1 = "INSERT INTO Account(Student_ID, Username, NaCl_Hash, NaCl) 
 					VALUES (:Student_ID, :Username, :NaCl_Hash, :NaCl)";
 			
 			// Query for creating new Account row
-			$query = $this->db->prepare($sql);
-			$parameters = array(':Student_ID' => $sfsu_id, ':Username' => $username, ':NaCl_Hash' => $NaCl_Hash, ':NaCl' => $salt);
+			$query1 = $this->db->prepare($sql1);
+			$parameters1 = array(':Student_ID' => $sfsu_id, ':Username' => $username, ':NaCl_Hash' => $NaCl_Hash, ':NaCl' => $salt);
 			
-			$query->execute($parameters);
+			$query1->execute($parameters1);
                                                                     
 			// Query for retrieving Account_ID
-			$sql = "SELECT Account_ID FROM Account WHERE Username = :Username;";
+			$sql2 = "SELECT Account_ID FROM Account WHERE Username = :Username;";
 			
-			$query = $this->db->prepare($sql);
-			$parameters = array(':Username' => $username);
+			$query2 = $this->db->prepare($sql2);
+			$parameters2 = array(':Username' => $username);
 			
-			$query->execute($parameters);
-			$account_id = $query->fetch(PDO::FETCH_ASSOC);
+			$query2->execute($parameters2);
+			$account_id = $query2->fetch(PDO::FETCH_ASSOC);
 			
 
                         
