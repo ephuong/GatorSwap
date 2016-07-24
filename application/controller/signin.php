@@ -8,6 +8,7 @@ class Signin extends Controller
 		require APP . 'view/signin/index.php';
 		require APP . 'view/_templates/footer.php';
 	}
+
         
         	/**
 	 * @param int $student_id, string $username, string $password Logs a user to the site
@@ -36,13 +37,25 @@ class Signin extends Controller
           
          //User is invalid Warning here
          $message = "Username and/or Password incorrect.\\nTry again.";
-          echo "<script type='text/javascript'>alert('$message');</script>";      
-          header('location: ' . URL . 'sign/index');     
-        } 
-      
-      	    
+         echo "<script type='text/javascript'>alert('$message');</script>"; 
+         ?>
+
+        <script>  
+         var url = window.location.href;   
+         var newUrl = url.split("/");
+         delete newUrl[5];
+         delete newUrl[6];
+         var modifiedUrl = newUrl.join("/");
+         location.href = modifiedUrl+"signin/index";   
+        </script>
+        
+        <?php  } 
+        
+        
+      	  
     }
 	 			
 }
-
+ 
 }
+ 
