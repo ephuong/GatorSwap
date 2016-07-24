@@ -33,11 +33,11 @@ class Signin extends Controller
           }
             else if(!isset ($_SESSION['login'])|| $_SESSION['login']==false)
         { 
-         header('location: ' . URL . 'sign/index');  
+          
          //User is invalid Warning here
          $message = "Username and/or Password incorrect.\\nTry again.";
           echo "<script type='text/javascript'>alert('$message');</script>";      
-              
+          header('location: ' . URL . 'sign/index');     
         } 
       
       	    
