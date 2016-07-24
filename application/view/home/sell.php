@@ -175,9 +175,10 @@ body {
 	                <input class="form-control" name="message" placeholder="I can deliver the item to your location." type="text"> 
             	</div>
 				</div>
-       <button type="button" class="btn btn-lg btn-primary btn-block ">  Done  </button>	 
-        
-                
+      <div class="col-md-offset-3 col-md-6 " Style = "Padding-top:2%">
+                  <button class="btn btn-lg btn-primary btn-block" name = "user_submit" type="submit" >Done</button>
+              </div>
+               
        </div>
                   
     </form>

@@ -169,7 +169,9 @@ body {
 	                <input class="form-control" name="zipcode" placeholder="Zipcode" type="text">
             	</div>
 				</div>
-				<button type="button" class="btn btn-lg btn-primary btn-block ">  Done  </button>
+		<div class="col-md-offset-3 col-md-6 " Style = "Padding-top:2%">
+                  <button class="btn btn-lg btn-primary btn-block" name = "user_submit" type="submit" >Save</button>
+              </div>
 
 
 
