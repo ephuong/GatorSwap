@@ -1,5 +1,5 @@
 <?php
-
+ 
 class Signin extends Controller
 {
 	public function index()
@@ -18,9 +18,9 @@ class Signin extends Controller
           //  Check that signin button responds and was clicked
             if (isset($_POST["user-signin"])) 
         {       
-               echo '<script language="javascript">';
-               echo 'alert("User.php signIn User good.")';
-               echo '</script>';
+               //echo '<script language="javascript">';
+               //echo 'alert("User.php signIn User good.")';
+               //echo '</script>';
             
           		
           //Check is the user exists in the database
@@ -31,35 +31,18 @@ class Signin extends Controller
              // where to go after song has been added
              header('location: ' . URL . 'dashboard/index'); 
           }
+            else if(!isset ($_SESSION['login'])|| $_SESSION['login']==false)
+        { 
           
+         //User is invalid Warning here
+         $message = "Username and/or Password incorrect.\\nTry again.";
+          echo "<script type='text/javascript'>alert('$message');</script>";      
+          header('location: ' . URL . 'sign/index');     
         } 
-        else if(!isset ($_SESSION['login'])|| $_SESSION['login']==false)
-        {
-            //<!-- Modal -->
-            echo '<div class="modal fade" id="myModal" role="dialog">';
-            echo '<div class="modal-dialog">';
-
-            //<!-- Modal content-->
-            echo '<div class="modal-content">';
-            echo '<div class="modal-header">';
-            echo '<button type="button" class="close" data-dismiss="modal">&times;</button>';
-            echo '<h4 class="modal-title">Modal Header</h4>';
-            echo '</div>';
-            echo '<div class="modal-body">';
-            echo '<p>Some text in the modal.</p>';
-            echo '</div>';
-            echo '<div class="modal-footer">';
-            echo '<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>';
-            echo '</div>';
-            echo '</div>';
-            echo '</div>';
-            echo '</div>';
-        }	
-         
-            
-           
-	    
+      
+      	    
     }
 	 			
 }
 
+}

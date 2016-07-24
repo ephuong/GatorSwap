@@ -87,7 +87,7 @@ body {
             <div id="messages"></div>
         </div>
     </div>
-      <button id="myBtn" class="btn btn-lg btn-primary btn-block" name="user-signin" type="submit" data-target="#myModal">Login</button>    
+      <button id="myBtn" class="btn btn-lg btn-primary btn-block" name="user-signin" type="submit" >Login</button>    
     </form>
   </div>
 
