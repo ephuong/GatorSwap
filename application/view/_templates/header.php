@@ -203,7 +203,7 @@
 
         <li>
           <form class="form-inline pull-xs-right">
-            <input class="input-block-level" type="text" placeholder="Search">
+            <input class="form-control input-block-level" type="text" placeholder="Search">
             <button class="btn btn-success-outline" id="search-button" type="submit"><span class="glyphicon glyphicon-search"></span></button>
           </form>
       </li>
