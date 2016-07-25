@@ -101,19 +101,20 @@
 {
   padding-left: 15px;
   padding-right: 15px;
+  margin-top: 10px;
 }
 
-.input-block-level {
-  display: block;
-  width: 100%;
-  min-height: 28px;       
-  .box-sizing(border-box);
+.search-input {
+  margin-top: 10px;
+  width:500px;
 }
 
 #options-button
 {
   padding-left: 20px;
   padding-right: 20px;
+  margin-right: 5px;
+  margin-top: 10px;
 
 }
 
@@ -210,7 +211,7 @@
 
         <li>
           <form class="form-inline pull-xs-right">
-            <input class="form-control input-block-level" type="text" placeholder="Search">
+            <input class="form-control search-input" type="text" placeholder="Search">
             <button class="btn btn-success-outline" id="search-button" type="submit"><span class="glyphicon glyphicon-search"></span></button>
           </form>
       </li>
