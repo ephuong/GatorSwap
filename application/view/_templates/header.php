@@ -192,7 +192,7 @@
 <nav class="navbar navbar-default navbar-inverse" role="navigation">
   <div class="navbar-collapse collapse">
     <ul class="nav navbar-nav navbar-left">
-        <li><a href="<?php echo URL; ?>home/index">Logo</a></li>
+        <li><a href="<?php echo URL; ?>home/index"><img src="http://image.flaticon.com/icons/svg/166/166753.svg"  alt="Image"  width="20" height="10"></a></li>
         <li>
             <div class="dropdown">
                 <button class="btn btn-default dropdown-toggle" id="options-button" type="button" id="menuitem" data-toggle="dropdown">All
