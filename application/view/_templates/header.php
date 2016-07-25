@@ -97,6 +97,12 @@
     margin:0 auto;
 }
 
+#search-button
+{
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
   </style>
 </head>
 <body>
@@ -191,26 +197,10 @@
         <li>
           <form class="form-inline pull-xs-right">
             <input class="form-control" type="text" placeholder="Search">
-            <button class="btn btn-success-outline" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+            <button class="btn btn-success-outline" id="search-button" type="submit"><span class="glyphicon glyphicon-search"></span></button>
           </form>
       </li>
     </ul>
-
-<!--     <ul class="nav navbar-nav">
-      <div class="dropdown">
-        <button class="btn btn-default dropdown-toggle" type="button" id="menuitem" data-toggle="dropdown">All
-        <span class="caret"></span></button>
-          <ul class="dropdown-menu" role="menu" aria-labelledby="menuitem">
-            <li role="presentation"><a role="menuitem" tabindex="1" href="#">All</a></li>
-            <li role="presentation"><a role="menuitem" tabindex="1" href="#">Books</a></li>
-            <li role="presentation"><a role="menuitem" tabindex="1" href="#">Office Supplies</a></li>
-            <li role="presentation"><a role="menuitem" tabindex="1" href="#">Clothes</a></li>
-            <li role="presentation"><a role="menuitem" tabindex="1" href="#">Furniture</a></li>
-            <li role="presentation"><a role="menuitem" tabindex="1" href="#">Electronic Supplies</a></li>
-            <li role="presentation"><a role="menuitem" tabindex="1" href="#">Other</a></li>
-          </ul>
-      </div>
-    </ul> -->
 
 
     <ul class="nav navbar-nav navbar-right">
