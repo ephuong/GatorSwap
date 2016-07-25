@@ -135,6 +135,7 @@
                if($_SESSION["login"])
              {
              echo "Logged in as ".$_SESSION['username'];
+             echo "You acc id is".$_SESSION['account_id'];
              echo "
             <script type=\"text/javascript\">
               $('#signinLink').hide();
