@@ -106,7 +106,7 @@
 
 .search-input {
   margin-top: 10px;
-  width:500px;
+  width:500px !important;
 }
 
 #options-button
