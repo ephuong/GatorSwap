@@ -101,7 +101,7 @@
 </head>
 <body>
 
-<nav class="navbar navbar-inverse">
+<!-- <nav class="navbar navbar-inverse">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
@@ -145,7 +145,7 @@
     </div>
     </div>
     </div>
-</nav>
+</nav> -->
 
 <!-- <nav class="navbar navbar-default" role="navigation">
   <div class="navbar-header">
@@ -189,6 +189,9 @@
           </ul>
       </div>
     </ul>
+
+    <input type="search" class="form-control" size="100px" class="glyphicon glyphicon-search" placeholder="Search">
+    <button type="button" class="btn btn-secondary btn-primary "> Search </button>
 
     <ul class="nav navbar-nav navbar-right">
         <li><a href="<?php echo URL; ?>home/sell" class="headerLinks"><span class="glyphicon glyphicon-open headerLinks "></span> Sell An Item</a></li>
