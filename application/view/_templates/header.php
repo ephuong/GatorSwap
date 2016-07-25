@@ -172,25 +172,28 @@
   <div class="navbar-collapse collapse">
     <ul class="nav navbar-nav navbar-left">
         <li><a href="<?php echo URL; ?>home/index">Logo</a></li>
-
-<div class="dropdown">
-        <button class="btn btn-default dropdown-toggle" type="button" id="menuitem" data-toggle="dropdown">All
-        <span class="caret"></span></button>
-          <ul class="dropdown-menu" role="menu" aria-labelledby="menuitem">
-            <li role="presentation"><a role="menuitem" tabindex="1" href="#">All</a></li>
-            <li role="presentation"><a role="menuitem" tabindex="1" href="#">Books</a></li>
-            <li role="presentation"><a role="menuitem" tabindex="1" href="#">Office Supplies</a></li>
-            <li role="presentation"><a role="menuitem" tabindex="1" href="#">Clothes</a></li>
-            <li role="presentation"><a role="menuitem" tabindex="1" href="#">Furniture</a></li>
-            <li role="presentation"><a role="menuitem" tabindex="1" href="#">Electronic Supplies</a></li>
-            <li role="presentation"><a role="menuitem" tabindex="1" href="#">Other</a></li>
-          </ul>
-      </div>
-        
-        <form class="form-inline pull-xs-right">
-          <input class="form-control" type="text" placeholder="Search">
-          <button class="btn btn-success-outline" type="submit">Search</button>
-        </form>
+        <li><a>
+            <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle" type="button" id="menuitem" data-toggle="dropdown">All
+                <span class="caret"></span></button>
+                  <ul class="dropdown-menu" role="menu" aria-labelledby="menuitem">
+                    <li role="presentation"><a role="menuitem" tabindex="1" href="#">All</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="1" href="#">Books</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="1" href="#">Office Supplies</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="1" href="#">Clothes</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="1" href="#">Furniture</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="1" href="#">Electronic Supplies</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="1" href="#">Other</a></li>
+                  </ul>
+              </div>
+            </a>
+          </li>
+        <li><a>
+          <form class="form-inline pull-xs-right">
+            <input class="form-control" type="text" placeholder="Search">
+            <button class="btn btn-success-outline" type="submit">Search</button>
+          </form>
+        </a></li>
     </ul>
 
 <!--     <ul class="nav navbar-nav">
