@@ -187,11 +187,10 @@
             <li role="presentation"><a role="menuitem" tabindex="1" href="#">Electronic Supplies</a></li>
             <li role="presentation"><a role="menuitem" tabindex="1" href="#">Other</a></li>
           </ul>
-      </div>
 
-       <input type="search" class="form-control" size="100px" class="glyphicon glyphicon-search" placeholder="Search">
+          <input type="search" class="form-control" size="100px" class="glyphicon glyphicon-search" placeholder="Search">
        <button type="button" class="btn btn-secondary btn-primary "> Search </button>
-       
+      </div>
     </ul>
 
     <ul class="nav navbar-nav navbar-right">
