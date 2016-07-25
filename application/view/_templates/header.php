@@ -201,7 +201,7 @@
     </div>
 
 
-  <div class="navbar-collapse collapse">
+  <div class="navbar-collapse collapse" id="myNavbar">
     <ul class="nav navbar-nav navbar-left">
         <li>
             <div class="dropdown">
