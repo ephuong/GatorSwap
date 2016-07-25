@@ -88,6 +88,15 @@
 
 }
 
+.centered-search
+{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    margin:0 auto;
+}
+
   </style>
 </head>
 <body>
@@ -138,14 +147,14 @@
     </div>
 </nav> -->
 
-<!-- <nav class="navbar navbar-default" role="navigation">
+<nav class="navbar navbar-default" role="navigation">
   <div class="navbar-header">
     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
       <span class="icon-bar">test<div class="row"></div><div class="row"></div></span>
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>    
-    <a class="navbar-brand" href="#">Brand</a>
+    <a class="centered-search" href="#">Brand</a>
   </div>
   <div class="navbar-collapse collapse">
     <ul class="nav navbar-nav navbar-left">
@@ -157,28 +166,8 @@
       <li><a href="#contact">Right</a></li>
     </ul>
   </div>
-</nav> -->
-
-<nav class="navbar navbar-default" role="navigation">
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>    
-  </div>
-  <div class="navbar-collapse collapse">
-    <ul class="nav navbar-nav">
-      <li class="navbar-left"><a href="#">Left 1</a></li>
-      <li class="navbar-left"><a href="#">Left 2</a></li>
-      <li class="active"><a href="#">Center 1</a></li>
-      <li><a href="#">Center 2</a></li>
-      <li><a href="#">Center 3</a></li>
-      <li class="navbar-right"><a href="#">Right 2</a></li>
-      <li class="navbar-right"><a href="#">Right 1</a></li>
-    </ul>
-  </div>
 </nav>
+
  <script>
 $(function(){
   
