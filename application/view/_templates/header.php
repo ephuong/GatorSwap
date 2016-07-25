@@ -200,10 +200,9 @@
         <a class="navbar-brand" href="<?php echo URL; ?>home/index">Logo</a>
     </div>
 
-      
+
   <div class="navbar-collapse collapse">
     <ul class="nav navbar-nav navbar-left">
-        <li><a href="<?php echo URL; ?>home/index">Logo</a></li>
         <li>
             <div class="dropdown">
                 <button class="btn btn-default dropdown-toggle" id="options-button" type="button" id="menuitem" data-toggle="dropdown">All
