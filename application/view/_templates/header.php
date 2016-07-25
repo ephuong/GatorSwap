@@ -100,8 +100,8 @@
   </style>
 </head>
 <body>
-<!-- 
-<nav class="navbar navbar-inverse">
+
+<!-- <nav class="navbar navbar-inverse">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
@@ -175,8 +175,11 @@
         <li><a href="#about">Left</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="#about">Right</a></li>
-      <li><a href="#contact">Right</a></li>
+        <li><a href="<?php echo URL; ?>home/sell" class="headerLinks"><span class="glyphicon glyphicon-open headerLinks "></span> Sell An Item</a></li>
+        <li><a href="<?php echo URL; ?>home/cart" class="headerLinks"><span class="glyphicon glyphicon-shopping-cart headerLinks"></span> Cart</a></li>
+        <li><a href="<?php echo URL; ?>signin/index" class="headerLinks"><span class="glyphicon glyphicon-log-in headerLinks"></span> Sign In</a></li>
+        <li><a href="<?php echo URL; ?>register/index" class="headerLinks"><span class="glyphicon glyphicon-log-in headerLinks"></span> Register</a></li>
+        <li><a href="<?php echo URL; ?>home/profile" class="headerLinks"><span class="glyphicon glyphicon-user headerLinks"></span> Profile</a></li>
     </ul>
   </div>
 </nav>
