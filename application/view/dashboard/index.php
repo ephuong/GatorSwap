@@ -78,7 +78,6 @@
   </style>
 <script>
  $('#logoutLink').hide();
- $('#profileLink').hide();
 </script>
   
 </head>
@@ -139,9 +138,7 @@
              echo "
             <script type=\"text/javascript\">
               $('#signinLink').hide();
-              $('#signinLink').hide();
               $('#logoutLink').show();
-              $('#profileLink').show();
               </script>
               ";
              }
