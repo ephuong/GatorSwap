@@ -7,7 +7,8 @@
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  
+  <script src="../sweetalert/dist/sweetalert.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="../sweetalert/dist/sweetalert.css">
   <style>
     /* Remove the navbar's default rounded borders and increase the bottom margin */
     .navbar {
@@ -72,7 +73,20 @@
 
     .navbar-inverse .navbar-nav>li>a:hover {
     color: #C99700;
-    }    
+    }
+    
+    .navbar-brand>img {
+   max-height: 100%;
+   height: 100%;
+   width: auto;
+   margin: 0 auto;
+
+
+   /* probably not needed anymore, but doesn't hurt */
+   -o-object-fit: contain;
+   object-fit: contain; 
+
+}
 
   </style>
 </head>
@@ -85,7 +99,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="<?php echo URL; ?>home/index">Logo</a>
+        <a class="navbar-brand" href="<?php echo URL; ?>home/index">Logo</a>
     </div>
 
     <div class="collapse navbar-collapse" id="myNavbar">
@@ -111,7 +125,7 @@
     <input type="search" class="form-control" size="100px" class="glyphicon glyphicon-search" placeholder="Search">
     <button type="button" class="btn btn-secondary btn-primary "> Search </button>
 
-    <ul class="nav navbar-nav navbar-right">
+	<ul class="nav navbar-nav navbar-right">
         <li><a href="<?php echo URL; ?>home/sell" class="headerLinks"><span class="glyphicon glyphicon-open headerLinks "></span> Sell An Item</a></li>
         <li><a href="<?php echo URL; ?>home/cart" class="headerLinks"><span class="glyphicon glyphicon-shopping-cart headerLinks"></span> Cart</a></li>
         <li><a href="<?php echo URL; ?>signin/index" class="headerLinks"><span class="glyphicon glyphicon-log-in headerLinks"></span> Sign In</a></li>
