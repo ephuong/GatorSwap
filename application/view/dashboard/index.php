@@ -139,7 +139,7 @@
              echo "
             <script type=\"text/javascript\">
               $('#signinLink').hide();
-              $('#registerLink').hide();
+              $('#signinLink').hide();
               $('#logoutLink').show();
               $('#profileLink').show();
               </script>
