@@ -7,8 +7,7 @@
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  <script src="../sweetalert/dist/sweetalert.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="../sweetalert/dist/sweetalert.css">
+  
   <style>
     /* Remove the navbar's default rounded borders and increase the bottom margin */
     .navbar {
@@ -73,171 +72,98 @@
 
     .navbar-inverse .navbar-nav>li>a:hover {
     color: #C99700;
-    }
-    
-    .navbar-brand>img {
-   max-height: 100%;
-   height: 100%;
-   width: auto;
-   margin: 0 auto;
-
-
-   /* probably not needed anymore, but doesn't hurt */
-   -o-object-fit: contain;
-   object-fit: contain; 
-
-}
-
-.centered-search
-{
-    position: absolute;
-    width: 100%;
-    left: 0;
-    text-align: center;
-    margin:0 auto;
-}
-
-#search-button
-{
-  padding-left: 15px;
-  padding-right: 15px;
-  margin-top: 10px;
-}
-
-.search-input {
-  margin-top: 10px;
-  width:450px !important;
-}
-
-#options-button
-{
-  padding-left: 20px;
-  padding-right: 20px;
-  margin-right: 5px;
-  margin-top: 10px;
-
-}
-
+    }    
+     
   </style>
+  
+  
 </head>
 <body>
 
-<!-- <nav class="navbar navbar-inverse">
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-        <a class="navbar-brand" href="<?php echo URL; ?>home/index">Logo</a>
+      <a class="navbar-brand" href="#">Logo</a>
     </div>
-
     <div class="collapse navbar-collapse" id="myNavbar">
-	   <div class="form-inline">
-     <div class="row text-center"> 
-		 <label>
-
-	   <div class="dropdown">
+	    <div class="row text-center">
+	<div class="form-inline">
+		 <label > <br> 	   
+	  <div class="dropdown">
       <button class="btn btn-default dropdown-toggle" type="button" id="menuitem" data-toggle="dropdown">All
       <span class="caret"></span></button>
-        <ul class="dropdown-menu" role="menu" aria-labelledby="menuitem">
-    	    <li role="presentation"><a role="menuitem" tabindex="1" href="#">All</a></li>
-          <li role="presentation"><a role="menuitem" tabindex="1" href="#">Books</a></li>
-          <li role="presentation"><a role="menuitem" tabindex="1" href="#">Office Supplies</a></li>
-          <li role="presentation"><a role="menuitem" tabindex="1" href="#">Clothes</a></li>
-    	    <li role="presentation"><a role="menuitem" tabindex="1" href="#">Furniture</a></li>
-          <li role="presentation"><a role="menuitem" tabindex="1" href="#">Electronic Supplies</a></li>
-          <li role="presentation"><a role="menuitem" tabindex="1" href="#">Other</a></li>
-        </ul>
-    </div>
-
+      <ul class="dropdown-menu" role="menu" aria-labelledby="menuitem">
+	  <li role="presentation"><a role="menuitem" tabindex="1" href="#">All</a></li>
+      <li role="presentation"><a role="menuitem" tabindex="1" href="#">Books</a></li>
+      <li role="presentation"><a role="menuitem" tabindex="1" href="#">Office Supplies</a></li>
+      <li role="presentation"><a role="menuitem" tabindex="1" href="#">Clothes</a></li>
+	  <li role="presentation"><a role="menuitem" tabindex="1" href="#">Furniture</a></li>
+      <li role="presentation"><a role="menuitem" tabindex="1" href="#">Electronic Supplies</a></li>
+      <li role="presentation"><a role="menuitem" tabindex="1" href="#">Other</a></li>
+    </ul>
+  </div>
 	  </label>
-    <input type="search" class="form-control" size="100px" class="glyphicon glyphicon-search" placeholder="Search">
-    <button type="button" class="btn btn-secondary btn-primary "> Search </button>
+	  <input type="search" class="form-control" size="100px" class="glyphicon glyphicon-search" placeholder="Search">
+	  <button type="button" class="btn btn-secondary btn-primary ">  Search  </button>
+			</div>
+		</div>
+	  </div>
+    </div>
 
-	<ul class="nav navbar-nav navbar-right collapse navbar-collapse">
-        <li><a href="<?php echo URL; ?>home/sell" class="headerLinks"><span class="glyphicon glyphicon-open headerLinks "></span> Sell An Item</a></li>
+      <ul class="nav navbar-nav navbar-right">
+       
+	<li><a href="<?php echo URL; ?>home/sell" class="headerLinks"><span class="glyphicon glyphicon-open headerLinks "></span> Sell An Item</a></li>
         <li><a href="<?php echo URL; ?>home/cart" class="headerLinks"><span class="glyphicon glyphicon-shopping-cart headerLinks"></span> Cart</a></li>
-        <li><a href="<?php echo URL; ?>signin/index" class="headerLinks"><span class="glyphicon glyphicon-log-in headerLinks"></span> Sign In</a></li>
-        <li><a href="<?php echo URL; ?>register/index" class="headerLinks"><span class="glyphicon glyphicon-log-in headerLinks"></span> Register</a></li>
-        <li><a href="<?php echo URL; ?>home/profile" class="headerLinks"><span class="glyphicon glyphicon-user headerLinks"></span> Profile</a></li>
-    </ul>
+        <li id="logoutLink"><a href="<?php echo URL; ?>signin/index" class="headerLinks"><span class="glyphicon glyphicon-log-in headerLinks"></span> Logout</a></li>
+        <li id="signinLink"><a href="<?php echo URL; ?>signin/index" class="headerLinks"><span class="glyphicon glyphicon-log-in headerLinks"></span> Sign In</a></li>
+        <li id="registerLink"><a href="<?php echo URL; ?>register/index" class="headerLinks"><span class="glyphicon glyphicon-log-in headerLinks"></span> Register</a></li>
+        <li id="profileLink"><a href="<?php echo URL; ?>home/profile" class="headerLinks"><span class="glyphicon glyphicon-user headerLinks"></span>Profile</a></li>
+      
+      </ul>
+       <div id="username" style="font-size: 30px; color: whitesmoke;">
+           
+           <?php
+           if(isset($_SESSION["login"])){
+               if($_SESSION["login"])
+             {
+             echo "Logged in as ".$_SESSION['username'];
+             echo "
+            <script type=\"text/javascript\">
+              $('#signinLink').hide();
+              $('#registerLink').hide();
+              $('#profileLink').show();
+              $('#logoutLink').show();
+              </script>
+              ";
+             }
+           }      
+          else 
+           {
+             echo "
+            <script type=\"text/javascript\">
+              $('#signinLink').show();
+              $('#logoutLink').hide();
+              $('#profileLink').hide();
+              </script>
+              ";   
+           }
+           
+           //unset
+           session_unset();
+
+           
+           
     
+           ?>
+       </div>
     </div>
-    </div>
-    </div>
-</nav> -->
-
-<!-- <nav class="navbar navbar-default" role="navigation">
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-      <span class="icon-bar">test<div class="row"></div><div class="row"></div></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>    
-    <a class="centered-search" href="#">Brand</a>
-  </div>
-  <div class="navbar-collapse collapse">
-    <ul class="nav navbar-nav navbar-left">
-        <li><a href="#">Left</a></li>
-        <li><a href="#about">Left</a></li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="#about">Right</a></li>
-      <li><a href="#contact">Right</a></li>
-    </ul>
-  </div>
-</nav> -->
-
-<nav class="navbar navbar-default navbar-inverse" role="navigation">
-
-  <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-        <a class="navbar-brand" href="<?php echo URL; ?>home/index">Logo</a>
-    </div>
-
-
-  <div class="navbar-collapse collapse" id="myNavbar">
-    <ul class="nav navbar-nav navbar-left">
-        <li>
-            <div class="dropdown">
-                <button class="btn btn-default dropdown-toggle" id="options-button" type="button" id="menuitem" data-toggle="dropdown">All
-                <span class="caret"></span></button>
-                  <ul class="dropdown-menu" role="menu" aria-labelledby="menuitem">
-                    <li role="presentation"><a role="menuitem" tabindex="1" href="#">All</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="1" href="#">Books</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="1" href="#">Office Supplies</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="1" href="#">Clothes</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="1" href="#">Furniture</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="1" href="#">Electronic Supplies</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="1" href="#">Other</a></li>
-                  </ul>
-              </div>
-          </li>
-
-        <li>
-          <form class="form-inline pull-xs-right">
-            <input class="form-control search-input" type="text" placeholder="Search">
-            <button class="btn btn-success-outline" id="search-button" type="submit"><span class="glyphicon glyphicon-search"></span></button>
-          </form>
-      </li>
-    </ul>
-
-
-    <ul class="nav navbar-nav navbar-right">
-        <li><a href="<?php echo URL; ?>home/sell" class="headerLinks"><span class="glyphicon glyphicon-open headerLinks "></span> Sell An Item</a></li>
-        <li><a href="<?php echo URL; ?>home/cart" class="headerLinks"><span class="glyphicon glyphicon-shopping-cart headerLinks"></span> Cart</a></li>
-        <li><a href="<?php echo URL; ?>signin/index" class="headerLinks"><span class="glyphicon glyphicon-log-in headerLinks"></span> Sign In</a></li>
-        <li><a href="<?php echo URL; ?>register/index" class="headerLinks"><span class="glyphicon glyphicon-log-in headerLinks"></span> Register</a></li>
-        <li><a href="<?php echo URL; ?>home/profile" class="headerLinks"><span class="glyphicon glyphicon-user headerLinks"></span> Profile</a></li>
-    </ul>
   </div>
 </nav>
-
  <script>
 $(function(){
   
@@ -258,3 +184,16 @@ $(function(){
 
 });
   </script>
+
+<style>
+
+.panel-primary>.panel-heading {
+    background-color: #000000;
+    border-color: #000000;
+}
+
+.panel-primary{
+  border-color: #53565a
+}
+
+</style>
