@@ -110,6 +110,13 @@
   .box-sizing(border-box);
 }
 
+#options-button
+{
+  padding-left: 20px;
+  padding-right: 20px;
+
+}
+
   </style>
 </head>
 <body>
@@ -187,7 +194,7 @@
         <li><a href="<?php echo URL; ?>home/index">Logo</a></li>
         <li>
             <div class="dropdown">
-                <button class="btn btn-default dropdown-toggle" type="button" id="menuitem" data-toggle="dropdown">All
+                <button class="btn btn-default dropdown-toggle" id="options-button" type="button" id="menuitem" data-toggle="dropdown">All
                 <span class="caret"></span></button>
                   <ul class="dropdown-menu" role="menu" aria-labelledby="menuitem">
                     <li role="presentation"><a role="menuitem" tabindex="1" href="#">All</a></li>
