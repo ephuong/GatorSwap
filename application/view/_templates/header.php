@@ -191,7 +191,7 @@
         <li>
           <form class="form-inline pull-xs-right">
             <input class="form-control" type="text" placeholder="Search">
-            <button class="btn btn-success-outline" type="submit">Search</button>
+            <button class="btn btn-success-outline" type="submit"><span class="glyphicon glyphicon-search"></span></button>
           </form>
       </li>
     </ul>
