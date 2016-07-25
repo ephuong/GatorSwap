@@ -77,7 +77,8 @@
    
   </style>
 <script>
- $('#logoutLink').hide(); 
+ $('#logoutLink').hide();
+ $('#profileLink').hide();
 </script>
   
 </head>
@@ -124,8 +125,8 @@
         <li><a href="<?php echo URL; ?>home/cart" class="headerLinks"><span class="glyphicon glyphicon-shopping-cart headerLinks"></span> Cart</a></li>
         <li id="logoutLink"><a href="<?php echo URL; ?>signin/index" class="headerLinks"><span class="glyphicon glyphicon-log-in headerLinks"></span> Logout</a></li>
         <li id="signinLink"><a href="<?php echo URL; ?>signin/index" class="headerLinks"><span class="glyphicon glyphicon-log-in headerLinks"></span> Sign In</a></li>
-        <li><a href="<?php echo URL; ?>register/index" class="headerLinks"><span class="glyphicon glyphicon-log-in headerLinks"></span> Register</a></li>
-        <li><a href="<?php echo URL; ?>home/profile" class="headerLinks"><span class="glyphicon glyphicon-user headerLinks"></span> Profile</a></li>
+        <li id="registerLink"><a href="<?php echo URL; ?>register/index" class="headerLinks"><span class="glyphicon glyphicon-log-in headerLinks"></span> Register</a></li>
+        <li id="profileLink"><a href="<?php echo URL; ?>home/profile" class="headerLinks"><span class="glyphicon glyphicon-user headerLinks"></span> Profile</a></li>
         
       </ul>
        <div id="username" style="font-size: 30px; color: whitesmoke;">
@@ -138,7 +139,9 @@
              echo "
             <script type=\"text/javascript\">
               $('#signinLink').hide();
-              $('#logoutLink').show(); 
+              $('#registerLink').hide();
+              $('#logoutLink').show();
+              $('#profileLink').show();
               </script>
               ";
              }
@@ -148,7 +151,8 @@
              echo "
             <script type=\"text/javascript\">
               $('#signinLink').show();
-              $('#logoutLink').hide(); 
+              $('#logoutLink').hide();
+              
               </script>
               ";   
            }
