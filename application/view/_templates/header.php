@@ -99,8 +99,15 @@
 
 #search-button
 {
-  padding-left: 0px;
-  padding-right: 0px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.input-block-level {
+  display: block;
+  width: 100%;
+  min-height: 28px;       
+  .box-sizing(border-box);
 }
 
   </style>
@@ -196,7 +203,7 @@
 
         <li>
           <form class="form-inline pull-xs-right">
-            <input class="form-control" type="text" placeholder="Search">
+            <input class="form-control input-block-level" type="text" placeholder="Search">
             <button class="btn btn-success-outline" id="search-button" type="submit"><span class="glyphicon glyphicon-search"></span></button>
           </form>
       </li>
