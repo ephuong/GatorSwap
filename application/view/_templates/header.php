@@ -171,8 +171,7 @@
 <nav class="navbar navbar-default navbar-inverse" role="navigation">
   <div class="navbar-collapse collapse">
     <ul class="nav navbar-nav navbar-left">
-        <li><a href="#">Left</a></li>
-        <li><a href="#about">Left</a></li>
+        <li><a href="<?php echo URL; ?>home/index">Logo</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
         <li><a href="<?php echo URL; ?>home/sell" class="headerLinks"><span class="glyphicon glyphicon-open headerLinks "></span> Sell An Item</a></li>
