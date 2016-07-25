@@ -169,9 +169,6 @@
 </nav> -->
 
 <nav class="navbar navbar-default" role="navigation">
-  <div class="navbar-header">    
-    <a class="centered-search" href="#">Brand</a>
-  </div>
   <div class="navbar-collapse collapse">
     <ul class="nav navbar-nav navbar-left">
         <li><a href="#">Left</a></li>
