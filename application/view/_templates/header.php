@@ -147,13 +147,29 @@
     </div>
 </nav> -->
 
-<nav class="navbar navbar-default" role="navigation">
+<!-- <nav class="navbar navbar-default" role="navigation">
   <div class="navbar-header">
     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
       <span class="icon-bar">test<div class="row"></div><div class="row"></div></span>
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>    
+    <a class="centered-search" href="#">Brand</a>
+  </div>
+  <div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav navbar-left">
+        <li><a href="#">Left</a></li>
+        <li><a href="#about">Left</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#about">Right</a></li>
+      <li><a href="#contact">Right</a></li>
+    </ul>
+  </div>
+</nav> -->
+
+<nav class="navbar navbar-default" role="navigation">
+  <div class="navbar-header">    
     <a class="centered-search" href="#">Brand</a>
   </div>
   <div class="navbar-collapse collapse">
