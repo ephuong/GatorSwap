@@ -73,59 +73,101 @@
     .navbar-inverse .navbar-nav>li>a:hover {
     color: #C99700;
     }    
+
+  .navbar-brand>img {
+    max-height: 100%;
+    height: 100%;
+    width: auto;
+    margin: 0 auto;
+ 
+ 
+    /* probably not needed anymore, but doesn't hurt */
+    -o-object-fit: contain;
+    object-fit: contain; 
+ 
+ }
+ 
+ .centered-search
+ {
+     position: absolute;
+     width: 100%;
+     left: 0;
+     text-align: center;
+     margin:0 auto;
+ }
+ 
+ #search-button
+ {
+   padding-left: 15px;
+   padding-right: 15px;
+   margin-top: 10px;
+ }
+ 
+ .search-input {
+   margin-top: 10px;
+   width:450px !important;
+ }
+ 
+ #options-button
+ {
+   padding-left: 20px;
+   padding-right: 20px;
+   margin-right: 5px;
+   margin-top: 10px;
+ 
+ }
      
   </style>
  
   
 </head>
 <body>
+<nav class="navbar navbar-default navbar-inverse" role="navigation">
 
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
+  <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Logo</a>
+        <a class="navbar-brand" href="<?php echo URL; ?>home/index">Logo</a>
     </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-	    <div class="row text-center">
-	<div class="form-inline">
-		 <label > <br> 	   
-	  <div class="dropdown">
-      <button class="btn btn-default dropdown-toggle" type="button" id="menuitem" data-toggle="dropdown">All
-      <span class="caret"></span></button>
-      <ul class="dropdown-menu" role="menu" aria-labelledby="menuitem">
-	  <li role="presentation"><a role="menuitem" tabindex="1" href="#">All</a></li>
-      <li role="presentation"><a role="menuitem" tabindex="1" href="#">Books</a></li>
-      <li role="presentation"><a role="menuitem" tabindex="1" href="#">Office Supplies</a></li>
-      <li role="presentation"><a role="menuitem" tabindex="1" href="#">Clothes</a></li>
-	  <li role="presentation"><a role="menuitem" tabindex="1" href="#">Furniture</a></li>
-      <li role="presentation"><a role="menuitem" tabindex="1" href="#">Electronic Supplies</a></li>
-      <li role="presentation"><a role="menuitem" tabindex="1" href="#">Other</a></li>
+
+  <div class="navbar-collapse collapse" id="myNavbar">
+    <ul class="nav navbar-nav navbar-left">
+        <li>
+            <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle" id="options-button" type="button" id="menuitem" data-toggle="dropdown">All
+                <span class="caret"></span></button>
+                  <ul class="dropdown-menu" role="menu" aria-labelledby="menuitem">
+                    <li role="presentation"><a role="menuitem" tabindex="1" href="#">All</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="1" href="#">Books</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="1" href="#">Office Supplies</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="1" href="#">Clothes</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="1" href="#">Furniture</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="1" href="#">Electronic Supplies</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="1" href="#">Other</a></li>
+                  </ul>
+              </div>
+          </li>
+
+        <li>
+          <form class="form-inline pull-xs-right">
+            <input class="form-control search-input" type="text" placeholder="Search">
+            <button class="btn btn-success-outline" id="search-button" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+          </form>
+      </li>
     </ul>
-  </div>
-	  </label>
-	  <input type="search" class="form-control" size="100px" class="glyphicon glyphicon-search" placeholder="Search">
-	  <button type="button" class="btn btn-secondary btn-primary ">  Search  </button>
-			</div>
-		</div>
-	  </div>
-    </div>
-     
-      <ul class="nav navbar-nav navbar-right">
-       
-	<li id="sellLink"><a href="<?php echo URL; ?>home/sell" class="headerLinks"><span class="glyphicon glyphicon-open headerLinks "></span> Sell An Item</a></li>
+
+
+    <ul class="nav navbar-nav navbar-right">     
+        <li id="sellLink"><a href="<?php echo URL; ?>home/sell" class="headerLinks"><span class="glyphicon glyphicon-open headerLinks "></span> Sell An Item</a></li>
         <li id="cartLink"><a href="<?php echo URL; ?>home/cart" class="headerLinks"><span class="glyphicon glyphicon-shopping-cart headerLinks"></span> Cart</a></li>
         <li id="logoutLink"><a href="<?php echo URL; ?>signin/index" class="headerLinks"><span class="glyphicon glyphicon-log-in headerLinks"></span> Logout</a></li>
         <li id="signinLink"><a href="<?php echo URL; ?>signin/index" class="headerLinks"><span class="glyphicon glyphicon-log-in headerLinks"></span> Sign In</a></li>
         <li id="registerLink"><a href="<?php echo URL; ?>register/index" class="headerLinks"><span class="glyphicon glyphicon-log-in headerLinks"></span> Register</a></li>
-        <li id="profileLink"><a href="<?php echo URL; ?>home/profile" class="headerLinks"><span class="glyphicon glyphicon-user headerLinks">
-            
-          </span>
-                 <?php
+        <li id="profileLink"><a href="<?php echo URL; ?>home/profile" class="headerLinks"><span class="glyphicon glyphicon-user headerLinks"></span>
+        <?php
            if(isset($_SESSION["login"])){
                if($_SESSION["login"])
              {
@@ -160,13 +202,10 @@
            ?>  
            </a>
         </li>
-      
       </ul>
-       
-                  
-    </div>
   </div>
 </nav>
+
  <script>
 $(function(){
   
