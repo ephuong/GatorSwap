@@ -1,3 +1,9 @@
+<?php
+   if(!session_id())
+   {
+    session_start();  
+   }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -114,7 +120,7 @@
 		</div>
 	  </div>
     </div>
-
+     
       <ul class="nav navbar-nav navbar-right">
        
 	<li><a href="<?php echo URL; ?>home/sell" class="headerLinks"><span class="glyphicon glyphicon-open headerLinks "></span> Sell An Item</a></li>
