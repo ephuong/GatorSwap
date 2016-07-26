@@ -1,5 +1,8 @@
 <?php
-session_start();
+if(!session_id())
+{
+  session_start();  
+}
 /**
  * Communicates with the Account table in the database
  */
@@ -40,7 +43,7 @@ class Account extends Model
                         
                         $_SESSION['username'] = $username;
                         $_SESSION['login'] = true;
-
+                       
                         
 			return $account_id['Account_ID'];		
 		} 

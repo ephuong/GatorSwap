@@ -1,5 +1,10 @@
 <?php
 
+   if(!session_id())
+   {
+    session_start();  
+   }
+
 /**
  * Class Home
  *
@@ -123,10 +128,17 @@ class Home extends Controller
 	require APP . 'view/home/checkout.php';
 	require APP . 'view/_templates/footer.php';
 }
-	public function search()
-	{ 
-	require APP . 'view/_templates/header.php';
-	require APP . 'view/home/search.php';
-	require APP . 'view/_templates/footer.php';
-}		
+
+
+    public function search()
+    {
+            if(isset($_POST["search"])) {
+			    $results = $this->itemModel->searchItems($_POST["search-keyword"], "All");
+		    }   
+
+            require APP . 'view/_templates/header.php';
+            require APP . 'view/home/search.php';
+            require APP . 'view/_templates/footer.php';
+    }
+
 }
