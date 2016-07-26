@@ -3,7 +3,7 @@
 session_unset();
 ?>
 <style>
- @import "bourbon";
+@import "bourbon";
 
 body {
 	background: white;	
@@ -124,34 +124,7 @@ body {
          }
     });
 });
-
-function myFunction()
-{  
-     
-   // var url = window.location.href;   
-    //var formData = JSON.stringify($("#myForm").serializeArray());
-    //var newUrl = url.split("/");
-    //delete newUrl[6];
-   // var modifiedUrl = newUrl.join("/");
-    //location.href = modifiedUrl+"dashboard";
-   /* 
-   $.ajax({
-    url: modifiedUrl+"dashboard",
-    type: "POST",
-    //data: "{'username':'" + username + "','password':'"+password+"'}",
-    contentType: "application/json; charset=UTF-8",
-    success: function(res) {
-          console.log("ajax went through!");
-          location.href = modifiedUrl+"dashboard";
-        },
-        error: function(res){
-         console.log(res);
-        }
-    });
-  */
-}
-
-
+ 
 </script>
 
 
