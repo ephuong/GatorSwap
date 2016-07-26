@@ -144,6 +144,7 @@
            }      
           else 
            {
+              session_unset();
              echo "
             <script type=\"text/javascript\">
               $('#signinLink').show();
