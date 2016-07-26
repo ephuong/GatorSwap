@@ -145,19 +145,24 @@
           else 
            {
               session_unset();
-             echo "
-            <script type=\"text/javascript\">
-              $('#signinLink').show();
-              $('#logoutLink').hide();
-              $('#profileLink').hide();
-              </script>
-              ";   
+            // echo "
+            //<script type=\"text/javascript\">
+             // $('#signinLink').show();
+              //$('#logoutLink').hide();
+             // $('#profileLink').hide();
+             // </script>
+             // ";   
            }
            
            //unset
            //session_unset();
                       
            ?>
+           <script type=\"text/javascript\">
+              $('#signinLink').show();
+              $('#logoutLink').hide();
+              $('#profileLink').hide();
+              </script>
        </div>
     </div>
   </div>
