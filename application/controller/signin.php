@@ -1,12 +1,14 @@
 <?php
- if(!session_id())
-   {
-    session_start();  
-   }
+  
 class Signin extends Controller
 {
 	public function index()
 	{
+            if (session_id())
+         {   
+             session_unset();
+             session_destroy();   
+         }
 		require APP . 'view/_templates/header.php';
 		require APP . 'view/signin/index.php';
 		require APP . 'view/_templates/footer.php';

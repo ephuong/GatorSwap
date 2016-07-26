@@ -151,11 +151,12 @@
               $('#sellLink').hide();
               $('#cartLink').hide();
               </script>
-             ";   
-           }
-           if (session_id()){
+             "; 
+             if (session_id()){
              session_destroy();   
-           }             
+              } 
+           }
+                       
            ?>  
            </a>
         </li>
