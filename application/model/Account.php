@@ -1,7 +1,7 @@
 <?php
 if(!session_id())
 {
-  //session_start();  
+  session_start();  
 }
 /**
  * Communicates with the Account table in the database

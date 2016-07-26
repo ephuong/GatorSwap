@@ -1,5 +1,10 @@
 <?php
 
+if(!session_id())
+   {
+    session_start();  
+   }
+   
 class Dashboard extends Controller
 {
 	public function index()
