@@ -127,35 +127,33 @@ body {
 	                <input class="form-control" name="condition" placeholder="Good" type="text"> 
             	</div> -->
 
-            	<div class="dropdown open">
-				  <button class="btn btn-secondary dropdown-toggle" type="button" id="condition" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				    Condition
-				  </button>
-				  <div class="dropdown-menu" aria-labelledby="conditionmenu">
-				    <a class="dropdown-item" href="#">New</a>
-				    <a class="dropdown-item" href="#">Like New</a>
-				    <a class="dropdown-item" href="#">Used</a>
-				    <a class="dropdown-item" href="#">Damaged</a>
-				  </div>
-				</div>
+            	<div class="dropdown">
+	                <button class="btn btn-default dropdown-toggle" id="conditions-button" type="button" data-toggle="dropdown">Condition
+	                <span class="caret"></span></button>
+	                  <ul class="dropdown-menu" role="menu" aria-labelledby="menuitem">
+	                    <li role="presentation"><a role="conditionitem" tabindex="1" href="#">New</a></li>
+	                    <li role="presentation"><a role="conditionitem" tabindex="1" href="#">Like New</a></li>
+	                    <li role="presentation"><a role="conditionitem" tabindex="1" href="#">Good</a></li>
+	                    <li role="presentation"><a role="conditionitem" tabindex="1" href="#">Damaged</a></li>
+	                  </ul>
+             	 </div>
 
                      <!-- <div class="form-group">                
  	                <label>Quantity</label> 
  	                <input type="number" class="form-control" name="quantity" placeholder="1" type="text"> 
              		</div>   --> 
 
-             	<div class="dropdown open">
-				  <button class="btn btn-secondary dropdown-toggle" type="button" id="quantity" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				    Quantity
-				  </button>
-				  <div class="dropdown-menu" aria-labelledby="quantitymenu">
-				    <a class="dropdown-item" href="#"> 1 </a>
-				    <a class="dropdown-item" href="#"> 2 </a>
-				    <a class="dropdown-item" href="#"> 3 </a>
-				    <a class="dropdown-item" href="#"> 4 </a>
-				    <a class="dropdown-item" href="#"> 5+ </a>
-				  </div>
-				</div> 
+             	<div class="dropdown">
+	                <button class="btn btn-default dropdown-toggle" id="quantity-button" type="button" data-toggle="dropdown">Quantity
+	                <span class="caret"></span></button>
+	                  <ul class="dropdown-menu" role="menu" aria-labelledby="menuitem">
+	                    <li role="presentation"><a role="quantityitem" tabindex="1" href="#"> 1 </a></li>
+	                    <li role="presentation"><a role="quantityitem" tabindex="1" href="#"> 2 </a></li>
+	                    <li role="presentation"><a role="cquantityitem" tabindex="1" href="#"> 3 </a></li>
+	                    <li role="presentation"><a role="quantityitem" tabindex="1" href="#"> 4 </a></li>
+	                    <li role="presentation"><a role="quantityitem" tabindex="1" href="#"> 5+ </a></li>
+	                  </ul>
+             	 </div>
 
             </div>
             
@@ -173,16 +171,15 @@ body {
 	                <input class="form-control" name="delivery" placeholder="I can deliver the item to your location." type="text"> 
             	</div> -->
 
-            	<div class="dropdown open">
-				  <button class="btn btn-secondary dropdown-toggle" type="button" id="quantity" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				    Preferred Delivery
-				  </button>
-				  <div class="dropdown-menu" aria-labelledby="quantitymenu">
-				    <a class="dropdown-item" href="#"> Meet up on campus </a>
-				    <a class="dropdown-item" href="#"> Come pick up </a>
-				    <a class="dropdown-item" href="#"> I will deliver/ship </a>
-				  </div>
-				</div> 
+            	<div class="dropdown">
+	                <button class="btn btn-default dropdown-toggle" id="delivery-button" type="button" data-toggle="dropdown">Preferred Delivery
+	                <span class="caret"></span></button>
+	                  <ul class="dropdown-menu" role="menu" aria-labelledby="menuitem">
+	                    <li role="presentation"><a role="delivery" tabindex="1" href="#"> Meet on campus </a></li>
+	                    <li role="presentation"><a role="delivery" tabindex="1" href="#"> Come pick up </a></li>
+	                    <li role="presentation"><a role="delivery" tabindex="1" href="#"> Deliver/Ship </a></li>
+	                  </ul>
+             	 </div>
 
             	<div class="form-group">                
 	                <label>Add Images: </label> 
