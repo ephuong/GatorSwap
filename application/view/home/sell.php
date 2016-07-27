@@ -119,6 +119,20 @@ body {
 	                <label>Name:</label>
 	                <input class="form-control" name="name_of_item" placeholder=" " type="text">
             	</div>
+            	
+            	<div class="form-group">
+	                <label>Price: </label>
+	                <input class="form-control" name="price" placeholder="$10" type="text">
+            	</div>
+
+            	<div class="dropdown">
+	                <button class="btn btn-default dropdown-toggle" id="conditions-button" type="button" data-toggle="dropdown">Condition
+	                <span class="caret"></span></button>
+	                  <ul class="dropdown-menu" role="menu" aria-labelledby="conditionitem">
+	                    <li role="presentation"><a role="conditionitem" tabindex="1" href="#">New</a></li>
+	                    <li role="presentation"><a role="conditionitem" tabindex="1" href="#">Used</a></li>
+	                  </ul>
+             	 </div>
 
 <!-- 		  		<div class="form-group">                
 	                <label>Condition</label> 
@@ -147,20 +161,6 @@ body {
             </div>
             
             <div class="col-md-6">
-
-            	<div class="form-group">
-	                <label>Price: </label>
-	                <input class="form-control" name="price" placeholder="$10" type="text">
-            	</div>
-
-            	<div class="dropdown">
-	                <button class="btn btn-default dropdown-toggle" id="conditions-button" type="button" data-toggle="dropdown">Condition
-	                <span class="caret"></span></button>
-	                  <ul class="dropdown-menu" role="menu" aria-labelledby="conditionitem">
-	                    <li role="presentation"><a role="conditionitem" tabindex="1" href="#">New</a></li>
-	                    <li role="presentation"><a role="conditionitem" tabindex="1" href="#">Used</a></li>
-	                  </ul>
-             	 </div>
                 <!-- <div class="form-group">                
 	                <label>Email address::</label> 
 	                <input class="form-control" name="email_address"  placeholder="johndoe@sfsu.edu" type="text"> 
