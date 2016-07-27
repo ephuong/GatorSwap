@@ -99,9 +99,10 @@ body {
 	line-height: 300%;
 }
 }
-#conditions-button, #quality-button, #delivery-button{
+#conditions-button, #quantity-button, #delivery-button{
 	border-color: #cccccc;
-	margin: 15px;
+	margin-top: 15px;
+	margin-bottom: 15px;
 
 }
 </style>
