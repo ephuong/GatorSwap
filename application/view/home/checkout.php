@@ -1,5 +1,8 @@
 <style>
-body { margin-top:20px; 
+
+
+.col-md-6{
+	padding-left: 50px ;
 }
 .panel-title {display: inline;font-weight: bold;}
 .checkbox.pull-right { margin: 0; }
