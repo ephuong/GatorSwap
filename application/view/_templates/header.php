@@ -154,7 +154,7 @@
         <li>
           <form class="form-inline pull-xs-right">
             <input class="form-control search-input" type="text" placeholder="Search">
-            <button class="btn btn-success-outline" id="search-button" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+            <button class="btn btn-success-outline" href="<?php echo URL; ?>home/search" id="search-button" type="submit"><span class="glyphicon glyphicon-search"></span></button>
           </form>
       </li>
     </ul>
@@ -165,6 +165,7 @@
         <li id="cartLink"><a href="<?php echo URL; ?>home/cart" class="headerLinks"><span class="glyphicon glyphicon-shopping-cart headerLinks"></span> Cart</a></li>
         <li id="signinLink"><a href="<?php echo URL; ?>signin/index" class="headerLinks"><span class="glyphicon glyphicon-log-in headerLinks"></span> Sign In</a></li>
         <li id="registerLink"><a href="<?php echo URL; ?>register/index" class="headerLinks"><span class="glyphicon glyphicon-log-in headerLinks"></span> Register</a></li>
+        <li id="logoutLink"><a href="<?php echo URL; ?>signin/index" class="headerLinks"><span class="glyphicon glyphicon-log-in headerLinks"></span> Logout</a></li>
         <li id="profileLink"><a href="<?php echo URL; ?>home/profile" class="headerLinks"><span class="glyphicon glyphicon-user headerLinks"></span>
         <?php
            if(isset($_SESSION["login"])){
@@ -183,7 +184,7 @@
            }      
           else 
            {
-              
+              //Logout
              echo "
             <script type=\"text/javascript\">
               $('#signinLink').show();
@@ -201,7 +202,6 @@
            ?>  
            </a>
         </li>
-        <li id="logoutLink"><a href="<?php echo URL; ?>signin/index" class="headerLinks"><span class="glyphicon glyphicon-log-in headerLinks"></span> Logout</a></li>
       </ul>
   </div>
 </nav>
