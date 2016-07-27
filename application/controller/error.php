@@ -1,9 +1,9 @@
 <?php
 
-if(!session_id())
-   {
-    session_start();  
-   }
+// if(!session_id())
+//    {
+//     session_start();  
+//    }
 /**
  * Class Error
  *
@@ -12,7 +12,7 @@ if(!session_id())
  * This is really weird behaviour, but documented here: http://php.net/manual/en/language.oop5.decon.php
  *
  */
-class Error2 extends Controller
+class Error extends Controller
 {
     /**
      * PAGE: index
