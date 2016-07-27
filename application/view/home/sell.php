@@ -119,7 +119,7 @@ body {
 	                <label>Name:</label>
 	                <input class="form-control" name="name_of_item" placeholder=" " type="text">
             	</div>
-            	
+
             	<div class="form-group">
 	                <label>Price: </label>
 	                <input class="form-control" name="price" placeholder="$10" type="text">
@@ -186,6 +186,7 @@ body {
 
             	<div class="form-group">                
 	                <label>Add Image: </label> 
+	                <br>
 	                <span class="glyphicons glyphicons-ambulance"></span><button type="button" class="btn btn-default btn-sm">
 					<span class="glyphicon glyphicon-plus"></span> Add
 					</button></label> <br><br>
