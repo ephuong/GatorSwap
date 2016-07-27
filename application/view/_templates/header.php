@@ -116,13 +116,17 @@
    margin-top: 10px;
  
  }
-     
+ 
+ .navbar-fixed-top {
+    top: 0;
+    border-width: 0 0 1px;
+}    
   </style>
  
   
 </head>
 <body>
-<nav class="navbar navbar-default navbar-inverse" role="navigation">
+<nav class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation">
 
   <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
