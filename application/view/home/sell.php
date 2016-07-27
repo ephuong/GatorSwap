@@ -110,12 +110,11 @@ body {
     
     <form class="form-sell" role="form" method="post" action="#">
         <h3>Post An Item For Sale.</h3>
-        <div class="row">
             <div class="col-md-6">
-                
+    
                 <div class="form-group">
 	                <label>Name of item:</label>
-	                <input class="form-control" name="name_of_item" placeholder="Name of Item" type="text">
+	                <input class="form-control" name="name_of_item" placeholder="Book Title, " type="text">
             	</div>
 
             	<div class="form-group">
@@ -123,62 +122,85 @@ body {
 	                <input class="form-control" name="price" placeholder="$10" type="text">
             	</div>
 
-		  <div class="form-group">                
+<!-- 		  		<div class="form-group">                
 	                <label>Condition</label> 
 	                <input class="form-control" name="condition" placeholder="Good" type="text"> 
-            	</div>
-                     <div class="form-group">                
+            	</div> -->
+
+            	<div class="dropdown open">
+				  <button class="btn btn-secondary dropdown-toggle" type="button" id="condition" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				    Condition
+				  </button>
+				  <div class="dropdown-menu" aria-labelledby="conditionmenu">
+				    <a class="dropdown-item" href="#">New</a>
+				    <a class="dropdown-item" href="#">Like New</a>
+				    <a class="dropdown-item" href="#">Used</a>
+				    <a class="dropdown-item" href="#">Damaged</a>
+				  </div>
+				</div>
+
+                     <!-- <div class="form-group">                
  	                <label>Quantity</label> 
  	                <input type="number" class="form-control" name="quantity" placeholder="1" type="text"> 
-             	</div>
-                 
-                 <div class="form-group">                
- 	                <label>Description: </label> 
-					<textarea class="form-control" id="comments" name="Description" placeholder="This product was highlighted paragraphs." rows="5"></textarea></label><br>
- 	           
-             	</div>
-                
+             		</div>   --> 
+
+             	<div class="dropdown open">
+				  <button class="btn btn-secondary dropdown-toggle" type="button" id="quantity" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				    Quantity
+				  </button>
+				  <div class="dropdown-menu" aria-labelledby="quantitymenu">
+				    <a class="dropdown-item" href="#"> 1 </a>
+				    <a class="dropdown-item" href="#"> 2 </a>
+				    <a class="dropdown-item" href="#"> 3 </a>
+				    <a class="dropdown-item" href="#"> 4 </a>
+				    <a class="dropdown-item" href="#"> 5+ </a>
+				  </div>
+				</div> 
 
             </div>
             
             <div class="col-md-6">
-                  <div class="form-group">                
+                <div class="form-group">                
+	                <label>Email address::</label> 
+	                <input class="form-control" name="email_address"  placeholder="johndoe@sfsu.edu" type="text"> 
+            	</div>
+        		<div class="form-group">                
+	                <label>Phone #:</label> 
+	                <input class="form-control"  name="phone_no" placeholder="123-456-7890" type="text"> 
+            	</div>
+        		<!-- <div class="form-group">                
+	                <label>Delivery</label> 
+	                <input class="form-control" name="delivery" placeholder="I can deliver the item to your location." type="text"> 
+            	</div> -->
+
+            	<div class="dropdown open">
+				  <button class="btn btn-secondary dropdown-toggle" type="button" id="quantity" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				    Preferred Delivery
+				  </button>
+				  <div class="dropdown-menu" aria-labelledby="quantitymenu">
+				    <a class="dropdown-item" href="#"> Meet up on campus </a>
+				    <a class="dropdown-item" href="#"> Come pick up </a>
+				    <a class="dropdown-item" href="#"> I will deliver/ship </a>
+				  </div>
+				</div> 
+
+            	<div class="form-group">                
 	                <label>Add Images: </label> 
 	                <span class="glyphicons glyphicons-ambulance"></span><button type="button" class="btn btn-default btn-sm">
 					<span class="glyphicon glyphicon-plus"></span> Add
 					</button></label> <br><br>
             	</div>
-                
-                <div class="form-group">                
-	                <label>Author/ Brand name:</label> 
-	                <input class="form-control" name="author" placeholder="Sam Smith/Puma" type="text"> 
-            	</div>
-              
-                
-                <div class="form-group">                
-	                <label>Name of seller:</label> 
-	                <input class="form-control" name="name_of_seller" placeholder="Ron Ray" type="text"> 
-            	</div>
 
-   		
-                
-                <div class="form-group">                
-	                <label>Email address::</label> 
-	                <input class="form-control" name="email_address"  placeholder="rray@sfsu.edu" type="text"> 
-            	</div>
-        <div class="form-group">                
-	                <label>Phone no.:</label> 
-	                <input class="form-control"  name="phone_no" placeholder="650-621-1998" type="text"> 
-            	</div>
-        <div class="form-group">                
-	                <label>Message</label> 
-	                <input class="form-control" name="message" placeholder="I can deliver the item to your location." type="text"> 
-            	</div>
-				</div>
-       <button type="button" class="btn btn-lg btn-primary btn-block ">  Done  </button>	 
+			</div>
+
+			<div class="col-md-12">
+			    <div class="form-group">                
+ 	                <label>Description: </label> 
+					<textarea class="form-control" id="comments" name="Description" placeholder="Describe your item here!" rows="5"></textarea></label><br>
+             	</div>
+            </div>
+       		<button type="button" class="btn btn-lg btn-primary btn-block ">  Submit  </button>	 
         
-                
-       </div>
                   
     </form>
 </div>
