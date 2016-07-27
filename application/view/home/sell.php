@@ -99,8 +99,10 @@ body {
 	line-height: 300%;
 }
 }
-.button{
-	
+#conditions-button, #quality-button, #delivery-button{
+	border-color: #cccccc;
+	margin: 15px;
+
 }
 </style>
 
@@ -130,7 +132,7 @@ body {
             	<div class="dropdown">
 	                <button class="btn btn-default dropdown-toggle" id="conditions-button" type="button" data-toggle="dropdown">Condition
 	                <span class="caret"></span></button>
-	                  <ul class="dropdown-menu" role="menu" aria-labelledby="menuitem">
+	                  <ul class="dropdown-menu" role="menu" aria-labelledby="conditionitem">
 	                    <li role="presentation"><a role="conditionitem" tabindex="1" href="#">New</a></li>
 	                    <li role="presentation"><a role="conditionitem" tabindex="1" href="#">Like New</a></li>
 	                    <li role="presentation"><a role="conditionitem" tabindex="1" href="#">Good</a></li>
@@ -146,7 +148,7 @@ body {
              	<div class="dropdown">
 	                <button class="btn btn-default dropdown-toggle" id="quantity-button" type="button" data-toggle="dropdown">Quantity
 	                <span class="caret"></span></button>
-	                  <ul class="dropdown-menu" role="menu" aria-labelledby="menuitem">
+	                  <ul class="dropdown-menu" role="menu" aria-labelledby="quantityitem">
 	                    <li role="presentation"><a role="quantityitem" tabindex="1" href="#"> 1 </a></li>
 	                    <li role="presentation"><a role="quantityitem" tabindex="1" href="#"> 2 </a></li>
 	                    <li role="presentation"><a role="cquantityitem" tabindex="1" href="#"> 3 </a></li>
@@ -174,7 +176,7 @@ body {
             	<div class="dropdown">
 	                <button class="btn btn-default dropdown-toggle" id="delivery-button" type="button" data-toggle="dropdown">Preferred Delivery
 	                <span class="caret"></span></button>
-	                  <ul class="dropdown-menu" role="menu" aria-labelledby="menuitem">
+	                  <ul class="dropdown-menu" role="menu" aria-labelledby="deliveryitem">
 	                    <li role="presentation"><a role="delivery" tabindex="1" href="#"> Meet on campus </a></li>
 	                    <li role="presentation"><a role="delivery" tabindex="1" href="#"> Come pick up </a></li>
 	                    <li role="presentation"><a role="delivery" tabindex="1" href="#"> Deliver/Ship </a></li>
