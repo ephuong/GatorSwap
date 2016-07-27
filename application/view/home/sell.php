@@ -116,13 +116,8 @@ body {
             <div class="col-md-6">
     
                 <div class="form-group">
-	                <label>Name of item:</label>
-	                <input class="form-control" name="name_of_item" placeholder="Book Title, " type="text">
-            	</div>
-
-            	<div class="form-group">
-	                <label>Price: </label>
-	                <input class="form-control" name="price" placeholder="$10" type="text">
+	                <label>Name:</label>
+	                <input class="form-control" name="name_of_item" placeholder=" " type="text">
             	</div>
 
 <!-- 		  		<div class="form-group">                
@@ -130,16 +125,6 @@ body {
 	                <input class="form-control" name="condition" placeholder="Good" type="text"> 
             	</div> -->
 
-            	<div class="dropdown">
-	                <button class="btn btn-default dropdown-toggle" id="conditions-button" type="button" data-toggle="dropdown">Condition
-	                <span class="caret"></span></button>
-	                  <ul class="dropdown-menu" role="menu" aria-labelledby="conditionitem">
-	                    <li role="presentation"><a role="conditionitem" tabindex="1" href="#">New</a></li>
-	                    <li role="presentation"><a role="conditionitem" tabindex="1" href="#">Like New</a></li>
-	                    <li role="presentation"><a role="conditionitem" tabindex="1" href="#">Good</a></li>
-	                    <li role="presentation"><a role="conditionitem" tabindex="1" href="#">Damaged</a></li>
-	                  </ul>
-             	 </div>
 
                      <!-- <div class="form-group">                
  	                <label>Quantity</label> 
@@ -147,34 +132,49 @@ body {
              		</div>   --> 
 
              	<div class="dropdown">
-	                <button class="btn btn-default dropdown-toggle" id="quantity-button" type="button" data-toggle="dropdown">Quantity
+	                <button class="btn btn-default dropdown-toggle" id="quantity-button" type="button" data-toggle="dropdown">Category
 	                <span class="caret"></span></button>
 	                  <ul class="dropdown-menu" role="menu" aria-labelledby="quantityitem">
-	                    <li role="presentation"><a role="quantityitem" tabindex="1" href="#"> 1 </a></li>
-	                    <li role="presentation"><a role="quantityitem" tabindex="1" href="#"> 2 </a></li>
-	                    <li role="presentation"><a role="cquantityitem" tabindex="1" href="#"> 3 </a></li>
-	                    <li role="presentation"><a role="quantityitem" tabindex="1" href="#"> 4 </a></li>
-	                    <li role="presentation"><a role="quantityitem" tabindex="1" href="#"> 5+ </a></li>
+	                    <li role="presentation"><a role="quantityitem" tabindex="1" href="#"> Books </a></li>
+	                    <li role="presentation"><a role="quantityitem" tabindex="1" href="#"> Office Supplies </a></li>
+	                    <li role="presentation"><a role="quantityitem" tabindex="1" href="#"> Clothing </a></li>
+	                    <li role="presentation"><a role="quantityitem" tabindex="1" href="#"> Furniture </a></li>
+	                    <li role="presentation"><a role="quantityitem" tabindex="1" href="#"> Electronics </a></li>
+	                    <li role="presentation"><a role="quantityitem" tabindex="1" href="#"> Other </a></li>
 	                  </ul>
              	 </div>
 
             </div>
             
             <div class="col-md-6">
-                <div class="form-group">                
+
+            	<div class="form-group">
+	                <label>Price: </label>
+	                <input class="form-control" name="price" placeholder="$10" type="text">
+            	</div>
+
+            	<div class="dropdown">
+	                <button class="btn btn-default dropdown-toggle" id="conditions-button" type="button" data-toggle="dropdown">Condition
+	                <span class="caret"></span></button>
+	                  <ul class="dropdown-menu" role="menu" aria-labelledby="conditionitem">
+	                    <li role="presentation"><a role="conditionitem" tabindex="1" href="#">New</a></li>
+	                    <li role="presentation"><a role="conditionitem" tabindex="1" href="#">Used</a></li>
+	                  </ul>
+             	 </div>
+                <!-- <div class="form-group">                
 	                <label>Email address::</label> 
 	                <input class="form-control" name="email_address"  placeholder="johndoe@sfsu.edu" type="text"> 
             	</div>
         		<div class="form-group">                
 	                <label>Phone #:</label> 
 	                <input class="form-control"  name="phone_no" placeholder="123-456-7890" type="text"> 
-            	</div>
+            	</div> -->
         		<!-- <div class="form-group">                
 	                <label>Delivery</label> 
 	                <input class="form-control" name="delivery" placeholder="I can deliver the item to your location." type="text"> 
             	</div> -->
 
-            	<div class="dropdown">
+            	<!-- <div class="dropdown">
 	                <button class="btn btn-default dropdown-toggle" id="delivery-button" type="button" data-toggle="dropdown">Preferred Delivery
 	                <span class="caret"></span></button>
 	                  <ul class="dropdown-menu" role="menu" aria-labelledby="deliveryitem">
@@ -182,10 +182,10 @@ body {
 	                    <li role="presentation"><a role="delivery" tabindex="1" href="#"> Come pick up </a></li>
 	                    <li role="presentation"><a role="delivery" tabindex="1" href="#"> Deliver/Ship </a></li>
 	                  </ul>
-             	 </div>
+             	 </div> -->
 
             	<div class="form-group">                
-	                <label>Add Images: </label> 
+	                <label>Add Image: </label> 
 	                <span class="glyphicons glyphicons-ambulance"></span><button type="button" class="btn btn-default btn-sm">
 					<span class="glyphicon glyphicon-plus"></span> Add
 					</button></label> <br><br>
