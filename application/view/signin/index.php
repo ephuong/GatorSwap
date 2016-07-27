@@ -74,7 +74,7 @@ body {
       ?>
       </br>
       <label for="pwd" control-label">Password</label> 
-      <input type="text" id="pwd" class="form-control" name="password" placeholder="Password" value="<?php if(isset($_POST['password'])){echo htmlspecialchars($_POST['password']); }?>"/> 
+      <input id="pwd" class="form-control" type="password"  name="password" placeholder="Password" /> 
       <?php 
       if(isset($errPassword)){
       echo "<p class='text-danger'>$errPassword</p>";
