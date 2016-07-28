@@ -132,7 +132,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-        <a class="navbar-brand" href="<?php echo URL; ?>home/index"><img src="application/view/_templates/GatorSwapLogo.png"></img></a>
+        <a class="navbar-brand" href="<?php echo URL; ?>home/index"><img src="GatorSwapLogo.jpg"></img></a>
     </div>
 
   <div class="navbar-collapse collapse" id="myNavbar">
