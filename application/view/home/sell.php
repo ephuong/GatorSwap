@@ -135,6 +135,11 @@ body {
 				  </div>
 				</div>
 
+				<select>
+				  <option value="New">New</option>
+				  <option value="Used">Used</option>
+				</select>
+
             	<div class="dropdown">
 	                <button class="btn btn-default dropdown-toggle" id="conditions-button" type="button" data-toggle="dropdown">Condition
 	                <span class="caret"></span></button>
@@ -155,7 +160,7 @@ body {
  	                <label>Quantity</label> 
  	                <input type="number" class="form-control" name="quantity" placeholder="1" type="text"> 
              		</div>   
-             		
+
              	<div class="dropdown">
 	                <button class="btn btn-default dropdown-toggle" id="quantity-button" type="button" data-toggle="dropdown">Category
 	                <span class="caret"></span></button>
