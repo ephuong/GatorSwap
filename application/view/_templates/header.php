@@ -118,6 +118,7 @@
    margin-top: 10px;
  
  }
+
    
   </style>
  
@@ -132,7 +133,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-        <a class="navbar-brand" href="<?php echo URL; ?>home/index"><img src="https://s31.postimg.org/5s7zczl7f/Gator_Swap_Logo.jpg" alt="GatorSwap"></img></a>
+        <a class="navbar-brand" href="<?php echo URL; ?>home/index"><img id="logo" src="https://s31.postimg.org/5s7zczl7f/Gator_Swap_Logo.jpg" alt="GatorSwap" width="125" height="75"></img></a>
     </div>
 
   <div class="navbar-collapse collapse" id="myNavbar">
