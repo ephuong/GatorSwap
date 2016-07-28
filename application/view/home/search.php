@@ -1,4 +1,47 @@
 
+<head>
+  <link rel="stylesheet" href="<?php echo URL; ?>css/vp.css">
+</head>
+
+<div class="container">
+	
+	<!-- Table for search results -->
+	<div id="user-table">
+		<h2>Search: <?php echo $results["count"]; ?> result(s)</h2>
+		<table>
+			<thead style="background-color: #ddd; font-weight: bold;">
+            <tr>
+                <td>Item ID</td>
+                <td>Title</td>
+                <td>Category</td>
+                <td>Description</td>
+				<td>Price</td>
+				<td>Image</td>
+            </tr>
+            </thead>
+			
+			<tbody>
+			<?php foreach ($results["results"] as $result) { ?>
+			<tr>
+				<td><?php if (isset($result->Item_ID)) echo htmlspecialchars($result->Item_ID, ENT_QUOTES, 'UTF-8'); ?></td>
+				<td><?php if (isset($result->Title)) echo htmlspecialchars($result->Title, ENT_QUOTES, 'UTF-8'); ?></td>
+				<td><?php if (isset($result->Category)) echo htmlspecialchars($result->Category, ENT_QUOTES, 'UTF-8'); ?></td>
+				<td><?php if (isset($result->Description)) echo htmlspecialchars($result->Description, ENT_QUOTES, 'UTF-8'); ?></td>
+				<td><?php if (isset($result->Price)) echo htmlspecialchars($result->Price, ENT_QUOTES, 'UTF-8'); ?></td>
+				<td>
+				<?php 
+					if (isset($result->IMG)) {
+						echo '<img style="width:50%" src="data:image/jpg;base64,' . base64_encode($result->IMG) . '" />';
+					}									
+				?>
+				</td>
+			</tr>
+			<?php } ?>
+			</tbody>
+		</table>
+	</div>
+</div>
+
 
 <div class="container">
 

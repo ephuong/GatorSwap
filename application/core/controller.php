@@ -13,6 +13,7 @@ class Controller
         public $model = null;
 	public $AccountModel = null;
 	public $UserModel = null;
+  	public $itemModel = null;
 	
 
     /**
@@ -49,12 +50,13 @@ class Controller
         require APP . 'model/model.php';
 	require APP . 'model/Account.php';
 	require APP . 'model/User.php';
-	//require APP . 'model/item.php';
+	require APP . 'model/item.php';
 		
         // create new "model" (and pass the database connection)
         $this->model = new Model($this->db);
 	$this->AccountModel = new Account($this->db);
 	$this->UserModel = new User($this->db);
+    $this->itemModel = new Item($this->db);
 	
     }
 }

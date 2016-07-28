@@ -152,9 +152,10 @@
           </li>
 
         <li>
-          <form class="form-inline pull-xs-right">
-            <input class="form-control search-input" type="text" placeholder="Search">
-            <button class="btn btn-success-outline" href="<?php echo URL; ?>home/search" id="search-button" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+          <form class="form-inline pull-xs-right" action="<?php echo URL; ?>home/search" method="POST">
+          
+            <input class="form-control search-input" type="text" placeholder="Search" name="search-keyword">
+            <button class="btn btn-success-outline" id="search-button" name="search" value="Search"><span class="glyphicon glyphicon-search"></span></button>
           </form>
       </li>
     </ul>
