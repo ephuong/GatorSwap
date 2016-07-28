@@ -135,16 +135,20 @@ body {
 				  </div>
 				</div> -->
 
+				<div class="btn-group btn-group-lg" id="conditionOptions">
+					<label>Condition</label>
+				  <button type="button" class="btn btn-secondary">New</button>
+				  <button type="button" class="btn btn-secondary">Used</button>
+				</div>
 
-
-            	<div class="dropdown">
+            	<!-- <div class="dropdown">
 	                <button class="btn btn-default dropdown-toggle" id="conditions-button" type="button" data-toggle="dropdown">Condition
 	                <span class="caret"></span></button>
 	                  <ul class="dropdown-menu" role="menu" aria-labelledby="condition-button">
 	                    <li role="presentation"><a role="conditionitem" tabindex="1" href="#">New</a></li>
 	                    <li role="presentation"><a role="conditionitem" tabindex="1" href="#">Used</a></li>
 	                  </ul>
-             	 </div>
+             	 </div> -->
 
 
 <!-- 		  		<div class="form-group">                
@@ -158,7 +162,7 @@ body {
  	                <input type="number" class="form-control" name="quantity" placeholder="1" type="text"> 
              		</div>   --> 
 
-             	<div class="dropdown">
+             	<!-- <div class="dropdown">
 	                <button class="btn btn-default dropdown-toggle" id="quantity-button" type="button" data-toggle="dropdown">Category
 	                <span class="caret"></span></button>
 	                  <ul class="dropdown-menu" role="menu" aria-labelledby="quantityitem">
@@ -169,7 +173,17 @@ body {
 	                    <li role="presentation"><a role="quantityitem" tabindex="1" href="#"> Electronics </a></li>
 	                    <li role="presentation"><a role="quantityitem" tabindex="1" href="#"> Other </a></li>
 	                  </ul>
-             	 </div>
+             	 </div> -->
+
+             	 <div class="btn-group btn-group-lg" id="categoryOptions">
+					<label>Category</label>
+				  <button type="button" class="btn btn-secondary">Books</button>
+				  <button type="button" class="btn btn-secondary">Office Supplies</button>
+				  <button type="button" class="btn btn-secondary">Clothing</button>
+				  <button type="button" class="btn btn-secondary">Furniture</button>
+				  <button type="button" class="btn btn-secondary">Electronics</button>
+				  <button type="button" class="btn btn-secondary">Other</button>
+				</div>
 
             </div>
             
