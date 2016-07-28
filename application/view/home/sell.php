@@ -99,10 +99,16 @@ body {
 	line-height: 300%;
 }
 }
-#conditions-button, #quantity-button, #delivery-button, #submit-button{
+#conditions-button, #quantity-button, #delivery-button{
 	border-color: #cccccc;
 	margin-top: 15px;
 	margin-bottom: 15px;
+
+}
+
+#submit-button{
+	border-color: #cccccc;
+	background-color: #d6f5d6;
 
 }
 </style>
@@ -138,6 +144,7 @@ body {
 				  <option value="Electronics">Electronics</option>
 				  <option value="Other">Other</option>
 				</select>
+				<br>
 
 
 
