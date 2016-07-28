@@ -136,7 +136,7 @@
   <div class="navbar-collapse collapse" id="myNavbar">
     <ul class="nav navbar-nav navbar-left">
         <li>
-            <div class="dropdown">
+            <!-- <div class="dropdown">
                 <button class="btn btn-default dropdown-toggle" type="button" id="menuitem" data-toggle="dropdown">All
                 <span class="caret"></span></button>
                   <ul class="dropdown-menu" role="menu" aria-labelledby="menuitem">
@@ -148,7 +148,16 @@
                     <li role="presentation"><a role="menuitem" tabindex="1" href="#">Electronic Supplies</a></li>
                     <li role="presentation"><a role="menuitem" tabindex="1" href="#">Other</a></li>
                   </ul>
-              </div>
+              </div> -->
+
+              <select class="form-control" id="menuitem">
+                <option value="Books">Books</option>
+                <option value="Office Supplies">Office Supplies</option>
+                <option value="Clothing">Clothing</option>
+                <option value="Furniture">Furniture</option>
+                <option value="Electronics">Electronics</option>
+                <option value="Other">Other</option>
+              </select>
           </li>
 
         <li>
