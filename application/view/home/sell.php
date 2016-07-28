@@ -99,7 +99,7 @@ body {
 	line-height: 300%;
 }
 }
-#conditions-button, #quantity-button, #delivery-button{
+#conditions-button, #quantity-button, #delivery-button, #submit-button{
 	border-color: #cccccc;
 	margin-top: 15px;
 	margin-bottom: 15px;
@@ -129,7 +129,7 @@ body {
 				  <option value="New">New</option>
 				  <option value="Used">Used</option>
 				</select>
-
+				<br>
              	 <select class="form-control">
 				  <option value="Books">Books</option>
 				  <option value="Office Supplies">Office Supplies</option>
@@ -182,11 +182,11 @@ body {
  	                <label>Description: </label> 
 					<textarea class="form-control" id="comments" name="Description" placeholder="Describe your item here!" rows="5"></textarea></label><br>
              	</div>
+
+             	<input type="submit" value="Submit" id="submit-button" class="btn btn-lg btn-default" /> 
             </div>
 
-       		<input type="submit" value="Submite" id="request-submit" class="btn btn-lg" /> 
-        
-                  
+                         
     </form>
 </div>
 </br></br></br></br></br>
