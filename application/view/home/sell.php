@@ -135,7 +135,7 @@ body {
 				  </div>
 				</div>
 
-				<select class="selectpicker">
+				<select class="form-control">
 				  <option value="New">New</option>
 				  <option value="Used">Used</option>
 				</select>
