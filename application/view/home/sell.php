@@ -125,15 +125,17 @@ body {
 	                <input class="form-control" name="price" placeholder="$10" type="text">
             	</div>
 
-            	<div class="btn-group">
-				  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				    Action <span class="caret"></span>
+				<div class="dropdown open">
+				  <button class="btn btn-secondary dropdown-toggle" type="button" id="ConditionButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				    Condition
 				  </button>
-				  <ul class="dropdown-menu">
-				    <li><a href="#">New</a></li>
-				    <li><a href="#">Used</a></li>
-				  </ul>
+				  <div class="dropdown-menu" aria-labelledby="ConditionButton">
+				    <a class="dropdown-item" href="#">New</a>
+				    <a class="dropdown-item" href="#">Used</a>
+				  </div>
 				</div>
+
+
 
             	<!-- <div class="dropdown">
 	                <button class="btn btn-default dropdown-toggle" id="conditions-button" type="button" data-toggle="dropdown">Condition
