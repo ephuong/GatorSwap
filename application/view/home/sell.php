@@ -125,54 +125,19 @@ body {
 	                <input class="form-control" name="price" placeholder="$10" type="text">
             	</div>
 
-			<div class="dropdown open">
-				  <button class="btn btn-secondary dropdown-toggle" type="button" id="ConditionButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				    Condition
-				  </button>
-				  <div class="dropdown-menu" aria-labelledby="ConditionButton">
-				    <a class="dropdown-item" href="#">New</a>
-				    <a class="dropdown-item" href="#">Used</a>
-				  </div>
-				</div>
-
 				<select class="form-control">
 				  <option value="New">New</option>
 				  <option value="Used">Used</option>
 				</select>
 
-            	<div class="dropdown">
-	                <button class="btn btn-default dropdown-toggle" id="conditions-button" type="button" data-toggle="dropdown">Condition
-	                <span class="caret"></span></button>
-	                  <ul class="dropdown-menu" role="menu" aria-labelledby="condition-button">
-	                    <li role="presentation"><a role="conditionitem" tabindex="1" href="#">New</a></li>
-	                    <li role="presentation"><a role="conditionitem" tabindex="1" href="#">Used</a></li>
-	                  </ul>
-             	 </div>
-
-
-		  		<div class="form-group">                
-	                <label>Condition</label> 
-	                <input class="form-control" name="condition" placeholder="Good" type="text"> 
-            	</div>
-
-
-                     <div class="form-group">                
- 	                <label>Quantity</label> 
- 	                <input type="number" class="form-control" name="quantity" placeholder="1" type="text"> 
-             		</div>   
-
-             	<div class="dropdown">
-	                <button class="btn btn-default dropdown-toggle" id="quantity-button" type="button" data-toggle="dropdown">Category
-	                <span class="caret"></span></button>
-	                  <ul class="dropdown-menu" role="menu" aria-labelledby="quantityitem">
-	                    <li role="presentation"><a role="quantityitem" tabindex="1" href="#"> Books </a></li>
-	                    <li role="presentation"><a role="quantityitem" tabindex="1" href="#"> Office Supplies </a></li>
-	                    <li role="presentation"><a role="quantityitem" tabindex="1" href="#"> Clothing </a></li>
-	                    <li role="presentation"><a role="quantityitem" tabindex="1" href="#"> Furniture </a></li>
-	                    <li role="presentation"><a role="quantityitem" tabindex="1" href="#"> Electronics </a></li>
-	                    <li role="presentation"><a role="quantityitem" tabindex="1" href="#"> Other </a></li>
-	                  </ul>
-             	 </div>
+             	 <select class="form-control">
+				  <option value="Books">Books</option>
+				  <option value="Office Supplies">Office Supplies</option>
+				  <option value="Clothing">Clothing</option>
+				  <option value="Furniture">Furniture</option>
+				  <option value="Electronics">Electronics</option>
+				  <option value="Other">Other</option>
+				</select>
 
 
 
@@ -192,7 +157,7 @@ body {
 	                <input class="form-control" name="delivery" placeholder="I can deliver the item to your location." type="text"> 
             	</div> -->
 
-            	<div class="dropdown">
+            	<!-- <div class="dropdown">
 	                <button class="btn btn-default dropdown-toggle" id="delivery-button" type="button" data-toggle="dropdown">Preferred Delivery
 	                <span class="caret"></span></button>
 	                  <ul class="dropdown-menu" role="menu" aria-labelledby="deliveryitem">
@@ -200,7 +165,7 @@ body {
 	                    <li role="presentation"><a role="delivery" tabindex="1" href="#"> Come pick up </a></li>
 	                    <li role="presentation"><a role="delivery" tabindex="1" href="#"> Deliver/Ship </a></li>
 	                  </ul>
-             	 </div>
+             	 </div> -->
 
             	<div class="form-group">                
 	                <label>Add Image: </label> 
@@ -218,7 +183,8 @@ body {
 					<textarea class="form-control" id="comments" name="Description" placeholder="Describe your item here!" rows="5"></textarea></label><br>
              	</div>
             </div>
-       		<button type="button" class="btn btn-lg btn-primary btn-block ">  Submit  </button>	 
+
+       		<input type="submit" value="Submite" id="request-submit" class="btn btn-lg" /> 
         
                   
     </form>
