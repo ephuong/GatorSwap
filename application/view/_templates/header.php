@@ -101,6 +101,8 @@
    padding-left: 15px;
    padding-right: 15px;
    margin-top: 10px;
+   margin-left: 10px;
+   margin-right: 10px;
  }
  
  .search-input {
@@ -151,12 +153,12 @@
               </div> -->
 
               <select class="form-control" id="menuitem">
+                <option value="All">All</option>
                 <option value="Books">Books</option>
                 <option value="Office Supplies">Office Supplies</option>
                 <option value="Clothing">Clothing</option>
                 <option value="Furniture">Furniture</option>
                 <option value="Electronics">Electronics</option>
-                <option value="Other">Other</option>
               </select>
           </li>
 
