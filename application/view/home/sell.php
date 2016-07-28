@@ -131,11 +131,14 @@ body {
 	                <input class="form-control" name="price" placeholder="$10" type="text">
             	</div>
 
+            	<label>Condition:</label>
 				<select class="form-control">
 				  <option value="New">New</option>
 				  <option value="Used">Used</option>
 				</select>
 				<br>
+
+				<label>Category:</label>
              	 <select class="form-control">
 				  <option value="Books">Books</option>
 				  <option value="Office Supplies">Office Supplies</option>
