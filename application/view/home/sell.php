@@ -125,7 +125,7 @@ body {
 	                <input class="form-control" name="price" placeholder="$10" type="text">
             	</div>
 
-<!-- 				<div class="dropdown open">
+			<div class="dropdown open">
 				  <button class="btn btn-secondary dropdown-toggle" type="button" id="ConditionButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				    Condition
 				  </button>
@@ -133,36 +133,30 @@ body {
 				    <a class="dropdown-item" href="#">New</a>
 				    <a class="dropdown-item" href="#">Used</a>
 				  </div>
-				</div> -->
-
-				<div class="btn-group btn-group-lg" id="conditionOptions">
-					<label>Condition</label>
-				  <button type="button" class="btn btn-secondary">New</button>
-				  <button type="button" class="btn btn-secondary">Used</button>
 				</div>
 
-            	<!-- <div class="dropdown">
+            	<div class="dropdown">
 	                <button class="btn btn-default dropdown-toggle" id="conditions-button" type="button" data-toggle="dropdown">Condition
 	                <span class="caret"></span></button>
 	                  <ul class="dropdown-menu" role="menu" aria-labelledby="condition-button">
 	                    <li role="presentation"><a role="conditionitem" tabindex="1" href="#">New</a></li>
 	                    <li role="presentation"><a role="conditionitem" tabindex="1" href="#">Used</a></li>
 	                  </ul>
-             	 </div> -->
+             	 </div>
 
 
-<!-- 		  		<div class="form-group">                
+		  		<div class="form-group">                
 	                <label>Condition</label> 
 	                <input class="form-control" name="condition" placeholder="Good" type="text"> 
-            	</div> -->
+            	</div>
 
 
-                     <!-- <div class="form-group">                
+                     <div class="form-group">                
  	                <label>Quantity</label> 
  	                <input type="number" class="form-control" name="quantity" placeholder="1" type="text"> 
-             		</div>   --> 
-
-             	<!-- <div class="dropdown">
+             		</div>   
+             		
+             	<div class="dropdown">
 	                <button class="btn btn-default dropdown-toggle" id="quantity-button" type="button" data-toggle="dropdown">Category
 	                <span class="caret"></span></button>
 	                  <ul class="dropdown-menu" role="menu" aria-labelledby="quantityitem">
@@ -173,17 +167,9 @@ body {
 	                    <li role="presentation"><a role="quantityitem" tabindex="1" href="#"> Electronics </a></li>
 	                    <li role="presentation"><a role="quantityitem" tabindex="1" href="#"> Other </a></li>
 	                  </ul>
-             	 </div> -->
+             	 </div>
 
-             	 <div class="btn-group btn-group-lg" id="categoryOptions">
-					<label>Category</label>
-				  <button type="button" class="btn btn-secondary">Books</button>
-				  <button type="button" class="btn btn-secondary">Office Supplies</button>
-				  <button type="button" class="btn btn-secondary">Clothing</button>
-				  <button type="button" class="btn btn-secondary">Furniture</button>
-				  <button type="button" class="btn btn-secondary">Electronics</button>
-				  <button type="button" class="btn btn-secondary">Other</button>
-				</div>
+
 
             </div>
             
@@ -201,7 +187,7 @@ body {
 	                <input class="form-control" name="delivery" placeholder="I can deliver the item to your location." type="text"> 
             	</div> -->
 
-            	<!-- <div class="dropdown">
+            	<div class="dropdown">
 	                <button class="btn btn-default dropdown-toggle" id="delivery-button" type="button" data-toggle="dropdown">Preferred Delivery
 	                <span class="caret"></span></button>
 	                  <ul class="dropdown-menu" role="menu" aria-labelledby="deliveryitem">
@@ -209,7 +195,7 @@ body {
 	                    <li role="presentation"><a role="delivery" tabindex="1" href="#"> Come pick up </a></li>
 	                    <li role="presentation"><a role="delivery" tabindex="1" href="#"> Deliver/Ship </a></li>
 	                  </ul>
-             	 </div> -->
+             	 </div>
 
             	<div class="form-group">                
 	                <label>Add Image: </label> 
