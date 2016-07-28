@@ -101,13 +101,13 @@
    padding-left: 15px;
    padding-right: 15px;
    margin-top: 10px;
-   margin-left: 10px;
-   margin-right: 10px;
  }
  
  .search-input {
    margin-top: 10px;
    width:450px !important;
+   margin-left: 10px;
+   margin-right: 10px;
  }
  
  #menuitem
