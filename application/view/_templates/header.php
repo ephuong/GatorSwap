@@ -108,7 +108,7 @@
    width:450px !important;
  }
  
- #options-button
+ #menuitem
  {
    padding-left: 20px;
    padding-right: 20px;
@@ -137,7 +137,7 @@
     <ul class="nav navbar-nav navbar-left">
         <li>
             <div class="dropdown">
-                <button class="btn btn-default dropdown-toggle" id="options-button" type="button" id="menuitem" data-toggle="dropdown">All
+                <button class="btn btn-default dropdown-toggle" type="button" id="menuitem" data-toggle="dropdown">All
                 <span class="caret"></span></button>
                   <ul class="dropdown-menu" role="menu" aria-labelledby="menuitem">
                     <li role="presentation"><a role="menuitem" tabindex="1" href="#">All</a></li>
