@@ -14,7 +14,7 @@ class ItemAction extends Controller
     {	
             
         // Insert new row in Account and setting the User's name in database using values inputted in the HTML form
-            $newItem = $this->itemModel->createItem($_POST["item_accid"], $_POST["item_title"], $_POST["item_category"], $_POST["item_price"], 
+        $newItem = $this->itemModel->createItem($_POST["item_accid"], $_POST["item_title"], $_POST["item_category"], $_POST["item_price"], 
                        $_POST["item_desc"], $_POST["item_condition"] );
 		
     }

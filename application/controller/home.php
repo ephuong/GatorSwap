@@ -28,18 +28,7 @@ class Home extends Controller
     }
  
    
-    /**
-     * PAGE: profile
-     * This method handles what happens when you move to http://yourproject/home/exampletwo
-     * The camelCase writing is just for better readability. The method name is case-insensitive.
-     */
-    public function profile()
-    {
-        // load views
-        require APP . 'view/_templates/header.php';
-        require APP . 'view/home/profile.php';
-        require APP . 'view/_templates/footer.php';
-    }
+    
 
     /**
      * PAGE: cart

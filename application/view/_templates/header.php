@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
     
@@ -15,16 +17,9 @@
 <nav class="navbar navbar-default navbar-inverse" role="navigation">
   <a class="navbar-left" href="<?php echo URL; ?>home/index"><img id="logo" src="https://s31.postimg.org/5s7zczl7f/Gator_Swap_Logo.jpg" alt="GatorSwap" width="65" height="55"></a>
 
-  <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-<!--         <a class="navbar-brand" href="<?php echo URL; ?>home/index"><img id="logo" src="https://s31.postimg.org/5s7zczl7f/Gator_Swap_Logo.jpg" alt="GatorSwap" width="125" height="75"></img></a>
- -->    </div>
+ 
 
-  <div class="navbar-collapse collapse" id="myNavbar">
+ <div class="navbar-collapse collapse">
     <ul class="nav navbar-nav navbar-left">
         <li>
   
@@ -54,7 +49,7 @@
         <li id="signinLink"><a href="<?php echo URL; ?>signin/index" class="headerLinks"><span class="glyphicon glyphicon-log-in headerLinks"></span> Sign In</a></li>
         <li id="registerLink"><a href="<?php echo URL; ?>register/index" class="headerLinks"><span class="glyphicon glyphicon-log-in headerLinks"></span> Register</a></li>
         <li id="logoutLink"><a href="<?php echo URL; ?>signin/index" class="headerLinks"><span class="glyphicon glyphicon-log-in headerLinks"></span> Logout</a></li>
-        <li id="profileLink"><a href="<?php echo URL; ?>home/profile" class="headerLinks"><span class="glyphicon glyphicon-user headerLinks"></span>
+        <li id="profileLink"><a href="<?php echo URL; ?>profile/index" class="headerLinks"><span class="glyphicon glyphicon-user headerLinks"></span>
         <?php
            if(isset($_SESSION["login"])){
                if($_SESSION["login"])
@@ -73,7 +68,7 @@
           else 
            {
               //Logout
-             echo "
+            echo "
             <script type=\"text/javascript\">
               $('#signinLink').show();
               $('#logoutLink').hide();

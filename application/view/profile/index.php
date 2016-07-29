@@ -1,3 +1,9 @@
+<?php
+if(!session_id())
+   {
+    session_start();  
+   }
+   ?>
 <style>
  @import "bourbon";
 
@@ -115,33 +121,29 @@ body {
             <div class="col-md-6">
 
                 <div class="form-group">
-	                <label>First Name</label>
-	                <input class="form-control" name="firstname" placeholder="Your First Name" type="text">
+	                <label>First Name</label></br>
+	                <label><?php echo $_SESSION['firstname'] ?></label>
             	</div>
 
             	<div class="form-group">
-	                <label>Last Name</label>
-	                <input class="form-control" name="lastname" placeholder="Your Last Name" type="text">
+	                <label>Last Name</label></br>
+                        <label><?php if(isset($_SESSION['lastname'])){ echo $_SESSION['lastname']; }?></label>
             	</div>
 
 		  <div class="form-group">
-	                <label>UserName</label>
-	                <input class="form-control" name="username" placeholder="Username" type="text">
+	                <label>UserName</label></br>
+                        <label><?php if(isset($_SESSION['username'])){ echo $_SESSION['username'] ;}?></label>
             	</div>
                   <div class="form-group">
-	                <label>SFSU E-mail</label>
-	                <input class="form-control" name="email" placeholder="....@mail.sfsu.edu" type="email" data-error="Bruh, that email address is invalid" required>
+	                <label>SFSU E-mail</label></br>
+                        <label><?php if(isset($_SESSION['username'])){ echo $_SESSION['username']."@mail.sfsu.edu" ;} ?></label>
 
                 </div>
 
                 <div class="form-group">
 	                <label>SFSU ID:</label>
-	                <input class="form-control" name="sfsu_id" placeholder="SFSU ID" type="text">
+                        <label><?php if(isset($_SESSION['student_id'])){ echo  $_SESSION['student_id']; }?></label>
             	</div>
-
-
-
-
 
             </div>
 
@@ -151,75 +153,32 @@ body {
 
                 <div class="form-group">
 	                <label>Phone Number</label>
-	                <input class="form-control" name="phoneNumber" placeholder="Phone Number" type="text">
+                        <label><?php if(isset($_SESSION['phone'])){echo  $_SESSION['phone']; }?></label>
             	</div>
 
 
 
                 <div class="form-group">
 	                <label>Address:</label>
-	                <input class="form-control" name="address"  placeholder="1600 Holloway Ave" type="text">
+	               <label><?php if(isset($_SESSION['address'])){ echo  $_SESSION['address'];} ?></label>
             	</div>
         <div class="form-group">
 	                <label>City</label>
-	                <input class="form-control"  name="city" placeholder="City" type="text">
+                        <label><?php if(isset($_SESSION['city'])){ echo $_SESSION['city']; }?></label>
             	</div>
         <div class="form-group">
 	                <label>Zipcode</label>
-	                <input class="form-control" name="zipcode" placeholder="Zipcode" type="text">
+                        <label><?php if(isset($_SESSION['zipcode'])){ echo  $_SESSION['zipcode'] ;}?></label>
             	</div>
-				</div>
-				<button type="button" class="btn btn-lg btn-primary btn-block ">  Done  </button>
-
-
+</div>
+		
 
        </div>
 
     </form>
 </div>
 </br></br></br></br></br>
-<script>
-
-   $('#backToTopBtn').click(function(){
-        $('html,body').animate({scrollTop:0},'slow');return false;
-    });
-   // $(".Title").on("click", function( e ) {
-
-       // e.preventDefault();
-
-       // $("body, html").animate({
-       //     scrollTop: $( $(this).attr('href') ).offset().top
-      //  }, 5000);
-
-    //});
-
-    $('a[href^="#"]').on('click', function(event) {
-    var target = $(this.getAttribute('href'));
-    if( target.length ) {
-        event.preventDefault();
-        $('html, body').stop().animate({
-            scrollTop: target.offset().top
-        }, 10000);
-    }
-});
-    </script>
 
 
-<?php
-if(isset($_POST['submit'])){
-    $firstname = $_POST['firstname'];
- $lastname = $_POST['lastname'];
- $username = $_POST['username'];
-
- $password = $_POST['password'];
- $confirmPassword = $_POST['confirmPassword'];
- $email = $_POST['email'];
- $sfsu_id = $_POST['sfsu_id'];
- $phoneNumber = $_POST['phoneNumber'];
- $address = $_POST['address'];
- $city = $_POST['city'];
- $zipcode = $_POST['zipcode'];
-}
 
 
-?>
