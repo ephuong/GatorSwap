@@ -13,7 +13,7 @@
   margin-top: -55px;
 }
 #lastHomeIndex{
-  margin-bottom: -55px;
+  margin-bottom: 55px;
 }
 
 </style>
