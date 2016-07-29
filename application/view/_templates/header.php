@@ -124,6 +124,11 @@
 
  }
 
+ #navBarLinks{
+  margin-top:33px;
+
+ }
+
    
   </style>
  
@@ -131,7 +136,7 @@
 </head>
 <body>
 <nav class="navbar navbar-default navbar-inverse" role="navigation">
-  <a class="navbar-left" href="<?php echo URL; ?>home/index"><img id="logo" src="https://s31.postimg.org/5s7zczl7f/Gator_Swap_Logo.jpg" alt="GatorSwap" width="65" height="55"></img></a>
+  <a class="navbar-left" href="<?php echo URL; ?>home/index"><img id="logo" src="https://s31.postimg.org/5s7zczl7f/Gator_Swap_Logo.jpg" alt="GatorSwap" width="105" height="95"></img></a>
 
   <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -143,6 +148,7 @@
  -->    </div>
 
   <div class="navbar-collapse collapse" id="myNavbar">
+    <div class="row" id="navBarLinks">
     <ul class="nav navbar-nav navbar-left">
         <li>
             <!-- <div class="dropdown">
@@ -176,6 +182,7 @@
             <button class="btn btn-success-outline" id="search-button" name="search" value="Search"><span class="glyphicon glyphicon-search"></span></button>
           </form>
       </li>
+    </div>
     </ul>
 
 
