@@ -93,7 +93,7 @@
     <h2 id="noResults"> No results found! :[
         <?php 
 
-        if(echo $results["count"] <= 0){
+        if($results["count"] <= 0){
             echo "
             <script type=\"text/javascript\">
               $('#results').hide();
