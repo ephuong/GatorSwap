@@ -90,12 +90,12 @@ if(isset($_POST['user_submit'])){
      $sfsuIdLength= "Please type you 9 digit sfsu id";
  }
  
- /*
+ 
  if((strlen($phoneNumber))< 10 && (strlen($phoneNumber))>10)
  {   
     $phoneNumberError= "Please type a 10 digit valid phonenumber";  
  }
- */
+ 
  //Check the length of the username
  if((strlen($username))< 3)
  {
@@ -156,7 +156,7 @@ if(isset($_POST['user_submit'])){
 
               
                 <div class="form-group">                
-	                <label>SFSU E-mail / Username</label> 
+	                <label>SFSU E-mail</label> 
 	                <input class="form-control" name="email" placeholder="Email" type="email" data-error="Bruh, that email address is invalid" required> 
             	        <?php if(isset($emailValidation)){echo "<p class='text-danger'>$emailValidation</p>";}?>
                   <b Style = "font-size: 80% ">Example: <i Style = "color:blue">jdoe@mail.sfsu.edu</i> is <b Style = "color:blue">jdoe</b></b>

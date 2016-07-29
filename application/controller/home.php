@@ -106,6 +106,10 @@ class Home extends Controller
     
 	public function sell ()
 	{
+             if (!session_id())
+         {   
+                 session_start();  
+         }
 	 require APP . 'view/_templates/header.php';
 	require APP . 'view/home/sell.php';
 	require APP . 'view/_templates/footer.php';
