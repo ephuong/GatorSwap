@@ -49,9 +49,8 @@
       </div>
     </div>
   </div>
-</div><br>
+<br>
 
-<div class="container">
   <div class="row">
     <div class="col-sm-4">
       <div class="panel panel-primary">
@@ -75,4 +74,5 @@
       </div>
     </div>
   </div>
-</div><br><br>
+</div> <!-- container -->
+<br><br>
