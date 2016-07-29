@@ -9,13 +9,20 @@
   border-color: #53565a
 }
 
+#welcomeText{
+  margin-top: -55px;
+}
+#lastHomeIndex{
+  margin-bottom: -55px;
+}
+
 </style>
 
 
 
 
 <div class="container">
-  <div class="row">
+  <div class="row" id="welcomeText">
     <div class="text-center">
       <div class="page-header">
           <h1>GatorSwap</h1>
@@ -51,7 +58,7 @@
   </div>
 <br>
 
-  <div class="row">
+  <div class="row" id="lastHomeIndex">
     <div class="col-sm-4">
       <div class="panel panel-primary">
         <div class="panel-heading text-center">Furniture</div>
