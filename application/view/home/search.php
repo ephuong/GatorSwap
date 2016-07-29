@@ -88,7 +88,30 @@
 <body style = "background-color:#F0f0f0; padding-bottom:50px;">
     
 <div class="container" >
-    <h2>Search: <?php echo $results["count"]; ?> result(s)</h2>
+
+    <h2 id="results"> Search: <?php echo $results["count"]; ?> result(s) </h2>
+    <h2 id="noResults"> No results found! :[
+        <?php 
+
+        if(echo $results["count"] <= 0){
+            echo "
+            <script type=\"text/javascript\">
+              $('#results').hide();
+              $('#noResults').show();
+              </script>
+              ";
+        }else{
+            echo "
+            <script type=\"text/javascript\">
+              $('#results').show();
+              $('#noResults').hide();
+              </script>
+              ";
+        }
+
+
+        ?>
+    </h2>
    <!-- <div class="well well-sm">
         <strong>Category Title</strong>
         <div class="btn-group">
