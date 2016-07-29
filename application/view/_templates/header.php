@@ -182,7 +182,6 @@
             <button class="btn btn-success-outline" id="search-button" name="search" value="Search"><span class="glyphicon glyphicon-search"></span></button>
           </form>
       </li>
-    </div>
     </ul>
 
 
@@ -229,6 +228,7 @@
            </a>
         </li>
       </ul>
+      </div>
   </div>
 </nav>
 
