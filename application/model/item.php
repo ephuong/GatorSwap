@@ -38,23 +38,23 @@ class Item extends Model
         
           foreach ($keywordarray as $word)
           {
-            $searchString = $searchString . " +" . $word . "*" ; 
+            $searchString = $searchString . " +" . $word . "" ; 
           }
         }
       
         try {		
 			//Query for searching the Item table using the search keyword
-			$sql = "SELECT I.Item_ID, I.Title, I.Category, I.Price, Description, Im.IMG, Match(I.Title,  I.Description) 
+			$sql = "SELECT I.Item_ID, I.Title, I.Category_ID, I.Price, Description, Im.IMG, Match(I.Title,  I.Description) 
 					AGAINST ('". $searchString . "') AS score FROM Item I, Item_Img Im WHERE 
 					Match(I.Title, I.Description, I.Details) AGAINST ('" . $searchString . "' IN BOOLEAN MODE) AND I.Item_ID = Im.Item_ID AND Is_Visible = 1 " ;
          
             //Filtering by case   
             $category = strtolower($category);
             switch($category ) {
-                case "all" :
+                case "1" :
                     break;
                 default:
-                    $sql = $sql . "AND I.Category = '" . $category . "' ";
+                    $sql = $sql . "AND I.Category_ID = '" . $category . "' ";
                     break;
             }
             
