@@ -16,6 +16,17 @@
 
 <div class="container">
   <div class="row">
+    <div class="text-center">
+      <div class="page-header">
+          <h1>GatorSwap</h1>
+        </div>
+        <p>
+          San Francisco State University's Marketplace 
+        </p>
+    </div>
+  </div>
+
+  <div class="row">
     <div class="col-sm-4">
       <div class="panel panel-primary">
         <div class="panel-heading">Books</div>
