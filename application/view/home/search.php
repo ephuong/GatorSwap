@@ -1,48 +1,4 @@
-<!--
-<head>
-    <link rel="stylesheet" href="<?php echo URL; ?>css/vp.css">
-</head>
 
-<div class="container">
-
-<!-- Table for search results 
-<div id="user-table">
-    <h2>Search: <?php echo $results["count"]; ?> result(s)</h2>
-    <table>
-        <thead style="background-color: #ddd; font-weight: bold;">
-            <tr>
-                <td>Item ID</td>
-                <td>Title</td>
-                <td>Category</td>
-                <td>Description</td>
-                <td>Price</td>
-                <td>Image</td>
-            </tr>
-        </thead>
-
-        <tbody>
-<?php foreach ($results["results"] as $result) { ?>
-                <tr>
-                    <td><?php if (isset($result->Item_ID)) echo htmlspecialchars($result->Item_ID, ENT_QUOTES, 'UTF-8'); ?></td>
-                    <td><?php if (isset($result->Title)) echo htmlspecialchars($result->Title, ENT_QUOTES, 'UTF-8'); ?></td>
-                    <td><?php if (isset($result->Category)) echo htmlspecialchars($result->Category, ENT_QUOTES, 'UTF-8'); ?></td>
-                    <td><?php if (isset($result->Description)) echo htmlspecialchars($result->Description, ENT_QUOTES, 'UTF-8'); ?></td>
-                    <td><?php if (isset($result->Price)) echo htmlspecialchars($result->Price, ENT_QUOTES, 'UTF-8'); ?></td>
-                    <td>
-    <?php
-    if (isset($result->IMG)) {
-        echo '<img style="width:50%" src="data:image/jpg;base64,' . base64_encode($result->IMG) . '" />';
-    }
-    ?>
-                    </td>
-                </tr>
-<?php } ?>
-        </tbody>
-    </table>
-</div>
-</div>
-
--->
 <!--<head>
     <title>Search Display Items</title>
     <meta charset="utf-8">
@@ -86,21 +42,13 @@
      </script> 
 </head>-->
 <body style = "background-color:#F0f0f0;">
+    <div class="container">
+		<h2>Search: <?php echo $results["count"]; ?> results</h2>
 
-    <div class="container" >
-        <h2>Search: <?php echo $results["count"]; ?> result(s)</h2>
-        <!-- <div class="well well-sm">
-             <strong>Category Title</strong>
-             <div class="btn-group">
-                 <a href="#" id="list" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-th-list">
-                 </span>List</a> <a href="#" id="grid" class="btn btn-default btn-sm"><span
-                     class="glyphicon glyphicon-th"></span>Grid</a>
-             </div>
-         </div> -->
         <div id="products" class="row list-group is-table-row" >
+		
             <?php foreach ($results["results"] as $result) { ?>
-                <div class="item col-xs-6 col-md-3 " >
-                  
+                <div class="item col-xs-6 col-md-3 " > 
                     <div class="thumbnail" >
                         <?php
                         if (isset($result->IMG) && !empty($result->IMG)) {
@@ -115,9 +63,9 @@
                             <h5 class="group inner "> 
                                 <b> <?php if (isset($result->Category)) echo htmlspecialchars($result->Category, ENT_QUOTES, 'UTF-8'); ?> </b></h5>
 
-                          <!--  <p class="group inner list-group-item-text"> 
+                           <p class="group inner list-group-item-text"> 
                                 <?php if (isset($result->Description)) echo htmlspecialchars($result->Description, ENT_QUOTES, 'UTF-8'); ?>
-                            </p>  -->
+                            </p>
                             <hr style ="border-color:black">
 
                             <div class="row ">
@@ -192,5 +140,4 @@
 
 
 </body>
-</html>
 

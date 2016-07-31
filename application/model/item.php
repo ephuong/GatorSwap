@@ -23,7 +23,6 @@ class Item extends Model
 	 */
 	public function searchItems($keyword, $category)
     {
-		echo $keyword . " " . $category;
 		$sql = "";
         
         if(empty($keyword) == true) {   

@@ -205,18 +205,18 @@
               </div> -->
 
 			<select class="form-control" id="menuitem" name="search-category">
-				<option value="1">All</option>
-				<option value="2">Books</option>
-				<option value="3">Office Supplies</option>
-				<option value="4">Clothing</option>
-				<option value="5">Furniture</option>
-				<option value="6">Electronics</option>
+				<option <?php echo isset($_POST['search-category']) && $_POST['search-category'] == 1 ? 'selected="' . $_POST['search-category'] . '" value="1"' : 'value="1"' ?>>All</option>
+				<option <?php echo isset($_POST['search-category']) && $_POST['search-category'] == 2 ? 'selected="' . $_POST['search-category'] . '" value="2"' : 'value="2"' ?>>Books</option>
+				<option <?php echo isset($_POST['search-category']) && $_POST['search-category'] == 3 ? 'selected="' . $_POST['search-category'] . '" value="3"' : 'value="3"' ?>>Office Supplies</option>
+				<option <?php echo isset($_POST['search-category']) && $_POST['search-category'] == 4 ? 'selected="' . $_POST['search-category'] . '" value="4"' : 'value="4"' ?>>Clothing</option>
+				<option <?php echo isset($_POST['search-category']) && $_POST['search-category'] == 5 ? 'selected="' . $_POST['search-category'] . '" value="5"' : 'value="5"' ?>>Furniture</option>
+				<option <?php echo isset($_POST['search-category']) && $_POST['search-category'] == 6 ? 'selected="' . $_POST['search-category'] . '" value="6"' : 'value="6"' ?>>Electronics</option>
 			</select> 
 		  </li>
 
         <li>
 			
-				<input class="form-control search-input" type="text" placeholder="Search" name="search-keyword">
+				<input class="form-control search-input" type="text" placeholder="Search for an item" name="search-keyword" value="<?php echo isset($_POST['search-keyword']) ? $_POST['search-keyword'] : '' ?>">
 				<button class="btn btn-success-outline" id="search-button" name="search" value="Search"><span class="glyphicon glyphicon-search"></span></button>
 			
 		</li>
@@ -270,6 +270,10 @@
   </div>
 </nav>
 
+<script>
+$(function() {
+	$(#menuItem).
+</script>
  <script>
 $(function(){
   
