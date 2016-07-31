@@ -126,15 +126,9 @@
                         </div>
 	
                         <div class="col-xs-12 col-md-10">
-                            <a class="btn btn-success" href="#">Add to cart</a>
+                            <a class="btn btn-success" href="#">Buy</a>
                         </div>
-                        <div class="col-xs-12 col-md-10" style="padding-top:5px;">
-                            <a class="btn btn-danger" href ="#"  >
-                            <i class="glyphicon glyphicon-flag"></i>
-                                        Flag
-                              </a>
-                             
-                        </div>
+                        
                     </div>
                 </div>
             </div>
