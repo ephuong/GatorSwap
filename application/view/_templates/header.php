@@ -129,40 +129,44 @@
  <!-- Testing -->
  
 
- 
 .products {
   
-  margin-left: 5px;
-  margin-right: 5px ; 
+}
+
+
+.item 
+{
+     
+    height: 400px; 
+    position: relative; 
+    padding: 10px 10px 10px 10px;
+    box-sizing: border-box;
+
+ 
+}
+.inner-item {
+  
+  possition: static;
+  height :100%;
+  background-color: translucent;
+  padding-bottom: 0px;
+
 }
  .thumbnail
 {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     padding: 0px;
     -webkit-border-radius: 0px;
     -moz-border-radius: 0px;
     border-radius: 0px;
+    
+  
 }
 
-.item 
-{
+ .caption {
+   padding-bottom:10px;
 
-    background-color: translucent;
-    padding: 0px 0px 0px 0px;
-
-
-
-
- 
-}
-.item:after {
-  padding-bottom: 0px;
-}
-
-.item:nth-of-type(odd)
-{
-    background-color: #000000;
-}
+ }
 
    
   </style>

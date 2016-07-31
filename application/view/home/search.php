@@ -99,8 +99,9 @@
          </div> -->
         <div id="products" class="row list-group is-table-row" >
             <?php foreach ($results["results"] as $result) { ?>
-                <div class="item  col-xs-6 col-md-3" >
-                    <div class="thumbnail " >
+                <div class="item col-xs-6 col-md-3 " >
+                  
+                    <div class="thumbnail" >
                         <?php
                         if (isset($result->IMG) && !empty($result->IMG)) {
                             echo '<img style="max-height:250px; " class="group" src="data:image/jpg;base64,' . base64_encode($result->IMG) . '" alt=""/>';
@@ -108,10 +109,10 @@
                             echo ' <img style="height:250px;" class="group " src="http://placehold.it/400x250/000/fff" alt="" /> ';
                         }
                         ?>
-                        <div class="caption" style = "background-color:#FFFFFF;" >
-                            <h3 class="group inner list-group-item-heading">
+                        <div class= "caption list-group-text"  >
+                            <h3 class="group inner ">
                                 <b> <?php if (isset($result->Title)) echo htmlspecialchars($result->Title, ENT_QUOTES, 'UTF-8'); ?>  </b> </h3>
-                            <h5 class="group inner list-group-category"> 
+                            <h5 class="group inner "> 
                                 <b> <?php if (isset($result->Category)) echo htmlspecialchars($result->Category, ENT_QUOTES, 'UTF-8'); ?> </b></h5>
 
                           <!--  <p class="group inner list-group-item-text"> 
@@ -119,12 +120,12 @@
                             </p>  -->
                             <hr style ="border-color:black">
 
-                            <div class="row">
-                                <div class="col-xs-12 col-md-*">
+                            <div class="row ">
+                                <div class="col-xs-12 col-md-6">
                                     <p class="lead">
                                         <?php if (isset($result->Price)) echo "$" . htmlspecialchars($result->Price, ENT_QUOTES, 'UTF-8'); ?> </p>
                                 </div>
-                                 <div class="col-xs-12 col-xs-offset-6 col-md-* col-md-offset-6" style="position:relative">
+                                 <div class="col-xs-12 col-md-6">
                                     <a class="btn btn-warning " href="#">Buy it Now</a>
 
                                 </div>
@@ -132,7 +133,10 @@
 
                         </div>
                     </div>
+                    
+                    
                 </div>
+ 
             <?php } ?>
         </div>
     </div>
