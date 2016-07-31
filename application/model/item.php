@@ -23,12 +23,13 @@ class Item extends Model
 	 */
 	public function searchItems($keyword, $category)
     {
-      
-        $searchString = "";
+		$sql = "";
         
-        if(empty($keyword) == true) { 
-        
-          $searchString = "qazwsxedcasdfghytrtgbjhgfdrtyh"; 
+        if(empty($keyword) == true) {   
+		  //Query for searching the Item table when there's no keyword
+		  $sql = "SELECT I.Item_ID, I.Title, I.Category_ID, I.Price, Description, Im.IMG, I.List_Date as List_Order 
+				  FROM Item I, Item_Img Im 
+				  WHERE I.Item_ID = Im.Item_ID AND Is_Visible = 1 " ;
         }
         else {
         //Parse the string into an array
@@ -40,25 +41,27 @@ class Item extends Model
           {
             $searchString = $searchString . " +" . $word . "*" ; 
           }
+		  
+		  //Query for searching the Item table using the search keyword
+		  $sql = "SELECT I.Item_ID, I.Title, I.Category_ID, I.Price, Description, Im.IMG, 
+				    Match(I.Title,  I.Description) AGAINST ('". $searchString . "') AS List_Order 
+				  FROM Item I, Item_Img Im 
+				  WHERE Match(I.Title, I.Description, I.Details) AGAINST ('" . $searchString . "' IN BOOLEAN MODE) 
+					AND I.Item_ID = Im.Item_ID AND Is_Visible = 1 " ;
         }
       
         try {		
-			//Query for searching the Item table using the search keyword
-			$sql = "SELECT I.Item_ID, I.Title, I.Category_ID, I.Price, Description, Im.IMG, Match(I.Title,  I.Description) 
-					AGAINST ('". $searchString . "') AS score FROM Item I, Item_Img Im WHERE 
-					Match(I.Title, I.Description, I.Details) AGAINST ('" . $searchString . "' IN BOOLEAN MODE) AND I.Item_ID = Im.Item_ID AND Is_Visible = 1 " ;
-         
             //Filtering by case   
             $category = strtolower($category);
             switch($category ) {
-                case "1" :
+                case "All" :
                     break;
                 default:
                     $sql = $sql . "AND I.Category_ID = '" . $category . "' ";
                     break;
             }
             
-			$sql = $sql .	"ORDER BY Score DESC;";	
+			$sql = $sql .	"ORDER BY List_Order DESC;";	
 
 			$query = $this->db->prepare($sql);
 			$query->execute();
