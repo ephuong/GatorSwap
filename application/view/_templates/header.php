@@ -18,12 +18,14 @@
 
 
     }
-	.btn {
     
-    border-color: #46b8da;
-    padding-left: 50px;
-    padding-right: 50px;
-}
+
+
+	.btn {
+    font-size:16px;
+    block-align:center;
+     
+  }
 
     /* Remove the jumbotron's default bottom margin */
      .jumbotron {
@@ -123,6 +125,44 @@
   margin-right: 10px;
 
  }
+ 
+ <!-- Testing -->
+ 
+
+ 
+.products {
+  
+  margin-left: 5px;
+  margin-right: 5px ; 
+}
+ .thumbnail
+{
+    margin-bottom: 20px;
+    padding: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+}
+
+.item 
+{
+
+    background-color: translucent;
+    padding: 0px 0px 0px 0px;
+
+
+
+
+ 
+}
+.item:after {
+  padding-bottom: 0px;
+}
+
+.item:nth-of-type(odd)
+{
+    background-color: #000000;
+}
 
    
   </style>

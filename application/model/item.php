@@ -38,7 +38,7 @@ class Item extends Model
         
           foreach ($keywordarray as $word)
           {
-            $searchString = $searchString . " +" . $word . "" ; 
+            $searchString = $searchString . " +" . $word . "*" ; 
           }
         }
       
