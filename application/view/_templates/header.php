@@ -183,8 +183,9 @@
  -->    </div>
 
   <div class="navbar-collapse collapse" id="myNavbar">
+  <form class="form-inline pull-xs-right" action="<?php echo URL; ?>home/search" method="POST">
     <ul class="nav navbar-nav navbar-left">
-        <li>
+		<li>
             <!-- <div class="dropdown">
                 <button class="btn btn-default dropdown-toggle" type="button" id="menuitem" data-toggle="dropdown">All
                 <span class="caret"></span></button>
@@ -199,25 +200,25 @@
                   </ul>
               </div> -->
 
-              <select class="form-control" id="menuitem">
-                <option value="All">All</option>
-                <option value="Books">Books</option>
-                <option value="Office Supplies">Office Supplies</option>
-                <option value="Clothing">Clothing</option>
-                <option value="Furniture">Furniture</option>
-                <option value="Electronics">Electronics</option>
-              </select>
-          </li>
+			<select class="form-control" id="menuitem" name="search-category">
+				<option value="1">All</option>
+				<option value="2">Books</option>
+				<option value="3">Office Supplies</option>
+				<option value="4">Clothing</option>
+				<option value="5">Furniture</option>
+				<option value="6">Electronics</option>
+			</select> 
+		  </li>
 
         <li>
-          <form class="form-inline pull-xs-right" action="<?php echo URL; ?>home/search" method="POST">
-          
-            <input class="form-control search-input" type="text" placeholder="Search" name="search-keyword">
-            <button class="btn btn-success-outline" id="search-button" name="search" value="Search"><span class="glyphicon glyphicon-search"></span></button>
-          </form>
-      </li>
+			
+				<input class="form-control search-input" type="text" placeholder="Search" name="search-keyword">
+				<button class="btn btn-success-outline" id="search-button" name="search" value="Search"><span class="glyphicon glyphicon-search"></span></button>
+			
+		</li>
+	  
     </ul>
-
+</form>
 
     <ul class="nav navbar-nav navbar-right">     
         <li id="sellLink"><a href="<?php echo URL; ?>home/sell" class="headerLinks"><span class="glyphicon glyphicon-open headerLinks "></span> Sell An Item</a></li>

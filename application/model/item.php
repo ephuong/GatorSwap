@@ -23,6 +23,7 @@ class Item extends Model
 	 */
 	public function searchItems($keyword, $category)
     {
+		echo $keyword . " " . $category;
 		$sql = "";
         
         if(empty($keyword) == true) {   
@@ -30,9 +31,9 @@ class Item extends Model
 		  $sql = "SELECT I.Item_ID, I.Title, I.Category_ID, I.Price, Description, Im.IMG, I.List_Date as List_Order 
 				  FROM Item I, Item_Img Im 
 				  WHERE I.Item_ID = Im.Item_ID AND Is_Visible = 1 " ;
-        }
-        else {
-        //Parse the string into an array
+				  
+        } else {
+		  //Parse the string into an array
           $keywordarray = explode(" ",      $keyword);
       
           $searchString = "";
@@ -54,7 +55,7 @@ class Item extends Model
             //Filtering by case   
             $category = strtolower($category);
             switch($category ) {
-                case "All" :
+                case "1" :
                     break;
                 default:
                     $sql = $sql . "AND I.Category_ID = '" . $category . "' ";

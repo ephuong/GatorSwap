@@ -133,7 +133,7 @@ class Home extends Controller
     public function search()
     {
             if(isset($_POST["search"])) {
-			    $results = $this->itemModel->searchItems($_POST["search-keyword"], "All");
+			    $results = $this->itemModel->searchItems($_POST["search-keyword"], $_POST["search-category"]);
 		    }   
 
             require APP . 'view/_templates/header.php';
