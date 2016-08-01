@@ -43,29 +43,7 @@
 
 
     <ul class="nav navbar-nav navbar-right">  
-    <?php
-           if(isset($_SESSION["login"])){
-               if($_SESSION["login"])
-             {
-             
-             echo "
-            <script type=\"text/javascript\">
-              $('#sellLink').show();
-              </script>
-              ";
-             }
-           }      
-          else 
-           {
-              //Logout
-            echo "
-            <script type=\"text/javascript\">
-              $('#sellLink').hide();
-              </script>
-             "; 
-           }
-                       
-        ?>      
+       
         
   <li id="sellLink1"><a href="<?php echo URL; ?>checkLoginModal/index" data-remote="false" data-toggle="modal" data-target="#myModal" class="headerLinks"><span class="glyphicon glyphicon-open headerLinks "></span> Sell An Item</a></li> 
   <li id="sellLink2"><a href="<?php echo URL; ?>home/sell" class="headerLinks"><span class="glyphicon glyphicon-open headerLinks "></span> Sell An Item</a></li>
