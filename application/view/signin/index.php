@@ -80,9 +80,6 @@ body {
       echo "<p class='text-danger'>$errPassword</p>";
       }
       ?>
-      <label class="checkbox">
-        <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Remember me
-      </label>
        <div class="form-group">
         <div class="col-md-4 ">
             <div id="messages"></div>
