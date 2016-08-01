@@ -157,7 +157,14 @@ $( document ).ready(function() {
     
     <form class="form-sell" role="form" method="post" action="#">
         
-        <h3 id="hiddenDiv" style="color:red;">You Are Not Logged in!, Please log in and start selling!</h3>
+        <div class="alert alert-info" id="hiddenDiv" >
+			 <span class="glyphicon glyphicon-info-sign"></span>
+			 <strong> You are not signed in! Please</strong> 
+			 <a href="<?php echo URL; ?>signin/index">sign in</a>
+			 <strong> or </strong>
+			 <a href="<?php echo URL; ?>register/index">register</a>
+			 <strong>to start selling!</strong>
+		</div>
         
         
         <h3>Post An Item For Sale.</h3>
