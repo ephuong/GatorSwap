@@ -85,9 +85,49 @@
         });
      </script> 
 </head>-->
-<body style = "background-color:#F0f0f0;">
 
+<!--   <p> <?php if (isset($results["results"][1]->Title))
+{          echo $results["results"][1]->Title;
+} ?> </p>
+
+-->
+<body style = "background-color:#F0f0f0;">
+ <!-- Details Modal --> 
+ 
+<a href="item-modal.php" data-remote="false" data-toggle="modal" data-target="#myModal" class="btn btn-default">
+    Launch Modal
+</a>
+<!-- modal template -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            
+        
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body clearfix">
+                <img class="pull-left" src="#" width="256" height="256" alt="image">
+				<p></p>  
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+ <a id="item-modal" data-original-title="Preview" data-placement="top" class="data-tooltip" rel="tooltip" data-toggle="modal" href="#modal_2">Modal</a>
+ 
+ 
     <div class="container" >
+    
         <h2>Search: <?php echo $results["count"]; ?> result(s)</h2>
         <!-- <div class="well well-sm">
              <strong>Category Title</strong>
@@ -98,7 +138,12 @@
              </div>
          </div> -->
         <div id="products" class="row list-group is-table-row" >
-            <?php foreach ($results["results"] as $result) { ?>
+            <?php
+                  // Incrementing variable for details button 
+                  $rowID = 0;
+                  foreach ($results["results"] as $result) { ?>
+            
+            
                 <div class="item col-xs-6 col-md-3 " >
                   
                     <div class="thumbnail" >
@@ -118,6 +163,11 @@
                           <!--  <p class="group inner list-group-item-text"> 
                                 <?php if (isset($result->Description)) echo htmlspecialchars($result->Description, ENT_QUOTES, 'UTF-8'); ?>
                             </p>  -->
+                            
+                            
+                        <button href="item-modal.php" data-remote="false" data-toggle="modal" data-target="#myModal" class="btn btn-default" data-id = "<?php echo $rowID; ?>" > Details </button> 
+                            
+                            
                             <hr style ="border-color:black">
 
                             <div class="row ">
@@ -126,7 +176,7 @@
                                         <?php if (isset($result->Price)) echo "$" . htmlspecialchars($result->Price, ENT_QUOTES, 'UTF-8'); ?> </p>
                                 </div>
                                  <div class="col-xs-12 col-md-6">
-                                    <a class="btn btn-warning " href="#">Buy it Now</a>
+                                    <a class="btn btn-warning " href="#">Buy</a>
 
                                 </div>
                             </div>
@@ -137,21 +187,28 @@
                     
                 </div>
  
-            <?php } ?>
+            <?php
+                $rowID++; } ?>
         </div>
     </div>
 
-  <!--  <script>
-    $(document).ready(function() {
-    var maxHeight = 0;          
-    $(".equalize").each(function(){
-      if ($(this).height() > maxHeight) { maxHeight = $(this).height(); }
-    });         
-    $(".equalize").height(maxHeight);
-  }); 
-  </script> -->
+
     <script>
-        //Function to duplicate items 
+        //Function for ajax modal 
+ $("#myModal").on("show.bs.modal", function(e) {
+    var link = $(e.relatedTarget);
+    $(this).find(".modal-body").load(link.attr("href"));
+});
+
+ $(document).ready(function() {
+    $('#item-modal').click(function() {
+        var $modal = $('#item-modal');
+            $modal.load('item-modal.php', {'row_id': '2'},
+            function(){
+              $modal.modal('show');
+        });  
+    });
+});        
 
 
         $('.advenced').click(function (e) {
