@@ -94,32 +94,16 @@
 <body style = "background-color:#F0f0f0;">
  <!-- Details Modal --> 
  
-<a href="item-modal.php" data-remote="false" data-toggle="modal" data-target="#myModal" class="btn btn-default">
+<a href= "<?php echo URL; ?>itemmodal/index" data-remote="false" data-toggle="modal" data-target="#myModal" class="btn btn-default">
     Launch Modal
 </a>
+
 <!-- modal template -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            
-        
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-      </div>
-      <div class="modal-body clearfix">
-                <img class="pull-left" src="#" width="256" height="256" alt="image">
-				<p></p>  
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
     </div>
-  </div>
+</div>
 </div>
 
 
@@ -165,7 +149,7 @@
                             </p>  -->
                             
                             
-                        <button href="item-modal.php" data-remote="false" data-toggle="modal" data-target="#myModal" class="btn btn-default" data-id = "<?php echo $rowID; ?>" > Details </button> 
+                        <button href="<?php echo URL; ?>itemmodal/index" data-remote="false" data-toggle="modal" data-target="#myModal" class="btn btn-default" data-id = "<?php echo $rowID; ?>" > Details </button> 
                             
                             
                             <hr style ="border-color:black">
@@ -197,7 +181,7 @@
         //Function for ajax modal 
  $("#myModal").on("show.bs.modal", function(e) {
     var link = $(e.relatedTarget);
-    $(this).find(".modal-body").load(link.attr("href"));
+    $(this).find(".modal-content").load(link.attr("href"));
 });
 
  $(document).ready(function() {
