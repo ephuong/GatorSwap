@@ -18,12 +18,14 @@
 
 
     }
-	.btn {
     
-    border-color: #46b8da;
-    padding-left: 50px;
-    padding-right: 50px;
-}
+
+
+	.btn {
+    font-size:16px;
+    block-align:center;
+     
+  }
 
     /* Remove the jumbotron's default bottom margin */
      .jumbotron {
@@ -123,6 +125,48 @@
   margin-right: 10px;
 
  }
+ 
+ <!-- Testing -->
+ 
+
+.products {
+  
+}
+
+
+.item 
+{
+     
+    height: 400px; 
+    position: relative; 
+    padding: 10px 10px 10px 10px;
+    box-sizing: border-box;
+
+ 
+}
+.inner-item {
+  
+  possition: static;
+  height :100%;
+  background-color: translucent;
+  padding-bottom: 0px;
+
+}
+ .thumbnail
+{
+    margin-bottom: 10px;
+    padding: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    
+  
+}
+
+ .caption {
+   padding-bottom:10px;
+
+ }
 
    
   </style>
@@ -143,8 +187,9 @@
  -->    </div>
 
   <div class="navbar-collapse collapse" id="myNavbar">
+  <form class="form-inline pull-xs-right" action="<?php echo URL; ?>home/search" method="POST">
     <ul class="nav navbar-nav navbar-left">
-        <li>
+		<li>
             <!-- <div class="dropdown">
                 <button class="btn btn-default dropdown-toggle" type="button" id="menuitem" data-toggle="dropdown">All
                 <span class="caret"></span></button>
@@ -159,25 +204,24 @@
                   </ul>
               </div> -->
 
-              <select class="form-control" id="menuitem">
-                <option value="All">All</option>
-                <option value="Books">Books</option>
-                <option value="Office Supplies">Office Supplies</option>
-                <option value="Clothing">Clothing</option>
-                <option value="Furniture">Furniture</option>
-                <option value="Electronics">Electronics</option>
-              </select>
-          </li>
+			<select class="form-control" id="menuitem" name="search-category">
+                            <?php foreach ($categoryList as $category) { ?>
+                            <option value="<?php if(isset($category->Category_ID)) echo htmlspecialchars($category->Category_ID, ENT_QUOTES, 'UTF-8'); ?>">
+                            <?php if(isset($category->Category_Name)) echo htmlspecialchars($category->Category_Name, ENT_QUOTES, 'UTF-8'); ?>
+                            </option>
+                            <?php } ?>
+			</select> 
+		  </li>
 
         <li>
-          <form class="form-inline pull-xs-right" action="<?php echo URL; ?>home/search" method="POST">
-          
-            <input class="form-control search-input" type="text" placeholder="Search" name="search-keyword">
-            <button class="btn btn-success-outline" id="search-button" name="search" value="Search"><span class="glyphicon glyphicon-search"></span></button>
-          </form>
-      </li>
+			
+				<input class="form-control search-input" type="text" placeholder="Search" name="search-keyword">
+				<button class="btn btn-success-outline" id="search-button" name="search" value="Search"><span class="glyphicon glyphicon-search"></span></button>
+			
+		</li>
+	  
     </ul>
-
+</form>
 
     <ul class="nav navbar-nav navbar-right">     
         <li id="sellLink"><a href="<?php echo URL; ?>home/sell" class="headerLinks"><span class="glyphicon glyphicon-open headerLinks "></span> Sell An Item</a></li>

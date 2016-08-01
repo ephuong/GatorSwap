@@ -5,15 +5,20 @@
     width: 100%;
 }
 
-.footer{
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+
+.footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #efefef;
+  text-align: center;
 }
+
 </style>
 
-
-<footer class="container-fluid text-center footer" id="gatorSwapFooter">
+<footer>
 	<div class="container">
 		<div class="row">
 			<div class="col-md-2 col-md-offset-1"><a href="<?php echo URL; ?>home/about" title="About us" class="footerLinks"> About</a> </div>
@@ -24,6 +29,7 @@
 		</div> <!--Row-->
   	</div> <!--container-->
 </footer>
+
 </body>
 </html>
 
