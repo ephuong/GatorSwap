@@ -17,7 +17,6 @@
         }
 
 
-
         /* On small screens, set height to 'auto' for sidenav and grid */
         @media screen and (max-width: 767px) {
             .sidenav {
@@ -41,6 +40,7 @@
         });
      </script> 
 </head>-->
+
 <body style = "background-color:#F0f0f0;">
     <div class="container">
 		<h2>Search: <?php echo $results["count"]; ?> results</h2>
@@ -53,6 +53,7 @@
                         <?php
                         if (isset($result->IMG) && !empty($result->IMG)) {
                             echo '<img style="max-height:250px; " class="group" src="data:image/jpg;base64,' . base64_encode($result->IMG) . '" alt=""/>';
+
                         } else {
                             echo ' <img style="height:250px;" class="group " src="http://placehold.it/400x250/000/fff" alt="" /> ';
                         }
@@ -66,6 +67,7 @@
                            <p class="group inner list-group-item-text"> 
                                 <?php if (isset($result->Description)) echo htmlspecialchars($result->Description, ENT_QUOTES, 'UTF-8'); ?>
                             </p>
+							
                             <hr style ="border-color:black">
 
                             <div class="row ">
@@ -89,7 +91,7 @@
         </div>
     </div>
 
-  <!--  <script>
+  <!--<script>
     $(document).ready(function() {
     var maxHeight = 0;          
     $(".equalize").each(function(){
@@ -97,7 +99,7 @@
     });         
     $(".equalize").height(maxHeight);
   }); 
-  </script> -->
+  </script>-->
     <script>
         //Function to duplicate items 
 
@@ -138,6 +140,6 @@
         });
     </script>
 
-
 </body>
+
 

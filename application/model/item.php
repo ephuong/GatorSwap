@@ -4,6 +4,26 @@
  */
 class Item extends Model
 {
+    public function getCategories() 
+    {
+	try 
+        {
+            // Query for retrieving item categories from the database
+            $sql = "SELECT C.Category_ID, C.Category_Name  
+                    FROM Item_Category C;";
+
+            $query = $this->db->prepare($sql);
+            $query->execute();
+
+            $categoryList = $query->fetchAll();
+
+            return $categoryList;
+
+        } catch (PDOException $e) {
+                    echo $sql . "<br>" . $e->getMessage();
+        }
+    }
+        
     public function createItem($item_accid, $item_title, $item_category, $item_price, $item_desc, $item_condition)
     {
         $sql = "INSERT INTO Item(Account_ID, Title, Price, Category, Item_Condition, Description) 

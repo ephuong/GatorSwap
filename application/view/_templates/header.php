@@ -24,7 +24,6 @@
 	.btn {
     font-size:16px;
     block-align:center;
-     
   }
 
     /* Remove the jumbotron's default bottom margin */
@@ -184,7 +183,8 @@
         <span class="icon-bar"></span>
       </button>
 <!--         <a class="navbar-brand" href="<?php echo URL; ?>home/index"><img id="logo" src="https://s31.postimg.org/5s7zczl7f/Gator_Swap_Logo.jpg" alt="GatorSwap" width="125" height="75"></img></a>
- -->    </div>
+ -->    
+  </div>
 
   <div class="navbar-collapse collapse" id="myNavbar">
   <form class="form-inline pull-xs-right" action="<?php echo URL; ?>home/search" method="POST">
@@ -205,20 +205,22 @@
               </div> -->
 
 			<select class="form-control" id="menuitem" name="search-category">
-				<option <?php echo isset($_POST['search-category']) && $_POST['search-category'] == 1 ? 'selected="' . $_POST['search-category'] . '" value="1"' : 'value="1"' ?>>All</option>
-				<option <?php echo isset($_POST['search-category']) && $_POST['search-category'] == 2 ? 'selected="' . $_POST['search-category'] . '" value="2"' : 'value="2"' ?>>Books</option>
-				<option <?php echo isset($_POST['search-category']) && $_POST['search-category'] == 3 ? 'selected="' . $_POST['search-category'] . '" value="3"' : 'value="3"' ?>>Office Supplies</option>
-				<option <?php echo isset($_POST['search-category']) && $_POST['search-category'] == 4 ? 'selected="' . $_POST['search-category'] . '" value="4"' : 'value="4"' ?>>Clothing</option>
-				<option <?php echo isset($_POST['search-category']) && $_POST['search-category'] == 5 ? 'selected="' . $_POST['search-category'] . '" value="5"' : 'value="5"' ?>>Furniture</option>
-				<option <?php echo isset($_POST['search-category']) && $_POST['search-category'] == 6 ? 'selected="' . $_POST['search-category'] . '" value="6"' : 'value="6"' ?>>Electronics</option>
+				<?php foreach ($categoryList as $category) { 
+					if (isset($category->Category_ID))
+						$category_id = htmlspecialchars($category->Category_ID, ENT_QUOTES, 'UTF-8');
+					if (isset($category->Category_Name))
+						$category_name = htmlspecialchars($category->Category_Name, ENT_QUOTES, 'UTF-8');
+				?>
+				<option <?php echo isset($_POST['search-category']) && $_POST['search-category'] == $category_id ? 'selected="' . $_POST['search-category'] . '" value="' . $category_id . '"' : 'value="' . $category_id  . '"' ?>>
+					<?php echo $category_name; ?>
+				</option>
+				<?php } ?>
 			</select> 
-		  </li>
+		</li>
 
         <li>
-			
-				<input class="form-control search-input" type="text" placeholder="Search for an item" name="search-keyword" value="<?php echo isset($_POST['search-keyword']) ? $_POST['search-keyword'] : '' ?>">
-				<button class="btn btn-success-outline" id="search-button" name="search" value="Search"><span class="glyphicon glyphicon-search"></span></button>
-			
+			<input class="form-control search-input" type="text" placeholder="Search for an item" name="search-keyword" value="<?php echo isset($_POST['search-keyword']) ? $_POST['search-keyword'] : '' ?>">
+			<button class="btn btn-success-outline" id="search-button" name="search" value="Search"><span class="glyphicon glyphicon-search"></span></button>
 		</li>
 	  
     </ul>
