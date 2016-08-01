@@ -123,42 +123,15 @@ $( document ).ready(function() {
           
 </script>
 
-<?php
-           if(isset($_SESSION["login"])){
-               if($_SESSION["login"])
-             {
-             echo "
-            <script type=\"text/javascript\">
-              $( document ).ready(function() {
-    
-               $('#hiddenDiv').hide();  
-                 });
-              </script>
-              ";
-             }
-           }      
-          else 
-           {
-              //Logout
-            echo "
-            <script type=\"text/javascript\">
-              $( document ).ready(function() {
-    
-                $('#hiddenDiv').show();  
-                  });
-              </script>
-             "; 
-           
-           }
-                       
-           ?>  
 
+    
+       
 <div id="seller page" class="container">
     
     <form class="form-sell" role="form" method="post" action="#">
-        
+        <!--
         <h3 id="hiddenDiv" style="color:red;">You Are Not Logged in!, Please log in and start selling!</h3>
-        
+        -->
         
         <h3>Post An Item For Sale.</h3>
             <div class="col-md-6">

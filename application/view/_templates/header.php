@@ -42,20 +42,68 @@
     </ul>
 
 
-    <ul class="nav navbar-nav navbar-right">     
-        <li id="sellLink"><a href="<?php echo URL; ?>home/sell" class="headerLinks"><span class="glyphicon glyphicon-open headerLinks "></span> Sell An Item</a></li>
+    <ul class="nav navbar-nav navbar-right">  
+    <?php
+           if(isset($_SESSION["login"])){
+               if($_SESSION["login"])
+             {
+             
+             echo "
+            <script type=\"text/javascript\">
+              $('#sellLink').show();
+              </script>
+              ";
+             }
+           }      
+          else 
+           {
+              //Logout
+            echo "
+            <script type=\"text/javascript\">
+              $('#sellLink').hide();
+              </script>
+             "; 
+           }
+                       
+        ?>      
+        
+  <li id="sellLink1"><a href="<?php echo URL; ?>checkLoginModal/index" data-remote="false" data-toggle="modal" data-target="#myModal" class="headerLinks"><span class="glyphicon glyphicon-open headerLinks "></span> Sell An Item</a></li> 
+  <li id="sellLink2"><a href="<?php echo URL; ?>home/sell" class="headerLinks"><span class="glyphicon glyphicon-open headerLinks "></span> Sell An Item</a></li>
+     
+     <!-- modal template -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        
+            
+    </div>
+</div>
+</div>
+     
+     <script>
+                $("#myModal").on("show.bs.modal", function(e) {
+                var link = $(e.relatedTarget);
+            $(this).find(".modal-content").load(link.attr("href"));
+                });
+
+     </script>
+     
+     
         <li id="cartLink"><a href="<?php echo URL; ?>home/cart" class="headerLinks"><span class="glyphicon glyphicon-shopping-cart headerLinks"></span> Cart</a></li>
         <li id="signinLink"><a href="<?php echo URL; ?>signin/index" class="headerLinks"><span class="glyphicon glyphicon-log-in headerLinks"></span> Sign In</a></li>
         <li id="registerLink"><a href="<?php echo URL; ?>register/index" class="headerLinks"><span class="glyphicon glyphicon-log-in headerLinks"></span> Register</a></li>
         <li id="logoutLink"><a href="<?php echo URL; ?>signin/index" class="headerLinks"><span class="glyphicon glyphicon-log-in headerLinks"></span> Logout</a></li>
         <li id="profileLink"><a href="<?php echo URL; ?>profile/index" class="headerLinks"><span class="glyphicon glyphicon-user headerLinks"></span>
+        
         <?php
            if(isset($_SESSION["login"])){
                if($_SESSION["login"])
              {
-             echo $_SESSION['username'];
+              echo $_SESSION['username'];
              echo "
             <script type=\"text/javascript\">
+              $('#sellLink1').hide();
+              $('#sellLink2').show();
               $('#signinLink').hide();
               $('#registerLink').hide();
               $('#profileLink').show();
@@ -69,6 +117,8 @@
               //Logout
             echo "
             <script type=\"text/javascript\">
+              $('#sellLink2').hide();
+               $('#sellLink1').show();
               $('#signinLink').show();
               $('#logoutLink').hide();
               $('#profileLink').hide();
@@ -80,7 +130,7 @@
               } 
            }
                        
-           ?>  
+        ?>  
            </a>
         </li>
       </ul>
