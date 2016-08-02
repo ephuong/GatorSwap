@@ -1,10 +1,6 @@
-<?php
-// remove all session variables
 
-         
-?>
 <style>
-@import "bourbon";
+ @import "bourbon";
 
 body {
 	background: white;	
@@ -15,7 +11,7 @@ body {
   margin-bottom: 80px;
 }
 
-.form-sign-in {
+.form-signin {
   max-width: 380px;
   padding: 15px 35px 45px;
   margin: 0 auto;
@@ -63,9 +59,9 @@ body {
 </style>
 
   <div id="loginForm" class="wrapper" data-toggle="validator">
-      <form id="myForm" class="form-sign-in" method="post" action="<?php echo URL; ?>signin/login">       
+      <form id="myForm" class="form-signin" method="post" action="<?php echo URL; ?>signin/login">       
         <h3>Login or <a href="<?php echo URL; ?>register/index">Sign up</a> </h3>
-      <label for="username" control-label>Username</label>  
+      <label for="username" control-label">Username</label>  
       <input type="text" id="username" class="form-control" name="username" placeholder="Username" value="<?php if(isset($_POST['username'])){echo htmlspecialchars($_POST['username']); }?>" />
       <?php 
       if(isset($errUserName)){
@@ -73,13 +69,16 @@ body {
       }
       ?>
       </br>
-      <label for="pwd" control-label>Password</label> 
-      <input id="pwd" class="form-control" type="password"  name="password" placeholder="Password" /> 
+      <label for="pwd" control-label">Password</label> 
+      <input type="text" id="pwd" class="form-control" name="password" placeholder="Password" value="<?php if(isset($_POST['password'])){echo htmlspecialchars($_POST['password']); }?>"/> 
       <?php 
       if(isset($errPassword)){
       echo "<p class='text-danger'>$errPassword</p>";
       }
       ?>
+      <label class="checkbox">
+        <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Remember me
+      </label>
        <div class="form-group">
         <div class="col-md-4 ">
             <div id="messages"></div>
@@ -122,7 +121,10 @@ body {
          }
     });
 });
- 
+
+
+
+
 </script>
 
 

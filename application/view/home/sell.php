@@ -1,4 +1,5 @@
- <style>
+ 
+<style>
  @import "bourbon";
 
 body {
@@ -113,11 +114,24 @@ body {
 }
 </style>
 
- 
+<script>
 
+$( document ).ready(function() {
+    
+     $('#hiddenDiv').hide();  
+ });
+          
+</script>
+
+
+    
+       
 <div id="seller page" class="container">
     
     <form class="form-sell" role="form" method="post" action="#">
+
+       
+     
         <h3>Post An Item For Sale.</h3>
             <div class="col-md-6">
     
@@ -149,33 +163,12 @@ body {
 				</select>
 				<br>
 
-
+          
 
             </div>
             
             <div class="col-md-6">
-                <!-- <div class="form-group">                
-	                <label>Email address::</label> 
-	                <input class="form-control" name="email_address"  placeholder="johndoe@sfsu.edu" type="text"> 
-            	</div>
-        		<div class="form-group">                
-	                <label>Phone #:</label> 
-	                <input class="form-control"  name="phone_no" placeholder="123-456-7890" type="text"> 
-            	</div> -->
-        		<!-- <div class="form-group">                
-	                <label>Delivery</label> 
-	                <input class="form-control" name="delivery" placeholder="I can deliver the item to your location." type="text"> 
-            	</div> -->
-
-            	<!-- <div class="dropdown">
-	                <button class="btn btn-default dropdown-toggle" id="delivery-button" type="button" data-toggle="dropdown">Preferred Delivery
-	                <span class="caret"></span></button>
-	                  <ul class="dropdown-menu" role="menu" aria-labelledby="deliveryitem">
-	                    <li role="presentation"><a role="delivery" tabindex="1" href="#"> Meet on campus </a></li>
-	                    <li role="presentation"><a role="delivery" tabindex="1" href="#"> Come pick up </a></li>
-	                    <li role="presentation"><a role="delivery" tabindex="1" href="#"> Deliver/Ship </a></li>
-	                  </ul>
-             	 </div> -->
+      
 
             	<div class="form-group">                
 	                <label>Add Image: </label> 

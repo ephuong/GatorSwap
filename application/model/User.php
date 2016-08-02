@@ -1,4 +1,9 @@
 <?php
+if(!session_id())
+   {
+    session_start();  
+   }
+
 /**
  * Communicates with the User table in the database
  */
@@ -55,6 +60,22 @@ class User extends Model
 		
 			$query2->execute($parameters2);
 			
+                        
+                        $sql3 = "SELECT Account_ID,Student_ID FROM Account WHERE Username = :username;";
+                        $query3 = $this->db->prepare($sql3);
+                        $parameters3 = array(':username' => $username);
+                        $query3->execute($parameters3);
+                        $account = $query3->fetch(PDO::FETCH_ASSOC);
+                        $accountId = $account['Account_ID'];
+                        $studentId = $account['Student_ID'];
+                        
+                        $sql4="SELECT F_Name,L_Name,Country,State,Address,City,Zipcode,Phone FROM User WHERE Account_ID = :accountId;";
+                        $query4 = $this->db->prepare($sql4);
+                        $parameters4 = array(':accountId' => $accountId);
+                        $query4->execute($parameters4);
+                        $userInfo = $query4->fetch(PDO::FETCH_ASSOC);
+                        
+                        
 			// Check that a row exists with the log in information
 			if(empty($query2->fetchAll())) {
 			    //$account_exist = false;
@@ -63,7 +84,16 @@ class User extends Model
                         else
                         {
                          $_SESSION['username'] = $username;
-                         $_SESSION['login'] = true;  
+                         $_SESSION['login'] = true;
+                         $_SESSION['firstname']=$userInfo['F_Name'];
+                         $_SESSION['lastname']=$userInfo['L_Name'];
+                         $_SESSION['student_id']=$studentId;
+                         $_SESSION['country']=$userInfo['Country'];
+                         $_SESSION['state']=$userInfo['State'];
+                         $_SESSION['address']=$userInfo['Address'];
+                         $_SESSION['city']=$userInfo['City'];
+                         $_SESSION['zipcode']=$userInfo['Zipcode'];
+                         $_SESSION['phone']=$userInfo['Phone'];
                         }
                                             			
 			//return $account_exist;
@@ -72,6 +102,8 @@ class User extends Model
 			echo $sql . "<br>" . $e->getMessage();
 		}
 	}
+        
+ 
           
 }
 
