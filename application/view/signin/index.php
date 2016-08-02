@@ -15,7 +15,7 @@ body {
   margin-bottom: 80px;
 }
 
-.form-signin {
+.form-sign-in {
   max-width: 380px;
   padding: 15px 35px 45px;
   margin: 0 auto;
@@ -63,7 +63,7 @@ body {
 </style>
 
   <div id="loginForm" class="wrapper" data-toggle="validator">
-      <form id="myForm" class="form-signin" method="post" action="<?php echo URL; ?>signin/login">       
+      <form id="myForm" class="form-sign-in" method="post" action="<?php echo URL; ?>signin/login">       
         <h3>Login or <a href="<?php echo URL; ?>register/index">Sign up</a> </h3>
       <label for="username" control-label>Username</label>  
       <input type="text" id="username" class="form-control" name="username" placeholder="Username" value="<?php if(isset($_POST['username'])){echo htmlspecialchars($_POST['username']); }?>" />
