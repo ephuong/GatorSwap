@@ -1,160 +1,103 @@
-<!--
-<head>
-    <link rel="stylesheet" href="<?php echo URL; ?>css/vp.css">
-</head>
-
-<div class="container">
-
-<!-- Table for search results 
-<div id="user-table">
-    <h2>Search: <?php echo $results["count"]; ?> result(s)</h2>
-    <table>
-        <thead style="background-color: #ddd; font-weight: bold;">
-            <tr>
-                <td>Item ID</td>
-                <td>Title</td>
-                <td>Category</td>
-                <td>Description</td>
-                <td>Price</td>
-                <td>Image</td>
-            </tr>
-        </thead>
-
-        <tbody>
-<?php foreach ($results["results"] as $result) { ?>
-                <tr>
-                    <td><?php if (isset($result->Item_ID)) echo htmlspecialchars($result->Item_ID, ENT_QUOTES, 'UTF-8'); ?></td>
-                    <td><?php if (isset($result->Title)) echo htmlspecialchars($result->Title, ENT_QUOTES, 'UTF-8'); ?></td>
-                    <td><?php if (isset($result->Category)) echo htmlspecialchars($result->Category, ENT_QUOTES, 'UTF-8'); ?></td>
-                    <td><?php if (isset($result->Description)) echo htmlspecialchars($result->Description, ENT_QUOTES, 'UTF-8'); ?></td>
-                    <td><?php if (isset($result->Price)) echo htmlspecialchars($result->Price, ENT_QUOTES, 'UTF-8'); ?></td>
-                    <td>
-    <?php
-    if (isset($result->IMG)) {
-        echo '<img style="width:50%" src="data:image/jpg;base64,' . base64_encode($result->IMG) . '" />';
-    }
-    ?>
-                    </td>
-                </tr>
-<?php } ?>
-        </tbody>
-    </table>
-</div>
-</div>
+<!--   <p> <?php if (isset($results["results"][1]->Title))
+{          echo $results["results"][1]->Title;
+} ?> </p>
 
 -->
-<!--<head>
-    <title>Search Display Items</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <style>
-        /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
-        .row.content {height: 1500px}
-
-        /* Set gray background color and 100% height */
-        .sidenav {
-            background-color: #f1f1f1;
-            height: 100%;
-        }
-
-
-
-        /* On small screens, set height to 'auto' for sidenav and grid */
-        @media screen and (max-width: 767px) {
-            .sidenav {
-                height: auto;
-                padding: 15px;
-            }
-            .row.content {height: auto;}
-        }
-    </style>
-    <script> 
-                $(document).ready(function () {
-            $('#list').click(function (event) {
-                event.preventDefault();
-                $('#products .item').addClass('list-group-item');
-            });
-            $('#grid').click(function (event) {
-                event.preventDefault();
-                $('#products .item').removeClass('list-group-item');
-                $('#products .item').addClass('grid-group-item');
-            });
-        });
-     </script> 
-</head>-->
 <body style = "background-color:#F0f0f0;">
+<!-- Details Modal --> 
+ 
+<!--<a href= "<?php echo URL; ?>itemmodal/index" data-remote="false" data-toggle="modal" data-rowid = "NULL" data-target="#myModal" class="btn btn-default">
+    Launch Modal
+</a>
+ -->
+<!-- modal template -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+    </div>
+  </div>
+</div>
+ 
+ <!--search results body --> 
+ 
+<div class="container" >
 
-    <div class="container" >
-        <h2>Search: <?php echo $results["count"]; ?> result(s)</h2>
-        <!-- <div class="well well-sm">
-             <strong>Category Title</strong>
-             <div class="btn-group">
-                 <a href="#" id="list" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-th-list">
-                 </span>List</a> <a href="#" id="grid" class="btn btn-default btn-sm"><span
-                     class="glyphicon glyphicon-th"></span>Grid</a>
-             </div>
-         </div> -->
-        <div id="products" class="row list-group is-table-row" >
-            <?php foreach ($results["results"] as $result) { ?>
-                <div class="item col-xs-6 col-md-3 " >
-                  
-                    <div class="thumbnail">
-                        <?php
-                        if (isset($result->IMG) && !empty($result->IMG)) {
-                            //echo '<img style="min-height: 250px; max-height:250px; " class="group" src="data:image/jpg;base64,' . base64_encode($result->IMG) . '" alt=""/>';
-                            echo '<img style="max-height: 250px; min-height:250px; " class="group" src="data:image/jpg;base64,' . base64_encode($result->IMG) . '" alt=""/>';
-                        } else {
-                            echo ' <img style="height:250px;" class="group " src="http://placehold.it/400x250/000/fff" alt="" /> ';
-                        }
-                        ?>
-                        <div class= "caption list-group-text"  >
-                            <h3 class="group inner ">
-                                <b> <?php if (isset($result->Title)) echo htmlspecialchars($result->Title, ENT_QUOTES, 'UTF-8'); ?>  </b> </h3>
-                            <h5 class="group inner "> 
-                                <b> <?php if (isset($result->Category)) echo htmlspecialchars($result->Category, ENT_QUOTES, 'UTF-8'); ?> </b></h5>
+    <h2>Search: <?php echo $results["count"]; ?> result(s)</h2>
+    <!-- <div class="well well-sm">
+         <strong>Category Title</strong>
+         <div class="btn-group">
+             <a href="#" id="list" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-th-list">
+             </span>List</a> <a href="#" id="grid" class="btn btn-default btn-sm"><span
+                 class="glyphicon glyphicon-th"></span>Grid</a>
+         </div>
+     </div> -->
+    <div id="products" class="row list-group is-table-row" >
+        <?php
+              // Incrementing variable for details button 
+              $rowID = 0;
 
-                          <!--  <p class="group inner list-group-item-text"> 
-                                <?php if (isset($result->Description)) echo htmlspecialchars($result->Description, ENT_QUOTES, 'UTF-8'); ?>
-                            </p>  -->
-                            <hr style ="border-color:black">
+              foreach ($results["results"] as $result) { ?>
 
-                            <div class="row ">
-                                <div class="col-xs-12 col-md-6">
-                                    <p class="lead">
-                                        <?php if (isset($result->Price)) echo "$" . htmlspecialchars($result->Price, ENT_QUOTES, 'UTF-8'); ?> </p>
-                                </div>
-                                 <div class="col-xs-12 col-md-6">
-                                    <a class="btn btn-warning " href="#">Buy it Now</a>
+            <div class="item col-xs-6 col-md-3 " style="margin-bottom: 40px">
 
-                                </div>
+                <div class="thumbnail">
+                   <?php
+                    if (isset($result->IMG) && !empty($result->IMG)) {
+                        echo '<img style="max-height: 180px; min-height:180px; padding-top: 7px;" class="group"  src="data:image/jpg;base64,' . base64_encode($result->IMG) . '" alt=""/>';
+                    } else {
+                        echo ' <img style="height:180px; padding-top: 7px;" class="group " src="http://placehold.it/400x250/000/fff" alt="" /> ';
+                    }
+                    ?>
+                    <div class= "caption list-group-text">
+                        <h3 class="group inner" style="margin-bottom: 40px; height:37px">
+                            <b> <?php if (isset($result->Title)) echo htmlspecialchars($result->Title, ENT_QUOTES, 'UTF-8'); ?> </b> 
+                        </h3>
+                        
+                        <p style="margin: 0px; padding-top: 5px; padding-bottom: 3px;"> 
+                            <b><i><?php if (isset($result->Category_Name)) echo htmlspecialchars($result->Category_Name, ENT_QUOTES, 'UTF-8'); ?> </i></b>
+                        </p>
+                        
+                        <p style="margin: 0px; padding-top: 0px; padding-bottom: 3px;"> 
+                            <b>Condition:</b> <?php if (isset($result->Item_Condition))echo htmlspecialchars($result->Item_Condition, ENT_QUOTES, 'UTF-8'); ?> 
+                        </p>
+                        
+                        <p class="lead" style="margin: 0px;">
+                            <?php if (isset($result->Price)) echo "$" . htmlspecialchars($result->Price, ENT_QUOTES, 'UTF-8'); ?> 
+                        </p>
+
+                        <hr style ="border-color:black; margin-top: 5px; margin-bottom: 5px;">
+
+                        <div class="btn-group" style="margin-top: 0px;">
+                            <div class="col-xs-6 col-md-6">
+                              <button href="<?php echo URL; ?>itemmodal/index" data-remote="false" data-toggle="modal" data-target="#myModal" class="btn btn-block  btn-default" data-item= "<?php if (isset($result->Item_ID)) echo htmlspecialchars($result->Item_ID, ENT_QUOTES, 'UTF-8'); ?>">More Info</button> 
                             </div>
 
+                            <div class="col-xs-6 col-md-6">
+                              <button href="#" class="btn btn-block  btn-primary">Buy it now</button>
+                            </div>
                         </div>
                     </div>
-                    
-                    
                 </div>
- 
-            <?php } ?>
-        </div>
+            </div>
 
+        <?php
+            $rowID++; } ?>
     </div>
+</div>
 
-  <!--  <script>
-    $(document).ready(function() {
-    var maxHeight = 0;          
-    $(".equalize").each(function(){
-      if ($(this).height() > maxHeight) { maxHeight = $(this).height(); }
-    });         
-    $(".equalize").height(maxHeight);
-  }); 
-  </script> -->
     <script>
-        //Function to duplicate items 
+        //Function for ajax modal 
+ $("#myModal").on("show.bs.modal", function(e) {
+    var link = $(e.relatedTarget);
+    var Id = link.data('item');
+    $(this).find(".modal-content").load(link.attr("href"), {item_id : Id});
+});
 
+$('#myModal').on('hidden.bs.modal', function () {
+    $(this).find(".modal-content").html("");
+
+});
+   
 
         $('.advenced').click(function (e) {
             e.preventDefault();
@@ -192,7 +135,4 @@
         });
     </script>
 
-    
 </body>
-</html>
-
