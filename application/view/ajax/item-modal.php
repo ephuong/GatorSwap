@@ -1,17 +1,49 @@
 <!-- Default bootstrap modal example -->
+<?php 
+    // Row id set from Search.php
+    $rowid = $_POST['item_id'];
+   
+ ?> 
+   <!--  Use $results['content'] where 'content' is the item's information 
+
+<?php if (isset($results['Title'])) {  
+        echo $results['Title'];
+        } ?>
+
+   --> 
     <div class="modal-header">
+
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             
-        
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+       
       </div>
-      <div class="modal-body clearfix">
-                <img class="pull-left" src="#" width="256" height="256" alt="image">
-				<p></p>  
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
+    <div class="modal-body clearfix">
+    <div class= "col-xs-6 col-md-6">
+<?php
+
+    if (isset($results['IMG']) && !empty($results['IMG'])) {
+         echo '<img class="pull-left" width="256"  src="data:image/jpg;base64,' . base64_encode($results['IMG']) . '" alt=""/>';
+        } else {
+              echo ' <img class="pull-left" width="256" height="256" src="http://placehold.it/400x250/000/fff" alt="" /> ';
+        }
+ ?>
+	</div>
+  <div class= "col-xs-6 col-md-6">
+        <h2> <b><?php if (isset($results['Title'])){ 
+            echo $results['Title'];} ?> </b></h2>  
+          <h5><b> Id: </b><?php if (isset($results['Item_ID'])){ 
+            echo $results['Item_ID'];} ?> </h5>  
+          <h5> <b> Condition: </b> <<?php if (isset($results['Item_Condition'])){ 
+            echo $results['Item_Condition'];} ?> </h5>  
+            <p><b> Description: </b></p>
+            <p> <?php if (isset($results['Description'])){ 
+            echo $results['Description'];} ?> </p>  
+            <br>
+         <h3> Price: $<?php if (isset($results['Price'])){ 
+            echo $results['Price'];} ?> </h3>
+  </div> 
+  
+      </div> 
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Return</button>
         <button type="button" class="btn btn-primary">Purchase now</button>

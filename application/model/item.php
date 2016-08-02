@@ -16,21 +16,37 @@ class Item extends Model
         $query->execute($parameters);
  
     }
+ public function findItem($itemID){
+   //return a single item based on $itemID
+   	$sql = "SELECT I.Item_ID, I.Title, I.Category_ID, I.Item_Condition, I.Price, Description, Im.IMG, I.List_Date as List_Order 
+		FROM Item I, Item_Img Im 
+		WHERE I.Item_ID = Im.Item_ID AND I.Item_ID = " . $itemID .  " ; " ;
     
+    try {
+      
+   	$query = $this->db->prepare($sql);
+	  $query->execute();
+    // return first row
+    $result = $query->fetch(PDO::FETCH_ASSOC);
+    return $result ; 
+    
+    } catch (PDOException $e) {
+			echo $sql . "<br>" . $e->getMessage();
+		}
+ }
     /**
 	 * @param string $keyword Searching for items with the specified keyword(s)
 	 * @return mixed array containing the result set and the number of results 
 	 */
 	public function searchItems($keyword, $category)
     {
-		echo $keyword . " " . $category;
 		$sql = "";
         
         if(empty($keyword) == true) {   
 		  //Query for searching the Item table when there's no keyword
-		  $sql = "SELECT I.Item_ID, I.Title, I.Category_ID, I.Price, Description, Im.IMG, I.List_Date as List_Order 
-				  FROM Item I, Item_Img Im 
-				  WHERE I.Item_ID = Im.Item_ID AND Is_Visible = 1 " ;
+		  $sql = "SELECT I.Item_ID, I.Title, I.Category_ID, I.Item_Condition, I.Price, I.Description, Im.IMG, I.List_Date AS List_Order, C.Category_Name 
+				  FROM Item I, Item_Img Im, Item_Category C
+				  WHERE I.Item_ID = Im.Item_ID AND Is_Visible = 1 AND I.Category_ID = C.Category_ID " ;
 				  
         } else {
 		  //Parse the string into an array
@@ -44,11 +60,11 @@ class Item extends Model
           }
 		  
 		  //Query for searching the Item table using the search keyword
-		  $sql = "SELECT I.Item_ID, I.Title, I.Category_ID, I.Price, Description, Im.IMG, 
+		  $sql = "SELECT I.Item_ID, I.Title, I.Category_ID, I.Item_Condition, I.Price, I.Description, Im.IMG, C.Category_Name,
 				    Match(I.Title,  I.Description) AGAINST ('". $searchString . "') AS List_Order 
-				  FROM Item I, Item_Img Im 
+				  FROM Item I, Item_Img Im, Item_Category C
 				  WHERE Match(I.Title, I.Description, I.Details) AGAINST ('" . $searchString . "' IN BOOLEAN MODE) 
-					AND I.Item_ID = Im.Item_ID AND Is_Visible = 1 " ;
+					AND I.Item_ID = Im.Item_ID AND Is_Visible = 1 AND I.Category_ID= C.Category_ID " ;
         }
       
         try {		
@@ -76,6 +92,7 @@ class Item extends Model
 			$resultSet = $query->fetchAll();
 			
 			$results = array("results" => $resultSet, "count" => $number_of_rows);
+      
 				return $results;
 				
 		} catch (PDOException $e) {

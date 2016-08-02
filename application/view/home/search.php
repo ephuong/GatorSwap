@@ -94,10 +94,10 @@
 <body style = "background-color:#F0f0f0;">
  <!-- Details Modal --> 
  
-<a href= "<?php echo URL; ?>itemmodal/index" data-remote="false" data-toggle="modal" data-target="#myModal" class="btn btn-default">
+<!--<a href= "<?php echo URL; ?>itemmodal/index" data-remote="false" data-toggle="modal" data-rowid = "NULL" data-target="#myModal" class="btn btn-default">
     Launch Modal
 </a>
-
+ -->
 <!-- modal template -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -105,10 +105,8 @@
     </div>
 </div>
 </div>
-
-
- <a id="item-modal" data-original-title="Preview" data-placement="top" class="data-tooltip" rel="tooltip" data-toggle="modal" href="#modal_2">Modal</a>
  
+ <!--search results body --> 
  
     <div class="container" >
     
@@ -125,15 +123,16 @@
             <?php
                   // Incrementing variable for details button 
                   $rowID = 0;
+                  
                   foreach ($results["results"] as $result) { ?>
             
             
                 <div class="item col-xs-6 col-md-3 " >
                   
                     <div class="thumbnail" >
-                        <?php
+                       <?php
                         if (isset($result->IMG) && !empty($result->IMG)) {
-                            echo '<img style="max-height:250px; " class="group" src="data:image/jpg;base64,' . base64_encode($result->IMG) . '" alt=""/>';
+                            echo '<img style="max-height:250px; " class="group"  src="data:image/jpg;base64,' . base64_encode($result->IMG) . '" alt=""/>';
                         } else {
                             echo ' <img style="height:250px;" class="group " src="http://placehold.it/400x250/000/fff" alt="" /> ';
                         }
@@ -142,27 +141,30 @@
                             <h3 class="group inner ">
                                 <b> <?php if (isset($result->Title)) echo htmlspecialchars($result->Title, ENT_QUOTES, 'UTF-8'); ?>  </b> </h3>
                             <h5 class="group inner "> 
-                                <b> <?php if (isset($result->Category)) echo htmlspecialchars($result->Category, ENT_QUOTES, 'UTF-8'); ?> </b></h5>
-
-                          <!--  <p class="group inner list-group-item-text"> 
-                                <?php if (isset($result->Description)) echo htmlspecialchars($result->Description, ENT_QUOTES, 'UTF-8'); ?>
-                            </p>  -->
+                                <i>  <?php if (isset($result->Category_Name)) echo htmlspecialchars($result->Category_Name, ENT_QUOTES, 'UTF-8'); ?> </i></h5>
+                            <h5> <b> Condition: </b> <?php if (isset($result->Item_Condition)){  echo $result->Item_Condition;} ?> </h5> 
                             
+                                    <p class="lead">
+                                        <?php if (isset($result->Price)) echo "$" . htmlspecialchars($result->Price, ENT_QUOTES, 'UTF-8'); ?> </p>
+                                
                             
-                        <button href="<?php echo URL; ?>itemmodal/index" data-remote="false" data-toggle="modal" data-target="#myModal" class="btn btn-default" data-id = "<?php echo $rowID; ?>" > Details </button> 
+                       
                             
                             
                             <hr style ="border-color:black">
 
-                            <div class="row ">
-                                <div class="col-xs-12 col-md-6">
-                                    <p class="lead">
-                                        <?php if (isset($result->Price)) echo "$" . htmlspecialchars($result->Price, ENT_QUOTES, 'UTF-8'); ?> </p>
+                            <div class="btn-group">
+                                
+                               
+                                 <div class="col-xs-6 col-md-6">
+                                  <button href="<?php echo URL; ?>itemmodal/index" data-remote="false" data-toggle="modal" data-target="#myModal" class="btn btn-block  btn-default" data-item= "<?php if (isset($result->Item_ID)) echo htmlspecialchars($result->Item_ID, ENT_QUOTES, 'UTF-8'); ?>" >More Info</button> 
+                                 
                                 </div>
-                                 <div class="col-xs-12 col-md-6">
-                                    <a class="btn btn-warning " href="#">Buy</a>
-
+                                
+                                <div class="col-xs-6 col-md-6">
+                                  <button class="btn btn-block btn-warning " href="#">Buy It Now</button>
                                 </div>
+                          
                             </div>
 
                         </div>
@@ -181,19 +183,15 @@
         //Function for ajax modal 
  $("#myModal").on("show.bs.modal", function(e) {
     var link = $(e.relatedTarget);
-    $(this).find(".modal-content").load(link.attr("href"));
+    var Id = link.data('item');
+    $(this).find(".modal-content").load(link.attr("href"), {item_id : Id});
 });
 
- $(document).ready(function() {
-    $('#item-modal').click(function() {
-        var $modal = $('#item-modal');
-            $modal.load('item-modal.php', {'row_id': '2'},
-            function(){
-              $modal.modal('show');
-        });  
-    });
-});        
+$('#myModal').on('hidden.bs.modal', function () {
+    $(this).find(".modal-content").html("");
 
+});
+   
 
         $('.advenced').click(function (e) {
             e.preventDefault();
