@@ -41,18 +41,54 @@
      </script> 
 </head>-->
 
-<body style = "background-color:#F0f0f0;">
-    <div class="container">
-		<h2>Search: <?php echo $results["count"]; ?> results</h2>
+<!--   <p> <?php if (isset($results["results"][1]->Title))
+{          echo $results["results"][1]->Title;
+} ?> </p>
 
+-->
+<body style = "background-color:#F0f0f0;">
+ <!-- Details Modal --> 
+ 
+<!--<a href= "<?php echo URL; ?>itemmodal/index" data-remote="false" data-toggle="modal" data-rowid = "NULL" data-target="#myModal" class="btn btn-default">
+    Launch Modal
+</a>
+ -->
+<!-- modal template -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+    </div>
+</div>
+</div>
+ 
+ <!--search results body --> 
+ 
+    <div class="container" >
+    
+        <h2>Search: <?php echo $results["count"]; ?> result(s)</h2>
+        <!-- <div class="well well-sm">
+             <strong>Category Title</strong>
+             <div class="btn-group">
+                 <a href="#" id="list" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-th-list">
+                 </span>List</a> <a href="#" id="grid" class="btn btn-default btn-sm"><span
+                     class="glyphicon glyphicon-th"></span>Grid</a>
+             </div>
+         </div> -->
         <div id="products" class="row list-group is-table-row" >
-		
-            <?php foreach ($results["results"] as $result) { ?>
-                <div class="item col-xs-6 col-md-3 " > 
+            <?php
+                  // Incrementing variable for details button 
+                  $rowID = 0;
+                  
+                  foreach ($results["results"] as $result) { ?>
+            
+            
+                <div class="item col-xs-6 col-md-3 " >
+                  
                     <div class="thumbnail" >
-                        <?php
+                       <?php
                         if (isset($result->IMG) && !empty($result->IMG)) {
-                            echo '<img style="max-height:250px; " class="group" src="data:image/jpg;base64,' . base64_encode($result->IMG) . '" alt=""/>';
+
+                            echo '<img style="max-height:250px; " class="group"  src="data:image/jpg;base64,' . base64_encode($result->IMG) . '" alt=""/>';
 
                         } else {
                             echo ' <img style="height:250px;" class="group " src="http://placehold.it/400x250/000/fff" alt="" /> ';
@@ -60,25 +96,34 @@
                         ?>
                         <div class= "caption list-group-text"  >
                             <h3 class="group inner ">
-                                <b> <?php if (isset($result->Title)) echo htmlspecialchars($result->Title, ENT_QUOTES, 'UTF-8'); ?>  </b> </h3>
-                            <h5 class="group inner "> 
-                                <b> <?php if (isset($result->Category)) echo htmlspecialchars($result->Category, ENT_QUOTES, 'UTF-8'); ?> </b></h5>
+                                <b> <?php if (isset($result->Title)) echo htmlspecialchars($result->Title, ENT_QUOTES, 'UTF-8'); ?>  </b> </h4>
+                            <h4 class="group inner "> 
 
-                           <p class="group inner list-group-item-text"> 
-                                <?php if (isset($result->Description)) echo htmlspecialchars($result->Description, ENT_QUOTES, 'UTF-8'); ?>
-                            </p>
-							
-                            <hr style ="border-color:black">
+                                <i>  <?php if (isset($result->Category_Name)) echo htmlspecialchars($result->Category_Name, ENT_QUOTES, 'UTF-8'); ?> </i></h5>
+                            <h5> <b> Condition: </b> <?php if (isset($result->Item_Condition)){  echo $result->Item_Condition;} ?> </h5> 
+                            
 
-                            <div class="row ">
-                                <div class="col-xs-12 col-md-6">
                                     <p class="lead">
                                         <?php if (isset($result->Price)) echo "$" . htmlspecialchars($result->Price, ENT_QUOTES, 'UTF-8'); ?> </p>
-                                </div>
-                                 <div class="col-xs-12 col-md-6">
-                                    <a class="btn btn-warning " href="#">Buy it Now</a>
+                                
+                            
+                       
+                            
+                            
+                            <hr style ="border-color:black">
 
+                            <div class="btn-group">
+                                
+                               
+                                 <div class="col-xs-6 col-md-6">
+                                  <button href="<?php echo URL; ?>itemmodal/index" data-remote="false" data-toggle="modal" data-target="#myModal" class="btn btn-block  btn-default" data-item= "<?php if (isset($result->Item_ID)) echo htmlspecialchars($result->Item_ID, ENT_QUOTES, 'UTF-8'); ?>" >More Info</button> 
+                                 
                                 </div>
+                                
+                                <div class="col-xs-6 col-md-6">
+                                  <button class="btn btn-block btn-warning " href="#">Buy It Now</button>
+                                </div>
+                          
                             </div>
 
                         </div>
@@ -87,22 +132,24 @@
                     
                 </div>
  
-            <?php } ?>
+            <?php
+                $rowID++; } ?>
         </div>
     </div>
 
-  <!--<script>
-    $(document).ready(function() {
-    var maxHeight = 0;          
-    $(".equalize").each(function(){
-      if ($(this).height() > maxHeight) { maxHeight = $(this).height(); }
-    });         
-    $(".equalize").height(maxHeight);
-  }); 
-  </script>-->
     <script>
-        //Function to duplicate items 
+        //Function for ajax modal 
+ $("#myModal").on("show.bs.modal", function(e) {
+    var link = $(e.relatedTarget);
+    var Id = link.data('item');
+    $(this).find(".modal-content").load(link.attr("href"), {item_id : Id});
+});
 
+$('#myModal').on('hidden.bs.modal', function () {
+    $(this).find(".modal-content").html("");
+
+});
+   
 
         $('.advenced').click(function (e) {
             e.preventDefault();

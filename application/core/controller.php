@@ -51,6 +51,7 @@ class Controller
 	require APP . 'model/Account.php';
 	require APP . 'model/User.php';
 	require APP . 'model/item.php';
+
 		
         // create new "model" (and pass the database connection)
         $this->model = new Model($this->db);

@@ -36,13 +36,7 @@
       background-color: #53565A;
       padding: 25px;
     }
-	.h4, h4{
-		font-size : 20px;
-		color : white;
-		
-		text-decoration: underline;
-		
-	}
+	
 	a {
                 color: #3399ff;
 		text-align: center; 
