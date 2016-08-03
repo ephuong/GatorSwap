@@ -76,9 +76,9 @@ class Item extends Model
         
           foreach ($keywordarray as $word)
           {
-			  $pattern = '[~`@#$%^&*()\-_+={}\[\]\|\\\/:;\"\'<>,.?]';
+
 			  $word = preg_replace("/[~`@#$%^&*()\-_+={}\[\]\|\\\\\/\:\;\"\'<>,.?]/", "", $word);
-			  echo $word;
+
 			  if(strlen($word) > 1)
 				$searchString = $searchString . " +" . $word . "*" ; 
           }
