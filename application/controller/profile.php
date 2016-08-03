@@ -13,7 +13,9 @@ class Profile extends Controller
      * The camelCase writing is just for better readability. The method name is case-insensitive.
      */
     public function index()
-    {        
+    {   
+		$categoryList = $this->itemModel->getCategories();
+	
         // load views
         require APP . 'view/_templates/header.php';
         require APP . 'view/profile/index.php';

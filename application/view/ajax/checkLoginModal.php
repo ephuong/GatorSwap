@@ -4,7 +4,7 @@
     <div>
         <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
-            <h4 class="modal-title" id="myModalLabel">Please sign in or register to sell items</h4>
+            <h4 style="text-align:center" class="modal-title" id="myModalLabel">Please sign in or register to sell items</h4>
         </div>
         <div class="modal-body">
             <div class="row">

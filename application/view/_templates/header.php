@@ -16,31 +16,56 @@
 <nav class="navbar navbar-default navbar-inverse" role="navigation">
   <a class="navbar-left" href="<?php echo URL; ?>home/index"><img id="logo" src="https://s31.postimg.org/5s7zczl7f/Gator_Swap_Logo.jpg" alt="GatorSwap" width="65" height="55"></a>
 
- 
+  <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+<!--         <a class="navbar-brand" href="<?php echo URL; ?>home/index"><img id="logo" src="https://s31.postimg.org/5s7zczl7f/Gator_Swap_Logo.jpg" alt="GatorSwap" width="125" height="75"></img></a>
+ -->    
+  </div>
 
- <div class="navbar-collapse collapse">
+  <div class="navbar-collapse collapse" id="myNavbar">
+  <form class="form-inline pull-xs-right" action="<?php echo URL; ?>home/search" method="POST">
     <ul class="nav navbar-nav navbar-left">
-        <li>
-  
-              <select class="form-control" id="menuitem">
-                <option value="All">All</option>
-                <option value="Books">Books</option>
-                <option value="Office Supplies">Office Supplies</option>
-                <option value="Clothing">Clothing</option>
-                <option value="Furniture">Furniture</option>
-                <option value="Electronics">Electronics</option>
-              </select>
-          </li>
+		<li>
+            <!-- <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle" type="button" id="menuitem" data-toggle="dropdown">All
+                <span class="caret"></span></button>
+                  <ul class="dropdown-menu" role="menu" aria-labelledby="menuitem">
+                    <li role="presentation"><a role="menuitem" tabindex="1" href="#">All</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="1" href="#">Books</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="1" href="#">Office Supplies</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="1" href="#">Clothes</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="1" href="#">Furniture</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="1" href="#">Electronic Supplies</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="1" href="#">Other</a></li>
+                  </ul>
+              </div> -->
+
+			<select class="form-control" id="menuitem" name="search-category">
+				<?php foreach ($categoryList as $category) { 
+					if (isset($category->Category_ID))
+						$category_id = htmlspecialchars($category->Category_ID, ENT_QUOTES, 'UTF-8');
+					if (isset($category->Category_Name))
+						$category_name = htmlspecialchars($category->Category_Name, ENT_QUOTES, 'UTF-8');
+				?>
+				<option <?php echo isset($_POST['search-category']) && $_POST['search-category'] == $category_id ? 'selected="' . $_POST['search-category'] . '" value="' . $category_id . '"' : 'value="' . $category_id  . '"' ?>>
+					<?php echo $category_name; ?>
+				</option>
+				<?php } ?>
+			</select> 
+		</li>
+
 
         <li>
-          <form class="form-inline pull-xs-right" action="<?php echo URL; ?>home/search" method="POST">
-          
-            <input class="form-control search-input" type="text" placeholder="Search" name="search-keyword">
-            <button class="btn btn-success-outline" id="search-button" name="search" value="Search"><span class="glyphicon glyphicon-search"></span></button>
-          </form>
-      </li>
+			<input class="form-control search-input" type="text" placeholder="Search for an item" name="search-keyword" value="<?php echo isset($_POST['search-keyword']) ? $_POST['search-keyword'] : '' ?>">
+			<button class="btn btn-success-outline" id="search-button" name="search" value="Search"><span class="glyphicon glyphicon-search"></span></button>
+		</li>
+	  
     </ul>
-
+</form>
 
     <ul class="nav navbar-nav navbar-right">  
        
@@ -114,6 +139,10 @@
   </div>
 </nav>
 
+<script>
+$(function() {
+	$(#menuItem).
+</script>
  <script>
 $(function(){
   

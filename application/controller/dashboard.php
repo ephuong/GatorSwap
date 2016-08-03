@@ -9,6 +9,7 @@ class Dashboard extends Controller
 {
 	public function index()
     {
+        $categoryList = $this->itemModel->getCategories();
         // load views
         require APP . 'view/_templates/header.php'; //Do not lead the header
         require APP . 'view/dashboard/index.php';

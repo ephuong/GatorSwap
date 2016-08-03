@@ -19,8 +19,10 @@ class Home extends Controller
      * PAGE: index
      * This method handles what happens when you move to http://yourproject/home/index (which is the default page btw)
      */
-    public function index()
+   public function index()
     {
+	$categoryList = $this->itemModel->getCategories();
+		
         // load views
         require APP . 'view/_templates/header.php';
         require APP . 'view/home/index.php';
@@ -28,7 +30,19 @@ class Home extends Controller
     }
  
    
-    
+    /**
+     * PAGE: profile
+     * This method handles what happens when you move to http://yourproject/home/exampletwo
+     * The camelCase writing is just for better readability. The method name is case-insensitive.
+     */
+    public function profile()
+    {
+        $categoryList = $this->itemModel->getCategories();
+        // load views
+        require APP . 'view/_templates/header.php';
+        require APP . 'view/home/profile/index.php';
+        require APP . 'view/_templates/footer.php';
+    }
 
     /**
      * PAGE: cart
@@ -106,27 +120,31 @@ class Home extends Controller
     
 	public function sell ()
 	{
-             if (!session_id())
-         {   
-                 session_start();  
-         }
-	 require APP . 'view/_templates/header.php';
+
+    $categoryList = $this->itemModel->getCategories();
+        
+	require APP . 'view/_templates/header.php';
+
 	require APP . 'view/home/sell.php';
 	require APP . 'view/_templates/footer.php';
 
       }      
 	public function checkout()
 	{
+        $categoryList = $this->itemModel->getCategories();
+            
 	require APP . 'view/_templates/header.php';
 	require APP . 'view/home/checkout.php';
 	require APP . 'view/_templates/footer.php';
-}
+        }
 
 
     public function search()
     {
+        $categoryList = $this->itemModel->getCategories();
+        
             if(isset($_POST["search"])) {
-			    $results = $this->itemModel->searchItems($_POST["search-keyword"], "All");
+			    $results = $this->itemModel->searchItems($_POST["search-keyword"], $_POST["search-category"]);
 		    }   
 
             require APP . 'view/_templates/header.php';
