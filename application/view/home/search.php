@@ -23,16 +23,51 @@
  
 <div class="container" >
 
-    <h2>Search: <?php echo $results["count"]; ?> result(s)</h2>
-    <!-- <div class="well well-sm">
-         <strong>Category Title</strong>
-         <div class="btn-group">
-             <a href="#" id="list" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-th-list">
-             </span>List</a> <a href="#" id="grid" class="btn btn-default btn-sm"><span
-                 class="glyphicon glyphicon-th"></span>Grid</a>
-         </div>
-     </div> -->
-    <div id="products" class="row list-group is-table-row" >
+
+    <h2 id="results"><?php echo $results["count"]; ?> results found </h2>
+	<h2 id="one_result"><?php echo $results["count"]; ?> result found </h2>
+    <h2 id="noResults"> No results found
+        <?php 
+
+        if($results["count"] < 1){
+            echo "
+            <script type=\"text/javascript\">
+              $('#results').hide();
+			  $('#one_result').hide();
+              $('#noResults').show();
+              </script>
+              ";
+        } elseif($results["count"] == 1) {
+			echo "
+			<script type=\"text/javascript\">
+              $('#results').hide();
+			  $('#one_result').show();
+              $('#noResults').hide();
+              </script>
+              ";
+		} else {
+            echo "
+            <script type=\"text/javascript\">
+              $('#results').show();
+			  $('#one_result').hide();
+              $('#noResults').hide();
+              </script>
+              ";
+        }
+
+
+        ?>
+    </h2>
+   <!-- <div class="well well-sm">
+        <strong>Category Title</strong>
+        <div class="btn-group">
+            <a href="#" id="list" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-th-list">
+            </span>List</a> <a href="#" id="grid" class="btn btn-default btn-sm"><span
+                class="glyphicon glyphicon-th"></span>Grid</a>
+        </div>
+    </div> -->
+    <div id="products" class="row list-group is-table-row">
+
         <?php
               // Incrementing variable for details button 
               $rowID = 0;
