@@ -1,11 +1,17 @@
 <?php
 
-   
+
+  
 class Register extends Controller
 {
 	
     public function index()
     {
+        if(!session_id())
+        {
+          session_start();  
+         }
+
       $categoryList = $this->itemModel->getCategories();
             require APP . 'view/_templates/header.php';
             require APP . 'view/register/index.php';

@@ -109,6 +109,31 @@ body {
 .button{
 
 }
+
+/* Code for footer starts */
+     footer {
+    
+    background-color: #53565A;
+    border-top: 1px solid #E7E7E7;
+    text-align:center;
+    padding:20px;   
+    position: absolute;
+    left: 0;
+    bottom: 0;   
+    width: 100%;
+  
+} 
+    
+    .footerLinks{
+      color:white;
+
+    }
+
+    .footerLinks:hover{
+      color:#C99700;
+
+    }
+    /*Code for the footer ends*/
 </style>
 
 
@@ -122,7 +147,7 @@ body {
 
                 <div class="form-group">
 	                <label>First Name</label></br>
-	                <label><?php echo $_SESSION['firstname'] ?></label>
+                        <label><?php if(isset($_SESSION['firstname'])){ echo $_SESSION['firstname'] ;}?></label>
             	</div>
 
             	<div class="form-group">

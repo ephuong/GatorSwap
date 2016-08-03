@@ -112,6 +112,31 @@ body {
 	background-color: #d6f5d6;
 
 }
+
+/* Code for footer starts */
+     footer {
+    
+    background-color: #53565A;
+    border-top: 1px solid #E7E7E7;
+    text-align:center;
+    padding:20px;   
+    position: absolute;
+    left: 0;
+    bottom: 0;   
+    width: 100%;
+  
+} 
+    
+    .footerLinks{
+      color:white;
+
+    }
+
+    .footerLinks:hover{
+      color:#C99700;
+
+    }
+    /*Code for the footer ends*/
 </style>
 
 <script>

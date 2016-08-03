@@ -18,30 +18,19 @@
       margin-bottom: 0;
     }
 
-    /* Add a gray background color and some padding to the footer */
-    footer {
-      background-color: #53565A;
-      padding: 25px;
-    }
-	
-	a {
-        color: #3399ff;
-		text-align: center; 
-	}
-
-    .footerLinks{
-      color:white;
-
-    }
+  
+    a {
+      color: #3399ff;
+      text-align: center; 
+      }
+  
+    
 
     .headerLinks{
       color:white;
 
     }
-    .footerLinks:hover{
-      color:#C99700;
-
-    }
+   
 
     .headerLinks:hover{
       color:#C99700;

@@ -7,12 +7,15 @@
 @import "bourbon";
 
 body {
-	background: white;	
+	background: #eee !important;
+        padding-bottom: 100px;
+        
 }
 
 .wrapper {	
-	margin-top: 80px;
-  margin-bottom: 80px;
+       // margin-top: 80px;
+       //margin-bottom: 80px;
+       
 }
 
 .form-sign-in {
@@ -57,8 +60,34 @@ body {
        .Title {
         text-align: center;
 	line-height: 300%;
+       }
+       
 }
-}
+
+  /* Code for footer starts */
+     footer {
+    
+    background-color: #53565A;
+    border-top: 1px solid #E7E7E7;
+    text-align:center;
+    padding:20px;   
+    position: absolute;
+    left: 0;
+    bottom: 0;   
+    width: 100%;
+  
+} 
+    
+    .footerLinks{
+      color:white;
+
+    }
+
+    .footerLinks:hover{
+      color:#C99700;
+
+    }
+    /*Code for the footer ends*/
 
 </style>
 
@@ -88,6 +117,8 @@ body {
       <button id="myBtn" class="btn btn-lg btn-primary btn-block" name="user-signin" type="submit" >Login</button>    
     </form>
   </div>
+  
+
 
 <script>
     

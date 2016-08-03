@@ -3,7 +3,8 @@
  @import "bourbon";
 
 body {
-	background: #eee !important;	
+	background: #eee !important;
+        height:100%;
 }
 
 .wrapper {	
@@ -55,6 +56,31 @@ body {
 	line-height: 300%;
 }
 }
+
+/* Code for footer starts */
+     footer {
+    
+    background-color: #53565A;
+    border-top: 1px solid #E7E7E7;
+    text-align:center;
+    padding:20px;   
+    position: relative;
+    left: 0;
+    bottom: 0;   
+    width: 100%;
+  
+} 
+    
+    .footerLinks{
+      color:white;
+
+    }
+
+    .footerLinks:hover{
+      color:#C99700;
+
+    }
+    /*Code for the footer ends*/
 </style>
 <?php
 if(isset($_POST['user_submit'])){
@@ -156,8 +182,8 @@ if(isset($_POST['user_submit'])){
 
               
                 <div class="form-group">                
-	                <label>SFSU E-mail</label> 
-	                <input class="form-control" name="email" placeholder="Email" type="email" data-error="Bruh, that email address is invalid" required> 
+	                <label>SFSU E-mail</label></br> 
+                        <input name="email" placeholder="Email" type="text"  value="" required /> @mail.sfsu.edu<br>
             	        <?php if(isset($emailValidation)){echo "<p class='text-danger'>$emailValidation</p>";}?>
                   <b Style = "font-size: 80% ">Example: <i Style = "color:blue">jdoe@mail.sfsu.edu</i> is <b Style = "color:blue">jdoe</b></b>
                 </div>
@@ -230,4 +256,3 @@ if(isset($_POST['user_submit'])){
                   
     </form>
 </div>
-</br></br></br></br></br>
