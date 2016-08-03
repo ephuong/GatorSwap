@@ -151,5 +151,11 @@ class Home extends Controller
             require APP . 'view/home/search.php';
             require APP . 'view/_templates/footer.php';
     }
+	public functioin thankyou()
+	{
+	  require APP . 'view/_templates/header.php';
+        require APP . 'view/home/thankyou.php';
+        require APP . 'view/_templates/footer.php';
 
+}
 }
