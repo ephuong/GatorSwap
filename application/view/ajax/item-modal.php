@@ -45,8 +45,8 @@
   
       </div> 
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Return</button>
-        <button type="button" class="btn btn-primary">Purchase now</button>
+        <button style="font-size:18px" type="button" class="btn btn-lg btn-default" data-dismiss="modal"> Return </button>
+        <button style="font-size:18px" type="button" class="btn btn-lg btn-primary">Buy it now</button>
       </div>
     </div>
 
