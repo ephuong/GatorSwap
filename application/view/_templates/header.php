@@ -74,11 +74,11 @@
     <ul class="nav navbar-nav navbar-right">  
        
         
-  <li id="sellLink1"><a href="<?php echo URL; ?>checkLoginModal/index" data-remote="false" data-toggle="modal" data-target="#myModal" class="headerLinks"><span class="glyphicon glyphicon-open headerLinks "></span> Sell An Item</a></li> 
+  <li id="sellLink1"><a href="<?php echo URL; ?>checkLoginModal/index" data-remote="false" data-toggle="modal" data-target="#signinModal" class="headerLinks"><span class="glyphicon glyphicon-open headerLinks "></span> Sell An Item</a></li> 
   <li id="sellLink2"><a href="<?php echo URL; ?>home/sell" class="headerLinks"><span class="glyphicon glyphicon-open headerLinks "></span> Sell An Item</a></li>
      
      <!-- modal template -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="signinModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
         
@@ -88,7 +88,7 @@
 </div>
      
      <script>
-                $("#myModal").on("show.bs.modal", function(e) {
+                $("#signinModal").on("show.bs.modal", function(e) {
                 var link = $(e.relatedTarget);
             $(this).find(".modal-content").load(link.attr("href"));
                 });
