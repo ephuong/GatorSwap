@@ -14,7 +14,7 @@ class Profile extends Controller
      */
     public function index()
     {   
-		$categoryList = $this->itemModel->getCategories();
+	$categoryList = $this->itemModel->getCategories();
 	
         // load views
         require APP . 'view/_templates/header.php';
