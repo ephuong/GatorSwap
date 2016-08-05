@@ -179,24 +179,24 @@ body {
 
                 <div class="form-group">
 	                <label>Phone Number</label>
-                        <input class="form-control" name="phoneNumber"  type="text" value= <?php if(isset($_SESSION['phone'])){echo  $_SESSION['phone']; }?>>           
+                        <input class="form-control" type="text" name="phoneNumber"  value= "<?php if(isset($_SESSION['phone'])){echo  $_SESSION['phone']; }?>">         
             	</div>
 
 
 
                 <div class="form-group">
 	                <label>Address:</label>
-                        <input class="form-control" name="address"  type="text" value= <?php if(isset($_SESSION['address'])){ echo  $_SESSION['address'];} ?>>
+                        <input class="form-control" name="address"  type="text" value= "<?php if(isset($_SESSION['address'])){ echo  $_SESSION['address'];} ?>">
               
             	</div>
         <div class="form-group">
 	                <label>City</label>
-                        <input class="form-control" name="city"  type="text" value= <?php if(isset($_SESSION['city'])){ echo $_SESSION['city']; }?>>
+                        <input class="form-control" name="city"  type="text" value= "<?php if(isset($_SESSION['city'])){ echo $_SESSION['city']; }?>">
                         
             	</div>
         <div class="form-group">
 	                <label>Zipcode</label>                 
-                        <input class="form-control" name="zipcode"  type="text" value= <?php if(isset($_SESSION['zipcode'])){ echo  $_SESSION['zipcode'] ;}?>>
+                        <input class="form-control" name="zipcode"  type="text" value= "<?php if(isset($_SESSION['zipcode'])){ echo  $_SESSION['zipcode'] ;}?>">
                         
             	</div>
 </div>

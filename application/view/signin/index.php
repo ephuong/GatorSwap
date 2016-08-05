@@ -120,41 +120,7 @@ body {
   
 
 
-<script>
-    
-    $(document).ready(function() {
-    $('#loginForm').bootstrapValidator({
-        container: '#messages',
-        feedbackIcons: {
-            valid: 'glyphicon glyphicon-ok',
-            invalid: 'glyphicon glyphicon-remove',
-            validating: 'glyphicon glyphicon-refresh'
-        },
-        fields: {
-            username: {
-                validators: {
-                    notEmpty: {
-                        message: 'Username is required and cannot be empty'
-                    }
-                }
-            },
-            password: {
-                validators: {
-                    notEmpty: {
-                        message: 'Password is required and cannot be empty'
-                    },
-                    stringLength: {
-                        min: 6,
-                        message: 'The content must be at least than 6 characters long'
-                    }
-                }
-            }
-        
-         }
-    });
-});
- 
-</script>
+
 
 
 

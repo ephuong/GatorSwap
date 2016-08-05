@@ -196,9 +196,10 @@ body {
                         <label><?php if(isset($_SESSION['zipcode'])){ echo  $_SESSION['zipcode'] ;}?></label>
             	</div>
 </div>
-		
-       <button  id="useEditBtn" class="btn btn-lg btn-primary btn-block" name="user-edit" type="submit" >Edit profile</button>
-               
+	
+        
+       
+    <button  id="useEditBtn" class="btn btn-lg btn-primary btn-block" name="user-edit" type="submit" >Edit profile</button>           
 
        </div>
 
