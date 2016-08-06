@@ -16,7 +16,11 @@
 #lastHomeIndex{
   margin-bottom: 55px;
 }
-
+#category-icons{
+    background-color: transparent; 
+    border: none;
+    outline: none;
+}
 </style>
 
 
@@ -39,11 +43,11 @@
         <div class="panel-heading">BOOKS</div>
         <!--USING flaticon free icons here, need to put in doc -->
         <form action="<?php echo URL; ?>home/search" method="POST">
-            <input type= "hidden" name="search-category" value="2">
+            <input  type= "hidden" name="search-category" value="2">
             <input type= "hidden" name="search-keyword" value="">
             <div class="panel-body">
-                <button class="btn btn-success-outline" id="search-button" name="search">
-                <img src="http://image.flaticon.com/icons/svg/126/126503.svg"  alt="Image"  width="300" height="200"></div>
+                <button id="category-icons" name="search">
+                    <img src="http://image.flaticon.com/icons/svg/126/126503.svg"  alt="Image"  width="300" height="200"></div>
         </form>
 
       </div>
@@ -55,7 +59,7 @@
             <input type= "hidden" name="search-category" value="3">
             <input type= "hidden" name="search-keyword" value="">
             <div class="panel-body">
-            <button class="btn btn-success-outline" id="search-button" name="search">
+            <button id="category-icons" name="search">
                 <img src="http://image.flaticon.com/icons/svg/126/126483.svg"  alt="Image"  width="300" height="200"></button></div>
       </form>
 
@@ -69,7 +73,7 @@
             <input type= "hidden" name="search-category" value="4">
             <input type= "hidden" name="search-keyword" value="">
         <div class="panel-body">
-            <button class="btn btn-success-outline" id="search-button" name="search">
+            <button id="category-icons" name="search">
             <img src="http://image.flaticon.com/icons/svg/126/126515.svg" alt="Image"  width="300" height="200"></button></div>
 
       </div>
@@ -88,7 +92,7 @@
             <input type= "hidden" name="search-category" value="5">
             <input type= "hidden" name="search-keyword" value="">
             <div class="panel-body">
-                <button class="btn btn-success-outline" id="search-button" name="search">
+                <button id="category-icons" name="search">
                 <img src="http://image.flaticon.com/icons/svg/126/126496.svg"  alt="Image"  width="300" height="200"></div>
         </form>
 		
@@ -102,7 +106,7 @@
             <input type= "hidden" name="search-category" value="6">
             <input type= "hidden" name="search-keyword" value="">
             <div class="panel-body">
-            <button class="btn btn-success-outline" id="search-button" name="search">
+            <button id="category-icons" name="search">
                 <img src="http://image.flaticon.com/icons/svg/126/126512.svg"  alt="Image"  width="300" height="200"></button></div>
       </form>
 
@@ -116,7 +120,7 @@
             <input type= "hidden" name="search-category" value="7">
             <input type= "hidden" name="search-keyword" value="">
         <div class="panel-body">
-            <button class="btn btn-success-outline" id="search-button" name="search">
+            <button id="category-icons" name="search">
             <img src="http://image.flaticon.com/icons/svg/126/126498.svg" alt="Image"  width="300" height="200"></button></div>
 
       </div>
