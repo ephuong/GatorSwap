@@ -384,11 +384,6 @@ $('document').ready(function()
                         max: 9,
                         min: 9,
                         message: 'Your 9 digit phone Number'
-                    },
-                    between: {
-                        min: 1,
-                        max: 9,
-                        message: 'must be a greater than 0'
                     }
                 }
             },
@@ -397,14 +392,9 @@ $('document').ready(function()
                     regexp: {
                         regexp: /^\d{5}$/,
                         message: 'The US zipcode must contain 5 digits'
-                    },
-                    between: {
-                        min: 1,
-                        max: 9,
-                        message: 'must be a greater than 0'
                     }
                 }
-            },
+            }
            
         }
     });
