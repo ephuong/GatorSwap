@@ -91,15 +91,15 @@ body {
     <form class="form-signup"  method="post" id="register-form" role="form" method="post" action="<?php echo URL; ?>register/addUser">
         <h3>Register To Create Your Account</h3>
         <div class = "row ">
-       
-            <div class="col-md-5" >
+        
+            <div class="col-md-5 messageContainer" >
                 
               <div class="form-group">                
 	                <label>SFSU ID:</label> 
 	                <input class="form-control" name="sfsu_id" placeholder="SFSU ID" type="text">
                         
             	</div>
-                <div class="col-xs-5 messageContainer"></div>
+                
               
                 <div class="form-group">                
 	                <label>SFSU E-mail</label></br> 
@@ -126,13 +126,12 @@ body {
             </div>
             <div class="col-md-1"></div>
             
-            <div class="col-md-5" >
+            <div class="col-md-5 messageContainer" >
 
                 <div class="form-group">
 	                <label>First Name</label>
 	                <input class="form-control" name="firstname" placeholder="First Name" type="text">
-                        
-                        
+
             	</div>
                 
                 
@@ -198,11 +197,6 @@ $('document').ready(function()
         //container: '#messages',
          err: {
             container: function($field, validator) {
-                // Look at the markup
-                //  <div class="col-xs-4">
-                //      <field>
-                //  </div>
-                //  <div class="col-xs-5 messageContainer"></div>
                 return $field.parent().next('.messageContainer');
             }
         },
@@ -226,24 +220,24 @@ $('document').ready(function()
                     stringLength: {
                         max: 9,
                         min: 9,
-                        message: 'Yo, its your 9 digit sf state Id!'
-                    },
-                    between: {
-                        min: 1,
-                        max: 9,
-                        message: 'must be a greater than 0'
+                        message: 'Its your 9 digit sf state Id!'
                     }
+                    
                 }
             },
             username: {
                 validators: {
                     notEmpty: {
-                        message: 'Your username is the first part of you sfsu student email'
+                        message: 'username cannot be empty'
                     },
                     regexp: {
                      regexp: /^[a-z\s]+$/i,
-                     message: 'Name can consist of alphabetical characters and spaces only'
+                     message: 'Please type alphabetical characters only'
                     },
+                    stringLength: {
+                        max: 10,
+                        message: 'username is too long!'
+                    }
                 }
             },
          password: {
@@ -252,22 +246,37 @@ $('document').ready(function()
                     field: 'confirmPassword',
                     message: 'The password and its confirm are not the same'
                 },
-                regexp: {
-                     regexp: /^[a-z\s]+$/i,
-                     message: 'Name can consist of alphabetical characters and spaces only'
-                    },
+                numeric: {
+                            message: 'Password must be numeric type',
+                            // The default separators
+                            thousandsSeparator: '',
+                            decimalSeparator: ' '
+                        },
+                    stringLength: {
+                        max: 10,
+                        min: 5,
+                        message: 'Password must be between 5-10 digits long'
+                    }
+                  
             }
         },
         confirmPassword: {
             validators: {
                 identical: {
                     field: 'password',
-                    message: 'The password and its confirm are not the same'
+                    message: 'Paswords does not Match!'
                 },
-                regexp: {
-                     regexp: /^[a-z\s]+$/i,
-                     message: 'Name can consist of alphabetical characters and spaces only'
-                    },
+                numeric: {
+                            message: 'Password must be numeric type',
+                            // The default separators
+                            thousandsSeparator: '',
+                            decimalSeparator: ' '
+                        },
+                    stringLength: {
+                        max: 10,
+                        min: 5,
+                        message: 'Password must be between 5-10 digits long'
+                    }
             }
         },
             firstname: {
@@ -279,6 +288,10 @@ $('document').ready(function()
                      regexp: /^[a-z\s]+$/i,
                      message: 'Name can consist of alphabetical characters and spaces only'
                     },
+                    stringLength: {
+                        max: 35,
+                        message: 'Name is abnormaly long!'
+                    }
                 }
             },
             lastname: {
@@ -290,6 +303,10 @@ $('document').ready(function()
                      regexp: /^[a-z\s]+$/i,
                      message: 'Name can consist of alphabetical characters and spaces only'
                     },
+                     stringLength: {
+                        max: 35,
+                        message: 'Name is abnormaly long!'
+                    }
                 }
             },
             country: {
@@ -301,6 +318,10 @@ $('document').ready(function()
                      regexp: /^[a-z\s]+$/i,
                      message: 'Country Name should consist of alphabetical characters and spaces only'
                     },
+                     stringLength: {
+                        max: 15,
+                        message: 'Country Name is abnormaly long!'
+                    }
                 }
             },
              state: {
@@ -312,6 +333,10 @@ $('document').ready(function()
                      regexp: /^[a-z\s]+$/i,
                      message: 'State consist of alphabetical characters and spaces only'
                     },
+                    stringLength: {
+                        max: 12,
+                        message: 'State Name is abnormaly long!'
+                    }
                 }
             },
             address: {
@@ -323,6 +348,10 @@ $('document').ready(function()
                      regexp: /^[a-z\s]+$/i,
                      message: 'Address should be of alphabetical characters and spaces only'
                     },
+                     stringLength: {
+                        max: 50,
+                        message: 'Address is abnormaly long!'
+                    }
                 }
             },
              city: {
@@ -334,6 +363,10 @@ $('document').ready(function()
                      regexp: /^[a-z\s]+$/i,
                      message: 'City name should be of alphabetical characters and spaces only'
                     },
+                    stringLength: {
+                        max: 15,
+                        message: 'City name is abnormaly long!'
+                    }
                 }
             },
             phoneNumber: {
