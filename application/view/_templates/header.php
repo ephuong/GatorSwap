@@ -15,7 +15,7 @@
 <body>
 <nav class="navbar navbar-default navbar-inverse" role="navigation">
 
-  <a class="navbar-left" href="<?php echo URL; ?>home/index"><img id="logo" src="https://s31.postimg.org/5s7zczl7f/Gator_Swap_Logo.jpg" alt="GatorSwap" width="105" height="95"></img></a>
+  <a class="navbar-left" href="<?php echo URL; ?>home/index"><img id="logo" src="http://sfsuswe.com/~ephuong/GatorSwap/public/img/GatorSwapLogo.jpg" alt="GatorSwap" width="105" height="95"></img></a>
 
 
   <div class="navbar-header">
@@ -23,9 +23,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
-      </button>
-<!--         <a class="navbar-brand" href="<?php echo URL; ?>home/index"><img id="logo" src="https://s31.postimg.org/5s7zczl7f/Gator_Swap_Logo.jpg" alt="GatorSwap" width="125" height="75"></img></a>
- -->    
+      </button>  
   </div>
 
   <div class="navbar-collapse collapse" id="myNavbar" style=" margin-top:20px;">
@@ -34,19 +32,6 @@
 
     <ul class="nav navbar-nav navbar-left">
 		<li>
-            <!-- <div class="dropdown">
-                <button class="btn btn-default dropdown-toggle" type="button" id="menuitem" data-toggle="dropdown">All
-                <span class="caret"></span></button>
-                  <ul class="dropdown-menu" role="menu" aria-labelledby="menuitem">
-                    <li role="presentation"><a role="menuitem" tabindex="1" href="#">All</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="1" href="#">Books</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="1" href="#">Office Supplies</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="1" href="#">Clothes</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="1" href="#">Furniture</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="1" href="#">Electronic Supplies</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="1" href="#">Other</a></li>
-                  </ul>
-              </div> -->
 
 			<select class="form-control" id="menuitem" name="search-category">
 				<?php foreach ($categoryList as $category) { 
@@ -74,9 +59,9 @@
     <ul class="nav navbar-nav navbar-right">  
        
         
-  <li id="sellLink1"><a href="<?php echo URL; ?>checkLoginModal/index" data-remote="false" data-toggle="modal" data-target="#signinModal" class="headerLinks"><span class="glyphicon glyphicon-open headerLinks "></span> Sell An Item</a></li> 
-  <li id="sellLink2"><a href="<?php echo URL; ?>home/sell" class="headerLinks"><span class="glyphicon glyphicon-open headerLinks "></span> Sell An Item</a></li>
-     
+  <li id="sellLink1"><button class="btn btn-block btn-primary headerLinks" href="<?php echo URL; ?>checkLoginModal/index" data-remote="false" data-toggle="modal" data-target="#signinModal"><span class="glyphicon glyphicon-open headerLinks" style="font-size:1.5em;"></span> Sell An Item</button></li>
+  <li id="sellLink2"><a class="btn btn-block btn-primary headerLinks" href="<?php echo URL; ?>home/sell" role="button" style="padding-top:6px;padding-bottom:6px;"><span class="glyphicon glyphicon-open headerLinks" style="font-size:1.5em;"></span> Sell An Item</a></li>
+      
      <!-- modal template -->
 <div class="modal fade" id="signinModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -144,10 +129,7 @@
   </div>
 </nav>
 
-<script>
-$(function() {
-	$(#menuItem).
-</script>
+
  <script>
 $(function(){
   
@@ -178,6 +160,10 @@ $(function(){
 
 .panel-primary{
   border-color: #53565a
+}
+
+#sellLink2 .btn-primary:hover {
+	background-color: #286090;
 }
 
 </style>
