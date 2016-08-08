@@ -18,10 +18,10 @@
   padding: 0px;
 }
 
-#welcomeText{
+#siteText{
   
-  color : #FFF;
-  background-color: #26215f ;
+  color :#26215f;
+  background-color: #fff;
   margin-bottom: 15px;
   margin-top: 0px;
 }
@@ -40,12 +40,12 @@
 
 
 <div class="container">
-  <div class="row" id="welcomeText">
+  <div class="row" id="siteText">
     <div class="text-center">
       <div class="page-header">
-          <h1>GatorSwap</h1>
+          <h1>Welcome to GatorSwap</h1>
 		  <p>
-			San Francisco State University's Marketplace 
+			A marketplace for students at San Francisco State University.
           </p>
       </div>    
     </div>
@@ -139,6 +139,12 @@
 
       </div>
     </form>
+    </div>
+  </div><hr>
+  <div class="row" id="siteText">
+    <div class="text-center">
+          <h4>Disclamer: This is a SFSU Software Engineering project for Summer 2016. This website is for demonstration purposes only.</h4>
+      </div>    
     </div>
   </div>
 </div><br>

@@ -48,9 +48,9 @@
 		</li>
 
 
-        <li>
-			<input class="form-control search-input" type="text" placeholder="Search for an item" name="search-keyword" value="<?php echo isset($_POST['search-keyword']) ? $_POST['search-keyword'] : '' ?>">
-			<button class="btn btn-success-outline" id="search-button" name="search" value="Search"><span class="glyphicon glyphicon-search"></span></button>
+        <li><div class="input-group">
+			<input class="form-control search-input" type="search" placeholder="Search for an item" name="search-keyword" value="<?php echo isset($_POST['search-keyword']) ? $_POST['search-keyword'] : '' ?>">
+			<div class="input-group-btn"><button class="btn btn-success-outline" id="search-button" name="search" value="Search"><i class="glyphicon glyphicon-search"></i></button></div></div>
 		</li>
 	  
     </ul>

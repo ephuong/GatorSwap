@@ -1,32 +1,51 @@
 <style>
 
-.panel-primary>.panel-heading {
-    font-size: 100%:
-    background-color: #000000;
-    border-color: #000000;
+.panel .panel-heading {
+    font-size: 150%;
+    background-color: #26215f ;
+    border-color: #26215f;
 }
 
 .panel-primary{
-  border-color: #53565a
+  background-color: #26215f ;
+  border-color: #26215f;
+}
+.panel-body {
+     padding: 0px;
 }
 
-#welcomeText{
-  margin-top: -55px;
+.panel-body .btn {
+  padding: 0px;
+}
+
+#siteText{
+  
+  color :#26215f;
+  background-color: #fff;
+  margin-bottom: 15px;
+  margin-top: 0px;
+}
+.page-header {
+  margin:0px;
 }
 #lastHomeIndex{
   margin-bottom: 55px;
 }
-
+#category-icons{
+   background-color: transparent; 
+   border: none;
+   outline: none;
+}
 </style>
 
 
 <div class="container">
-  <div class="row" id="welcomeText">
+  <div class="row" id="siteText">
     <div class="text-center">
       <div class="page-header">
-          <h1>GatorSwap</h1>
+          <h1>Welcome to GatorSwap</h1>
 		  <p>
-			San Francisco State University's Marketplace 
+			A marketplace for students at San Francisco State University.
           </p>
       </div>    
     </div>
@@ -42,8 +61,8 @@
             <input type= "hidden" name="search-category" value="2">
             <input type= "hidden" name="search-keyword" value="">
             <div class="panel-body" style="height:300px">
-                <p style="text-align:center;height:100%"><button class="btn btn-success-outline" id="search-button" name="search" style="height:100%;">
-                <img class="img-responsive" src="http://sfsuswe.com/~pbroestl/gatorswap/GatorSwap/public/img/book-icon.png"  alt="Image" style="height:100%;" ></div></p>
+                <p style="text-align:center;height:100%;"><button class="btn btn-success-outline" id="category-icons" name="search" style="height:100%;">
+                <img class="img-responsive" src="http://sfsuswe.com/~pbroestl/gatorswap/GatorSwap/public/img/book-icon-white.png"  alt="Image" style="height:100%;" ></div></p>
         </form>
 
       </div>
@@ -55,8 +74,8 @@
             <input type= "hidden" name="search-category" value="3">
             <input type= "hidden" name="search-keyword" value="">
             <div class="panel-body" style="height:300px">
-            <p style="text-align:center;height:100%"><button class="btn btn-success-outline" id="search-button" name="search" style="height:100%;">
-                <img class="img-responsive" src="http://image.flaticon.com/icons/svg/126/126483.svg"  alt="Image" style="height:100%;"></button></div></p>
+            <p style="text-align:center;height:100%"><button class="btn btn-success-outline" id="category-icons" name="search" style="height:100%;">
+                <img class="img-responsive" src="http://sfsuswe.com/~pbroestl/gatorswap/GatorSwap/public/img/office-icon-white.png"  alt="Image" style="height:100%;"></button></div></p>
       </form>
 
       </div>
@@ -69,8 +88,8 @@
             <input type= "hidden" name="search-category" value="4">
             <input type= "hidden" name="search-keyword" value="">
         <div class="panel-body" style="height:300px">
-            <p style="text-align:center;height:100%"><button class="btn btn-success-outline" id="search-button" name="search" style="height:100%;">
-            <img class="img-responsive" src="http://image.flaticon.com/icons/svg/126/126515.svg" alt="Image" style="height:100%;"></button></div></p>
+            <p style="text-align:center;height:100%"><button class="btn btn-success-outline" id="category-icons" name="search" style="height:100%;">
+            <img class="img-responsive" src="http://sfsuswe.com/~pbroestl/gatorswap/GatorSwap/public/img/clothing-icon-white.png" alt="Image" style="height:100%;"></button></div></p>
 
       </div>
     </form>
@@ -83,13 +102,12 @@
       <div class="panel panel-primary">
 
         <div class="panel-heading">FURNITURE</div>
-        <!--USING flaticon free icons here, need to put in doc -->
         <form action="<?php echo URL; ?>home/search" method="POST">
             <input type= "hidden" name="search-category" value="5">
             <input type= "hidden" name="search-keyword" value="">
             <div class="panel-body" style="height:300px">
-                <p style="text-align:center;height:100%"><button class="btn btn-success-outline" id="search-button" name="search" style="height:100%;">
-                <img class="img-responsive" src="http://image.flaticon.com/icons/svg/126/126496.svg"  alt="Image" style="height:100%;"></div></p>
+                <p style="text-align:center;height:100%"><button class="btn btn-success-outline" id="category-icons" name="search" style="height:100%;">
+                <img class="img-responsive" src="http://sfsuswe.com/~pbroestl/gatorswap/GatorSwap/public/img/furniture-icon-white.png"  alt="Image" style="height:100%;"></div></p>
         </form>
 		
       </div>
@@ -102,8 +120,8 @@
             <input type= "hidden" name="search-category" value="6">
             <input type= "hidden" name="search-keyword" value="">
             <div class="panel-body" style="height:300px">
-            <p style="text-align:center;height:100%"><button class="btn btn-success-outline" id="search-button" name="search" style="height:100%;">
-                <img class="img-responsive" src="http://image.flaticon.com/icons/svg/126/126512.svg"  alt="Image" style="height:100%;"></button></div></p>
+            <p style="text-align:center;height:100%"><button class="btn btn-success-outline" id="category-icons" name="search" style="height:100%;">
+                <img class="img-responsive" src="http://sfsuswe.com/~pbroestl/gatorswap/GatorSwap/public/img/electronic-icon-white.png"  alt="Image" style="height:100%;"></button></div></p>
       </form>
 
       </div>
@@ -116,11 +134,17 @@
             <input type= "hidden" name="search-category" value="7">
             <input type= "hidden" name="search-keyword" value="">
         <div class="panel-body" style="height:300px">
-            <p style="text-align:center;height:100%"><button class="btn btn-success-outline" id="search-button" name="search" style="height:100%;">
-            <img class="img-responsive" src="http://image.flaticon.com/icons/svg/126/126498.svg" alt="Image" style="height:100%;"></button></div></p>
+            <p style="text-align:center;height:100%"><button class="btn btn-success-outline" id="category-icons" name="search" style="height:100%;">
+            <img class="img-responsive" src="http://sfsuswe.com/~pbroestl/gatorswap/GatorSwap/public/img/other-icon-white.png" alt="Image" style="height:100%;"></button></div></p>
 
       </div>
     </form>
+    </div>
+  </div><hr>
+  <div class="row" id="siteText">
+    <div class="text-center">
+          <h4>Disclamer: This is a SFSU Software Engineering project for Summer 2016. This website is for demonstration purposes only.</h4>
+      </div>    
     </div>
   </div>
 </div><br>

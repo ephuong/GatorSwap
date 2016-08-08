@@ -83,13 +83,13 @@
    padding-left: 15px;
    padding-right: 15px;
    margin-top: 10px;
+   font-size: 14px;
  }
  
  .search-input {
    margin-top: 10px;
-   width:450px !important;
+   width: 750px !important;
    margin-left: 10px;
-   margin-right: 10px;
  }
  
  #menuitem
