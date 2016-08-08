@@ -43,7 +43,7 @@
             <input type= "hidden" name="search-keyword" value="">
             <div class="panel-body" style="height:300px">
                 <p style="text-align:center;height:100%"><button class="btn btn-success-outline" id="search-button" name="search" style="height:100%;">
-                <img class="img-responsive" src="http://image.flaticon.com/icons/svg/126/126503.svg"  alt="Image" style="height:100%;" ></div></p>
+                <img class="img-responsive" src="http://sfsuswe.com/~pbroestl/gatorswap/GatorSwap/public/img/book-icon.png"  alt="Image" style="height:100%;" ></div></p>
         </form>
 
       </div>

@@ -15,7 +15,7 @@
 <body>
 <nav class="navbar navbar-default navbar-inverse" role="navigation">
 
-  <a class="navbar-left" href="<?php echo URL; ?>home/index"><img id="logo" src="http://sfsuswe.com/~ephuong/GatorSwap/public/img/GatorSwapLogo.jpg" alt="GatorSwap" width="105" height="95"></img></a>
+  <a class="navbar-left" href="<?php echo URL; ?>home/index"><img id="logo" src="http://sfsuswe.com/~pbroestl/gatorswap/GatorSwap/public/img/gatorswap-logo.png" alt="GatorSwap" width="300" height="110"></img></a>
 
 
   <div class="navbar-header">
@@ -29,8 +29,8 @@
   <div class="navbar-collapse collapse" id="myNavbar" style=" margin-top:20px;">
   <form class="form-inline pull-xs-right" action="<?php echo URL; ?>home/search" method="POST">
 
-
-    <ul class="nav navbar-nav navbar-left">
+<div class = "col-md-8">
+    <ul class="nav navbar-nav " style = "padding-top:20px">
 		<li>
 
 			<select class="form-control" id="menuitem" name="search-category">
@@ -54,9 +54,11 @@
 		</li>
 	  
     </ul>
+ </div>
+ 
 </form>
-
-    <ul class="nav navbar-nav navbar-right">  
+<div class = "col-xs-12 col-md-12">
+    <ul class="nav navbar-nav navbar-right ">  
        
         
   <li id="sellLink1"><button class="btn btn-block btn-primary headerLinks" href="<?php echo URL; ?>checkLoginModal/index" data-remote="false" data-toggle="modal" data-target="#signinModal"><span class="glyphicon glyphicon-open headerLinks" style="font-size:1.5em;"></span> Sell An Item</button></li>
@@ -125,6 +127,7 @@
            </a>
         </li>
       </ul>
+</div>
       </div>
   </div>
 </nav>
