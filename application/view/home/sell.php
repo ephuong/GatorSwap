@@ -118,11 +118,13 @@ h3
     font-size: 12pt;
     
 }
-#second, #first{
-  
-}
+
 #submit-button{
-  margin-left: 384px; 
+  /*margin-left: 384px; */
+  padding: 12px 22px;
+  font-size: 18px;
+  border-radius: 8px;
+
 }
 input[type="file"] {
 	  margin-left: 0px;
@@ -209,10 +211,11 @@ $( document ).ready(function() {
                 <label>Add Image:</label><br>
                     <input  type="file" size="60" name="item_image" accept=".jpg,.jpeg,.png">
             </div><br><br><br><br><br><br><br>
+            <div class="col-md-12">
+             	<input type="submit" value="CLICK TO SUBMIT" id="submit-button" class="btn btn-lg btn-primary center-block" name="postItem" /> 
+            </div>
         </div>
-        <div class="col-md-12">
-             	<input type="submit" value="CLICK TO SUBMIT" id="submit-button" class="btn btn-lg btn-primary" name="postItem" /> 
-        </div>
+        
       
         <!--<div class="col-xs-6 col-md-6">
             <button name="postItem" href="<?php echo URL; ?>itemmodal/postModal" data-remote="false" data-toggle="modal" data-target="#postModal" class="btn btn-lg btn-primary" data-item= "<?php if (isset($result->Item_ID)) echo htmlspecialchars($result->Item_ID, ENT_QUOTES, 'UTF-8'); ?>">SUBMIT</button> 
@@ -221,14 +224,11 @@ $( document ).ready(function() {
     </form>
     
     
-    <form class="form-sell" role="form" action="<?php echo URL; ?>itemaction/displayCurrItemPost" method="POST" enctype="multipart/form-data">
-
-        
+    <!--<form class="form-sell" role="form" action="<?php echo URL; ?>itemaction/displayCurrItemPost" method="POST" enctype="multipart/form-data">
         <div class="col-md-12">
              	<input type="submit" value="VIEW" id="submit-button" class="btn btn-lg btn-primary" name="displayCurrItemPost" /> 
-        </div>
-        
-    </form>
+        </div>  
+    </form>-->
     <br><br><br>
 </div>
 

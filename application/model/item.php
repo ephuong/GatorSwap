@@ -1,5 +1,5 @@
 <?php
-$active_id = $_SESSION['account_id']; 
+//$active_id = $_SESSION['account_id']; 
 /**
  * Communicates with the Item table in the database
  */
