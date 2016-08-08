@@ -18,7 +18,7 @@
   padding: 0px;
 }
 
-#siteText{
+#bodyText{
   
   color :#26215f;
   background-color: #fff;
@@ -40,7 +40,7 @@
 
 
 <div class="container">
-  <div class="row" id="siteText">
+  <div class="row" id="bodyText">
     <div class="text-center">
       <div class="page-header">
           <h1>Welcome to GatorSwap</h1>
@@ -140,13 +140,7 @@
       </div>
     </form>
     </div>
-  </div><hr>
-  <div class="row" id="siteText">
-    <div class="text-center">
-          <h4>Disclamer: This is a SFSU Software Engineering project for Summer 2016. This website is for demonstration purposes only.</h4>
-      </div>    
-    </div>
-  </div>
+
 </div><br>
 </div><br><br>
 

@@ -29,11 +29,11 @@
   <div class="navbar-collapse collapse" id="myNavbar" style=" margin-top:20px;">
   <form class="form-inline pull-xs-right" action="<?php echo URL; ?>home/search" method="POST">
 
-<div class = "col-md-8">
-    <ul class="nav navbar-nav " style = "padding-top:20px">
+<div class = "">
+    <ul class="nav navbar-nav  " style = "padding-top:20px">
 		<li>
 
-			<select class="form-control" id="menuitem" name="search-category">
+			<select class="form-control " id="menuitem" name="search-category">
 				<?php foreach ($categoryList as $category) { 
 					if (isset($category->Category_ID))
 						$category_id = htmlspecialchars($category->Category_ID, ENT_QUOTES, 'UTF-8');
@@ -57,7 +57,7 @@
  </div>
  
 </form>
-<div class = "col-xs-12 col-md-12">
+<div class = "col-xs-12 col-md-12" style = "padding-top:5px;">
     <ul class="nav navbar-nav navbar-right ">  
        
         
