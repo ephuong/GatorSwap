@@ -171,7 +171,7 @@ $( document ).ready(function() {
             <label>Category:</label>
             <select class="form-control" name="item_category" required>
                 <option selected value="">Please select a category</option>
-                <?php foreach ($categoryList as $category) { 
+                <?php foreach (array_slice($categoryList, 1) as $category) { 
                     if (isset($category->Category_ID))
                         $category_id = htmlspecialchars($category->Category_ID, ENT_QUOTES, 'UTF-8');
                     if (isset($category->Category_Name))
