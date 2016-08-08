@@ -15,7 +15,7 @@
 <body>
 <nav class="navbar navbar-default navbar-inverse" role="navigation">
 
-  <a class="navbar-left" href="<?php echo URL; ?>home/index"><img id="logo" src="http://sfsuswe.com/~pbroestl/gatorswap/GatorSwap/public/img/gatorswap-logo.png" alt="GatorSwap" width="300" height="110"></img></a>
+  <a class="navbar-left" href="<?php echo URL; ?>home/index"><img id="logo" src=" <?php echo URL; ?>public/img/gatorswap-logo.png" alt="GatorSwap" width="300" height="110"></img></a>
 
 
   <div class="navbar-header">

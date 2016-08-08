@@ -62,7 +62,7 @@
             <input type= "hidden" name="search-keyword" value="">
             <div class="panel-body" style="height:300px">
                 <p style="text-align:center;height:100%;"><button class="btn btn-success-outline" id="category-icons" name="search" style="height:100%;">
-                <img class="img-responsive" src="http://sfsuswe.com/~pbroestl/gatorswap/GatorSwap/public/img/book-icon-white.png"  alt="Image" style="height:100%;" ></div></p>
+                <img class="img-responsive" src="<?php echo URL; ?>public/img/book-icon-white.png"  alt="Image" style="height:100%;" ></div></p>
         </form>
 
       </div>
@@ -75,7 +75,7 @@
             <input type= "hidden" name="search-keyword" value="">
             <div class="panel-body" style="height:300px">
             <p style="text-align:center;height:100%"><button class="btn btn-success-outline" id="category-icons" name="search" style="height:100%;">
-                <img class="img-responsive" src="http://sfsuswe.com/~pbroestl/gatorswap/GatorSwap/public/img/office-icon-white.png"  alt="Image" style="height:100%;"></button></div></p>
+                <img class="img-responsive" src="<?php echo URL; ?>public/img/office-icon-white.png"  alt="Image" style="height:100%;"></button></div></p>
       </form>
 
       </div>
@@ -89,7 +89,7 @@
             <input type= "hidden" name="search-keyword" value="">
         <div class="panel-body" style="height:300px">
             <p style="text-align:center;height:100%"><button class="btn btn-success-outline" id="category-icons" name="search" style="height:100%;">
-            <img class="img-responsive" src="http://sfsuswe.com/~pbroestl/gatorswap/GatorSwap/public/img/clothing-icon-white.png" alt="Image" style="height:100%;"></button></div></p>
+            <img class="img-responsive" src="<?php echo URL; ?>public/img/clothing-icon-white.png" alt="Image" style="height:100%;"></button></div></p>
 
       </div>
     </form>
@@ -107,7 +107,7 @@
             <input type= "hidden" name="search-keyword" value="">
             <div class="panel-body" style="height:300px">
                 <p style="text-align:center;height:100%"><button class="btn btn-success-outline" id="category-icons" name="search" style="height:100%;">
-                <img class="img-responsive" src="http://sfsuswe.com/~pbroestl/gatorswap/GatorSwap/public/img/furniture-icon-white.png"  alt="Image" style="height:100%;"></div></p>
+                <img class="img-responsive" src="<?php echo URL; ?>public/img/furniture-icon-white.png"  alt="Image" style="height:100%;"></div></p>
         </form>
 		
       </div>
@@ -121,7 +121,7 @@
             <input type= "hidden" name="search-keyword" value="">
             <div class="panel-body" style="height:300px">
             <p style="text-align:center;height:100%"><button class="btn btn-success-outline" id="category-icons" name="search" style="height:100%;">
-                <img class="img-responsive" src="http://sfsuswe.com/~pbroestl/gatorswap/GatorSwap/public/img/electronic-icon-white.png"  alt="Image" style="height:100%;"></button></div></p>
+                <img class="img-responsive" src="<?php echo URL; ?>public/img/electronic-icon-white.png"  alt="Image" style="height:100%;"></button></div></p>
       </form>
 
       </div>
@@ -135,7 +135,7 @@
             <input type= "hidden" name="search-keyword" value="">
         <div class="panel-body" style="height:300px">
             <p style="text-align:center;height:100%"><button class="btn btn-success-outline" id="category-icons" name="search" style="height:100%;">
-            <img class="img-responsive" src="http://sfsuswe.com/~pbroestl/gatorswap/GatorSwap/public/img/other-icon-white.png" alt="Image" style="height:100%;"></button></div></p>
+            <img class="img-responsive" src="<?php echo URL; ?>public/img/other-icon-white.png" alt="Image" style="height:100%;"></button></div></p>
 
       </div>
     </form>
