@@ -9,6 +9,10 @@ class ItemModal extends Controller {
     if(isset($_POST["item_id"])) {
 			    $results = $this->itemModel->findItem($_POST["item_id"]);
 		}   
+	if(isset($_POST["search_key"]) && isset($_POST["search_cat"])) {
+			    $search_query = array($_POST["search_key"], $_POST["search_cat"]);
+		}
+
         
     require APP . 'view/ajax/item-modal.php';
     

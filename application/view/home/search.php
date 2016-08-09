@@ -140,7 +140,11 @@
 
                         <div class="btn-group" style="margin-top: 0px;">
                             <div class="col-xs-6 col-md-6">
-                              <button href="<?php echo URL; ?>itemmodal/index" data-remote="false" data-toggle="modal" data-target="#myModal" class="btn btn-block btn-default" data-item= "<?php if (isset($result->Item_ID)) echo htmlspecialchars($result->Item_ID, ENT_QUOTES, 'UTF-8'); ?>">More Info</button> 
+                              <button href="<?php echo URL; ?>itemmodal/index" data-remote="false" data-toggle="modal" data-target="#myModal" class="btn btn-block btn-default" 
+								data-item= "<?php if (isset($result->Item_ID)) echo htmlspecialchars($result->Item_ID, ENT_QUOTES, 'UTF-8'); ?>" 
+								data-searchkey="<?php echo htmlspecialchars($search_query[0], ENT_QUOTES, 'UTF-8'); ?>" 
+								data-searchcat="<?php echo htmlspecialchars($search_query[1], ENT_QUOTES, 'UTF-8'); ?>" 
+								>More Info</button> 
                             </div>
 
                          <div class="col-xs-6 col-md-6"> 
@@ -190,7 +194,9 @@
  $("#myModal").on("show.bs.modal", function(e) {
     var link = $(e.relatedTarget);
     var Id = link.data('item');
-    $(this).find(".modal-content").load(link.attr("href"), {item_id : Id});
+	var SearchKey = link.data('searchkey');
+	var SearchCat = link.data('searchcat');
+    $(this).find(".modal-content").load(link.attr("href"), {item_id : Id, search_key : SearchKey, search_cat : SearchCat});
 });
 
 
