@@ -56,11 +56,6 @@ class Item extends Model
     
     public function displaypostItem(){
         
-        /*$sql = "SELECT I.Item_ID, I.Title, I.Description, I.Item_Condition, I.Price, Im.IMG
-                FROM Item I, Item_Img Im
-		WHERE (I.Account_ID = '$active_id') AND (I.Item_ID = Im.Item_ID) 
-                AND I.Item_ID = (SELECT MAX(Item_ID) FROM Item I)";*/
-        
         $sql = "SELECT I.Item_ID, I.Title, I.Description, I.Item_Condition, I.Price, Im.IMG 
                 FROM Item I, Item_Img Im
 		WHERE (I.Account_ID = '{$_SESSION['account_id']}') AND (I.Item_ID = Im.Item_ID)
@@ -69,15 +64,34 @@ class Item extends Model
         $query = $this->db->prepare($sql);
         $query->execute();
         
-        $lastItemPost = $query->fetchAll();
+        $ItemPost = $query->fetchAll();
 			
-	$itemListArr= array("itemListArr" => $lastItemPost);
+	$itemListArr= array("itemListArr" => $ItemPost);
         
         //echo "display items from user";
         //print_r($itemListArr);
         return $itemListArr;
        
         
+    }
+    
+    public function displaypostItemHist(){
+    
+        $sql = "SELECT I.Item_ID, I.Title, I.Description, I.Item_Condition, I.Price, Im.IMG 
+                FROM Item I, Item_Img Im
+		WHERE (I.Account_ID = '{$_SESSION['account_id']}') AND (I.Item_ID = Im.Item_ID)";
+        
+        $query = $this->db->prepare($sql);
+        $query->execute();
+        
+        $allItemPost = $query->fetchAll();
+			
+	$allitemListArr= array("allitemListArr" => $allItemPost);
+        
+        //echo "display items from user";
+        //print_r($itemListArr);
+        return $allitemListArr;
+    
     }
     
     public function findItem($itemID){

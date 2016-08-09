@@ -73,8 +73,8 @@ img{
     
     <br>
     <div class="sellDispbuttons">
-        <a href="<?php echo URL; ?>home/index"><button class="btn btn-lg btn-primary" name="index">HOME</button></a>
-        <a href="<?php echo URL; ?>itemaction/returnToSellItem"><button class="btn btn-lg btn-primary"  name="returnToSellItem">RETURN TO SELL PAGE</button></a>
+        <a href="<?php echo URL; ?>home/index"><button class="btn btn-lg btn-primary" name="index">Home</button></a>
+        <a href="<?php echo URL; ?>itemaction/returnToSellItem"><button class="btn btn-lg btn-primary"  name="returnToSellItem">Return to Sell Page</button></a>
     </div>
     <br>
     

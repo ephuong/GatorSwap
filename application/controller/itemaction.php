@@ -34,6 +34,17 @@ class ItemAction extends Controller
         
     }
     
+    public function displayAllPost()
+    {
+        $categoryList = $this->itemModel->getCategories();
+        $allitemListArr = $this->itemModel->displaypostItemHist();
+                 
+	require APP . 'view/_templates/header.php';
+        require APP . 'view/home/sellhistdisplay.php';
+        require APP . 'view/_templates/footer.php';
+        
+    }
+    
     public function returnToSellItem()
     {
         $categoryList = $this->itemModel->getCategories();
