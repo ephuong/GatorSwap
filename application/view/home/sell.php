@@ -149,14 +149,14 @@ $( document ).ready(function() {
     <hr style="margin-top: 15px;">
     
     <form class="form-sell" role="form" action="<?php echo URL; ?>itemaction/postItem" method="POST" enctype="multipart/form-data">
-
+        <h4>* Required</h4><br>
         <div class="col-md-6" id="first">
 
-            <label>Title:</label>
+            <label>*Title:</label>
             <input class="form-control" name="item_title" placeholder=" " type="text" required>
             
             <br>
-            <label>Category:</label>
+            <label>*Category:</label>
             <select class="form-control" name="item_category" required>
                 <option selected value="">Please select a category</option>
                 <?php foreach (array_slice($categoryList, 1) as $category) { 
@@ -172,7 +172,7 @@ $( document ).ready(function() {
             </select>
             <br>
             
-            <label>Item Condition:</label>
+            <label>*Item Condition:</label>
             <select class="form-control" name="item_condition" required>
               <option selected value="">Please select item condition</option>
               <option value="New">New</option>
@@ -181,7 +181,7 @@ $( document ).ready(function() {
             <br>
             
             <div class="form-group">                
-                <label>Description: </label> 
+                <label>*Description: </label> 
                 <textarea class="form-control" name="item_desc" cols="10" rows="3" style="resize: none;" placeholder="Describe your item here." required></textarea><br>
             </div>
             
@@ -191,12 +191,12 @@ $( document ).ready(function() {
         <div class="col-md-6" id="second">
            
             <div class="form-group">
-                <label>Price:</label>
-                <input class="form-control" name="item_price" placeholder="10.00" type="text" required>
+                <label>*Price:</label>
+                <input class="form-control" name="item_price" placeholder="10.00" type="text" pattern="[1-99999999]" required>
             </div>
             <br>
             <div class="form-control-img">                
-                <label>Add Image:</label><br>
+                <label>*Add Image: </label><br>
                     <input  type="file" size="60" name="item_image" accept=".jpg,.jpeg,.png">
             </div><br><br><br><br><br><br><br>
             <div class="col-md-12">
