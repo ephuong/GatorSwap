@@ -12,12 +12,7 @@ table{
 .sellitem{
     margin-bottom: 10 px;
 }
-img{
-    padding: 8px;
-    margin: 8px;
-    max-height: 180px; 
-    min-height: 180px; 
-}
+
 
 
 </style>
@@ -38,10 +33,10 @@ img{
                 <div class="thumbnail">
                    <?php
                     if (isset($item_x->IMG) && !empty($item_x->IMG)) {
-                        echo '<img  class=" group"  src="data:image/jpg;base64,' . base64_encode($item_x->IMG) . '" alt=""/>';
+                        echo '<img style="max-height: 180px; min-height: 180px; padding: 8px; margin: 8px;" class="group"  src="data:image/jpg;base64,' . base64_encode($item_x->IMG) . '" alt=""/>';
 
                     } else {
-                        echo ' <img  class="group " src="http://placehold.it/400x250/000/fff" alt="" /> ';
+                        echo ' <img style="max-height: 180px; min-height: 180px; padding: 8px; margin: 8px;" class="group " src="http://placehold.it/400x250/000/fff" alt="" /> ';
                          
                     }
         
@@ -67,11 +62,13 @@ img{
  
               <?php } ?>
  
-    <hr>
-    <div class="sellhistbuttons">
+        <hr>
+        <br>
+     </div>
+
+</div>
+<div class="sellhistbuttons">
         <a href="<?php echo URL; ?>home/index"><button class="btn btn-lg btn-primary" name="index">Home</button></a>
         <a href="<?php echo URL; ?>profile/index"><button class="btn btn-lg btn-primary"  name="returnToProf">Return To Profile Page</button></a>
-    </div>
- 
-    <br>
 </div>
+<br><br>

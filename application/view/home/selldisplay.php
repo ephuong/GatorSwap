@@ -2,8 +2,6 @@
 p{
     text-align: center;
     font-size: 28px;
-    margin: 0px;
-    padding: 0px;
 } 
 
 table{
@@ -19,9 +17,6 @@ td{
 
 }
 img{
-    display: block;
-    min-height: 300px;
-    max-height: 300px;
     margin: 0 auto;
 }
 .container-selldisplay{
