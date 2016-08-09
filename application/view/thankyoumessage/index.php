@@ -20,7 +20,7 @@
      <div class="container-fluid text-center">
 
       <h1>THANK YOU FOR YOUR PURCHASE </h1>
-	  <h3> You will be contacted shortly. </h3>
+	  <h3> You will be contacted by the seller shortly. </h3>
 	  <span class="glyphicon glyphicon-ok logo-small"></span>
 	  <br><br>
 	  

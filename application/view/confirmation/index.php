@@ -33,7 +33,7 @@
 			<button class="btn btn-default btn-lg" style="font-size:18px; margin-right:10px" name="return_search" type="submit">
 				Return
 			</button>
-			<a href="<?php echo URL; ?>home/thankyou" style="font-size:18px; margin-left:10px" type="button" class="btn btn-primary btn-lg">
+			<a href="<?php echo URL; ?>thankyoumessage/index" style="font-size:18px; margin-left:10px" type="button" class="btn btn-primary btn-lg">
 			Confirm your order
 			</a>
 		</form>
