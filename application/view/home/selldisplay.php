@@ -19,9 +19,7 @@ td{
 
 }
 img{
-    display: block;
-    min-height: 300px;
-    max-height: 300px;
+
     margin: 0 auto;
 }
 .container-selldisplay{
