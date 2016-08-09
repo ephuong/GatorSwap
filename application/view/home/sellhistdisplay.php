@@ -13,7 +13,11 @@ table{
     margin-bottom: 10 px;
 }
 
-
+.wrapper {    
+      margin-top: 80px;
+      margin-bottom: 80px;
+      
+}
 
 </style>
 

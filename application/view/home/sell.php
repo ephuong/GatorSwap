@@ -148,7 +148,7 @@ $( document ).ready(function() {
     <h3 style="text-align:center;" >Sell an Item</h3>
     <hr style="margin-top: 15px;">
     
-    <form class="form-sell" role="form" action="<?php echo URL; ?>itemaction/postItem" method="POST" enctype="multipart/form-data">
+    <form name="form-sell" class="form-sell" role="form" action="<?php echo URL; ?>itemaction/postItem" method="POST" enctype="multipart/form-data">
         <h4>* Required</h4><br>
         <div class="col-md-6" id="first">
 
@@ -200,12 +200,13 @@ $( document ).ready(function() {
                     <input  type="file" size="60" name="item_image" accept=".jpg,.jpeg,.png">
             </div><br><br><br><br><br><br><br>
             <div class="col-md-12">
-             	<input type="submit" value="CLICK TO SUBMIT" id="submit-button" class="btn btn-lg btn-primary center-block" name="postItem" /> 
+             	<input type="submit" value="CLICK TO SUBMIT" id="submit-button" class="btn btn-lg btn-primary center-block" name="postItem" onclick="checkPriceInput();"/> 
             </div>
         </div>
                     
     </form>
     <br><br><br>
 </div>
+
 
 

@@ -17,6 +17,10 @@ td{
 
 }
 img{
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3f11ee52e0121e452265531ef9e75cf2c1c5e24b
     margin: 0 auto;
 }
 .container-selldisplay{
