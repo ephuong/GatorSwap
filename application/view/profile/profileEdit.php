@@ -3,7 +3,7 @@ if(!session_id())
    {
     session_start();  
    }
-   ?>
+?>
 <style>
  @import "bourbon";
 
@@ -156,7 +156,7 @@ body {
             	</div>
 
 		  <div class="form-group">
-	                <label>UserName</label></br>
+	                <label>Username</label></br>
                         <label><?php if(isset($_SESSION['username'])){ echo $_SESSION['username'] ;} ?></label>      
                         
             	</div>
@@ -174,8 +174,6 @@ body {
             </div>
 
             <div class="col-md-6">
-
-
 
                 <div class="form-group">
 	                <label>Phone Number</label>

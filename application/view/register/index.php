@@ -209,7 +209,7 @@ $('document').ready(function()
             sfsu_id: {
                 validators: {
                     notEmpty: {
-                        message: 'Your Sfsu Id is required for registration'
+                        message: 'Your SFSU ID is required for registration'
                     },
                     numeric: {
                             message: 'The value is not numeric',
@@ -230,10 +230,7 @@ $('document').ready(function()
                     notEmpty: {
                         message: 'username cannot be empty'
                     },
-                    regexp: {
-                     regexp: /^[a-z\s]+$/i,
-                     message: 'Please type alphabetical characters only'
-                    },
+                    
                     stringLength: {
                         max: 10,
                         message: 'username is too long!'
