@@ -26,7 +26,7 @@ class Item extends Model
         
     public function createItem($active_id, $item_title, $item_category, $item_price, $item_desc, $item_condition)
     {
-        
+        try {
         $sql = "INSERT INTO Item(Account_ID, Title, Price, Category_ID, Item_Condition, Description) 
 		VALUES (:Account_ID, :Title, :Price, :Category_ID, :Item_Condition, :Description)";
         
@@ -49,18 +49,17 @@ class Item extends Model
         $query2 = $this->db->prepare($sql_itemimg);
         $parameters = array(':Item_ID' => $last_id, ':IMG' => $imagetmp);
  
-        $query2->execute($parameters);
+        $query2->execute($parameters);}
         
+        catch (PDOException $e) {
+                    echo $sql . "<br>" . $e->getMessage();
+        }
  
     }
     
     public function displaypostItem(){
         
-        /*$sql = "SELECT I.Item_ID, I.Title, I.Description, I.Item_Condition, I.Price, Im.IMG
-                FROM Item I, Item_Img Im
-		WHERE (I.Account_ID = '$active_id') AND (I.Item_ID = Im.Item_ID) 
-                AND I.Item_ID = (SELECT MAX(Item_ID) FROM Item I)";*/
-        
+        try {
         $sql = "SELECT I.Item_ID, I.Title, I.Description, I.Item_Condition, I.Price, Im.IMG 
                 FROM Item I, Item_Img Im
 		WHERE (I.Account_ID = '{$_SESSION['account_id']}') AND (I.Item_ID = Im.Item_ID)
@@ -69,15 +68,41 @@ class Item extends Model
         $query = $this->db->prepare($sql);
         $query->execute();
         
-        $lastItemPost = $query->fetchAll();
+        $ItemPost = $query->fetchAll();
 			
-	$itemListArr= array("itemListArr" => $lastItemPost);
+	$itemListArr= array("itemListArr" => $ItemPost);
         
         //echo "display items from user";
         //print_r($itemListArr);
-        return $itemListArr;
+        return $itemListArr;}
        
+        catch (PDOException $e) {
+                    echo $sql . "<br>" . $e->getMessage();
+        }
         
+    }
+    
+    public function displaypostItemHist(){
+    
+        try {
+        $sql = "SELECT I.Item_ID, I.Title, I.Description, I.Item_Condition, I.Price, Im.IMG 
+                FROM Item I, Item_Img Im
+		WHERE (I.Account_ID = '{$_SESSION['account_id']}') AND (I.Item_ID = Im.Item_ID)";
+        
+        $query = $this->db->prepare($sql);
+        $query->execute();
+        
+        $allItemPost = $query->fetchAll();
+			
+	$allitemListArr= array("allitemListArr" => $allItemPost);
+        
+        //echo "display items from user";
+        //print_r($itemListArr);
+        return $allitemListArr;}
+        
+        catch (PDOException $e) {
+                    echo $sql . "<br>" . $e->getMessage();
+        }
     }
     
     public function findItem($itemID){

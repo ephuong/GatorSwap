@@ -127,24 +127,10 @@ h3
 
 }
 input[type="file"] {
-	  margin-left: 0px;
-	  border-bottom-left-radius: 0;
-	  border-bottom-right-radius: 0;
-	}
-        
-
-
-/*input[type="file"] {
-    display: none;
-}*/
-
-.custom-file-upload {
-    border: 1px solid #ccc;
-    display: inline-block;
-    padding: 6px 12px;
-    cursor: pointer;
+    margin-left: 0px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
 }
-
 
 </style>
 
@@ -162,15 +148,15 @@ $( document ).ready(function() {
     <h3 style="text-align:center;" >Sell an Item</h3>
     <hr style="margin-top: 15px;">
     
-    <form class="form-sell" role="form" action="<?php echo URL; ?>itemaction/postItem" method="POST" enctype="multipart/form-data">
-
+    <form name="form-sell" class="form-sell" role="form" action="<?php echo URL; ?>itemaction/postItem" method="POST" enctype="multipart/form-data">
+        <h4>* Required</h4><br>
         <div class="col-md-6" id="first">
 
-            <label>Title:</label>
+            <label>*Title:</label>
             <input class="form-control" name="item_title" placeholder=" " type="text" required>
             
             <br>
-            <label>Category:</label>
+            <label>*Category:</label>
             <select class="form-control" name="item_category" required>
                 <option selected value="">Please select a category</option>
                 <?php foreach (array_slice($categoryList, 1) as $category) { 
@@ -186,7 +172,7 @@ $( document ).ready(function() {
             </select>
             <br>
             
-            <label>Item Condition:</label>
+            <label>*Item Condition:</label>
             <select class="form-control" name="item_condition" required>
               <option selected value="">Please select item condition</option>
               <option value="New">New</option>
@@ -195,7 +181,7 @@ $( document ).ready(function() {
             <br>
             
             <div class="form-group">                
-                <label>Description: </label> 
+                <label>*Description: </label> 
                 <textarea class="form-control" name="item_desc" cols="10" rows="3" style="resize: none;" placeholder="Describe your item here." required></textarea><br>
             </div>
             
@@ -205,33 +191,22 @@ $( document ).ready(function() {
         <div class="col-md-6" id="second">
            
             <div class="form-group">
-                <label>Price:</label>
+                <label>*Price:</label>
                 <input class="form-control" name="item_price" placeholder="10.00" type="text" required>
             </div>
             <br>
             <div class="form-control-img">                
-                <label>Add Image:</label><br>
+                <label>*Add Image: </label><br>
                     <input  type="file" size="60" name="item_image" accept=".jpg,.jpeg,.png">
             </div><br><br><br><br><br><br><br>
             <div class="col-md-12">
-             	<input type="submit" value="CLICK TO SUBMIT" id="submit-button" class="btn btn-lg btn-primary center-block" name="postItem" /> 
+             	<input type="submit" value="CLICK TO SUBMIT" id="submit-button" class="btn btn-lg btn-primary center-block" name="postItem" onclick="checkPriceInput();"/> 
             </div>
         </div>
-        
-      
-        <!--<div class="col-xs-6 col-md-6">
-            <button name="postItem" href="<?php echo URL; ?>itemmodal/postModal" data-remote="false" data-toggle="modal" data-target="#postModal" class="btn btn-lg btn-primary" data-item= "<?php if (isset($result->Item_ID)) echo htmlspecialchars($result->Item_ID, ENT_QUOTES, 'UTF-8'); ?>">SUBMIT</button> 
-        </div>-->
                     
     </form>
-    
-    
-    <!--<form class="form-sell" role="form" action="<?php echo URL; ?>itemaction/displayCurrItemPost" method="POST" enctype="multipart/form-data">
-        <div class="col-md-12">
-             	<input type="submit" value="VIEW" id="submit-button" class="btn btn-lg btn-primary" name="displayCurrItemPost" /> 
-        </div>  
-    </form>-->
     <br><br><br>
 </div>
+
 
 

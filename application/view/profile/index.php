@@ -123,64 +123,66 @@ body {
             <div class="col-md-6">
 
                 <div class="form-group">
-	                <label>First Name</label></br>
-                        <label><?php if(isset($_SESSION['firstname'])){ echo $_SESSION['firstname'] ;}?></label>
+	            <label>First Name</label></br>
+                    <label><?php if(isset($_SESSION['firstname'])){ echo $_SESSION['firstname'] ;}?></label>
             	</div>
 
             	<div class="form-group">
-	                <label>Last Name</label></br>
-                        <label><?php if(isset($_SESSION['lastname'])){ echo $_SESSION['lastname']; }?></label>
+	            <label>Last Name</label></br>
+                    <label><?php if(isset($_SESSION['lastname'])){ echo $_SESSION['lastname']; }?></label>
             	</div>
 
 		  <div class="form-group">
-	                <label>UserName</label></br>
-                        <label><?php if(isset($_SESSION['username'])){ echo $_SESSION['username'] ;}?></label>
+	            <label>UserName</label></br>
+                    <label><?php if(isset($_SESSION['username'])){ echo $_SESSION['username'] ;}?></label>
             	</div>
-                  <div class="form-group">
-	                <label>SFSU E-mail</label></br>
-                        <label><?php if(isset($_SESSION['username'])){ echo $_SESSION['username']."@mail.sfsu.edu" ;} ?></label>
+                
+                <div class="form-group">
+	            <label>SFSU E-mail</label></br>
+                    <label><?php if(isset($_SESSION['username'])){ echo $_SESSION['username']."@mail.sfsu.edu" ;} ?></label>
 
                 </div>
 
                 <div class="form-group">
-	                <label>SFSU ID:</label>
-                        <label><?php if(isset($_SESSION['student_id'])){ echo  $_SESSION['student_id']; }?></label>
+	            <label>SFSU ID:</label>
+                    <label><?php if(isset($_SESSION['student_id'])){ echo  $_SESSION['student_id']; }?></label>
             	</div>
 
             </div>
 
             <div class="col-md-6">
 
-
-
                 <div class="form-group">
-	                <label>Phone Number</label>
+                        <label>Phone Number</label>
                         <label><?php if(isset($_SESSION['phone'])){echo  $_SESSION['phone']; }?></label>
-            	</div>
-
+                </div>
 
 
                 <div class="form-group">
-	                <label>Address:</label>
-	               <label><?php if(isset($_SESSION['address'])){ echo  $_SESSION['address'];} ?></label>
-            	</div>
-        <div class="form-group">
-	                <label>City</label>
-                        <label><?php if(isset($_SESSION['city'])){ echo $_SESSION['city']; }?></label>
-            	</div>
-        <div class="form-group">
-	                <label>Zipcode</label>
-                        <label><?php if(isset($_SESSION['zipcode'])){ echo  $_SESSION['zipcode'] ;}?></label>
-            	</div>
-</div>
+                        <label>Address:</label>
+                       <label><?php if(isset($_SESSION['address'])){ echo  $_SESSION['address'];} ?></label>
+                </div>
+
+                <div class="form-group">
+                            <label>City</label>
+                            <label><?php if(isset($_SESSION['city'])){ echo $_SESSION['city']; }?></label>
+                </div>
+
+                <div class="form-group">
+                            <label>Zipcode</label>
+                            <label><?php if(isset($_SESSION['zipcode'])){ echo  $_SESSION['zipcode'] ;}?></label>
+                </div>
+            </div>
 	
-        
-       
-    <button  id="useEditBtn" class="btn btn-lg btn-primary btn-block" name="user-edit" type="submit" >Edit profile</button>           
-
+            <button  id="useEditBtn" class="btn btn-lg btn-primary btn-block" name="user-edit" type="submit" >Edit profile</button>           
        </div>
-
     </form>
+    <br>
+    <form class="form-signup" method="POST" action="<?php echo URL; ?>itemaction/displayAllPost">
+        <h3>Sell History</h3>
+        <button  id="useEditBtn" class="btn btn-lg btn-primary btn-block" name="displayAllPost" type="submit" >View Sell History</button>           
+    </form>
+    <br>
 </div>
 
 
