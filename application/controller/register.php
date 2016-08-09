@@ -40,7 +40,7 @@ class Register extends Controller
        }
 
            // where to go after song has been added
-           header('location: ' . URL . 'dashboard/index');
+           header('location: ' . URL . 'home/index');
      }    
 
       

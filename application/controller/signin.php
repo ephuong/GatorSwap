@@ -38,7 +38,7 @@ class Signin extends Controller
           if($_SESSION['login'])
           {
              // where to go after song has been added
-             header('location: ' . URL . 'dashboard/index'); 
+             header('location: ' . URL . 'home/index'); 
           }
             else if(!isset ($_SESSION['login'])|| $_SESSION['login']==false)
         { 
