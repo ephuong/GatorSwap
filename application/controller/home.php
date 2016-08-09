@@ -151,7 +151,8 @@ class Home extends Controller
     {
         $categoryList = $this->itemModel->getCategories();
         
-            if(isset($_POST["search"])) {
+            if(isset($_POST["search"]) || isset($_POST["return_search"])) {
+				$search_query = array($_POST["search-keyword"], $_POST["search-category"]);
 			    $results = $this->itemModel->searchItems($_POST["search-keyword"], $_POST["search-category"]);
 		    }   
 
@@ -159,5 +160,6 @@ class Home extends Controller
             require APP . 'view/home/search.php';
             require APP . 'view/_templates/footer.php';
     }
-
 }
+
+?>
