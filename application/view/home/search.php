@@ -39,7 +39,14 @@
 </a>
  -->
 <!-- modal template -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+    </div>
+  </div>
+</div>
+ <!-- modal template -->
+<div class="modal fade" id="loginModal" tabindex="-1" role="form" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
     </div>
@@ -191,8 +198,15 @@ $('#myModal').on('hidden.bs.modal', function () {
     $(this).find(".modal-content").html("");
 
 });
+ $("#loginModal").on("show.bs.modal", function(e) {
+    var link = $(e.relatedTarget);
+    $(this).find(".modal-content").load(link.attr("href"));
+});
    
+$('#loginModal').on('hidden.bs.modal', function () {
+    $(this).find(".modal-content").html("");
 
+});
         $('.advenced').click(function (e) {
             e.preventDefault();
             $('#panelAdv').toggle();

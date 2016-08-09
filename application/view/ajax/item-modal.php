@@ -46,7 +46,26 @@
       </div> 
       <div class="modal-footer">
         <button style="font-size:18px" type="button" class="btn btn-lg btn-default" data-dismiss="modal"> Return </button>
-        <button style="font-size:18px" type="button" class="btn btn-lg btn-primary">Buy it now</button>
+          <?php
+             if(isset($_SESSION["login"])){
+               if($_SESSION["login"])
+               {  
+             ?>
+                  <button  href="#"  class="btn btn-block  btn-primary">Buy it now</button>
+             
+               <?php  }
+              }      
+                 else 
+               {  ?>
+             
+                <button href="<?php echo URL; ?>checkLoginModal/index"  data-toggle="modal" data-dismiss = "modal" data-remote="false" data-target="#loginModal" style="font-size:18px" type="button" class="btn btn-lg btn-primary">Buy it now</button>  
+              
+               <?php   }  
+               
+               ?>
+       
+    <!--   <button style="font-size:18px" type="button" class="btn btn-lg btn-primary" data-dismiss="modal">Buy it now</button>   -->
+       
       </div>
     </div>
   
