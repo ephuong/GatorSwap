@@ -105,12 +105,17 @@
 
                         <div class="btn-group" style="margin-top: 0px;">
                             <div class="col-xs-6 col-md-6">
-                              <button href="<?php echo URL; ?>itemmodal/index" data-remote="false" data-toggle="modal" data-target="#myModal" class="btn btn-block  btn-default" data-item= "<?php if (isset($result->Item_ID)) echo htmlspecialchars($result->Item_ID, ENT_QUOTES, 'UTF-8'); ?>">More Info</button> 
+                              <button href="<?php echo URL; ?>itemmodal/index" data-remote="false" data-toggle="modal" data-target="#myModal" class="btn btn-block btn-default" data-item= "<?php if (isset($result->Item_ID)) echo htmlspecialchars($result->Item_ID, ENT_QUOTES, 'UTF-8'); ?>">More Info</button> 
+                            </div>
+                            <div class="col-xs-6 col-md-6 form-group">
+							<form method="post" action="<?php echo URL; ?>confirmation/index">
+							  <input type="hidden" name="item_id" value="<?php if (isset($result->Item_ID)) echo htmlspecialchars($result->Item_ID, ENT_QUOTES, 'UTF-8'); ?>" />
+							  <input type="hidden" name="search_key" value="<?php echo htmlspecialchars($search_query[0], ENT_QUOTES, 'UTF-8'); ?>" />
+							  <input type="hidden" name="search_cat" value="<?php echo htmlspecialchars($search_query[1], ENT_QUOTES, 'UTF-8'); ?>" />
+                              <button class="form-control btn btn-block  btn-primary" name="confirm" type="submit">Buy it now</button>
+							</form>
                             </div>
 
-                            <div class="col-xs-6 col-md-6">
-                              <button href="#" class="btn btn-block  btn-primary">Buy it now</button>
-                            </div>
                         </div>
                     </div>
                 </div>
