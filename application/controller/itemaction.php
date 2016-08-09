@@ -3,8 +3,6 @@
 class ItemAction extends Controller
 {
    
-    
-    
     public function postItem()
     {	
         $categoryList = $this->itemModel->getCategories();
@@ -32,6 +30,16 @@ class ItemAction extends Controller
                  
 	require APP . 'view/_templates/header.php';
         require APP . 'view/home/selldisplay.php';
+        require APP . 'view/_templates/footer.php';
+        
+    }
+    
+    public function returnToSellItem()
+    {
+        $categoryList = $this->itemModel->getCategories();
+                 
+	require APP . 'view/_templates/header.php';
+        require APP . 'view/home/sell.php';
         require APP . 'view/_templates/footer.php';
         
     }

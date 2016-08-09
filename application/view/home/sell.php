@@ -127,24 +127,10 @@ h3
 
 }
 input[type="file"] {
-	  margin-left: 0px;
-	  border-bottom-left-radius: 0;
-	  border-bottom-right-radius: 0;
-	}
-        
-
-
-/*input[type="file"] {
-    display: none;
-}*/
-
-.custom-file-upload {
-    border: 1px solid #ccc;
-    display: inline-block;
-    padding: 6px 12px;
-    cursor: pointer;
+    margin-left: 0px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
 }
-
 
 </style>
 
@@ -217,20 +203,8 @@ $( document ).ready(function() {
              	<input type="submit" value="CLICK TO SUBMIT" id="submit-button" class="btn btn-lg btn-primary center-block" name="postItem" /> 
             </div>
         </div>
-        
-      
-        <!--<div class="col-xs-6 col-md-6">
-            <button name="postItem" href="<?php echo URL; ?>itemmodal/postModal" data-remote="false" data-toggle="modal" data-target="#postModal" class="btn btn-lg btn-primary" data-item= "<?php if (isset($result->Item_ID)) echo htmlspecialchars($result->Item_ID, ENT_QUOTES, 'UTF-8'); ?>">SUBMIT</button> 
-        </div>-->
                     
     </form>
-    
-    
-    <!--<form class="form-sell" role="form" action="<?php echo URL; ?>itemaction/displayCurrItemPost" method="POST" enctype="multipart/form-data">
-        <div class="col-md-12">
-             	<input type="submit" value="VIEW" id="submit-button" class="btn btn-lg btn-primary" name="displayCurrItemPost" /> 
-        </div>  
-    </form>-->
     <br><br><br>
 </div>
 

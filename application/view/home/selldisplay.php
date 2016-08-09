@@ -2,16 +2,33 @@
 p{
     text-align: center;
     font-size: 28px;
+    margin: 0px;
+    padding: 0px;
 } 
+
 table{
     text-align: left;
+    margin: 0 auto;
+    
 }
 td{
-    padding: 30px;
+    min-height: 300px;
+    max-height: 300px;
+    margin: 10px;
+    padding: 10px;
+
+}
+img{
+    display: block;
+    min-height: 300px;
+    max-height: 300px;
+    margin: 0 auto;
 }
 .container-selldisplay{
     margin: 0 auto;
-    padding: 30px;
+    padding-right: 30px;
+    padding-left: 30px;
+    padding-top: 15px;
 }
 
 .wrapper {	
@@ -20,16 +37,23 @@ td{
        
 }
 
+.sellDispbuttons{
+    width: 50%;
+    margin: 0 auto; 
+    text-align: center;
+}
 </style>
-<div class="container-selldisplay wrapper">
+
+
+<div class="container-selldisplay">
     <!--<div class= "col-xs-6 col-md-6">-->
-    <p>Item successfully posted. Thank you for using GatorSwap</p><br><br>
+    <p>Item successfully posted. Thank you for using GatorSwap</p>
     
      <table>
          <tr>
            <td>
            <?php foreach ($itemListArr["itemListArr"] as $item_x) { ?>
-            <h4><b>Title: <?php if (isset($item_x->Title)) echo htmlspecialchars($item_x->Title, ENT_QUOTES, 'UTF-8'); ?></h4></b>
+            <h4><b><?php if (isset($item_x->Title)) echo htmlspecialchars($item_x->Title, ENT_QUOTES, 'UTF-8'); ?></h4></b>
             <h4><b>Item ID: <?php if (isset($item_x->Item_ID)) echo htmlspecialchars($item_x->Item_ID, ENT_QUOTES, 'UTF-8'); ?></h4> </b>
             
             <h4><b>Description: <?php if (isset($item_x->Description)) echo htmlspecialchars($item_x->Description, ENT_QUOTES, 'UTF-8'); ?></h4> </b>
@@ -38,43 +62,20 @@ td{
            <td>
             <?php 
                     if (isset($item_x->IMG)) {
-                            echo '<img style=" width:60%" src="data:image/jpg;base64,' . base64_encode($item_x->IMG) . '" />';
+                            echo '<img style=" width:60%;" src="data:image/jpg;base64,' . base64_encode($item_x->IMG) . '" />';
                     }									
             ?>     
 
         <?php } ?>
-            <td>
+           </td>
         </tr>
-     </table>    
+     </table> 
     
-    <!--<table class="table table-hover">
-        <thead>
-        <tr>
-          <th>Item ID</th>
-          <th>Title</th>
-          <th>Description</th>
-          <th>Price</th>
-          <th>Item Image</th>
-        </tr>
-        </thead>
-        <tr>
-            <?php foreach ($itemListArr["itemListArr"] as $item_x) { ?>
-            <td><h5><b>Item ID: <?php if (isset($item_x->Item_ID)) echo htmlspecialchars($item_x->Item_ID, ENT_QUOTES, 'UTF-8'); ?></h5> </b></td>
-
-            <td><h5><b><?php if (isset($item_x->Title)) echo htmlspecialchars($item_x->Title, ENT_QUOTES, 'UTF-8'); ?></h5></b></td> 
-            <td><h5><b><?php if (isset($item_x->Description)) echo htmlspecialchars($item_x->Description, ENT_QUOTES, 'UTF-8'); ?></h5> </b></td>
-            <td><h5><b>$<?php if (isset($item_x->Price)) echo htmlspecialchars($item_x->Price, ENT_QUOTES, 'UTF-8'); ?></h5> </b></td>
-
-            <td>
-                <?php 
-                    if (isset($item_x->IMG)) {
-                        echo '<img style=" width:30%" src="data:image/jpg;base64,' . base64_encode($item_x->IMG) . '" />';
-                    }									
-                ?>     
-
-                <?php } ?>
-             </td>
-        </tr>
-    </table>-->    
-    <!--</div> -->
+    <br>
+    <div class="sellDispbuttons">
+        <a href="<?php echo URL; ?>home/index"><button class="btn btn-lg btn-primary" name="index">HOME</button></a>
+        <a href="<?php echo URL; ?>itemaction/returnToSellItem"><button class="btn btn-lg btn-primary"  name="returnToSellItem">RETURN TO SELL PAGE</button></a>
+    </div>
+    <br>
+    
 </div>
