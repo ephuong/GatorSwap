@@ -192,7 +192,7 @@ $( document ).ready(function() {
            
             <div class="form-group">
                 <label>*Price:</label>
-                <input class="form-control" name="item_price" placeholder="10.00" type="text" pattern="[1-99999999]" required>
+                <input class="form-control" name="item_price" placeholder="10.00" type="text" required>
             </div>
             <br>
             <div class="form-control-img">                
