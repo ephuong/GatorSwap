@@ -228,51 +228,45 @@ $('document').ready(function()
             username: {
                 validators: {
                     notEmpty: {
-                        message: 'username cannot be empty'
+                        message: 'Username cannot be empty'
                     },
                     
                     stringLength: {
                         max: 10,
-                        message: 'username is too long!'
+                        message: 'Username is too long!'
                     }
                 }
             },
          password: {
             validators: {
+                notEmpty: {
+                        message: 'Password cannot be empty'
+                    },
                 identical: {
                     field: 'confirmPassword',
                     message: 'The password and its confirm are not the same'
                 },
-                numeric: {
-                            message: 'Password must be numeric type',
-                            // The default separators
-                            thousandsSeparator: '',
-                            decimalSeparator: ' '
-                        },
                     stringLength: {
-                        max: 10,
-                        min: 5,
-                        message: 'Password must be between 5-10 digits long'
+                        max: 25,
+                        min: 6,
+                        message: 'Password must be between 6-25 characters long'
                     }
                   
             }
         },
         confirmPassword: {
             validators: {
+              notEmpty: {
+                        message: 'Password cannot be empty'
+                    },
                 identical: {
                     field: 'password',
                     message: 'Paswords does not Match!'
                 },
-                numeric: {
-                            message: 'Password must be numeric type',
-                            // The default separators
-                            thousandsSeparator: '',
-                            decimalSeparator: ' '
-                        },
                     stringLength: {
-                        max: 10,
-                        min: 5,
-                        message: 'Password must be between 5-10 digits long'
+                        max: 25,
+                        min: 6,
+                        message: 'Password must be between 6-25 characters long'
                     }
             }
         },
@@ -287,7 +281,7 @@ $('document').ready(function()
                     },
                     stringLength: {
                         max: 35,
-                        message: 'Name is abnormaly long!'
+                        message: 'Name is too long!'
                     }
                 }
             },
@@ -302,7 +296,7 @@ $('document').ready(function()
                     },
                      stringLength: {
                         max: 35,
-                        message: 'Name is abnormaly long!'
+                        message: 'Name is too long!'
                     }
                 }
             },
@@ -312,12 +306,12 @@ $('document').ready(function()
                         message: 'Country is required and cannot be empty'
                     },
                     regexp: {
-                     regexp: /^[a-z\s]+$/i,
+                     regexp: /^([a-z])\s +$/i,
                      message: 'Country Name should consist of alphabetical characters and spaces only'
                     },
                      stringLength: {
                         max: 15,
-                        message: 'Country Name is abnormaly long!'
+                        message: 'Country Name is too long!'
                     }
                 }
             },
@@ -332,7 +326,7 @@ $('document').ready(function()
                     },
                     stringLength: {
                         max: 12,
-                        message: 'State Name is abnormaly long!'
+                        message: 'State Name is too long!'
                     }
                 }
             },
@@ -342,12 +336,12 @@ $('document').ready(function()
                         message: 'address is required and cannot be empty'
                     },
                     regexp: {
-                     regexp: /^[a-z\s]+$/i,
-                     message: 'Address should be of alphabetical characters and spaces only'
+                     regexp: /^[0-9a-zA-Z. ]+$/i,
+                     message: 'Address should consist of the street number and name.'
                     },
                      stringLength: {
                         max: 50,
-                        message: 'Address is abnormaly long!'
+                        message: 'Address is too long!'
                     }
                 }
             },
@@ -362,7 +356,7 @@ $('document').ready(function()
                     },
                     stringLength: {
                         max: 15,
-                        message: 'City name is abnormaly long!'
+                        message: 'City name is too long!'
                     }
                 }
             },
@@ -371,16 +365,12 @@ $('document').ready(function()
                     notEmpty: {
                         message: 'Phone Number is required and cannot be empty'
                     },
-                    numeric: {
-                            message: 'The value is not numeric',
-                            // The default separators
-                            thousandsSeparator: '',
-                            decimalSeparator: ' '
-                        },
+                    regexp: {
+                     regexp: /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/i,
+                     message: 'This is an invalid phone number!'
+                            },
                     stringLength: {
-                        max: 9,
-                        min: 9,
-                        message: 'Your 9 digit phone Number'
+                        message: 'Your 10 digit phone Number'
                     }
                 }
             },
