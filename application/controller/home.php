@@ -63,6 +63,7 @@ class Home extends Controller
      */
     public function about()
     {
+        $categoryList = $this->itemModel->getCategories();
         require APP . 'view/_templates/header.php';
         require APP . 'view/home/about.php';
         require APP . 'view/_templates/footer.php';
@@ -75,6 +76,7 @@ class Home extends Controller
      */
     public function terms()
     {
+        $categoryList = $this->itemModel->getCategories();
         require APP . 'view/_templates/header.php';
         require APP . 'view/home/terms.php';
         require APP . 'view/_templates/footer.php';
@@ -87,6 +89,7 @@ class Home extends Controller
      */
     public function privacy()
     {
+        $categoryList = $this->itemModel->getCategories();
         require APP . 'view/_templates/header.php';
         require APP . 'view/home/privacy.php';
         require APP . 'view/_templates/footer.php';
@@ -99,6 +102,7 @@ class Home extends Controller
      */
     public function contact()
     {
+        $categoryList = $this->itemModel->getCategories();
         require APP . 'view/_templates/header.php';
         require APP . 'view/home/contact.php';
         require APP . 'view/_templates/footer.php';
@@ -111,6 +115,7 @@ class Home extends Controller
      */
     public function help()
     {
+        $categoryList = $this->itemModel->getCategories();
         require APP . 'view/_templates/header.php';
         require APP . 'view/home/help.php';
         require APP . 'view/_templates/footer.php';

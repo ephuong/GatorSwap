@@ -24,19 +24,63 @@ class Item extends Model
         }
     }
         
-    public function createItem($item_accid, $item_title, $item_category, $item_price, $item_desc, $item_condition)
+    public function createItem($active_id, $item_title, $item_category, $item_price, $item_desc, $item_condition)
     {
-        $sql = "INSERT INTO Item(Account_ID, Title, Price, Category, Item_Condition, Description) 
-		VALUES (:Account_ID, :Title, :Price, :Category, :Item_Condition, :Description)";
+        
+        $sql = "INSERT INTO Item(Account_ID, Title, Price, Category_ID, Item_Condition, Description) 
+		VALUES (:Account_ID, :Title, :Price, :Category_ID, :Item_Condition, :Description)";
         
         $query = $this->db->prepare($sql);
-        $parameters = array(':Account_ID' => $item_accid, ':Title' => $item_title, ':Price' => $item_price, 
-                     ':Category' => $item_category, ':Item_Condition' => $item_condition, ':Description' => $item_desc);
+        $parameters = array(':Account_ID' => $active_id, ':Title' => $item_title, ':Price' => $item_price, 
+                     ':Category_ID' => $item_category, ':Item_Condition' => $item_condition, ':Description' => $item_desc);
         
         $query->execute($parameters);
+       
+        $last_id = $this->db->lastInsertId();
+        
+        //echo "New record created successfully. Last inserted ID is: " . $last_id;
+
+        //Get the content of the image and then add slashes to it 
+        $imagetmp = addslashes (file_get_contents($_FILES['item_image']['tmp_name']));
+
+        $sql_itemimg = "INSERT INTO Item_Img(Item_ID, IMG) 
+                        VALUES ('$last_id', '$imagetmp')";
+              
+        $query2 = $this->db->prepare($sql_itemimg);
+        $parameters = array(':Item_ID' => $last_id, ':IMG' => $imagetmp);
+ 
+        $query2->execute($parameters);
+        
  
     }
- public function findItem($itemID){
+    
+    public function displaypostItem(){
+        
+        /*$sql = "SELECT I.Item_ID, I.Title, I.Description, I.Item_Condition, I.Price, Im.IMG
+                FROM Item I, Item_Img Im
+		WHERE (I.Account_ID = '$active_id') AND (I.Item_ID = Im.Item_ID) 
+                AND I.Item_ID = (SELECT MAX(Item_ID) FROM Item I)";*/
+        
+        $sql = "SELECT I.Item_ID, I.Title, I.Description, I.Item_Condition, I.Price, Im.IMG 
+                FROM Item I, Item_Img Im
+		WHERE (I.Account_ID = '{$_SESSION['account_id']}') AND (I.Item_ID = Im.Item_ID)
+                ORDER BY I.Item_ID DESC LIMIT 1";
+        
+        $query = $this->db->prepare($sql);
+        $query->execute();
+        
+        $lastItemPost = $query->fetchAll();
+			
+	$itemListArr= array("itemListArr" => $lastItemPost);
+        
+        //echo "display items from user";
+        //print_r($itemListArr);
+        return $itemListArr;
+       
+        
+    }
+    
+    public function findItem($itemID){
    //return a single item based on $itemID
    	$sql = "SELECT I.Item_ID, I.Title, I.Category_ID, I.Item_Condition, I.Price, Description, Im.IMG, I.List_Date as List_Order 
 		FROM Item I, Item_Img Im 
@@ -45,7 +89,7 @@ class Item extends Model
     try {
       
    	$query = $this->db->prepare($sql);
-	  $query->execute();
+	$query->execute();
     // return first row
     $result = $query->fetch(PDO::FETCH_ASSOC);
     return $result ; 
@@ -53,7 +97,7 @@ class Item extends Model
     } catch (PDOException $e) {
 			echo $sql . "<br>" . $e->getMessage();
 		}
- }
+    }
     /**
 	 * @param string $keyword Searching for items with the specified keyword(s)
 	 * @return mixed array containing the result set and the number of results 
@@ -76,11 +120,7 @@ class Item extends Model
         
           foreach ($keywordarray as $word)
           {
-
-			  $word = preg_replace("/[~`@#$%^&*()\-_+={}\[\]\|\\\\\/\:\;\"\'<>,.?]/", "", $word);
-
-			  if(strlen($word) > 1)
-				$searchString = $searchString . " +" . $word . "*" ; 
+            $searchString = $searchString . " +" . $word . "*" ; 
           }
 		  
 		  //Query for searching the Item table using the search keyword

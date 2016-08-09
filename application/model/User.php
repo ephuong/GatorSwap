@@ -65,10 +65,13 @@ class User extends Model
                         $query3 = $this->db->prepare($sql3);
                         $parameters3 = array(':username' => $username);
                         $query3->execute($parameters3);
+                       
+
                         $account = $query3->fetch(PDO::FETCH_ASSOC);
                         $accountId = $account['Account_ID'];
-                        $studentId = $account['Student_ID'];
+                                               
                         
+                        $studentId = $account['Student_ID'];
                         $sql4="SELECT F_Name,L_Name,Country,State,Address,City,Zipcode,Phone FROM User WHERE Account_ID = :accountId;";
                         $query4 = $this->db->prepare($sql4);
                         $parameters4 = array(':accountId' => $accountId);
@@ -83,6 +86,7 @@ class User extends Model
 			}
                         else
                         {
+                         $_SESSION['account_id'] = $accountId;
                          $_SESSION['username'] = $username;
                          $_SESSION['login'] = true;
                          $_SESSION['firstname']=$userInfo['F_Name'];
