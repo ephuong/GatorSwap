@@ -1,9 +1,6 @@
 <?php
 
-   if(!session_id())
-   {
-    session_start();  
-   }
+ 
 
 /**
  * Class Home
@@ -20,9 +17,15 @@ class Home extends Controller
      * This method handles what happens when you move to http://yourproject/home/index (which is the default page btw)
      */
    public function index()
+           
     {
+       
 	$categoryList = $this->itemModel->getCategories();
-		
+        
+	if(!session_id())
+          {
+           session_start();  
+          }	
         // load views
         require APP . 'view/_templates/header.php';
         require APP . 'view/home/index.php';

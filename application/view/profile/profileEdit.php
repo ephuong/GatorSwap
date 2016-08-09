@@ -3,7 +3,7 @@ if(!session_id())
    {
     session_start();  
    }
-   ?>
+?>
 <style>
  @import "bourbon";
 
@@ -110,31 +110,31 @@ body {
 
 }
 
-
 </style>
 
 
 
 <div id="signup" class="container">
 
-    <form class="form-signup" role="form" method="post" action="<?php echo URL; ?>editProfile/profileEdit">
+    <form class="form-signup" role="form" method="post" action="<?php echo URL; ?>editProfile/updateUserInfo">
         <h3>Account Information</h3>
         <div class="row">
             <div class="col-md-6">
 
                 <div class="form-group">
 	                <label>First Name</label></br>
-                        <label><?php if(isset($_SESSION['firstname'])){ echo $_SESSION['firstname'] ;}?></label>
+                       <input class="form-control" name="firstName"  type="text" value= <?php if(isset($_SESSION['firstname'])){ echo $_SESSION['firstname'] ;}?>>
             	</div>
 
             	<div class="form-group">
 	                <label>Last Name</label></br>
-                        <label><?php if(isset($_SESSION['lastname'])){ echo $_SESSION['lastname']; }?></label>
+                        <input class="form-control" name="lastName"  type="text" value= <?php if(isset($_SESSION['lastname'])){ echo $_SESSION['lastname']; }?>>      
             	</div>
 
 		  <div class="form-group">
-	                <label>UserName</label></br>
-                        <label><?php if(isset($_SESSION['username'])){ echo $_SESSION['username'] ;}?></label>
+	                <label>Username</label></br>
+                        <label><?php if(isset($_SESSION['username'])){ echo $_SESSION['username'] ;} ?></label>      
+                        
             	</div>
                   <div class="form-group">
 	                <label>SFSU E-mail</label></br>
@@ -151,32 +151,32 @@ body {
 
             <div class="col-md-6">
 
-
-
                 <div class="form-group">
 	                <label>Phone Number</label>
-                        <label><?php if(isset($_SESSION['phone'])){echo  $_SESSION['phone']; }?></label>
+                        <input class="form-control" type="text" name="phoneNumber"  value= "<?php if(isset($_SESSION['phone'])){echo  $_SESSION['phone']; }?>">         
             	</div>
 
 
 
                 <div class="form-group">
 	                <label>Address:</label>
-	               <label><?php if(isset($_SESSION['address'])){ echo  $_SESSION['address'];} ?></label>
+                        <input class="form-control" name="address"  type="text" value= "<?php if(isset($_SESSION['address'])){ echo  $_SESSION['address'];} ?>">
+              
             	</div>
         <div class="form-group">
 	                <label>City</label>
-                        <label><?php if(isset($_SESSION['city'])){ echo $_SESSION['city']; }?></label>
+                        <input class="form-control" name="city"  type="text" value= "<?php if(isset($_SESSION['city'])){ echo $_SESSION['city']; }?>">
+                        
             	</div>
         <div class="form-group">
-	                <label>Zipcode</label>
-                        <label><?php if(isset($_SESSION['zipcode'])){ echo  $_SESSION['zipcode'] ;}?></label>
+	                <label>Zipcode</label>                 
+                        <input class="form-control" name="zipcode"  type="text" value= "<?php if(isset($_SESSION['zipcode'])){ echo  $_SESSION['zipcode'] ;}?>">
+                        
             	</div>
 </div>
-	
-        
-       
-    <button  id="useEditBtn" class="btn btn-lg btn-primary btn-block" name="user-edit" type="submit" >Edit profile</button>           
+		
+       <button  id="useEditBtn" class="btn btn-lg btn-primary btn-block" name="user-update" type="submit" >Save</button>
+               
 
        </div>
 

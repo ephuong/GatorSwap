@@ -16,11 +16,29 @@ class User extends Model
     public function setUser($account_id,$firstname, $lastname,$country,$state,$address, $city, $zipcode,$phoneNumber) 
         {	
             try {	
-                       $sql = "UPDATE User SET F_Name= :firstname,L_Name=:lastname,Country=:country,State=:state,Address=:address,City=:city,Zipcode=:zipcode,Phone=:phoneNumber WHERE Account_ID = :account_id;";
-                       $query = $this->db->prepare($sql);
-                       $parameters = array(':account_id'=>$account_id,':firstname' => $firstname, ':lastname' => $lastname,':country'=>$country,':state'=>$state,':address'=>$address,':city'=>$city,':zipcode'=>$zipcode,':phoneNumber'=>$phoneNumber);
-		       $query->execute($parameters); 
-		
+                      
+                     $sql = "UPDATE User SET F_Name= :firstname,L_Name=:lastname,Country=:country,State=:state,Address=:address,City=:city,Zipcode=:zipcode,Phone=:phoneNumber WHERE Account_ID = :account_id;";
+                     $query = $this->db->prepare($sql);
+                     $parameters = array(':account_id'=>$account_id,':firstname' => $firstname, ':lastname' => $lastname,':country'=>$country,':state'=>$state,':address'=>$address,':city'=>$city,':zipcode'=>$zipcode,':phoneNumber'=>$phoneNumber);
+		     $query->execute($parameters); 
+		       
+                     
+                     $sql4="SELECT F_Name,L_Name,Country,State,Address,City,Zipcode,Phone FROM User WHERE Account_ID = :accountId;";
+                     $query4 = $this->db->prepare($sql4);
+                     $parameters4 = array(':accountId' => $account_id);
+                     $query4->execute($parameters4);
+                     $userInfo = $query4->fetch(PDO::FETCH_ASSOC);   
+                     
+
+                         $_SESSION['firstname']=$userInfo['F_Name'];
+                         $_SESSION['lastname']=$userInfo['L_Name'];
+                         $_SESSION['student_id']= $account_id['Student_ID'];
+                         $_SESSION['country']=$userInfo['Country'];
+                         $_SESSION['state']=$userInfo['State'];
+                         $_SESSION['address']=$userInfo['Address'];
+                         $_SESSION['city']=$userInfo['City'];
+                         $_SESSION['zipcode']=$userInfo['Zipcode'];
+                         $_SESSION['phone']=$userInfo['Phone'];
 		} 
                 catch(PDOException $e) {
 			echo $sql . "<br>" . $e->getMessage();
@@ -106,8 +124,41 @@ class User extends Model
 			echo $sql . "<br>" . $e->getMessage();
 		}
 	}
+       
+        public function getAccountId($username) {
+            
+              $sql = "SELECT Account_ID FROM Account WHERE Username = :username;";
+              $query = $this->db->prepare($sql);
+              $parameters = array(':username' => $username);
+              $query->execute($parameters);
+              $account = $query->fetch(PDO::FETCH_ASSOC);
+              $accountId = $account['Account_ID']; 
+              return $accountId;
+        }
         
- 
+      public function updateUser($accountId,$firstName,$lastName,$phoneNumber,$address,$city,$zipcode) 
+         {
+            $sql = "UPDATE User SET F_Name= :firstname,L_Name=:lastname,Phone=:phoneNumber,Address=:address,City=:city,Zipcode=:zipcode WHERE Account_ID = :account_id;";
+            $query = $this->db->prepare($sql);
+            $parameters = array(':account_id'=>$accountId,':firstname' => $firstName, ':lastname' => $lastName,':phoneNumber'=> $phoneNumber,':address'=>$address,':city'=>$city,':zipcode'=>$zipcode );
+	    $query->execute($parameters); 
+            
+            $sql2="SELECT F_Name,L_Name,Phone,Address,City,Zipcode FROM User WHERE Account_ID = :accountId;";
+            $query2 = $this->db->prepare($sql2);
+            $parameters2 = array(':accountId' => $accountId);
+            $query2->execute($parameters2);
+            $userInfo = $query2->fetch(PDO::FETCH_ASSOC);
+            
+
+
+            $_SESSION['firstname']=$userInfo['F_Name'];
+            $_SESSION['lastname']=$userInfo['L_Name'];
+            $_SESSION['address']=$userInfo['Address'];
+            $_SESSION['phone']=$userInfo['Phone'];
+            $_SESSION['city']=$userInfo['City'];
+            $_SESSION['zipcode']=$userInfo['Zipcode'];
+           
+        }
           
 }
 

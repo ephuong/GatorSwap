@@ -1,18 +1,17 @@
-<?php
-// remove all session variables
 
-         
-?>
 <style>
 @import "bourbon";
 
 body {
-	background: white;	
+	background: #eee !important;
+        
+        
 }
 
 .wrapper {	
-	margin-top: 80px;
-  margin-bottom: 80px;
+       margin-top: 80px;
+       margin-bottom: 80px;
+       
 }
 
 .form-sign-in {
@@ -57,73 +56,31 @@ body {
        .Title {
         text-align: center;
 	line-height: 300%;
+       }
+       
 }
-}
+
+
 
 </style>
 
-  <div id="loginForm" class="wrapper" data-toggle="validator">
+  <div id="login" class="container wrapper">
+      
       <form id="myForm" class="form-sign-in" method="post" action="<?php echo URL; ?>signin/login">       
         <h3>Login or <a href="<?php echo URL; ?>register/index">Sign up</a> </h3>
-      <label for="username" control-label>Username</label>  
+      <label>Username</label>  
       <input type="text" id="username" class="form-control" name="username" placeholder="Username" value="<?php if(isset($_POST['username'])){echo htmlspecialchars($_POST['username']); }?>" />
-      <?php 
-      if(isset($errUserName)){
-      echo "<p class='text-danger'>$errUserName</p>";
-      }
-      ?>
+   
       </br>
-      <label for="pwd" control-label>Password</label> 
+      <label>Password</label> 
       <input id="pwd" class="form-control" type="password"  name="password" placeholder="Password" /> 
-      <?php 
-      if(isset($errPassword)){
-      echo "<p class='text-danger'>$errPassword</p>";
-      }
-      ?>
-       <div class="form-group">
-        <div class="col-md-4 ">
-            <div id="messages"></div>
-        </div>
-    </div>
+      
+    
       <button id="myBtn" class="btn btn-lg btn-primary btn-block" name="user-signin" type="submit" >Login</button>    
     </form>
-  </div>
-
-<script>
-    
-    $(document).ready(function() {
-    $('#loginForm').bootstrapValidator({
-        container: '#messages',
-        feedbackIcons: {
-            valid: 'glyphicon glyphicon-ok',
-            invalid: 'glyphicon glyphicon-remove',
-            validating: 'glyphicon glyphicon-refresh'
-        },
-        fields: {
-            username: {
-                validators: {
-                    notEmpty: {
-                        message: 'Username is required and cannot be empty'
-                    }
-                }
-            },
-            password: {
-                validators: {
-                    notEmpty: {
-                        message: 'Password is required and cannot be empty'
-                    },
-                    stringLength: {
-                        min: 6,
-                        message: 'The content must be at least than 6 characters long'
-                    }
-                }
-            }
-        
-         }
-    });
-});
  
-</script>
+</div>
+
 
 
 

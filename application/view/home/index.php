@@ -31,11 +31,13 @@
 #lastHomeIndex{
   margin-bottom: 55px;
 }
-#category-icons{
+
+#category-icons {
    background-color: transparent; 
    border: none;
    outline: none;
 }
+
 </style>
 
 

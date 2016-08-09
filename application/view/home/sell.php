@@ -144,6 +144,8 @@ input[type="file"] {
     padding: 6px 12px;
     cursor: pointer;
 }
+
+
 </style>
 
 <script>

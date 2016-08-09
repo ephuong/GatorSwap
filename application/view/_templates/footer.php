@@ -1,3 +1,4 @@
+
 <style>
 
 #gatorSwapFooter{
@@ -46,6 +47,7 @@
 		</div> <!--Row-->
   	</div> <!--container-->
 </footer>
+
 
 </body>
 </html>

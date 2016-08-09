@@ -1,4 +1,31 @@
 
+<style>
+    
+    /* Code for footer starts */
+     footer {
+    
+    background-color: #53565A;
+    border-top: 1px solid #E7E7E7;
+    text-align:center;
+    padding:20px;   
+    position: relative;
+    left: 0;
+    bottom: 0;   
+    width: 100%;
+  
+} 
+    
+    .footerLinks{
+      color:white;
+
+    }
+
+    .footerLinks:hover{
+      color:#C99700;
+
+    }
+    /*Code for the footer ends*/
+</style>
 <!--   <p> <?php if (isset($results["results"][1]->Title))
 {          echo $results["results"][1]->Title;
 } ?> </p>
@@ -22,7 +49,7 @@
  <!--search results body --> 
  
 <div class="container" >
-
+  
 
     <h2 id="results"><?php echo $results["count"]; ?> results found </h2>
 	<h2 id="one_result"><?php echo $results["count"]; ?> result found </h2>
@@ -54,36 +81,37 @@
               </script>
               ";
         }
-
-
+ 
         ?>
     </h2>
-   <!-- <div class="well well-sm">
-        <strong>Category Title</strong>
-        <div class="btn-group">
-            <a href="#" id="list" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-th-list">
-            </span>List</a> <a href="#" id="grid" class="btn btn-default btn-sm"><span
-                class="glyphicon glyphicon-th"></span>Grid</a>
-        </div>
-    </div> -->
+
     <div id="products" class="row list-group is-table-row">
 
         <?php
               // Incrementing variable for details button 
               $rowID = 0;
 
-              foreach ($results["results"] as $result) { ?>
+              foreach ($results["results"] as $result) { 
+                  
+                  
 
+        ?>
+             
+            
             <div class="item col-xs-6 col-md-3 " style="margin-bottom: 40px">
 
                 <div class="thumbnail">
                    <?php
                     if (isset($result->IMG) && !empty($result->IMG)) {
                         echo '<img style="max-height: 180px; min-height:180px; padding-top: 7px;" class=" group"  src="data:image/jpg;base64,' . base64_encode($result->IMG) . '" alt=""/>';
+
                     } else {
                         echo ' <img "style="height:180px; padding-top: 7px;" class="group " src="http://placehold.it/400x250/000/fff" alt="" /> ';
+                         
                     }
+        
                     ?>
+                                          
                     <div class= "caption list-group-text">
                         <h3 class="group inner" style="margin-bottom:38px; height:37px">
                             <b> <?php if (isset($result->Title)) echo htmlspecialchars($result->Title, ENT_QUOTES, 'UTF-8'); ?> </b> 
@@ -108,18 +136,40 @@
                               <button href="<?php echo URL; ?>itemmodal/index" data-remote="false" data-toggle="modal" data-target="#myModal" class="btn btn-block  btn-default" data-item= "<?php if (isset($result->Item_ID)) echo htmlspecialchars($result->Item_ID, ENT_QUOTES, 'UTF-8'); ?>">More Info</button> 
                             </div>
 
-                            <div class="col-xs-6 col-md-6">
-                              <button href="#" class="btn btn-block  btn-primary">Buy it now</button>
-                            </div>
+                         <div class="col-xs-6 col-md-6"> 
+            <?php
+             if(isset($_SESSION["login"])){
+               if($_SESSION["login"])
+               {  
+             ?>
+                  <button  href="#"  class="btn btn-block  btn-primary">Buy it now</button>
+             
+               <?php  }
+              }      
+                 else 
+               {  ?>
+             
+                <button href="<?php echo URL; ?>checkLoginModal/index"  data-toggle="modal" data-remote="false" data-target="#myModal" class="btn btn-block  btn-primary">Buy it now</button>  
+              
+               <?php   }  
+               
+               ?>
+                         
+         
+              
+                         </div>
+                           
                         </div>
                     </div>
                 </div>
-
+      
             </div>
 
         <?php
-            $rowID++; } ?>
-
+            $rowID++; } 
+                 
+       ?>      
+           
     </div>
 </div>
 

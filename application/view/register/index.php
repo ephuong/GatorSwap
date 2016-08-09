@@ -3,7 +3,8 @@
  @import "bourbon";
 
 body {
-	background: #eee !important;	
+	background: #eee !important;
+        height:100%;
 }
 
 .wrapper {	
@@ -55,171 +56,128 @@ body {
 	line-height: 300%;
 }
 }
-</style>
-<?php
-if(isset($_POST['user_submit'])){
+
+/* Code for footer starts */
+     footer {
     
- $firstname = $_POST['firstname'];
- $lastname = $_POST['lastname'];
- $password = $_POST['password'];
- $confirmPassword = $_POST['confirmPassword'];
- $email = $_POST['email'];
- $sfsu_id = $_POST['sfsu_id'];
- $phoneNumber = $_POST['phoneNumber'];
- $address = $_POST['address'];
- $country = $_POST['country'];
- $state = $_POST['state'];
- $city = $_POST['city'];
- $zipcode = $_POST['zipcode'];
+    background-color: #53565A;
+    border-top: 1px solid #E7E7E7;
+    text-align:center;
+    padding:20px;   
+    position: relative;
+    left: 0;
+    bottom: 0;   
+    width: 100%;
+  
+} 
+    
+    .footerLinks{
+      color:white;
 
- /*
- //Matches the password length
- if((strlen($password))< 6)
- {
-     $passwordLength= "Password has to be at least 6 characters long" ;
- }
- */
- //This code mathces two passwords
- if($password!=$confirmPassword)
- {
-     $passConfirmationError= "Passwords doesn't match";
- }
- 
- if(((strlen($sfsu_id))< 9) && (strlen($sfsu_id))>9)
- {
-     $sfsuIdLength= "Please type you 9 digit sfsu id";
- }
- 
- 
- if((strlen($phoneNumber))< 10 && (strlen($phoneNumber))>10)
- {   
-    $phoneNumberError= "Please type a 10 digit valid phonenumber";  
- }
- 
- //Check the length of the username
- if((strlen($username))< 3)
- {
-     $usernameLength= "Must be 3+ letters";
- }
- 
- //Check the length of the firstname
- if((strlen($firstname))< 3)
- {
-     $firstNameError= "name is too short!";
- }
- 
+    }
 
- //Check the length of the lastname
- if((strlen($lastname))< 3)
- {
-     $lastNameError= "name is too short!";
- }
- 
-//This code checks the validation of a email using regex
-//if (!preg_match("/([\w\-]+\@[\w\-]+\.[\w\-]+)/", $email)) 
-//{
-  //$emailValidation= "Invalid Email" ;
-//}
- //check if its a sfsu email
-  $myArray = []; //Declare an empty array
-  $myArray = explode('@', $email); //split up the email by @ sign
-  if($myArray[1]!="mail.sfsu.edu")
-  {
-    $emailValidation= "Please type your sfsu student email only";  
-  }
- 
- 
- if((strlen($zipcode))< 5)
- {
-   $zipCodeLength= "Zipcode has to be at least 5 digits long!";  
- }
- 
-}
+    .footerLinks:hover{
+      color:#C99700;
 
-?>
+    }
+    /*Code for the footer ends*/
+</style>
+
 
 <div id="signup" class="container">
 
   <h3 Style = "text-align:center">Already Have an account? <a href="<?php echo URL; ?>signin/index" >Login</a></h3>
     
-    <form class="form-signup" role="form" method="post" action="<?php echo URL; ?>register/addUser">
+    <form class="form-signup"  method="post" id="register-form" role="form" method="post" action="<?php echo URL; ?>register/addUser">
         <h3>Register To Create Your Account</h3>
         <div class = "row ">
-       
-            <div class="col-md-5" >
+        
+            <div class="col-md-5 messageContainer" >
                 
               <div class="form-group">                
 	                <label>SFSU ID:</label> 
 	                <input class="form-control" name="sfsu_id" placeholder="SFSU ID" type="text">
-                        <?php if(isset($sfsuIdLength)){echo "<p class='text-danger'>$sfsuIdLength</p>";}?>
+                        
             	</div>
-
-              
-                <div class="form-group">                
-	                <label>SFSU E-mail</label> 
-	                <input class="form-control" name="email" placeholder="Email" type="email" data-error="Bruh, that email address is invalid" required> 
-            	        <?php if(isset($emailValidation)){echo "<p class='text-danger'>$emailValidation</p>";}?>
+                
+  
+                <div class="form-group form-inline"> 				
+	                <label>SFSU E-mail</label></br> 
+                        <input style="width:60%" class="form-control" name="username" placeholder="username" type="text"  value="" required /> @mail.sfsu.edu<br>
+            	        
                   <b Style = "font-size: 80% ">Example: <i Style = "color:blue">jdoe@mail.sfsu.edu</i> is <b Style = "color:blue">jdoe</b></b>
                 </div>
+                
                 
                 <div class="form-group">                
 	                <label>Password</label> 
 	                <input class="form-control" name="password" placeholder="Password" type="password">
-                        <?php if(isset($passwordLength)){echo "<p class='text-danger'>$passwordLength</p>";}?>
-            	</div> 
+                        
+            	</div>
+                
                 
                 <div class="form-group">                
 	                <label>Confirm Password</label> 
 	                <input class="form-control" name="confirmPassword" placeholder="Confirm Password" type="password">
-                        <?php if(isset($passConfirmationError)){echo "<p class='text-danger'>$passConfirmationError</p>";}?>
+                        
             	</div>
                 
-
+            
             </div>
             <div class="col-md-1"></div>
             
-            <div class="col-md-5" >
+            <div class="col-md-5 messageContainer" >
 
                 <div class="form-group">
 	                <label>First Name</label>
 	                <input class="form-control" name="firstname" placeholder="First Name" type="text">
-                        <?php if(isset($firstNameError)){echo "<p class='text-danger'>$firstNameError</p>";}?>
-            	</div>
 
+            	</div>
+                
+                
             	<div class="form-group">
 	                <label>Last Name</label>
 	                <input class="form-control" name="lastname" placeholder="Last Name" type="text">
-                        <?php if(isset($lastNameError)){echo "<p class='text-danger'>$lastNameError</p>";}?>
+                           
             	</div>
    		
+                
                 <div class="form-group">                
 	                <label>Country</label> 
 	                <input class="form-control"  name="country" placeholder="Ex: USA" type="text"> 
             	</div>
+               
+                
                 <div class="form-group">                
 	                <label>State</label> 
 	                <input class="form-control"  name="state" placeholder="Ex: California" type="text"> 
             	</div>
+                
               
                 <div class="form-group">                
 	                <label>Address:</label> 
 	                <input class="form-control" name="address"  placeholder="Example: 1600 Holloway Ave." type="text"> 
             	</div>
-        <div class="form-group">                
+                
+                
+                <div class="form-group">                
 	                <label>City</label> 
 	                <input class="form-control"  name="city" placeholder="Example: San Francisco" type="text"> 
             	</div>
-        <div class="form-group">                
+                
+                
+                <div class="form-group">                
 	                <label>Zipcode</label> 
-	                <input class="form-control" name="zipcode" placeholder="Example: 94132" type="text">
-                        <?php if(isset($zipCodeLength)){echo "<p class='text-danger'>$zipCodeLength</p>";}?>
+	                <input class="form-control" name="zipcode" placeholder="Example: 94132" type="text">    
             	</div>
+                
               
               <div class="form-group">                
 	                <label>Phone Number</label> 
-	                <input class="form-control" name="phoneNumber" placeholder="Example: 5104081325" type="text"> 
-                        <?php if(isset($phoneNumberError)){echo "<p class='text-danger'>$phoneNumberError</p>";}?>
-            	</div>
+	                <input class="form-control" name="phoneNumber" placeholder="Example:5104081325" type="text"> 
+                       
+              </div>
+                
               <div class="col-md-1"></div>
 
         </div>
@@ -229,5 +187,218 @@ if(isset($_POST['user_submit'])){
        </div>
                   
     </form>
+     
+<script>
+// JavaScript Document
+
+$('document').ready(function()
+  { 
+   $('#register-form').bootstrapValidator({
+        //container: '#messages',
+         err: {
+            container: function($field, validator) {
+                return $field.parent().next('.messageContainer');
+            }
+        },
+        feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            sfsu_id: {
+                validators: {
+                    notEmpty: {
+                        message: 'Your SFSU ID is required for registration'
+                    },
+                    numeric: {
+                            message: 'The value is not numeric',
+                            // The default separators
+                            thousandsSeparator: '',
+                            decimalSeparator: ' '
+                        },
+                    stringLength: {
+                        max: 9,
+                        min: 9,
+                        message: 'Its your 9 digit sf state Id!'
+                    }
+                    
+                }
+            },
+            username: {
+                validators: {
+                    notEmpty: {
+                        message: 'username cannot be empty'
+                    },
+                    
+                    stringLength: {
+                        max: 10,
+                        message: 'username is too long!'
+                    }
+                }
+            },
+         password: {
+            validators: {
+                identical: {
+                    field: 'confirmPassword',
+                    message: 'The password and its confirm are not the same'
+                },
+                numeric: {
+                            message: 'Password must be numeric type',
+                            // The default separators
+                            thousandsSeparator: '',
+                            decimalSeparator: ' '
+                        },
+                    stringLength: {
+                        max: 10,
+                        min: 5,
+                        message: 'Password must be between 5-10 digits long'
+                    }
+                  
+            }
+        },
+        confirmPassword: {
+            validators: {
+                identical: {
+                    field: 'password',
+                    message: 'Paswords does not Match!'
+                },
+                numeric: {
+                            message: 'Password must be numeric type',
+                            // The default separators
+                            thousandsSeparator: '',
+                            decimalSeparator: ' '
+                        },
+                    stringLength: {
+                        max: 10,
+                        min: 5,
+                        message: 'Password must be between 5-10 digits long'
+                    }
+            }
+        },
+            firstname: {
+                validators: {
+                    notEmpty: {
+                        message: 'The firstname is required and cannot be empty'
+                    },
+                    regexp: {
+                     regexp: /^[a-z\s]+$/i,
+                     message: 'Name can consist of alphabetical characters and spaces only'
+                    },
+                    stringLength: {
+                        max: 35,
+                        message: 'Name is abnormaly long!'
+                    }
+                }
+            },
+            lastname: {
+                validators: {
+                    notEmpty: {
+                        message: 'The lastname is required and cannot be empty'
+                    },
+                    regexp: {
+                     regexp: /^[a-z\s]+$/i,
+                     message: 'Name can consist of alphabetical characters and spaces only'
+                    },
+                     stringLength: {
+                        max: 35,
+                        message: 'Name is abnormaly long!'
+                    }
+                }
+            },
+            country: {
+                validators: {
+                    notEmpty: {
+                        message: 'Country is required and cannot be empty'
+                    },
+                    regexp: {
+                     regexp: /^[a-z\s]+$/i,
+                     message: 'Country Name should consist of alphabetical characters and spaces only'
+                    },
+                     stringLength: {
+                        max: 15,
+                        message: 'Country Name is abnormaly long!'
+                    }
+                }
+            },
+             state: {
+                validators: {
+                    notEmpty: {
+                        message: 'State is required and cannot be empty'
+                    },
+                    regexp: {
+                     regexp: /^[a-z\s]+$/i,
+                     message: 'State consist of alphabetical characters and spaces only'
+                    },
+                    stringLength: {
+                        max: 12,
+                        message: 'State Name is abnormaly long!'
+                    }
+                }
+            },
+            address: {
+                validators: {
+                    notEmpty: {
+                        message: 'address is required and cannot be empty'
+                    },
+                    regexp: {
+                     regexp: /^[a-z\s]+$/i,
+                     message: 'Address should be of alphabetical characters and spaces only'
+                    },
+                     stringLength: {
+                        max: 50,
+                        message: 'Address is abnormaly long!'
+                    }
+                }
+            },
+             city: {
+                validators: {
+                    notEmpty: {
+                        message: 'city is required and cannot be empty'
+                    },
+                    regexp: {
+                     regexp: /^[a-z\s]+$/i,
+                     message: 'City name should be of alphabetical characters and spaces only'
+                    },
+                    stringLength: {
+                        max: 15,
+                        message: 'City name is abnormaly long!'
+                    }
+                }
+            },
+            phoneNumber: {
+                validators: {
+                    notEmpty: {
+                        message: 'Phone Number is required and cannot be empty'
+                    },
+                    numeric: {
+                            message: 'The value is not numeric',
+                            // The default separators
+                            thousandsSeparator: '',
+                            decimalSeparator: ' '
+                        },
+                    stringLength: {
+                        max: 9,
+                        min: 9,
+                        message: 'Your 9 digit phone Number'
+                    }
+                }
+            },
+             zipcode: {
+                validators: {
+                    regexp: {
+                        regexp: /^\d{5}$/,
+                        message: 'The US zipcode must contain 5 digits'
+                    }
+                }
+            }
+           
+        }
+    });
+    
+});
+
+
+</script>
+
 </div>
-</br></br></br></br></br>

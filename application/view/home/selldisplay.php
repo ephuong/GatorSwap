@@ -14,8 +14,14 @@ td{
     padding: 30px;
 }
 
+.wrapper {	
+       margin-top: 80px;
+       margin-bottom: 80px;
+       
+}
+
 </style>
-<div class="container-selldisplay">
+<div class="container-selldisplay wrapper">
     <!--<div class= "col-xs-6 col-md-6">-->
     <p>Item successfully posted. Thank you for using GatorSwap</p><br><br>
     
