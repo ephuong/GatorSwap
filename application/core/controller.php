@@ -10,9 +10,9 @@ class Controller
     /**
      * @var null Model
      */
-        public $model = null;
-	public $AccountModel = null;
-	public $UserModel = null;
+    public $model = null;
+	public $accountModel = null;
+	public $userModel = null;
   	public $itemModel = null;
 	
 
@@ -48,16 +48,16 @@ class Controller
     public function loadModel()
     {
         require APP . 'model/model.php';
-	require APP . 'model/Account.php';
-	require APP . 'model/User.php';
-	require APP . 'model/item.php';
+		require APP . 'model/account.php';
+		require APP . 'model/user.php';
+		require APP . 'model/item.php';
 
 		
         // create new "model" (and pass the database connection)
         $this->model = new Model($this->db);
-	$this->AccountModel = new Account($this->db);
-	$this->UserModel = new User($this->db);
-    $this->itemModel = new Item($this->db);
+		$this->accountModel = new Account($this->db);
+		$this->userModel = new User($this->db);
+		$this->itemModel = new Item($this->db);
 	
     }
 }
