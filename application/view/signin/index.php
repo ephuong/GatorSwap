@@ -1,21 +1,20 @@
-<?php
-// remove all session variables
 
-         
-?>
 <style>
 @import "bourbon";
 
 body {
-	background: white;	
+	background: #eee !important;
+        
+        
 }
 
 .wrapper {	
-	margin-top: 80px;
-  margin-bottom: 80px;
+       margin-top: 80px;
+       margin-bottom: 80px;
+       
 }
 
-.form-signin {
+.form-sign-in {
   max-width: 380px;
   padding: 15px 35px 45px;
   margin: 0 auto;
@@ -57,46 +56,48 @@ body {
        .Title {
         text-align: center;
 	line-height: 300%;
+       }
+       
 }
-}
+
+
 
 </style>
 
-  <div id="loginForm" class="wrapper" data-toggle="validator">
-      <form id="myForm" class="form-signin" method="post" action="<?php echo URL; ?>signin/login">       
+  <div id="login" class="container wrapper">
+      
+      <form id="myForm" class="form-sign-in" role="form" method="post" action="<?php echo URL; ?>signin/login">  
+		
         <h3>Login or <a href="<?php echo URL; ?>register/index">Sign up</a> </h3>
-      <label for="username" control-label">Username</label>  
-      <input type="text" id="username" class="form-control" name="username" placeholder="Username" value="<?php if(isset($_POST['username'])){echo htmlspecialchars($_POST['username']); }?>" />
-      <?php 
-      if(isset($errUserName)){
-      echo "<p class='text-danger'>$errUserName</p>";
-      }
-      ?>
-      </br>
-      <label for="pwd" control-label">Password</label> 
-      <input id="pwd" class="form-control" type="password"  name="password" placeholder="Password" /> 
-      <?php 
-      if(isset($errPassword)){
-      echo "<p class='text-danger'>$errPassword</p>";
-      }
-      ?>
-      <label class="checkbox">
-        <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Remember me
-      </label>
-       <div class="form-group">
-        <div class="col-md-4 ">
-            <div id="messages"></div>
-        </div>
-    </div>
+		<div class="messageContainer">
+      <div class="form-group">
+		  <label>Username</label>  
+		  <input type="text" id="username" class="form-control" name="username" placeholder="Username" value="<?php if(isset($_POST['username'])){echo htmlspecialchars($_POST['username']); }?>" />
+	  </div>
+      
+	  <div class="form-group">
+		  <label>Password</label> 
+		  <input id="pwd" class="form-control" type="password"  name="password" placeholder="Password" /> 
+      </div>
+	  </div>
+      <br>
       <button id="myBtn" class="btn btn-lg btn-primary btn-block" name="user-signin" type="submit" >Login</button>    
     </form>
-  </div>
+ 
+</div>
 
 <script>
-    
-    $(document).ready(function() {
-    $('#loginForm').bootstrapValidator({
-        container: '#messages',
+// JavaScript Document
+
+$('document').ready(function()
+  { 
+   $('#myForm').bootstrapValidator({
+        //container: '#messages',
+         err: {
+            container: function($field, validator) {
+                return $field.parent().next('.messageContainer');
+            }
+        },
         feedbackIcons: {
             valid: 'glyphicon glyphicon-ok',
             invalid: 'glyphicon glyphicon-remove',
@@ -106,27 +107,37 @@ body {
             username: {
                 validators: {
                     notEmpty: {
-                        message: 'Username is required and cannot be empty'
-                    }
+                        message: 'Username cannot be empty'
+                    },
+                    regexp: {
+                     regexp: /^[a-z0-9]+$/i,
+                     message: 'Name can consist of alphanumeric characters only'
+                    },
+
                 }
             },
-            password: {
-                validators: {
-                    notEmpty: {
-                        message: 'Password is required and cannot be empty'
+         password: {
+            validators: {
+                notEmpty: {
+                        message: 'Password cannot be empty'
                     },
-                    stringLength: {
-                        min: 6,
-                        message: 'The content must be at least than 6 characters long'
-                    }
-                }
+                  
             }
-        
-         }
+        }   
+        }
     });
+    
 });
- 
+
+$(function() {
+	$('.form-sign-in').keypress(function(e) {
+		if(e.which == 13) {
+			$('#myBtn').focus().click();
+		}
+	});
+});
 </script>
+
 
 
 

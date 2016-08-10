@@ -1,8 +1,5 @@
 <?php
-if(!session_id())
-{
-  session_start();  
-}
+
 /**
  * Communicates with the Account table in the database
  */
@@ -39,13 +36,19 @@ class Account extends Model
 			$query2->execute($parameters2);
 			$account_id = $query2->fetch(PDO::FETCH_ASSOC);
 			
-
+                           //**For the registration page
+                                        
+                     $_SESSION['username'] = $username;
+					 $_SESSION['student_id'] = $sfsu_id;
+					 $_SESSION['account_id'] = $account_id["Account_ID"];
+                     $_SESSION['login'] = true;
                         
-                        $_SESSION['username'] = $username;
-                        $_SESSION['login'] = true;
+                  
+                        
                        
                         
-			return $account_id['Account_ID'];		
+       
+		     return $account_id['Account_ID'];		
 		} 
 		catch(PDOException $e) 
 		{
@@ -54,6 +57,7 @@ class Account extends Model
 
 	}
 	
+        
     
          		
 }

@@ -1,15 +1,65 @@
-
+<?php
+if(!session_id())
+   {
+    session_start();  
+   }
+?>
 <style>
  @import "bourbon";
 
 body {
-	background: #eee !important;
-        height:100%;
+
+  background: white;	
 }
 
-.wrapper {	
+.wrapper {
 	margin-top: 80px;
   margin-bottom: 80px;
+}
+
+.form-signin {
+  max-width: 380px;
+  padding: 15px 35px 45px;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid rgba(0,0,0,0.1);
+
+  .form-signin-heading,
+	.checkbox {
+	  margin-bottom: 30px;
+	}
+
+	.checkbox {
+	  font-weight: normal;
+	}
+
+	.form-control {
+	  position: relative;
+	  font-size: 16px;
+	  height: auto;
+	  padding: 10px;
+		@include box-sizing(border-box);
+
+		&:focus {
+		  z-index: 2;
+		}
+	}
+
+	input[type="text"] {
+	  margin-bottom: -1px;
+	  border-bottom-left-radius: 0;
+	  border-bottom-right-radius: 0;
+	}
+
+	input[type="password"] {
+	  margin-bottom: 20px;
+	  border-top-left-radius: 0;
+	  border-top-right-radius: 0;
+	}
+       .Title {
+        text-align: center;
+	line-height: 300%;
+}
 }
 
 .form-signup {
@@ -17,7 +67,7 @@ body {
   padding: 15px 35px 45px;
   margin: 0 auto;
   background-color: #fff;
-  border: 1px solid rgba(0,0,0,0.1);  
+  border: 1px solid rgba(0,0,0,0.1);
 
   .form-signup-heading,
 	.checkbox {
@@ -56,144 +106,101 @@ body {
 	line-height: 300%;
 }
 }
+.button{
 
-/* Code for footer starts */
-     footer {
-    
-    background-color: #53565A;
-    border-top: 1px solid #E7E7E7;
-    text-align:center;
-    padding:20px;   
-    position: relative;
-    left: 0;
-    bottom: 0;   
-    width: 100%;
-  
-} 
-    
-    .footerLinks{
-      color:white;
+}
 
-    }
-
-    .footerLinks:hover{
-      color:#C99700;
-
-    }
-    /*Code for the footer ends*/
 </style>
+
 
 
 <div id="signup" class="container">
 
-  <h3 Style = "text-align:center">Already Have an account? <a href="<?php echo URL; ?>signin/index" >Login</a></h3>
-    
-    <form class="form-signup"  method="post" id="register-form" role="form" method="post" action="<?php echo URL; ?>register/addUser">
-        <h3>Register To Create Your Account</h3>
-        <div class = "row ">
-        
-            <div class="col-md-5 messageContainer" >
-                
-              <div class="form-group">                
-	                <label>SFSU ID:</label> 
-	                <input class="form-control" name="sfsu_id" placeholder="SFSU ID" type="text">
-                        
-            	</div>
-                
-  
-                <div class="form-group form-inline"> 				
-	                <label>SFSU E-mail</label></br> 
-                        <input style="width:60%" class="form-control" name="username" placeholder="username" type="text"  value="" required /> @mail.sfsu.edu<br>
-            	        
-                  <b Style = "font-size: 80% ">Example: <i Style = "color:blue">jdoe@mail.sfsu.edu</i> is <b Style = "color:blue">jdoe</b></b>
-                </div>
-                
-                
-                <div class="form-group">                
-	                <label>Password</label> 
-	                <input class="form-control" name="password" placeholder="Password" type="password">
-                        
-            	</div>
-                
-                
-                <div class="form-group">                
-	                <label>Confirm Password</label> 
-	                <input class="form-control" name="confirmPassword" placeholder="Confirm Password" type="password">
-                        
-            	</div>
-                
-            
-            </div>
-            <div class="col-md-1"></div>
-            
-            <div class="col-md-5 messageContainer" >
+    <form class="form-signup" role="form" method="post" id = "editProfile" action="<?php echo URL; ?>editProfile/updateUserInfo">
+        <h3>Account Information</h3>
+        <div class="row">
+            <div class="col-md-6 messageContainer">
 
                 <div class="form-group">
-	                <label>First Name</label>
-	                <input class="form-control" name="firstname" placeholder="First Name" type="text">
-
+	                <label>First Name</label></br>
+                       <input class="form-control" name="firstName"  type="text" value= <?php if(isset($_SESSION['firstname'])){ echo $_SESSION['firstname'] ;}?>>
             	</div>
-                
-                
+
             	<div class="form-group">
-	                <label>Last Name</label>
-	                <input class="form-control" name="lastname" placeholder="Last Name" type="text">
-                           
+	                <label>Last Name</label></br>
+                        <input class="form-control" name="lastName"  type="text" value= <?php if(isset($_SESSION['lastname'])){ echo $_SESSION['lastname']; }?>>      
             	</div>
-   		
-                
-                <div class="form-group">                
-	                <label>Country</label> 
-	                <input class="form-control"  name="country" placeholder="Ex: USA" type="text"> 
-            	</div>
-               
-                
-                <div class="form-group">                
-	                <label>State</label> 
-	                <input class="form-control"  name="state" placeholder="Ex: California" type="text"> 
-            	</div>
-                
-              
-                <div class="form-group">                
-	                <label>Address:</label> 
-	                <input class="form-control" name="address"  placeholder="Example: 1600 Holloway Ave." type="text"> 
-            	</div>
-                
-                
-                <div class="form-group">                
-	                <label>City</label> 
-	                <input class="form-control"  name="city" placeholder="Example: San Francisco" type="text"> 
-            	</div>
-                
-                
-                <div class="form-group">                
-	                <label>Zipcode</label> 
-	                <input class="form-control" name="zipcode" placeholder="Example: 94132" type="text">    
-            	</div>
-                
-              
-              <div class="form-group">                
-	                <label>Phone Number</label> 
-	                <input class="form-control" name="phoneNumber" placeholder="Example: 510-408-1325" type="text"> 
-                       
-              </div>
-                
-              <div class="col-md-1"></div>
 
-        </div>
-              <div class="col-md-offset-3 col-md-6 " Style = "Padding-top:2%">
-                  <button id="regBtn" class="btn btn-lg btn-primary btn-block" name = "user_submit" type="submit" >REGISTER</button>    
-              </div>
+		  <div class="form-group">
+	                <label>Username</label></br>
+                        <label><?php if(isset($_SESSION['username'])){ echo $_SESSION['username'] ;} ?></label>      
+                        
+            	</div>
+                  <div class="form-group">
+	                <label>SFSU E-mail</label></br>
+                        <label><?php if(isset($_SESSION['username'])){ echo $_SESSION['username']."@mail.sfsu.edu" ;} ?></label>
+
+                </div>
+
+                <div class="form-group">
+	                <label>SFSU ID:</label>
+                        <label><?php if(isset($_SESSION['student_id'])){ echo  $_SESSION['student_id']; }?></label>
+            	</div>
+
+            </div>
+
+            <div class="col-md-6 messageContainer">
+
+                <div class="form-group">
+	                <label>Phone Number</label>
+                        <input class="form-control" type="text" name="phoneNumber"  value= "<?php if(isset($_SESSION['phone'])){echo  $_SESSION['phone']; }?>">         
+            	</div>
+
+
+
+                <div class="form-group">
+	                <label>Address:</label>
+                        <input class="form-control" name="address"  type="text" value= "<?php if(isset($_SESSION['address'])){ echo  $_SESSION['address'];} ?>">
+              
+            	</div>
+        <div class="form-group">
+	                <label>City</label>
+                        <input class="form-control" name="city"  type="text" value= "<?php if(isset($_SESSION['city'])){ echo $_SESSION['city']; }?>">
+                        
+            	</div>
+              
+              <div class="form-group">
+	                <label>State</label>
+                        <input class="form-control" name="state"  type="text" value= "<?php if(isset($_SESSION['state'])){ echo $_SESSION['state']; }?>">
+                        
+            	</div>
+        <div class="form-group">
+	                <label>Zipcode</label>                 
+                        <input class="form-control" name="zipcode"  type="text" value= "<?php if(isset($_SESSION['zipcode'])){ echo  $_SESSION['zipcode'] ;}?>">
+                        
+            	</div>
+              
+              <div class="form-group">
+	                <label>Country</label>
+                        <input class="form-control" name="country"  type="text" value= "<?php if(isset($_SESSION['country'])){ echo $_SESSION['country']; }?>">
+                        
+            	</div>
+</div>
+		
+       <button  id="useEditBtn" class="btn btn-lg btn-primary btn-block" name="user-update" type="submit" >Save</button>
+               
+
        </div>
-                  
+
     </form>
-     
+</div>
+
 <script>
 // JavaScript Document
 
 $('document').ready(function()
   { 
-   $('#register-form').bootstrapValidator({
+   $('#editProfile').bootstrapValidator({
         //container: '#messages',
          err: {
             container: function($field, validator) {
@@ -393,10 +400,11 @@ $('document').ready(function()
 $(function() {
 	$('.form-signup').keypress(function(e) {
 		if(e.which == 13) {
-			$('#regBtn').focus().click();
+			$('#useEditBtn').focus().click();
 		}
 	});
 });
 </script>
 
-</div>
+
+

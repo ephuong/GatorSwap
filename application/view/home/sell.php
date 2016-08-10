@@ -1,4 +1,5 @@
- <style>
+ 
+<style>
  @import "bourbon";
 
 body {
@@ -6,7 +7,7 @@ body {
 }
 
 .wrapper {	
-	margin-top: 80px;
+  margin-top: 80px;
   margin-bottom: 80px;
 }
 
@@ -82,7 +83,7 @@ body {
 		  z-index: 2;
 		}
 	}
-
+        
 	input[type="text"] {
 	  margin-bottom: -1px;
 	  border-bottom-left-radius: 0;
@@ -105,99 +106,107 @@ body {
 	margin-bottom: 15px;
 
 }
+h3
+{
+    margin: 0px;
+    font-size: 20pt;
+}
+.container{
+   margin: auto;
+}
+.form-sell{
+    font-size: 12pt;
+    
+}
 
 #submit-button{
-	border-color: #cccccc;
-	background-color: #d6f5d6;
+  /*margin-left: 384px; */
+  padding: 12px 22px;
+  font-size: 18px;
+  border-radius: 8px;
 
 }
+input[type="file"] {
+    margin-left: 0px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
 </style>
 
- 
+<script>
 
-<div id="seller page" class="container">
+$( document ).ready(function() {
     
-    <form class="form-sell" role="form" method="post" action="#">
-        <h3>Post An Item For Sale.</h3>
-            <div class="col-md-6">
+     $('#hiddenDiv').hide();  
+ });
+          
+</script>
+
+
+<div id="seller-page" class="container">
+    <h3 style="text-align:center; padding-top:10px;" >Sell an Item</h3>
+    <hr style="margin-top: 15px;">
     
-                <div class="form-group">
-	                <label>Name:</label>
-	                <input class="form-control" name="name_of_item" placeholder=" " type="text">
-            	</div>
+    <form name="form-sell" class="form-sell" role="form" action="<?php echo URL; ?>itemaction/postItem" method="POST" enctype="multipart/form-data">
+        <h4>* Required</h4><br>
+        <div class="col-md-6" id="first">
 
-            	<div class="form-group">
-	                <label>Price: </label>
-	                <input class="form-control" name="price" placeholder="$10" type="text">
-            	</div>
-
-            	<label>Condition:</label>
-				<select class="form-control">
-				  <option value="New">New</option>
-				  <option value="Used">Used</option>
-				</select>
-				<br>
-
-				<label>Category:</label>
-             	 <select class="form-control">
-				  <option value="Books">Books</option>
-				  <option value="Office Supplies">Office Supplies</option>
-				  <option value="Clothing">Clothing</option>
-				  <option value="Furniture">Furniture</option>
-				  <option value="Electronics">Electronics</option>
-				  <option value="Other">Other</option>
-				</select>
-				<br>
-
-
-
+            <label>*Title:</label>
+            <input class="form-control" name="item_title" placeholder=" " type="text" required>
+            
+            <br>
+            <label>*Category:</label>
+            <select class="form-control" name="item_category" required>
+                <option selected value="">Please select a category</option>
+                <?php foreach (array_slice($categoryList, 1) as $category) { 
+                    if (isset($category->Category_ID))
+                        $category_id = htmlspecialchars($category->Category_ID, ENT_QUOTES, 'UTF-8');
+                    if (isset($category->Category_Name))
+                        $category_name = htmlspecialchars($category->Category_Name, ENT_QUOTES, 'UTF-8');
+                ?>
+                <option <?php echo isset($_POST['item_category']) && $_POST['item_category'] == $category_id ? 'selected="' . $_POST['item_category'] . '" value="' . $category_id . '"' : 'value="' . $category_id  . '"' ?>>
+                        <?php echo $category_name; ?>
+                </option>
+                <?php } ?>
+            </select>
+            <br>
+            
+            <label>*Item Condition:</label>
+            <select class="form-control" name="item_condition" required>
+              <option selected value="">Please select item condition</option>
+              <option value="New">New</option>
+              <option value="Used">Used</option>
+            </select>
+            <br>
+            
+            <div class="form-group">                
+                <label>*Description: </label> 
+                <textarea class="form-control" name="item_desc" cols="10" rows="3" style="resize: none;" placeholder="Describe your item here." required></textarea><br>
             </div>
             
-            <div class="col-md-6">
-                <!-- <div class="form-group">                
-	                <label>Email address::</label> 
-	                <input class="form-control" name="email_address"  placeholder="johndoe@sfsu.edu" type="text"> 
-            	</div>
-        		<div class="form-group">                
-	                <label>Phone #:</label> 
-	                <input class="form-control"  name="phone_no" placeholder="123-456-7890" type="text"> 
-            	</div> -->
-        		<!-- <div class="form-group">                
-	                <label>Delivery</label> 
-	                <input class="form-control" name="delivery" placeholder="I can deliver the item to your location." type="text"> 
-            	</div> -->
-
-            	<!-- <div class="dropdown">
-	                <button class="btn btn-default dropdown-toggle" id="delivery-button" type="button" data-toggle="dropdown">Preferred Delivery
-	                <span class="caret"></span></button>
-	                  <ul class="dropdown-menu" role="menu" aria-labelledby="deliveryitem">
-	                    <li role="presentation"><a role="delivery" tabindex="1" href="#"> Meet on campus </a></li>
-	                    <li role="presentation"><a role="delivery" tabindex="1" href="#"> Come pick up </a></li>
-	                    <li role="presentation"><a role="delivery" tabindex="1" href="#"> Deliver/Ship </a></li>
-	                  </ul>
-             	 </div> -->
-
-            	<div class="form-group">                
-	                <label>Add Image: </label> 
-	                <br>
-	                <span class="glyphicons glyphicons-ambulance"></span><button type="button" class="btn btn-default btn-sm">
-					<span class="glyphicon glyphicon-plus"></span> Add
-					</button></label> <br><br>
-            	</div>
-
-			</div>
-
-			<div class="col-md-12">
-			    <div class="form-group">                
- 	                <label>Description: </label> 
-					<textarea class="form-control" id="comments" name="Description" placeholder="Describe your item here!" rows="5"></textarea></label><br>
-             	</div>
-
-             	<input type="submit" value="Submit" id="submit-button" class="btn btn-lg btn-default" /> 
+             
+        </div>
+            
+        <div class="col-md-6" id="second">
+           
+            <div class="form-group">
+                <label>*Price:</label>
+                <input class="form-control" name="item_price" placeholder="10.00" type="text" required>
             </div>
-
-                         
+            <br>
+            <div class="form-control-img">                
+                <label>*Add Image: </label><br>
+                    <input  type="file" size="60" name="item_image" accept=".jpg,.jpeg,.png">
+            </div><br><br><br><br><br><br><br>
+            <div class="col-md-12">
+             	<input type="submit" value="CLICK TO SUBMIT" id="submit-button" class="btn btn-lg btn-primary center-block" name="postItem" onclick="checkPriceInput();"/> 
+            </div>
+        </div>
+                    
     </form>
+    <br><br><br>
 </div>
-</br></br></br></br></br>
+
+
 

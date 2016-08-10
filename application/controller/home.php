@@ -1,9 +1,6 @@
 <?php
 
-   if(!session_id())
-   {
-    session_start();  
-   }
+ 
 
 /**
  * Class Home
@@ -19,8 +16,16 @@ class Home extends Controller
      * PAGE: index
      * This method handles what happens when you move to http://yourproject/home/index (which is the default page btw)
      */
-    public function index()
+   public function index()
+           
     {
+       
+	$categoryList = $this->itemModel->getCategories();
+        
+	if(!session_id())
+          {
+           session_start();  
+          }	
         // load views
         require APP . 'view/_templates/header.php';
         require APP . 'view/home/index.php';
@@ -35,9 +40,10 @@ class Home extends Controller
      */
     public function profile()
     {
+        $categoryList = $this->itemModel->getCategories();
         // load views
         require APP . 'view/_templates/header.php';
-        require APP . 'view/home/profile.php';
+        require APP . 'view/home/profile/index.php';
         require APP . 'view/_templates/footer.php';
     }
 
@@ -60,6 +66,7 @@ class Home extends Controller
      */
     public function about()
     {
+        $categoryList = $this->itemModel->getCategories();
         require APP . 'view/_templates/header.php';
         require APP . 'view/home/about.php';
         require APP . 'view/_templates/footer.php';
@@ -72,6 +79,7 @@ class Home extends Controller
      */
     public function terms()
     {
+        $categoryList = $this->itemModel->getCategories();
         require APP . 'view/_templates/header.php';
         require APP . 'view/home/terms.php';
         require APP . 'view/_templates/footer.php';
@@ -84,6 +92,7 @@ class Home extends Controller
      */
     public function privacy()
     {
+        $categoryList = $this->itemModel->getCategories();
         require APP . 'view/_templates/header.php';
         require APP . 'view/home/privacy.php';
         require APP . 'view/_templates/footer.php';
@@ -96,6 +105,7 @@ class Home extends Controller
      */
     public function contact()
     {
+        $categoryList = $this->itemModel->getCategories();
         require APP . 'view/_templates/header.php';
         require APP . 'view/home/contact.php';
         require APP . 'view/_templates/footer.php';
@@ -108,6 +118,7 @@ class Home extends Controller
      */
     public function help()
     {
+        $categoryList = $this->itemModel->getCategories();
         require APP . 'view/_templates/header.php';
         require APP . 'view/home/help.php';
         require APP . 'view/_templates/footer.php';
@@ -117,28 +128,38 @@ class Home extends Controller
     
 	public function sell ()
 	{
-	 require APP . 'view/_templates/header.php';
+
+    $categoryList = $this->itemModel->getCategories();
+        
+	require APP . 'view/_templates/header.php';
+
 	require APP . 'view/home/sell.php';
 	require APP . 'view/_templates/footer.php';
 
       }      
 	public function checkout()
 	{
+        $categoryList = $this->itemModel->getCategories();
+            
 	require APP . 'view/_templates/header.php';
 	require APP . 'view/home/checkout.php';
 	require APP . 'view/_templates/footer.php';
-}
+        }
 
 
     public function search()
     {
-            if(isset($_POST["search"])) {
-			    $results = $this->itemModel->searchItems($_POST["search-keyword"], "All");
+        $categoryList = $this->itemModel->getCategories();
+        
+            if(isset($_POST["search"]) || isset($_POST["return_search"])) {
+				$search_query = array($_POST["search-keyword"], $_POST["search-category"]);
+			    $results = $this->itemModel->searchItems($_POST["search-keyword"], $_POST["search-category"]);
 		    }   
 
             require APP . 'view/_templates/header.php';
             require APP . 'view/home/search.php';
             require APP . 'view/_templates/footer.php';
     }
-
 }
+
+?>
