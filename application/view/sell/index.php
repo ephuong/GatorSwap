@@ -148,7 +148,7 @@ $( document ).ready(function() {
     <h3 style="text-align:center; padding-top:10px;" >Sell an Item</h3>
     <hr style="margin-top: 15px;">
     
-    <form name="form-sell" class="form-sell" role="form" action="<?php echo URL; ?>itemaction/postItem" method="POST" enctype="multipart/form-data">
+    <form name="form-sell" class="form-sell" role="form" action="<?php echo URL; ?>sell/postItem" method="POST" enctype="multipart/form-data">
         <h4>* Required</h4><br>
         <div class="col-md-6" id="first">
 

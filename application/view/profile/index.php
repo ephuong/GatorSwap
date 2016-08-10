@@ -188,7 +188,7 @@ body {
        </div>
     </form>
     <br>
-    <form class="form-signup" method="POST" action="<?php echo URL; ?>itemaction/displayAllPost">
+    <form class="form-signup" method="POST" action="<?php echo URL; ?>sell/displayAllPost">
         <h3>Sell History</h3>
         <button  id="useEditBtn" class="btn btn-lg btn-primary btn-block" name="displayAllPost" type="submit" >View Sell History</button>           
     </form>
