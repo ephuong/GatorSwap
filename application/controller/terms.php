@@ -2,9 +2,9 @@
 
 class Terms extends Controller 
 {
-	/**
+    /**
      * PAGE: terms
-     * This method handles the terms page 
+     * This method handles the terms page  on the footer.
      */
     public function index()
     {

@@ -2,9 +2,9 @@
 
 class Help extends Controller
 {
-	 /**
+    /**
      * PAGE: help
-     * This method handles the help page. 
+     * This method handles the help page on the footer. 
      */
     public function index()
     {

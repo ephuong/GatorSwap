@@ -14,19 +14,19 @@ class Home extends Controller
      * PAGE: index
      * This method handles the homepage
      */
-	public function index()
+    public function index()
     {
        
-		$categoryList = $this->itemModel->getCategories();
-        
-		if(!session_id())
-		{
-			session_start();  
-		}	
-		// load views
-		require APP . 'view/_templates/header.php';
-		require APP . 'view/home/index.php';
-		require APP . 'view/_templates/footer.php';
+        $categoryList = $this->itemModel->getCategories();
+
+        if(!session_id())
+        {
+                session_start();  
+        }	
+        // load views
+        require APP . 'view/_templates/header.php';
+        require APP . 'view/home/index.php';
+        require APP . 'view/_templates/footer.php';
     }
  
    
@@ -37,6 +37,7 @@ class Home extends Controller
     public function profile()
     {
         $categoryList = $this->itemModel->getCategories();
+        
         // load views
         require APP . 'view/_templates/header.php';
         require APP . 'view/home/profile/index.php';
@@ -44,24 +45,24 @@ class Home extends Controller
     }
 
 
-	/**
+    /**
      * PAGE: search
      * This method handles searching and displaying the search results in a new page
-
      */
     public function search()
     {
         $categoryList = $this->itemModel->getCategories();
         
-		// Runs search using keyword and selected category and saves the search query
-        if(isset($_POST["search"]) || isset($_POST["return_search"])) {
-			$search_query = array($_POST["search-keyword"], $_POST["search-category"]);
-			$results = $this->itemModel->searchItems($_POST["search-keyword"], $_POST["search-category"]);
-		}   
+	// Runs search using keyword and selected category and saves the search query
+        if(isset($_POST["search"]) || isset($_POST["return_search"])) 
+            {
+		$search_query = array($_POST["search-keyword"], $_POST["search-category"]);
+		$results = $this->itemModel->searchItems($_POST["search-keyword"], $_POST["search-category"]);
+            }   
 
-		require APP . 'view/_templates/header.php';
-		require APP . 'view/home/search.php';
-		require APP . 'view/_templates/footer.php';
+        require APP . 'view/_templates/header.php';
+        require APP . 'view/home/search.php';
+        require APP . 'view/_templates/footer.php';
     }
 }
 

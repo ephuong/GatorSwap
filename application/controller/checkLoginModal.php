@@ -1,11 +1,15 @@
 
 <?php
 
-
-class checkLoginModal extends Controller {
+class checkLoginModal extends Controller 
+{
   
-  
-  public function index () {
+  /**
+   * PAGE: Modal for Login
+   * This method handles the modal for logging in.
+   */
+  public function index () 
+  {
     
     require APP . 'view/ajax/checkLoginModal.php';
     
