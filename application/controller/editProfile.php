@@ -29,7 +29,7 @@ class editProfile extends Controller
               
               $accountId = $this->UserModel->getAccountId($username);   
               
-              $this->UserModel->updateUser($accountId,$_POST['firstName'],$_POST['lastName'],$_POST['phoneNumber'],$_POST['address'],$_POST['city'],$_POST['zipcode']);
+              $this->UserModel->updateUser($accountId,$_POST['firstName'],$_POST['lastName'],$_POST['phoneNumber'],$_POST['address'],$_POST['city'],$_POST['state'],$_POST['zipcode'],$_POST['country']);
               
                header('location: ' . URL . 'profile/index');
               

@@ -56,9 +56,12 @@ img{
            </td>
            <td>
             <?php 
-                    if (isset($item_x->IMG)) {
+                    if (isset($item_x->IMG )&& !empty($item_x->IMG)) {
                             echo '<img style=" width:60%;" src="data:image/jpg;base64,' . base64_encode($item_x->IMG) . '" />';
-                    }									
+                    }	else {
+                      
+                            echo ' <img style="width:60%" class="group" src="' . URL . 'public/img/gatorswap-logo.png" alt="" />';
+                    }								
             ?>     
 
         <?php } ?>

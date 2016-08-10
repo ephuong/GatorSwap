@@ -116,10 +116,10 @@ body {
 
 <div id="signup" class="container">
 
-    <form class="form-signup" role="form" method="post" action="<?php echo URL; ?>editProfile/updateUserInfo">
+    <form class="form-signup" role="form" method="post" id = "editProfile" action="<?php echo URL; ?>editProfile/updateUserInfo">
         <h3>Account Information</h3>
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-6 messageContainer">
 
                 <div class="form-group">
 	                <label>First Name</label></br>
@@ -149,7 +149,7 @@ body {
 
             </div>
 
-            <div class="col-md-6">
+            <div class="col-md-6 messageContainer">
 
                 <div class="form-group">
 	                <label>Phone Number</label>
@@ -168,9 +168,21 @@ body {
                         <input class="form-control" name="city"  type="text" value= "<?php if(isset($_SESSION['city'])){ echo $_SESSION['city']; }?>">
                         
             	</div>
+              
+              <div class="form-group">
+	                <label>State</label>
+                        <input class="form-control" name="state"  type="text" value= "<?php if(isset($_SESSION['state'])){ echo $_SESSION['state']; }?>">
+                        
+            	</div>
         <div class="form-group">
 	                <label>Zipcode</label>                 
                         <input class="form-control" name="zipcode"  type="text" value= "<?php if(isset($_SESSION['zipcode'])){ echo  $_SESSION['zipcode'] ;}?>">
+                        
+            	</div>
+              
+              <div class="form-group">
+	                <label>Country</label>
+                        <input class="form-control" name="country"  type="text" value= "<?php if(isset($_SESSION['country'])){ echo $_SESSION['country']; }?>">
                         
             	</div>
 </div>
@@ -183,7 +195,141 @@ body {
     </form>
 </div>
 
+<script> 
+$('document').ready(function()
+  { 
+   $('#editProfile').bootstrapValidator({
+        //container: '#messages',
+         err: {
+            container: function($field, validator) {
+                return $field.parent().next('.messageContainer');
+            }
+        },
+        feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            firstname: {
+                validators: {
+                    notEmpty: {
+                        message: 'The firstname is required and cannot be empty'
+                    },
+                    regexp: {
+                     regexp: /^[a-z\s]+$/i,
+                     message: 'Name can consist of alphabetical characters and spaces only'
+                    },
+                    stringLength: {
+                        max: 35,
+                        message: 'Name is too long!'
+                    }
+                }
+            },
+            lastname: {
+                validators: {
+                    notEmpty: {
+                        message: 'The lastname is required and cannot be empty'
+                    },
+                    regexp: {
+                     regexp: /^[a-z\s]+$/i,
+                     message: 'Name can consist of alphabetical characters and spaces only'
+                    },
+                     stringLength: {
+                        max: 35,
+                        message: 'Name is too long!'
+                    }
+                }
+            },
+            country: {
+                validators: {
+                    notEmpty: {
+                        message: 'Country is required and cannot be empty'
+                    },
+                    regexp: {
+                     regexp: /^[a-z\s]+$/i,
+                     message: 'Country Name should consist of alphabetical characters and spaces only'
+                    },
+                     stringLength: {
+                        max: 15,
+                        message: 'Country Name is too long!'
+                    }
+                }
+            },
+             state: {
+                validators: {
+                    notEmpty: {
+                        message: 'State is required and cannot be empty'
+                    },
+                    regexp: {
+                     regexp: /^[a-z\s]+$/i,
+                     message: 'State consist of alphabetical characters and spaces only'
+                    },
+                    stringLength: {
+                        max: 12,
+                        message: 'State Name is too long!'
+                    }
+                }
+            },
+            address: {
+                validators: {
+                    notEmpty: {
+                        message: 'address is required and cannot be empty'
+                    },
+                    regexp: {
+                     regexp: /^[0-9a-zA-Z. ]+$/i,
+                     message: 'Address should consist of the street number and name.'
+                    },
+                     stringLength: {
+                        max: 50,
+                        message: 'Address is too long!'
+                    }
+                }
+            },
+             city: {
+                validators: {
+                    notEmpty: {
+                        message: 'city is required and cannot be empty'
+                    },
+                    regexp: {
+                     regexp: /^[a-z\s]+$/i,
+                     message: 'City name should be of alphabetical characters and spaces only'
+                    },
+                    stringLength: {
+                        max: 15,
+                        message: 'City name is too long!'
+                    }
+                }
+            },
+            phoneNumber: {
+                validators: {
+                    notEmpty: {
+                        message: 'Phone Number is required and cannot be empty'
+                    },
+                    regexp: {
+                     regexp: /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/i,
+                     message: 'This is an invalid phone number!'
+                            },
+                    stringLength: {
+                        message: 'Your 10 digit phone Number'
+                    }
+                }
+            },
+             zipcode: {
+                validators: {
+                    regexp: {
+                        regexp: /^\d{5}$/,
+                        message: 'The US zipcode must contain 5 digits'
+                    }
+                }
+            }
+           
+        }
+    });
+    
+});
 
+</script> 
 
 
 
