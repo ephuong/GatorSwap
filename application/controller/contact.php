@@ -1,11 +1,12 @@
 <?php 
+/**
+* PAGE: contact
+* This method handles the contact page on the footer. 
+*/
 
 class Contact extends Controller
 {
-	/**
-     * PAGE: contact
-     * This method handles the contact page. 
-     */
+	
     public function index()
     {
         $categoryList = $this->itemModel->getCategories();

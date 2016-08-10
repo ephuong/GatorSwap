@@ -1,11 +1,12 @@
 <?php
+/**
+* PAGE: about
+* This method handles the about page on the footer. 
+*/
 
 class About extends Controller
 {
-	/**
-     * PAGE: about
-     * This method handles the about page. 
-     */
+    
     public function index()
     {
         $categoryList = $this->itemModel->getCategories();

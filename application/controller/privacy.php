@@ -2,9 +2,9 @@
 
 class Privacy extends Controller
 {
-	/**
+    /**
      * PAGE: privacy
-     * This method handles the privacy page. 
+     * This method handles the privacy page on the footer. 
      */
     public function index()
     {
