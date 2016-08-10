@@ -123,28 +123,28 @@ body {
             <div class="col-md-6">
 
                 <div class="form-group">
-	            <label>First Name</label></br>
+	            <label>First Name: </label></br>
                     <label><?php if(isset($_SESSION['firstname'])){ echo $_SESSION['firstname'] ;}?></label>
             	</div>
 
             	<div class="form-group">
-	            <label>Last Name</label></br>
+	            <label>Last Name: </label></br>
                     <label><?php if(isset($_SESSION['lastname'])){ echo $_SESSION['lastname']; }?></label>
             	</div>
 
 		  <div class="form-group">
-	            <label>UserName</label></br>
+	            <label>Username: </label></br>
                     <label><?php if(isset($_SESSION['username'])){ echo $_SESSION['username'] ;}?></label>
             	</div>
                 
                 <div class="form-group">
-	            <label>SFSU E-mail</label></br>
+	            <label>SFSU E-mail: </label></br>
                     <label><?php if(isset($_SESSION['username'])){ echo $_SESSION['username']."@mail.sfsu.edu" ;} ?></label>
 
                 </div>
 
                 <div class="form-group">
-	            <label>SFSU ID:</label>
+	            <label>SFSU ID: </label>
                     <label><?php if(isset($_SESSION['student_id'])){ echo  $_SESSION['student_id']; }?></label>
             	</div>
 
@@ -153,24 +153,34 @@ body {
             <div class="col-md-6">
 
                 <div class="form-group">
-                        <label>Phone Number</label>
+                        <label>Phone Number: </label>
                         <label><?php if(isset($_SESSION['phone'])){echo  $_SESSION['phone']; }?></label>
                 </div>
 
 
                 <div class="form-group">
-                        <label>Address:</label>
+                        <label>Address: </label>
                        <label><?php if(isset($_SESSION['address'])){ echo  $_SESSION['address'];} ?></label>
                 </div>
 
                 <div class="form-group">
-                            <label>City</label>
+                            <label>City: </label>
                             <label><?php if(isset($_SESSION['city'])){ echo $_SESSION['city']; }?></label>
+                </div>
+                
+                <div class="form-group">
+                            <label>State: </label>
+                            <label><?php if(isset($_SESSION['state'])){ echo $_SESSION['state']; }?></label>
                 </div>
 
                 <div class="form-group">
-                            <label>Zipcode</label>
+                            <label>Zipcode: </label>
                             <label><?php if(isset($_SESSION['zipcode'])){ echo  $_SESSION['zipcode'] ;}?></label>
+                </div>
+                
+                <div class="form-group">
+                            <label>Country: </label>
+                            <label><?php if(isset($_SESSION['country'])){ echo $_SESSION['country']; }?></label>
                 </div>
             </div>
 	

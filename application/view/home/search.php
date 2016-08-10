@@ -113,7 +113,7 @@
                         echo '<img style="max-height: 180px; min-height:180px; padding-top: 7px;" class=" group"  src="data:image/jpg;base64,' . base64_encode($result->IMG) . '" alt=""/>';
 
                     } else {
-                        echo ' <img "style="height:180px; padding-top: 7px;" class="group " src="http://placehold.it/400x250/000/fff" alt="" /> ';
+                        echo ' <img style="max-height:180px; padding-top: 7px; min-height:180px;" class="group" src="' . URL . 'public/img/gatorswap-logo.png" alt="" /> ';
                          
                     }
         

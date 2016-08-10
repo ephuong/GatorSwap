@@ -136,14 +136,14 @@ class User extends Model
               return $accountId;
         }
         
-      public function updateUser($accountId,$firstName,$lastName,$phoneNumber,$address,$city,$zipcode) 
+      public function updateUser($accountId,$firstName,$lastName,$phoneNumber,$address,$city,$state,$zipcode,$country) 
          {
-            $sql = "UPDATE User SET F_Name= :firstname,L_Name=:lastname,Phone=:phoneNumber,Address=:address,City=:city,Zipcode=:zipcode WHERE Account_ID = :account_id;";
+            $sql = "UPDATE User SET F_Name= :firstname,L_Name=:lastname,Phone=:phoneNumber,Address=:address,City=:city,State=:state,Zipcode=:zipcode,Country=:country WHERE Account_ID = :account_id;";
             $query = $this->db->prepare($sql);
-            $parameters = array(':account_id'=>$accountId,':firstname' => $firstName, ':lastname' => $lastName,':phoneNumber'=> $phoneNumber,':address'=>$address,':city'=>$city,':zipcode'=>$zipcode );
+            $parameters = array(':account_id'=>$accountId,':firstname' => $firstName, ':lastname' => $lastName,':phoneNumber'=> $phoneNumber,':address'=>$address,':city'=>$city,':state'=>$state,':zipcode'=>$zipcode,':country'=>$country );
 	    $query->execute($parameters); 
             
-            $sql2="SELECT F_Name,L_Name,Phone,Address,City,Zipcode FROM User WHERE Account_ID = :accountId;";
+            $sql2="SELECT F_Name,L_Name,Phone,Address,City,State,Zipcode,Country FROM User WHERE Account_ID = :accountId;";
             $query2 = $this->db->prepare($sql2);
             $parameters2 = array(':accountId' => $accountId);
             $query2->execute($parameters2);
@@ -156,7 +156,9 @@ class User extends Model
             $_SESSION['address']=$userInfo['Address'];
             $_SESSION['phone']=$userInfo['Phone'];
             $_SESSION['city']=$userInfo['City'];
+            $_SESSION['state']=$userInfo['State'];
             $_SESSION['zipcode']=$userInfo['Zipcode'];
+            $_SESSION['country']=$userInfo['Country'];
            
         }
           

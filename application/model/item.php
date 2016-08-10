@@ -41,7 +41,7 @@ class Item extends Model
         //echo "New record created successfully. Last inserted ID is: " . $last_id;
 
         //Get the content of the image and then add slashes to it 
-        $imagetmp = addslashes (file_get_contents($_FILES['item_image']['tmp_name']));
+        $imagetmp = addslashes (@file_get_contents($_FILES['item_image']['tmp_name']));
 
         $sql_itemimg = "INSERT INTO Item_Img(Item_ID, IMG) 
                         VALUES ('$last_id', '$imagetmp')";

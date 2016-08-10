@@ -174,7 +174,7 @@ body {
               
               <div class="form-group">                
 	                <label>Phone Number</label> 
-	                <input class="form-control" name="phoneNumber" placeholder="Example:5104081325" type="text"> 
+	                <input class="form-control" name="phoneNumber" placeholder="Example: 510-408-1325" type="text"> 
                        
               </div>
                 

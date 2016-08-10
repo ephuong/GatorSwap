@@ -145,7 +145,7 @@ $( document ).ready(function() {
 
 
 <div id="seller-page" class="container">
-    <h3 style="text-align:center;" >Sell an Item</h3>
+    <h3 style="text-align:center; padding-top:10px;" >Sell an Item</h3>
     <hr style="margin-top: 15px;">
     
     <form name="form-sell" class="form-sell" role="form" action="<?php echo URL; ?>itemaction/postItem" method="POST" enctype="multipart/form-data">
