@@ -28,7 +28,7 @@ table{
      <div class="sellitems" class="row list-group is-table-row">
 
         <?php
-
+			if(!empty($allitemListArr["allitemListArr"])) {
               foreach ($allitemListArr["allitemListArr"] as $item_x) { ?>
              
             
@@ -64,8 +64,12 @@ table{
       
             </div>
  
-              <?php } ?>
- 
+              <?php }
+			  } else { ?>
+					<div class="col-md-12  wrapper" style="text-align:center">
+					<h3>You haven't posted any items yet!</h3>
+					</div>
+			  <?php  } ?>
         <hr>
         <br>
      </div>

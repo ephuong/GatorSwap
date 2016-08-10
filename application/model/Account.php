@@ -39,6 +39,8 @@ class Account extends Model
                            //**For the registration page
                                         
                      $_SESSION['username'] = $username;
+					 $_SESSION['student_id'] = $sfsu_id;
+					 $_SESSION['account_id'] = $account_id["Account_ID"];
                      $_SESSION['login'] = true;
                         
                   

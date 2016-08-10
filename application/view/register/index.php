@@ -182,7 +182,7 @@ body {
 
         </div>
               <div class="col-md-offset-3 col-md-6 " Style = "Padding-top:2%">
-                  <button class="btn btn-lg btn-primary btn-block" name = "user_submit" type="submit" >REGISTER</button>    
+                  <button id="regBtn" class="btn btn-lg btn-primary btn-block" name = "user_submit" type="submit" >REGISTER</button>    
               </div>
        </div>
                   
@@ -212,7 +212,7 @@ $('document').ready(function()
                         message: 'Your SFSU ID is required for registration'
                     },
                     numeric: {
-                            message: 'The value is not numeric',
+                            message: 'Value must be numeric',
                             // The default separators
                             thousandsSeparator: '',
                             decimalSeparator: ' '
@@ -220,7 +220,7 @@ $('document').ready(function()
                     stringLength: {
                         max: 9,
                         min: 9,
-                        message: 'Its your 9 digit sf state Id!'
+                        message: 'Hint: It\'s your 9 digit student ID'
                     }
                     
                 }
@@ -230,10 +230,13 @@ $('document').ready(function()
                     notEmpty: {
                         message: 'Username cannot be empty'
                     },
-                    
+                    regexp: {
+                     regexp: /^[a-z0-9]+$/i,
+                     message: 'Username must consist of alphanumeric characters only'
+                    },
                     stringLength: {
-                        max: 10,
-                        message: 'Username is too long!'
+                        max: 20,
+                        message: 'Username contains too many characters'
                     }
                 }
             },
@@ -244,7 +247,6 @@ $('document').ready(function()
                     },
                 identical: {
                     field: 'confirmPassword',
-                    message: 'The password and its confirm are not the same'
                 },
                     stringLength: {
                         max: 25,
@@ -261,7 +263,7 @@ $('document').ready(function()
                     },
                 identical: {
                     field: 'password',
-                    message: 'Paswords does not Match!'
+                    message: 'Paswords do not match'
                 },
                     stringLength: {
                         max: 25,
@@ -277,11 +279,11 @@ $('document').ready(function()
                     },
                     regexp: {
                      regexp: /^[a-z\s]+$/i,
-                     message: 'Name can consist of alphabetical characters and spaces only'
+                     message: 'First name must consist of alphabetical characters and spaces only'
                     },
                     stringLength: {
                         max: 35,
-                        message: 'Name is too long!'
+                        message: 'First name must be be shorter than 35 characters'
                     }
                 }
             },
@@ -292,11 +294,11 @@ $('document').ready(function()
                     },
                     regexp: {
                      regexp: /^[a-z\s]+$/i,
-                     message: 'Name can consist of alphabetical characters and spaces only'
+                     message: 'Last name must consist of alphabetical characters and spaces only'
                     },
                      stringLength: {
                         max: 35,
-                        message: 'Name is too long!'
+                        message: 'Last name must be be shorter than 35 characters'
                     }
                 }
             },
@@ -306,12 +308,12 @@ $('document').ready(function()
                         message: 'Country is required and cannot be empty'
                     },
                     regexp: {
-                     regexp: /^([a-z])\s +$/i,
-                     message: 'Country Name should consist of alphabetical characters and spaces only'
+                     regexp: /^[a-z\s]+$/i,
+                     message: 'Country name must consist of alphabetical characters and spaces only'
                     },
                      stringLength: {
                         max: 15,
-                        message: 'Country Name is too long!'
+                        message: 'Country name must be be shorter than 15 characters'
                     }
                 }
             },
@@ -322,55 +324,55 @@ $('document').ready(function()
                     },
                     regexp: {
                      regexp: /^[a-z\s]+$/i,
-                     message: 'State consist of alphabetical characters and spaces only'
+                     message: 'State name must consist of alphabetical characters and spaces only'
                     },
                     stringLength: {
                         max: 12,
-                        message: 'State Name is too long!'
+                        message: 'State name must be be shorter than 12 characters'
                     }
                 }
             },
             address: {
                 validators: {
                     notEmpty: {
-                        message: 'address is required and cannot be empty'
+                        message: 'Address is required and cannot be empty'
                     },
                     regexp: {
                      regexp: /^[0-9a-zA-Z. ]+$/i,
-                     message: 'Address should consist of the street number and name.'
+                     message: 'Address must consist of alphanumeric characters and spaces only'
                     },
                      stringLength: {
                         max: 50,
-                        message: 'Address is too long!'
+                        message: 'Address must be be shorter than 50 characters'
                     }
                 }
             },
              city: {
                 validators: {
                     notEmpty: {
-                        message: 'city is required and cannot be empty'
+                        message: 'City is required and cannot be empty'
                     },
                     regexp: {
                      regexp: /^[a-z\s]+$/i,
-                     message: 'City name should be of alphabetical characters and spaces only'
+                     message: 'City name must consist of alphabetical characters and spaces only'
                     },
                     stringLength: {
                         max: 15,
-                        message: 'City name is too long!'
+                        message: 'City name must be be shorter than 35 characters'
                     }
                 }
             },
             phoneNumber: {
                 validators: {
                     notEmpty: {
-                        message: 'Phone Number is required and cannot be empty'
+                        message: 'Phone number is required and cannot be empty'
                     },
                     regexp: {
                      regexp: /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/i,
-                     message: 'This is an invalid phone number!'
+                     message: 'This is an invalid phone number'
                             },
                     stringLength: {
-                        message: 'Your 10 digit phone Number'
+                        message: 'Your 10 digit phone number'
                     }
                 }
             },
@@ -378,7 +380,7 @@ $('document').ready(function()
                 validators: {
                     regexp: {
                         regexp: /^\d{5}$/,
-                        message: 'The US zipcode must contain 5 digits'
+                        message: 'US zipcode must contain 5 digits'
                     }
                 }
             }
@@ -388,7 +390,13 @@ $('document').ready(function()
     
 });
 
-
+$(function() {
+	$('.form-signup').keypress(function(e) {
+		if(e.which == 13) {
+			$('#regBtn').focus().click();
+		}
+	});
+});
 </script>
 
 </div>

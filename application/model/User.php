@@ -32,7 +32,6 @@ class User extends Model
 
                          $_SESSION['firstname']=$userInfo['F_Name'];
                          $_SESSION['lastname']=$userInfo['L_Name'];
-                         $_SESSION['student_id']= $account_id['Student_ID'];
                          $_SESSION['country']=$userInfo['Country'];
                          $_SESSION['state']=$userInfo['State'];
                          $_SESSION['address']=$userInfo['Address'];
