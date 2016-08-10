@@ -63,7 +63,7 @@
        
         
   <li id="sellLink1"><button class="btn btn-block btn-primary headerLinks" href="<?php echo URL; ?>checkLoginModal/index" data-remote="false" data-toggle="modal" data-target="#signinModal"><span class="glyphicon glyphicon-open headerLinks" style="font-size:1.5em;"></span> Sell An Item</button></li>
-  <li id="sellLink2"><a class="btn btn-block btn-primary headerLinks" href="<?php echo URL; ?>home/sell" role="button" style="padding-top:6px;padding-bottom:6px;"><span class="glyphicon glyphicon-open headerLinks" style="font-size:1.5em;"></span> Sell An Item</a></li>
+  <li id="sellLink2"><a class="btn btn-block btn-primary headerLinks" href="<?php echo URL; ?>sell/index" role="button" style="padding-top:6px;padding-bottom:6px;"><span class="glyphicon glyphicon-open headerLinks" style="font-size:1.5em;"></span> Sell An Item</a></li>
       
      <!-- modal template -->
 <div class="modal fade" id="signinModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

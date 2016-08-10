@@ -1,9 +1,8 @@
 <?php
 
-if(!session_id())
-   {
-    session_start();  
-   }
+if(!session_id()) {
+	session_start();  
+}
    
 class Profile extends Controller
 {
@@ -20,8 +19,6 @@ class Profile extends Controller
         require APP . 'view/_templates/header.php';
         require APP . 'view/profile/index.php';
         require APP . 'view/_templates/footer.php';
-    }
-    
-
-				
+    }				
 }
+?>
