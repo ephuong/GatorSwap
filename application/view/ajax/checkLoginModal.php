@@ -9,7 +9,7 @@
         <div class="modal-body">
             <div class="row">
 
-                <div class="well col-xs-6 col-xs-offset-3" >
+                <div class="well col-xs-6 col-xs-offset-3 messageContainer" >
                     <form id="myForm" class="form-signin" method="post" action="<?php echo URL; ?>signin/login">
                         <div class="form-group">
                             <label for="username" control-label>Username</label>  
@@ -45,4 +45,55 @@
     </div>
 </div>
 
+<script>
+// JavaScript Document
 
+$('document').ready(function()
+  { 
+   $('#myForm').bootstrapValidator({
+        //container: '#messages',
+         err: {
+            container: function($field, validator) {
+                return $field.parent().next('.messageContainer');
+            }
+        },
+        feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            username: {
+                validators: {
+                    notEmpty: {
+                        message: 'Username cannot be empty'
+                    },
+                    regexp: {
+                     regexp: /^[a-z0-9]+$/i,
+                     message: 'Name can consist of alphanumeric characters only'
+                    },
+
+                }
+            },
+         password: {
+            validators: {
+                notEmpty: {
+                        message: 'Password cannot be empty'
+                    },
+                  
+            }
+        }   
+        }
+    });
+    
+});
+
+
+$(function() {
+	$('.form-signin').keypress(function(e) {
+		if(e.which == 13) {
+			$('#myBtn').focus().click();
+		}
+	});
+});
+</script>

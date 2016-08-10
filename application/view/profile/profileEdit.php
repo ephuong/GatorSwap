@@ -195,7 +195,9 @@ body {
     </form>
 </div>
 
-<script> 
+<script>
+// JavaScript Document
+
 $('document').ready(function()
   { 
    $('#editProfile').bootstrapValidator({
@@ -211,6 +213,72 @@ $('document').ready(function()
             validating: 'glyphicon glyphicon-refresh'
         },
         fields: {
+            sfsu_id: {
+                validators: {
+                    notEmpty: {
+                        message: 'Your SFSU ID is required for registration'
+                    },
+                    numeric: {
+                            message: 'Value must be numeric',
+                            // The default separators
+                            thousandsSeparator: '',
+                            decimalSeparator: ' '
+                        },
+                    stringLength: {
+                        max: 9,
+                        min: 9,
+                        message: 'Hint: It\'s your 9 digit student ID'
+                    }
+                    
+                }
+            },
+            username: {
+                validators: {
+                    notEmpty: {
+                        message: 'Username cannot be empty'
+                    },
+                    regexp: {
+                     regexp: /^[a-z0-9]+$/i,
+                     message: 'Username must consist of alphanumeric characters only'
+                    },
+                    stringLength: {
+                        max: 20,
+                        message: 'Username contains too many characters'
+                    }
+                }
+            },
+         password: {
+            validators: {
+                notEmpty: {
+                        message: 'Password cannot be empty'
+                    },
+                identical: {
+                    field: 'confirmPassword',
+                },
+                    stringLength: {
+                        max: 25,
+                        min: 6,
+                        message: 'Password must be between 6-25 characters long'
+                    }
+                  
+            }
+        },
+        confirmPassword: {
+            validators: {
+              notEmpty: {
+                        message: 'Password cannot be empty'
+                    },
+                identical: {
+                    field: 'password',
+                    message: 'Paswords do not match'
+                },
+                    stringLength: {
+                        max: 25,
+                        min: 6,
+                        message: 'Password must be between 6-25 characters long'
+                    }
+            }
+        },
             firstname: {
                 validators: {
                     notEmpty: {
@@ -218,11 +286,11 @@ $('document').ready(function()
                     },
                     regexp: {
                      regexp: /^[a-z\s]+$/i,
-                     message: 'Name can consist of alphabetical characters and spaces only'
+                     message: 'First name must consist of alphabetical characters and spaces only'
                     },
                     stringLength: {
                         max: 35,
-                        message: 'Name is too long!'
+                        message: 'First name must be be shorter than 35 characters'
                     }
                 }
             },
@@ -233,11 +301,11 @@ $('document').ready(function()
                     },
                     regexp: {
                      regexp: /^[a-z\s]+$/i,
-                     message: 'Name can consist of alphabetical characters and spaces only'
+                     message: 'Last name must consist of alphabetical characters and spaces only'
                     },
                      stringLength: {
                         max: 35,
-                        message: 'Name is too long!'
+                        message: 'Last name must be be shorter than 35 characters'
                     }
                 }
             },
@@ -248,11 +316,11 @@ $('document').ready(function()
                     },
                     regexp: {
                      regexp: /^[a-z\s]+$/i,
-                     message: 'Country Name should consist of alphabetical characters and spaces only'
+                     message: 'Country name must consist of alphabetical characters and spaces only'
                     },
                      stringLength: {
                         max: 15,
-                        message: 'Country Name is too long!'
+                        message: 'Country name must be be shorter than 15 characters'
                     }
                 }
             },
@@ -263,55 +331,55 @@ $('document').ready(function()
                     },
                     regexp: {
                      regexp: /^[a-z\s]+$/i,
-                     message: 'State consist of alphabetical characters and spaces only'
+                     message: 'State name must consist of alphabetical characters and spaces only'
                     },
                     stringLength: {
                         max: 12,
-                        message: 'State Name is too long!'
+                        message: 'State name must be be shorter than 12 characters'
                     }
                 }
             },
             address: {
                 validators: {
                     notEmpty: {
-                        message: 'address is required and cannot be empty'
+                        message: 'Address is required and cannot be empty'
                     },
                     regexp: {
                      regexp: /^[0-9a-zA-Z. ]+$/i,
-                     message: 'Address should consist of the street number and name.'
+                     message: 'Address must consist of alphanumeric characters and spaces only'
                     },
                      stringLength: {
                         max: 50,
-                        message: 'Address is too long!'
+                        message: 'Address must be be shorter than 50 characters'
                     }
                 }
             },
              city: {
                 validators: {
                     notEmpty: {
-                        message: 'city is required and cannot be empty'
+                        message: 'City is required and cannot be empty'
                     },
                     regexp: {
                      regexp: /^[a-z\s]+$/i,
-                     message: 'City name should be of alphabetical characters and spaces only'
+                     message: 'City name must consist of alphabetical characters and spaces only'
                     },
                     stringLength: {
                         max: 15,
-                        message: 'City name is too long!'
+                        message: 'City name must be be shorter than 35 characters'
                     }
                 }
             },
             phoneNumber: {
                 validators: {
                     notEmpty: {
-                        message: 'Phone Number is required and cannot be empty'
+                        message: 'Phone number is required and cannot be empty'
                     },
                     regexp: {
                      regexp: /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/i,
-                     message: 'This is an invalid phone number!'
+                     message: 'This is an invalid phone number'
                             },
                     stringLength: {
-                        message: 'Your 10 digit phone Number'
+                        message: 'Your 10 digit phone number'
                     }
                 }
             },
@@ -319,7 +387,7 @@ $('document').ready(function()
                 validators: {
                     regexp: {
                         regexp: /^\d{5}$/,
-                        message: 'The US zipcode must contain 5 digits'
+                        message: 'US zipcode must contain 5 digits'
                     }
                 }
             }
@@ -329,7 +397,14 @@ $('document').ready(function()
     
 });
 
-</script> 
+$(function() {
+	$('.form-signup').keypress(function(e) {
+		if(e.which == 13) {
+			$('#useEditBtn').focus().click();
+		}
+	});
+});
+</script>
 
 
 
