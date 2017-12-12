@@ -4,45 +4,36 @@
 </div>
  -->
 
- <style>
-
+<style>
 .panel-primary>.panel-heading {
-    background-color: #000000;
-    border-color: #000000;
+  background-color: #000000;
+  border-color: #000000;
 }
 
 .panel-primary{
   border-color: #53565a
 }
 /* Code for footer starts */
-     footer {
-    
-    background-color: #53565A;
-    border-top: 1px solid #E7E7E7;
-    text-align:center;
-    padding:20px;   
-    position: absolute;
-    left: 0;
-    bottom: 0;   
-    width: 100%;
-  
+footer {
+  background-color: #53565A;
+  border-top: 1px solid #E7E7E7;
+  text-align:center;
+  padding:20px;   
+  position: absolute;
+  left: 0;
+  bottom: 0;   
+  width: 100%;
 } 
-    
-    .footerLinks{
-      color:white;
 
-    }
+.footerLinks{
+  color:white;
+}
 
-    .footerLinks:hover{
-      color:#C99700;
-
-    }
-    /*Code for the footer ends*/
-
+.footerLinks:hover{
+  color:#C99700;
+}
+/*Code for the footer ends*/
 </style>
-
-
-
 
 <div class="container">
   <div class="row">

@@ -13,8 +13,8 @@
 define('ENVIRONMENT', 'development');
 
 if (ENVIRONMENT == 'development' || ENVIRONMENT == 'dev') {
-    error_reporting(E_ALL);
-    ini_set("display_errors", 1);
+  error_reporting(E_ALL);
+  ini_set("display_errors", 1);
 }
 
 /**
@@ -52,7 +52,7 @@ define('URL', URL_PROTOCOL . URL_DOMAIN . URL_SUB_FOLDER);
  */
 define('DB_TYPE', 'mysql');
 define('DB_HOST', '127.0.0.1');
-define('DB_NAME', 'su16g07');
-define('DB_USER', 'su16g07');
-define('DB_PASS', 'goodenough');
+define('DB_NAME', 'YOUR DATABASE NAME');
+define('DB_USER', 'YOUR DATABASE USER');
+define('DB_PASS', 'YOUR PASSWORD');
 define('DB_CHARSET', 'latin1');

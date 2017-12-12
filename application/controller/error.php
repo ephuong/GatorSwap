@@ -1,9 +1,9 @@
 <?php
 
-if(!session_id())
-   {
-    session_start();  
-   }
+if(!session_id()) {
+  session_start();  
+} 
+
 /**
  * Class Error
  *
@@ -12,17 +12,19 @@ if(!session_id())
  * This is really weird behaviour, but documented here: http://php.net/manual/en/language.oop5.decon.php
  *
  */
-class Error2 extends Controller
+class Error extends Controller
 {
-    /**
-     * PAGE: index
-     * This method handles the error page that will be shown when a page is not found
-     */
-    public function index()
-    {
-        // // load views
-        require APP . 'view/_templates/header.php';
-        require APP . 'view/error/index.php';
-        require APP . 'view/_templates/footer.php';
-    }
+  /**
+   * PAGE: index
+   * This method handles the error page that will be shown when a page is not found
+   */
+  public function index()
+  {
+    // load views
+    require APP . 'view/_templates/header.php';
+    require APP . 'view/error/index.php';
+    require APP . 'view/_templates/footer.php';
+  }
 }
+
+?>

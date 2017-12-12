@@ -1,45 +1,36 @@
 <style>
-
 .panel-primary>.panel-heading {
-    background-color: #000000;
-    border-color: #000000;
+  background-color: #000000;
+  border-color: #000000;
 }
 
 .panel-primary{
   border-color: #53565a
 }
 /* Code for footer starts */
-     footer {
-    
-    background-color: #53565A;
-    border-top: 1px solid #E7E7E7;
-    text-align:center;
-    padding:20px;   
-    position: relative;
-    left: 0;
-    bottom: 0;   
-    width: 100%;
-  
+footer {
+  background-color: #53565A;
+  border-top: 1px solid #E7E7E7;
+  text-align:center;
+  padding:20px;   
+  position: relative;
+  left: 0;
+  bottom: 0;   
+  width: 100%;
 } 
     
-    .footerLinks{
-      color:white;
+.footerLinks{
+  color:white;
+}
 
-    }
-
-    .footerLinks:hover{
-      color:#C99700;
-
-    }
-    /*Code for the footer ends*/
+.footerLinks:hover{
+  color:#C99700;
+}
+/*Code for the footer ends*/
 </style>
-
-
-
 
 <div class="container">
   <div class="row">
-    
 		<h1>
 			Terms and Conditions of Use
 		</h1>
@@ -76,6 +67,7 @@
 					<li>transfer the materials to another person or "mirror" the materials on any other server.</li>
 				</ol>
 			</li>
+
 			<li>
 				This license shall automatically terminate if you violate any of these restrictions and may be terminated by GatorSwap at any time. Upon terminating your viewing of these materials or upon the termination of this license, you must destroy any downloaded materials in your possession whether in electronic or printed format.
 			</li>
@@ -134,7 +126,5 @@
 		<p>
 			General Terms and Conditions applicable to Use of a Web Site.
 		</p>		
-
-			
   </div>
 </div><br><br>
