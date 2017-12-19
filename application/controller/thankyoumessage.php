@@ -10,6 +10,10 @@ class ThankYouMessage extends Controller
   {
     $categoryList = $this->itemModel->getCategories();
 
+    if(isset($_GET["bought"])) {
+      $this->itemModel->removeItem($_GET["item_id"]);
+    }
+
     require APP . 'view/_templates/header.php';
     require APP . 'view/thankyoumessage/index.php';
     require APP . 'view/_templates/footer.php';

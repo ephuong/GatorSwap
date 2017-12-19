@@ -38,7 +38,7 @@
       <button class="btn btn-default btn-lg" style="font-size:18px; margin-right:10px" name="return_search" type="submit">
         Return
       </button>
-      <a href="<?php echo URL; ?>thankyoumessage/index" style="font-size:18px; margin-left:10px" type="button" class="btn btn-primary btn-lg">
+      <a href="<?php echo URL; ?>thankyoumessage/index?item_id=<?php if(isset($item['Item_ID'])) echo htmlspecialchars($item['Item_ID'], ENT_QUOTES, 'UTF-8'); ?>&bought=true" style="font-size:18px; margin-left:10px" type="button" class="btn btn-primary btn-lg">
       Confirm your order
       </a>
     </form>
