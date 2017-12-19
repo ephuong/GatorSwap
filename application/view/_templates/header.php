@@ -10,13 +10,13 @@
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/css/bootstrapValidator.min.css"/>
     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/js/bootstrapValidator.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="<?php echo URL; ?>public/css/custom.css"> 
+    <link rel="stylesheet" type="text/css" href="<?php echo URL; ?>css/custom.css">
   </head>
 
   <body>
     <nav class="navbar navbar-default navbar-inverse" role="navigation">
 
-      <a class="navbar-left" href="<?php echo URL; ?>home/index"><img id="logo" src=" <?php echo URL; ?>public/img/gatorswap-logo.png" alt="GatorSwap" width="300" height="110"></img></a>
+      <a class="navbar-left" href="<?php echo URL; ?>home/index"><img id="logo" src=" <?php echo URL; ?>img/gatorswap-logo.png" alt="GatorSwap" width="300" height="110"></img></a>
 
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">

@@ -91,7 +91,7 @@ if (isset($results["results"][1]->Title)) {
           if (isset($result->IMG) && !empty($result->IMG)) {
               echo '<img style="max-height: 180px; min-height:180px; padding-top: 7px;" class=" group"  src="data:image/jpg;base64,' . base64_encode($result->IMG) . '" alt=""/>';
           } else {
-              echo ' <img style="max-height:180px; padding-top: 7px; min-height:180px;" class="group" src="' . URL . 'public/img/gatorswap-logo.png" alt="" /> ';
+              echo ' <img style="max-height:180px; padding-top: 7px; min-height:180px;" class="group" src="' . URL . 'img/gatorswap-logo.png" alt="" /> ';
           }
           ?>
 
