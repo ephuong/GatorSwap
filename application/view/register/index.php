@@ -84,92 +84,92 @@ footer {
 <div id="signup" class="container">
 
   <h3 Style = "text-align:center">Already Have an account? <a href="<?php echo URL; ?>signin/index" >Login</a></h3>
-    
+
     <form class="form-signup"  method="post" id="register-form" role="form" method="post" action="<?php echo URL; ?>register/addUser">
         <h3>Register To Create Your Account</h3>
         <div class = "row ">
           <div class="col-md-5 messageContainer" >
-                
-            <div class="form-group">                
-              <label>SFSU ID:</label> 
-              <input class="form-control" name="sfsu_id" placeholder="SFSU ID" type="text">       
+
+            <div class="form-group">
+              <label>SFSU ID:</label>
+              <input class="form-control" name="sfsu_id" placeholder="SFSU ID" type="text">
             </div>
-  
-            <div class="form-group form-inline">        
-              <label>SFSU E-mail</label></br> 
-              <input style="width:60%" class="form-control" name="username" placeholder="username" type="text"  value="" required /> @mail.sfsu.edu<br> 
-              <b Style = "font-size: 80% ">Example: <i Style = "color:blue">jdoe@mail.sfsu.edu</i> is <b Style = "color:blue">jdoe</b></b>
+
+            <div class="form-group form-inline">
+              <label>SFSU E-mail</label></br>
+              <input style="width:60%" class="form-control" name="username" placeholder="username" type="text" value="" required /> @mail.sfsu.edu<br>
+              <b Style = "font-size: 80% ">Example: <i style="color:blue">jdoe@mail.sfsu.edu</i> is <b style="color:blue">jdoe</b></b>
             </div>
-                
-            <div class="form-group">                
-              <label>Password</label> 
-              <input class="form-control" name="password" placeholder="Password" type="password">       
+
+            <div class="form-group">
+              <label>Password</label>
+              <input class="form-control" name="password" placeholder="Password" type="password">
             </div>
-                
-            <div class="form-group">                
-              <label>Confirm Password</label> 
+
+            <div class="form-group">
+              <label>Confirm Password</label>
               <input class="form-control" name="confirmPassword" placeholder="Confirm Password" type="password">
             </div>
-                  
+
           </div>
 
           <div class="col-md-1"></div>
-            
+
           <div class="col-md-5 messageContainer" >
 
             <div class="form-group">
               <label>First Name</label>
               <input class="form-control" name="firstname" placeholder="First Name" type="text">
             </div>
-                
+
             <div class="form-group">
               <label>Last Name</label>
               <input class="form-control" name="lastname" placeholder="Last Name" type="text">
             </div>
-                
-            <div class="form-group">                
-                <label>Country</label> 
-                <input class="form-control"  name="country" placeholder="Ex: USA" type="text"> 
+
+            <div class="form-group">
+                <label>Country</label>
+                <input class="form-control" name="country" placeholder="Ex: USA" type="text">
             </div>
-               
-            <div class="form-group">                
-              <label>State</label> 
-              <input class="form-control"  name="state" placeholder="Ex: California" type="text"> 
+
+            <div class="form-group">
+              <label>State</label>
+              <input class="form-control" name="state" placeholder="Ex: California" type="text">
             </div>
-                
-            <div class="form-group">                
-              <label>Address:</label> 
-              <input class="form-control" name="address"  placeholder="Example: 1600 Holloway Ave." type="text"> 
+
+            <div class="form-group">
+              <label>Address:</label>
+              <input class="form-control" name="address" placeholder="Example: 1600 Holloway Ave." type="text">
             </div>
-                
-            <div class="form-group">                
-              <label>City</label> 
-              <input class="form-control"  name="city" placeholder="Example: San Francisco" type="text"> 
+
+            <div class="form-group">
+              <label>City</label>
+              <input class="form-control" name="city" placeholder="Example: San Francisco" type="text">
             </div>
-                
-            <div class="form-group">                
-              <label>Zipcode</label> 
-              <input class="form-control" name="zipcode" placeholder="Example: 94132" type="text">    
+
+            <div class="form-group">
+              <label>Zipcode</label>
+              <input class="form-control" name="zipcode" placeholder="Example: 94132" type="text">
             </div>
-                
-            <div class="form-group">                
-              <label>Phone Number</label> 
-              <input class="form-control" name="phoneNumber" placeholder="Example: 510-408-1325" type="text"> 
+
+            <div class="form-group">
+              <label>Phone Number</label>
+              <input class="form-control" name="phoneNumber" placeholder="Example: 510-408-1325" type="text">
             </div>
-                
+
             <div class="col-md-1"></div>
 
           </div>
 
           <div class="col-md-offset-3 col-md-6 " Style = "Padding-top:2%">
-            <button id="regBtn" class="btn btn-lg btn-primary btn-block" name = "user_submit" type="submit" >REGISTER</button>
+            <button id="regBtn" class="btn btn-lg btn-primary btn-block" name="user_submit" type="submit" >REGISTER</button>
           </div>
        </div>
     </form>
-     
+
 <script>
 // JavaScript Document
-$('document').ready(function() { 
+$('document').ready(function() {
    $('#register-form').bootstrapValidator({
     //container: '#messages',
     err: {
@@ -353,6 +353,9 @@ $('document').ready(function() {
       },
       zipcode: {
         validators: {
+          notEmpty: {
+            message: 'Zipcode is required and cannot be empty'
+          },
           regexp: {
             regexp: /^\d{5}$/,
             message: 'US zipcode must contain 5 digits'

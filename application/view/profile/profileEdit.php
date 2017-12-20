@@ -117,19 +117,19 @@ body {
 </style>
 
 <div id="signup" class="container">
-  <form class="form-signup" role="form" method="post" id = "editProfile" action="<?php echo URL; ?>editProfile/updateUserInfo">
+  <form class="form-signup" role="form" method="post" id="editProfile" action="<?php echo URL; ?>editProfile/updateUserInfo">
     <h3>Account Information</h3>
     <div class="row">
       <div class="col-md-6 messageContainer">
 
         <div class="form-group">
           <label>First Name</label></br>
-          <input class="form-control" name="firstName"  type="text" value= <?php if(isset($_SESSION['firstname'])){ echo $_SESSION['firstname'] ;}?>>
+          <input class="form-control" name="firstName" type="text" value= <?php if(isset($_SESSION['firstname'])){ echo $_SESSION['firstname'] ;}?>>
         </div>
 
         <div class="form-group">
           <label>Last Name</label></br>
-          <input class="form-control" name="lastName"  type="text" value= <?php if(isset($_SESSION['lastname'])){ echo $_SESSION['lastname']; }?>>      
+          <input class="form-control" name="lastName" type="text" value= <?php if(isset($_SESSION['lastname'])){ echo $_SESSION['lastname']; }?>>
         </div>
 
         <div class="form-group">
@@ -153,7 +153,7 @@ body {
 
         <div class="form-group">
           <label>Phone Number</label>
-          <input class="form-control" type="text" name="phoneNumber"  value= "<?php if(isset($_SESSION['phone'])){echo  $_SESSION['phone']; }?>">         
+          <input class="form-control" type="text" name="phoneNumber" value= "<?php if(isset($_SESSION['phone'])){echo  $_SESSION['phone']; }?>">
         </div>
 
         <div class="form-group">
@@ -203,71 +203,7 @@ $('document').ready(function() {
       validating: 'glyphicon glyphicon-refresh'
     },
     fields: {
-      sfsu_id: {
-        validators: {
-          notEmpty: {
-            message: 'Your SFSU ID is required for registration'
-          },
-          numeric: {
-            message: 'Value must be numeric',
-            // The default separators
-            thousandsSeparator: '',
-            decimalSeparator: ' '
-          },
-          stringLength: {
-            max: 9,
-            min: 9,
-            message: 'Hint: It\'s your 9 digit student ID'
-          }
-        }
-      },
-      username: {
-        validators: {
-          notEmpty: {
-            message: 'Username cannot be empty'
-          },
-          regexp: {
-            regexp: /^[a-z0-9]+$/i,
-            message: 'Username must consist of alphanumeric characters only'
-          },
-          stringLength: {
-            max: 20,
-            message: 'Username contains too many characters'
-          }
-        }
-      },
-       password: {
-        validators: {
-          notEmpty: {
-              message: 'Password cannot be empty'
-          },
-          identical: {
-            field: 'confirmPassword',
-          },
-          stringLength: {
-            max: 25,
-            min: 6,
-            message: 'Password must be between 6-25 characters long'
-          }
-        }
-      },
-      confirmPassword: {
-        validators: {
-          notEmpty: {
-            message: 'Password cannot be empty'
-          },
-          identical: {
-            field: 'password',
-            message: 'Paswords do not match'
-          },
-          stringLength: {
-            max: 25,
-            min: 6,
-            message: 'Password must be between 6-25 characters long'
-          }
-        }
-      },
-      firstname: {
+      firstName: {
         validators: {
           notEmpty: {
             message: 'The firstname is required and cannot be empty'
@@ -282,7 +218,7 @@ $('document').ready(function() {
           }
         }
       },
-      lastname: {
+      lastName: {
         validators: {
           notEmpty: {
             message: 'The lastname is required and cannot be empty'
@@ -373,6 +309,9 @@ $('document').ready(function() {
       },
       zipcode: {
         validators: {
+          notEmpty: {
+            message: 'Zipcode is required and cannot be empty'
+          },
           regexp: {
             regexp: /^\d{5}$/,
             message: 'US zipcode must contain 5 digits'
