@@ -1,44 +1,3 @@
-<style>
-.panel .panel-heading {
-  font-size: 150%;
-  background-color: #26215f ;
-  border-color: #26215f;
-}
-
-.panel-primary{
-  background-color: #26215f ;
-  border-color: #26215f;
-}
-.panel-body {
-  padding: 0px;
-}
-
-.panel-body .btn {
-  padding: 0px;
-}
-
-#bodyText{
-  color :#26215f;
-  background-color: #fff;
-  margin-bottom: 15px;
-  margin-top: 0px;
-}
-
-.page-header {
-  margin:0px;
-}
-
-#lastHomeIndex{
-  margin-bottom: 55px;
-}
-
-#category-icons {
-  background-color: transparent; 
-  order: none;
-  outline: none;
-}
-</style>
-
 
 <div class="container">
   <div class="row" id="bodyText">
@@ -48,12 +7,12 @@
 		    <p>
           A marketplace for students at San Francisco State University.
         </p>
-      </div>    
+      </div>
     </div>
   </div>
 
   <div class="row">
-    <div class="col-sm-4 col-xs-4 offset-xs-4">
+    <div id="categoryBox" class="col-sm-4 col-xs-4 offset-xs-4">
       <div class="panel panel-primary">
 
         <div class="panel-heading">BOOKS</div>
@@ -71,7 +30,7 @@
       </div>
     </div>
 
-    <div class="col-sm-4 col-xs-4 offset-xs-4">
+    <div id="categoryBox" class="col-sm-4 col-xs-4 offset-xs-4">
       <div class="panel panel-primary">
         <div class="panel-heading">OFFICE SUPPLIES</div>
         <form action="<?php echo URL; ?>home/search" method="POST">
@@ -86,8 +45,8 @@
         </form>
       </div>
     </div>
-    
-    <div class="col-sm-4 col-xs-4 offset-xs-4">
+
+    <div id="categoryBox" class="col-sm-4 col-xs-4 offset-xs-4">
       <div class="panel panel-primary">
         <div class="panel-heading">CLOTHING</div>
         <form action="<?php echo URL; ?>home/search" method="POST">
@@ -105,7 +64,7 @@
     <br>
 
   <div class="row" id="lastHomeIndex">
-    <div class="col-xs-4 offset-xs-4">
+    <div id="categoryBox" class="col-xs-4 offset-xs-4">
       <div class="panel panel-primary">
         <div class="panel-heading">FURNITURE</div>
         <form action="<?php echo URL; ?>home/search" method="POST">
@@ -121,7 +80,7 @@
       </div>
     </div>
 
-    <div class="col-sm-4 col-xs-4 offset-xs-4">
+    <div id="categoryBox" class="col-sm-4 col-xs-4 offset-xs-4">
       <div class="panel panel-primary">
         <div class="panel-heading">ELECTRONICS</div>
         <form action="<?php echo URL; ?>home/search" method="POST">
@@ -136,13 +95,13 @@
       </div>
     </div>
 
-    <div class="col-sm-4 col-xs-4 offset-xs-4">
+    <div id="categoryBox" class="col-sm-4 col-xs-4 offset-xs-4">
       <div class="panel panel-primary">
         <div class="panel-heading">OTHERS</div>
         <form action="<?php echo URL; ?>home/search" method="POST">
             <input type= "hidden" name="search-category" value="6">
             <input type= "hidden" name="search-keyword" value="">
-        
+
             <div class="panel-body" style="height:300px">
               <p style="text-align:center;height:100%">
               <button class="btn btn-success-outline" id="category-icons" name="search" style="height:100%;">

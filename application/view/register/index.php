@@ -1,91 +1,16 @@
 
 <style>
-@import "bourbon";
-
 body {
   background: #eee !important;
   height:100%;
 }
-
-.wrapper {  
-  margin-top: 80px;
-  margin-bottom: 80px;
-}
-
-.form-signup {
-  max-width: 80%;
-  padding: 15px 35px 45px;
-  margin: 0 auto;
-  background-color: #fff;
-  border: 1px solid rgba(0,0,0,0.1);  
-
-  .form-signup-heading,
-  .checkbox {
-    margin-bottom: 30px;
-  }
-
-  .checkbox {
-    font-weight: normal;
-  }
-
-  .form-control {
-    position: relative;
-    font-size: 16px;
-    height: auto;
-    padding: 10px;
-    @include box-sizing(border-box);
-
-    &:focus {
-      z-index: 2;
-    }
-  }
-
-  input[type="text"] {
-    margin-bottom: -1px;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-  }
-
-  input[type="password"] {
-    margin-bottom: 20px;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-  }
-
-  .Title {
-    text-align: center;
-    line-height: 300%;
-  }
-}
-
-/* Code for footer starts */
-footer {
-  background-color: #53565A;
-  border-top: 1px solid #E7E7E7;
-  text-align:center;
-  padding:20px;   
-  position: relative;
-  left: 0;
-  bottom: 0;   
-  width: 100%;
-} 
-
-.footerLinks{
-  color:white;
-}
-
-.footerLinks:hover{
-  color:#C99700;
-}
-/*Code for the footer ends*/
 </style>
 
-
-<div id="signup" class="container">
+<div id="register-page" class="container wrapper">
 
   <h3 Style = "text-align:center">Already Have an account? <a href="<?php echo URL; ?>signin/index" >Login</a></h3>
 
-    <form class="form-signup"  method="post" id="register-form" role="form" method="post" action="<?php echo URL; ?>register/addUser">
+    <form class="form-input"  method="post" id="register-form" role="form" method="post" action="<?php echo URL; ?>register/addUser">
         <h3>Register To Create Your Account</h3>
         <div class = "row ">
           <div class="col-md-5 messageContainer" >
@@ -198,7 +123,7 @@ $('document').ready(function() {
             max: 9,
             min: 9,
             message: 'Hint: It\'s your 9 digit student ID'
-          }        
+          }
         }
       },
       username: {
@@ -228,7 +153,7 @@ $('document').ready(function() {
             max: 25,
             min: 6,
             message: 'Password must be between 6-25 characters long'
-          } 
+          }
         }
       },
       confirmPassword: {
@@ -367,7 +292,7 @@ $('document').ready(function() {
 });
 
 $(function() {
-  $('.form-signup').keypress(function(e) {
+  $('.form-register').keypress(function(e) {
     if(e.which == 13) {
       $('#regBtn').focus().click();
     }

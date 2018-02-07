@@ -20,12 +20,12 @@
 /* Add a gray background color and some padding to the footer */
 footer {
   background-color: #53565A;
-  padding: 25px;
+  padding: 20px;
 }
 
 a {
   color: #3399ff;
-  text-align: center; 
+  text-align: center;
 }
 
 .footerLinks{
@@ -50,7 +50,7 @@ a {
 
 .navbar-inverse .navbar-nav>li>a:hover {
   color: #C99700;
-}    
+}
 
 .navbar-brand>img {
   max-height: 100%;
@@ -60,7 +60,7 @@ a {
 
   /* probably not needed anymore, but doesn't hurt */
   -o-object-fit: contain;
-  object-fit: contain; 
+  object-fit: contain;
 }
 
 .centered-search {
@@ -76,14 +76,12 @@ a {
   padding-right: 15px;
   margin-top: 10px;
   font-size: 14px;
-}
-/*
-.search-input {
+}.search-input {
 margin-top: 10px;
-width: 600px !important; 
+width: 600px !important;
 margin-left: 10px;
 }
-*/
+
 
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 600px) { .search-input { width: 250px !important; margin-top: 10px; margin-left: 10px;}}
@@ -107,8 +105,8 @@ margin-right: 10px;
 }
 
 .item {
-  height: 400px; 
-  position: relative; 
+  height: 400px;
+  position: relative;
   padding: 10px 10px 10px 10px;
   box-sizing: border-box;
 }
@@ -130,4 +128,166 @@ margin-right: 10px;
 
 .caption {
   padding-bottom:10px;
+}
+
+
+/* footer.php */
+#footerText {
+  color: #fff;
+  background-color:none;
+  margin-bottom: 15px;
+  margin-top: 0px;
+  padding-left:15px;
+}
+
+/* header.php */
+.panel-primary>.panel-heading {
+  background-color: #000000;
+  border-color: #000000;
+}
+
+.panel-primary {
+  border-color: #53565a
+}
+
+#sellLink2 .btn-primary:hover {
+  background-color: #286090;
+}
+
+/* home - index */
+#categoryBox .panel .panel-heading {
+  font-size: 150%;
+  background-color: #26215f ;
+  border-color: #26215f;
+}
+
+#categoryBox .panel-primary {
+  background-color: #26215f ;
+  border-color: #26215f;
+}
+#categoryBox .panel-body {
+  padding: 0px;
+}
+
+#categoryBox .panel-body .btn {
+  padding: 0px;
+}
+
+#bodyText {
+  color :#26215f;
+  background-color: #fff;
+  margin-bottom: 15px;
+  margin-top: 0px;
+}
+
+#bodyText.page-header {
+  margin:0px;
+}
+
+#lastHomeIndex {
+  margin-bottom: 55px;
+}
+
+#category-icons {
+  background-color: transparent;
+  order: none;
+  outline: none;
+}
+
+/* profile and profile edit and register */
+.form-input {
+  max-width: 80%;
+  padding: 15px 35px 45px;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid rgba(0,0,0,0.1);
+}
+
+/* signin */
+#signin-form.form-input {
+  max-width: 380px;
+}
+
+#login.wrapper {
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+/* sell */
+#form-group-select .form-control + .form-control-feedback {
+  right: 10px;
+}
+
+#sellTitle {
+  text-align: center;
+  padding-top: 10px;
+  margin: 0px;
+  font-size: 20pt;
+}
+
+.form-sell {
+  font-size: 12pt;
+}
+
+#submit-button {
+  padding: 12px 22px;
+  font-size: 18px;
+  border-radius: 8px;
+}
+
+/* sell display */
+.container-selldisplay p {
+  text-align: center;
+  font-size: 28px;
+}
+
+.container-selldisplay table {
+  text-align: left;
+  margin: 0 auto;
+}
+
+.container-selldisplay td {
+  min-height: 300px;
+  max-height: 300px;
+  margin: 10px;
+  padding: 10px;
+}
+
+.container-selldisplay {
+  margin: 0 auto;
+  padding-right: 30px;
+  padding-left: 30px;
+  padding-top: 15px;
+}
+
+.sellDispbuttons {
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* profile - sell history */
+.sellhistbuttons {
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#noSellItems.wrapper {
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+/* register */
+#register-page.wrapper {
+  margin-bottom: 70px;
+}
+
+/* thank you message */
+.container-fluid {
+  padding: 60px 50px;
+  color: #0066cc;
+}.logo-small {
+  color: #00cc00;
+  font-size: 50px
 }

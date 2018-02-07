@@ -1,39 +1,6 @@
 
-<style>
-/* Code for footer starts */
-footer {
-  background-color: #53565A;
-  border-top: 1px solid #E7E7E7;
-  text-align:center;
-  padding:20px;   
-  position: relative;
-  left: 0;
-  bottom: 0;   
-  width: 100%;
-} 
-
-.footerLinks{
-  color:white;
-}
-
-.footerLinks:hover{
-  color:#C99700;
-}
-/*Code for the footer ends*/
-</style>
-
-<!--   <p> 
-<?php
-if (isset($results["results"][1]->Title)) {
-  echo $results["results"][1]->Title;
-}
-?> </p> -->
-
 <body style = "background-color:#F0f0f0;">
-<!-- Details Modal --> 
-<!--<a href= "<?php echo URL; ?>itemmodal/index" data-remote="false" data-toggle="modal" data-rowid = "NULL" data-target="#myModal" class="btn btn-default">
-   Launch Modal
-</a>-->
+<!-- Details Modal -->
     <!-- modal template -->
   <div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -49,7 +16,7 @@ if (isset($results["results"][1]->Title)) {
     </div>
   </div>
 
-  <!--search results body --> 
+  <!--search results body -->
   <div class="container" >
   <!-- This displays the number of results found. If no results are found, then "no results found" is displayed.-->
     <h2 id="results"><?php echo $results["count"]; ?> results found </h2>
@@ -80,7 +47,7 @@ if (isset($results["results"][1]->Title)) {
 
     <div id="products" class="row list-group is-table-row">
       <?php
-      // Incrementing variable for details button 
+      // Incrementing variable for details button
       $rowID = 0;
       foreach ($results["results"] as $result) {
       ?>
@@ -97,32 +64,32 @@ if (isset($results["results"][1]->Title)) {
 
           <div class= "caption list-group-text">
             <h3 class="group inner" style="margin-bottom:38px; height:37px">
-                <b> <?php if (isset($result->Title)) echo htmlspecialchars($result->Title, ENT_QUOTES, 'UTF-8'); ?> </b> 
+                <b> <?php if (isset($result->Title)) echo htmlspecialchars($result->Title, ENT_QUOTES, 'UTF-8'); ?> </b>
             </h3>
 
-            <p style="margin: 0px; padding-top: 5px; padding-bottom: 3px;"> 
+            <p style="margin: 0px; padding-top: 5px; padding-bottom: 3px;">
                 <b><i><?php if (isset($result->Category_Name)) echo htmlspecialchars($result->Category_Name, ENT_QUOTES, 'UTF-8'); ?> </i></b>
             </p>
 
-            <p style="margin: 0px; padding-top: 0px; padding-bottom: 3px;"> 
-                <b>Condition:</b> <?php if (isset($result->Item_Condition)) echo htmlspecialchars($result->Item_Condition, ENT_QUOTES, 'UTF-8'); ?> 
+            <p style="margin: 0px; padding-top: 0px; padding-bottom: 3px;">
+                <b>Condition:</b> <?php if (isset($result->Item_Condition)) echo htmlspecialchars($result->Item_Condition, ENT_QUOTES, 'UTF-8'); ?>
             </p>
 
             <p class="lead" style="margin: 0px;">
-              <?php if (isset($result->Price)) echo "$" . htmlspecialchars($result->Price, ENT_QUOTES, 'UTF-8'); ?> 
+              <?php if (isset($result->Price)) echo "$" . htmlspecialchars($result->Price, ENT_QUOTES, 'UTF-8'); ?>
             </p>
 
             <hr style ="border-color:black; margin-top: 5px; margin-bottom: 10px;">
 
             <div class="btn-group" style="margin-top: 0px;">
               <div class="col-xs-6 col-md-6">
-                <button href="<?php echo URL; ?>itemmodal/index" data-remote="false" data-toggle="modal" data-target="#myModal" class="btn btn-block btn-default" 
-                        data-item= "<?php if (isset($result->Item_ID)) echo htmlspecialchars($result->Item_ID, ENT_QUOTES, 'UTF-8'); ?>" 
-                        data-searchkey="<?php echo htmlspecialchars($search_query[0], ENT_QUOTES, 'UTF-8'); ?>" 
-                        data-searchcat="<?php echo htmlspecialchars($search_query[1], ENT_QUOTES, 'UTF-8'); ?>" >More Info</button> 
+                <button href="<?php echo URL; ?>itemmodal/index" data-remote="false" data-toggle="modal" data-target="#myModal" class="btn btn-block btn-default"
+                        data-item= "<?php if (isset($result->Item_ID)) echo htmlspecialchars($result->Item_ID, ENT_QUOTES, 'UTF-8'); ?>"
+                        data-searchkey="<?php echo htmlspecialchars($search_query[0], ENT_QUOTES, 'UTF-8'); ?>"
+                        data-searchcat="<?php echo htmlspecialchars($search_query[1], ENT_QUOTES, 'UTF-8'); ?>" >More Info</button>
               </div>
 
-              <div class="col-xs-6 col-md-6"> 
+              <div class="col-xs-6 col-md-6">
                 <?php
                 if (isset($_SESSION["login"])) {
                   if ($_SESSION["login"]) {
@@ -138,7 +105,7 @@ if (isset($results["results"][1]->Title)) {
                   }
                 } else {
                 ?>
-                <button href="<?php echo URL; ?>checkLoginModal/index"  data-toggle="modal" data-remote="false" data-target="#myModal" class="btn btn-block  btn-primary">Buy it now</button>  
+                <button href="<?php echo URL; ?>checkLoginModal/index"  data-toggle="modal" data-remote="false" data-target="#myModal" class="btn btn-block  btn-primary">Buy it now</button>
 
                 <?php } ?>
               </div>
@@ -150,12 +117,12 @@ if (isset($results["results"][1]->Title)) {
     <?php
       $rowID++;
     }
-    ?>      
+    ?>
     </div>
   </div>
 
 <script>
-//Function for ajax modal 
+//Function for ajax modal
 $("#myModal").on("show.bs.modal", function (e) {
   var link = $(e.relatedTarget);
   var Id = link.data('item');

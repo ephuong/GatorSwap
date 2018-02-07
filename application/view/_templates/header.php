@@ -23,14 +23,14 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
-        </button>  
+        </button>
       </div>
 
-      <div class="navbar-collapse collapse" id="myNavbar" style=" margin-top:20px;">
+      <div class="navbar-collapse collapse" id="myNavbar" style="margin-top:20px;">
         <form class="form-inline pull-xs-right" action="<?php echo URL; ?>home/search" method="POST">
           <div class = "">
-            <ul class="nav navbar-nav  " style = "padding-top:20px">
-              <li>     
+            <ul class="nav navbar-nav" style="padding-top:20px">
+              <li>
                 <select class="form-control" id="menuitem" name="search-category">
                   <?php
                   foreach ($categoryList as $category) {
@@ -43,7 +43,7 @@
                   <?php echo $category_name; ?>
                   </option>
                   <?php } ?>
-                </select> 
+                </select>
               </li>
 
               <li>
@@ -58,8 +58,8 @@
           </div>
         </form>
 
-        <div class = "col-xs-12 col-md-12" style = "padding-top:5px;">
-          <ul class="nav navbar-nav navbar-right ">  
+        <div class = "col-xs-12 col-md-12" style="padding-top:5px;">
+          <ul class="nav navbar-nav navbar-right ">
             <li id="sellLink1">
               <button class="btn btn-block btn-primary headerLinks" href="<?php echo URL; ?>checkLoginModal/index" data-remote="false" data-toggle="modal" data-target="#signinModal"><span class="glyphicon glyphicon-open headerLinks" style="font-size:1.5em;"></span> Sell An Item</button>
             </li>
@@ -117,7 +117,7 @@
                 session_destroy();
               }
             }
-            ?>  
+            ?>
               </a>
             </li>
           </ul>
@@ -141,18 +141,3 @@
     });
   });
 </script>
-
-<style>
-.panel-primary>.panel-heading {
-  background-color: #000000;
-  border-color: #000000;
-}
-
-.panel-primary{
-  border-color: #53565a
-}
-
-#sellLink2 .btn-primary:hover {
-  background-color: #286090;
-}
-</style>

@@ -1,3 +1,4 @@
+
 <div class="container">
   <div class="row">
     <div class="col-xs-6 col-xs-offset-3 col-md-4 col-md-offset-2 ">
@@ -11,27 +12,27 @@
     </div>
 
     <div class="col-xs-6 col-xs-offset-3 col-md-4 col-md-offset-1">
-      <h2><b><?php if (isset($item['Title'])) { 
+      <h2><b><?php if (isset($item['Title'])) {
         echo $item['Title'];} ?> </b>
-      </h2>  
-      <h5><b> Id: </b><?php if (isset($item['Item_ID'])) { 
+      </h2>
+      <h5><b> Id: </b><?php if (isset($item['Item_ID'])) {
         echo $item['Item_ID'];} ?>
-      </h5>  
-      <h5><b> Condition: </b> <?php if (isset($item['Item_Condition'])) { 
+      </h5>
+      <h5><b> Condition: </b> <?php if (isset($item['Item_Condition'])) {
         echo $item['Item_Condition'];} ?>
-      </h5>  
+      </h5>
       <p><b> Description: </b></p>
-      <p> <?php if (isset($item['Description'])) { 
+      <p> <?php if (isset($item['Description'])) {
         echo $item['Description'];} ?>
-      </p>  
+      </p>
       <br>
-      <h3> Price: $<?php if (isset($item['Price'])) { 
+      <h3> Price: $<?php if (isset($item['Price'])) {
         echo $item['Price'];} ?>
       </h3>
-    </div> 
-  </div> 
-  
-  <div class="row" style="margin-top: 50px; text-align:center;">  
+    </div>
+  </div>
+
+  <div class="row" style="margin-top:50px; text-align:center;">
     <form method="post" action="<?php echo URL; ?>home/search">
       <input type="hidden" name="search-keyword" value="<?php echo $search_query[0] ?>" />
       <input type="hidden" name="search-category" value="<?php echo $search_query[1] ?>" />

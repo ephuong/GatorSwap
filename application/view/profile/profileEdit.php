@@ -1,123 +1,14 @@
+
 <?php
 
 if(!session_id()) {
-  session_start();  
+  session_start();
 }
 
 ?>
 
-<style>
-@import "bourbon";
-
-body {
-  background: white;  
-}
-
-.wrapper {
-  margin-top: 80px;
-  margin-bottom: 80px;
-}
-
-.form-signin {
-  max-width: 380px;
-  padding: 15px 35px 45px;
-  margin: 0 auto;
-  background-color: #fff;
-  border: 1px solid rgba(0,0,0,0.1);
-
-  .form-signin-heading,
-  .checkbox {
-    margin-bottom: 30px;
-  }
-
-  .checkbox {
-    font-weight: normal;
-  }
-
-  .form-control {
-    position: relative;
-    font-size: 16px;
-    height: auto;
-    padding: 10px;
-    @include box-sizing(border-box);
-
-    &:focus {
-      z-index: 2;
-    }
-  }
-
-  input[type="text"] {
-    margin-bottom: -1px;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-  }
-
-  input[type="password"] {
-    margin-bottom: 20px;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-  }
-
-  .Title {
-    text-align: center;
-    line-height: 300%;
-  }
-}
-
-.form-signup {
-  max-width: 80%;
-  padding: 15px 35px 45px;
-  margin: 0 auto;
-  background-color: #fff;
-  border: 1px solid rgba(0,0,0,0.1);
-
-  .form-signup-heading,
-  .checkbox {
-    margin-bottom: 30px;
-  }
-
-  .checkbox {
-    font-weight: normal;
-  }
-
-  .form-control {
-    position: relative;
-    font-size: 16px;
-    height: auto;
-    padding: 10px;
-    @include box-sizing(border-box);
-
-    &:focus {
-      z-index: 2;
-    }
-  }
-
-  input[type="text"] {
-    margin-bottom: -1px;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-  }
-
-  input[type="password"] {
-    margin-bottom: 20px;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-  }
-
-  .Title {
-    text-align: center;
-    line-height: 300%;
-  }
-}
-
-.button{
-
-}
-
-</style>
-
-<div id="signup" class="container">
-  <form class="form-signup" role="form" method="post" id="editProfile" action="<?php echo URL; ?>editProfile/updateUserInfo">
+<div id="profileEdit" class="container">
+  <form class="form-input" role="form" method="post" id="editProfile" action="<?php echo URL; ?>editProfile/updateUserInfo">
     <h3>Account Information</h3>
     <div class="row">
       <div class="col-md-6 messageContainer">
@@ -134,7 +25,7 @@ body {
 
         <div class="form-group">
           <label>Username</label></br>
-          <label><?php if(isset($_SESSION['username'])){ echo $_SESSION['username'] ;} ?></label>      
+          <label><?php if(isset($_SESSION['username'])){ echo $_SESSION['username'] ;} ?></label>
         </div>
 
         <div class="form-group">
@@ -165,23 +56,23 @@ body {
           <label>City</label>
           <input class="form-control" name="city"  type="text" value= "<?php if(isset($_SESSION['city'])){ echo $_SESSION['city']; }?>">
         </div>
-              
+
         <div class="form-group">
           <label>State</label>
           <input class="form-control" name="state"  type="text" value= "<?php if(isset($_SESSION['state'])){ echo $_SESSION['state']; }?>">
         </div>
-        
+
         <div class="form-group">
-          <label>Zipcode</label>                 
+          <label>Zipcode</label>
           <input class="form-control" name="zipcode"  type="text" value= "<?php if(isset($_SESSION['zipcode'])){ echo  $_SESSION['zipcode'] ;}?>">
         </div>
-              
+
         <div class="form-group">
           <label>Country</label>
           <input class="form-control" name="country"  type="text" value= "<?php if(isset($_SESSION['country'])){ echo $_SESSION['country']; }?>">
         </div>
       </div>
-    
+
       <button  id="useEditBtn" class="btn btn-lg btn-primary btn-block" name="user-update" type="submit" >Save</button>
     </div>
   </form>
@@ -189,7 +80,7 @@ body {
 
 <script>
 // JavaScript Document
-$('document').ready(function() { 
+$('document').ready(function() {
   $('#editProfile').bootstrapValidator({
     //container: '#messages',
     err: {
@@ -323,7 +214,7 @@ $('document').ready(function() {
 });
 
 $(function() {
-  $('.form-signup').keypress(function(e) {
+  $('.form-profile-info').keypress(function(e) {
     if(e.which == 13) {
       $('#useEditBtn').focus().click();
     }
